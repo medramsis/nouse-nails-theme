@@ -54,7 +54,7 @@
     "sticky_cart": {
       "type": "sticky-add-to-cart-bar",
       "settings": {
-        "product_title": "",
+        "product_title": "Azalyan PoreLift™",
         "sale_price": "$59.99",
         "original_price": "$119.99",
         "button_text": "Add to cart"
