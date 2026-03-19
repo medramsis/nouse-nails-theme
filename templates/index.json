@@ -13,10 +13,10 @@
       "type": "hae-hero",
       "name": "Hero - half photo",
       "settings": {
-        "color_scheme": "",
-        "header-text": "<p>Redefining the <em>nous</em> standard for nails. </p>",
+        "color_scheme": "scheme-eversmooth-pink",
+        "header-text": "<p>Clear Skin Starts <em>Here</em></p>",
         "button-text": "Shop Now",
-        "button-url": "shopify://collections/new-arrivals",
+        "button-url": "shopify://collections/all",
         "media_type": "image",
         "hero-image": "shopify://shop_images/HP_Hero_bc9a065a-d766-466f-b2f7-bf9dcb0041fc.png",
         "video_url": "",
@@ -29,17 +29,17 @@
       "type": "hae-marquee-banner",
       "name": "News ticker banner",
       "settings": {
-        "color_scheme": "scheme-cc80f6b4-b558-4219-8256-b69a754c7c0a",
-        "text": "15-minutes. Non-toxic. Damage-free."
+        "color_scheme": "scheme-eversmooth-pink",
+        "text": "✨ LIMITED TIME: 50% OFF + FREE SHIPPING ✨ 60-Second Pore Reset. No Bruising. Dermatologist Approved."
       }
     },
     "collection_qMBnrM": {
       "type": "collection",
       "name": "Featured collection",
       "settings": {
-        "color_scheme": "scheme-e24c36e3-6758-46b1-b6d4-c5f5b5a35c26",
-        "title": "New Arrivals",
-        "collection": "new-arrivals",
+        "color_scheme": "background-1",
+        "title": "Shop Pore Care Essentials",
+        "collection": "all",
         "grid": 4,
         "rows": 2,
         "show_vendor": false,
@@ -91,21 +91,21 @@
         "eyebrow_F8CptN": {
           "type": "eyebrow",
           "settings": {
-            "text": "The Nous Way",
+            "text": "The Azalyan Way",
             "text_size": "text-size-medium"
           }
         },
         "heading_fWDNn7": {
           "type": "heading",
           "settings": {
-            "heading": "Professional Nails at home",
+            "heading": "Professional Pore Care at Home",
             "heading_size": "headline-style-h3"
           }
         },
         "text_BkXNpA": {
           "type": "text",
           "settings": {
-            "text": "<p>Did you know the average woman spends $2,160 & 48 hours a year on nails? Save your money and your time—with Nous. It’s the <em><strong>Nous way of doing things.</strong></em></p>",
+            "text": "<p>Did you know facial extractions cost $150+ per session? Save your money and your time—with Azalyan PoreLift™. It's the <em><strong>smarter way to clear skin.</strong></em></p>",
             "text_size": "text-size-large"
           }
         },
@@ -113,7 +113,7 @@
           "type": "text_with_icon",
           "settings": {
             "icon": "shopify://shop_images/0e17a53162a56d8cf9794ffeeb9326c1.svg",
-            "text": "3 easy steps – apply, cure, buff.",
+            "text": "3 easy steps – warm, glide, rinse.",
             "text_size": "text-size-medium"
           }
         },
@@ -121,7 +121,7 @@
           "type": "text_with_icon",
           "settings": {
             "icon": "shopify://shop_images/c8e8a3162fda8fb7050dd3c651695e2a.svg",
-            "text": "Non Toxic",
+            "text": "No Bruising",
             "text_size": "text-size-medium"
           }
         },
@@ -129,7 +129,7 @@
           "type": "text_with_icon",
           "settings": {
             "icon": "shopify://shop_images/ca0e36cc52a03559d35034ca36d41412.svg",
-            "text": "Lasts 14 Days",
+            "text": "60 Seconds Daily",
             "text_size": "text-size-medium"
           }
         },
@@ -137,7 +137,7 @@
           "type": "text_with_icon",
           "settings": {
             "icon": "shopify://shop_images/0ee9af4c0a5b1a829cf3abacf1cf0a0d.svg",
-            "text": "No nail damage",
+            "text": "Gentle on Skin",
             "text_size": "text-size-medium"
           }
         },
@@ -145,14 +145,14 @@
           "type": "text_with_icon",
           "settings": {
             "icon": "shopify://shop_images/52e95258835c6343d583074b3a79ba14.svg",
-            "text": "Easy removal",
+            "text": "3 Interchangeable Tips",
             "text_size": "text-size-medium"
           }
         },
         "button_dWdbrp": {
           "type": "button",
           "settings": {
-            "button_label": "How To Apply",
+            "button_label": "How To Use",
             "button_link": "shopify://pages/how-to",
             "button_size": "button--medium"
           }
@@ -260,8 +260,8 @@
           "settings": {
             "color_scheme": "scheme-2119b851-9410-4357-b9dd-7adf10307b8e",
             "callout_image": "shopify://shop_images/Star_Shape.svg",
-            "callout_header": "Clean ingredients only.",
-            "callout_text": "<p>No Nasties, Just Nail Magic. We left out the top 10 most questionable ingredients—so you can shine without worry. That means no formaldehyde, HEMA, DBP, TPHP, or toluene. Ever.</p>",
+            "callout_header": "Gentle on Skin.",
+            "callout_text": "<p>ClearVac™ micro-pulse technology is designed to minimize bruising and irritation. Start on Level 1 and work your way up—your skin will thank you.</p>",
             "text_size": "text-size-main"
           }
         },
@@ -270,8 +270,8 @@
           "settings": {
             "color_scheme": "scheme-6628b2c5-2a6e-43ae-9f30-7d31869aa0c7",
             "callout_image": "shopify://shop_images/Springy_Shape.svg",
-            "callout_header": "Salon-Quality, Done in Minutes",
-            "callout_text": "<p>Ditch the 2-hour waits, awkward small talk, tipping stress, and funky fumes. No nail drama. Just fast, flawless, feel-good nails that love you back.</p>",
+            "callout_header": "Spa-Quality, Done in Seconds",
+            "callout_text": "<p>Skip the $150 facial appointments and awkward small talk. Get professional pore care at home in just 60 seconds a day. Your schedule, your bathroom, your results.</p>",
             "text_size": "text-size-main"
           }
         },
@@ -280,8 +280,8 @@
           "settings": {
             "color_scheme": "scheme-38cadf72-7f29-4186-8b19-cfda33c52e01",
             "callout_image": "shopify://shop_images/Sun_Shape.svg",
-            "callout_header": "Effortless Luxury, Without the Price",
-            "callout_text": "<p>Get salon-quality nails for just $38/month (or less), compared to $80+ with tipping at the salon. Save time, money and bye to nail breakage—all without sacrificing style or shine.</p>",
+            "callout_header": "Effortless Results, Without the Price",
+            "callout_text": "<p>One device replaces monthly facials. Save hundreds compared to spa extractions. Rechargeable, reusable, and designed to last. Clear skin shouldn't cost a fortune.</p>",
             "text_size": "text-size-main"
           }
         }
@@ -294,14 +294,14 @@
       "name": "About and 3 callouts",
       "settings": {
         "color_scheme": "scheme-e24c36e3-6758-46b1-b6d4-c5f5b5a35c26",
-        "subtitle": "A Nous Standard in Nail Beauty.",
+        "subtitle": "A New Standard in Skincare.",
         "headline_size": "headline-style-h4",
-        "text": "<p>We’re building a future where nail care is clean, expressive, and affordable. Our gel strips skip the toxins, cost less, and save you time—because beauty shouldn’t come at your health or schedule.</p>",
+        "text": "<p>We're building a future where skincare is effective, accessible, and safe. Our pore care tools skip the harsh extractions, cost less than spa treatments, and save you time—because clear skin shouldn't come at the expense of your skin's health.</p>",
         "text_size": "text-size-x-large",
-        "button_text_1": "HOW TO APPLY NAILS",
+        "button_text_1": "HOW TO USE PORELIFT",
         "button_link_1": "how-to",
-        "button_text_2": "JOIN OUR CREATOR PROGRAM",
-        "button_link_2": "creator-program"
+        "button_text_2": "SHOP NOW",
+        "button_link_2": "shopify://collections/all"
       }
     },
     "hae_faqs_ACNzbj": {
@@ -310,36 +310,36 @@
         "faq_block_jRAPtz": {
           "type": "faq_block",
           "settings": {
-            "question": "How long do they last?",
-            "answer": "<p>Up to 14 days of chip-free shine. For best results, use the prep pad, apply on dry nails, and avoid oils or baths for 1-2 hours after. They’re tough enough for everyday life—like a screen protector for your nails.</p>"
+            "question": "Will it really not bruise my face?",
+            "answer": "<p>ClearVac™ micro-pulse is designed to be gentler than traditional suction. Start on Level 1, keep moving in short glides, and your skin should feel smooth—not sore. Most users see results without any marks.</p>"
           }
         },
         "faq_block_43ptYe": {
           "type": "faq_block",
           "settings": {
-            "question": "How do I apply?",
-            "answer": "<p>So easy! Find your strip size, peel & stick, then cure for 60 seconds. Trim or buff any excess. Voilà, salon-level nails in 15 minutes. For a complete guide, <a href=\"/pages/how-to\" target=\"_blank\" title=\"How To\"><span style=\"text-decoration:underline\">click here</span></a>.</p>"
+            "question": "How long does it take to see results?",
+            "answer": "<p>Most users notice smoother texture and fewer visible blackheads after 1-2 uses. For best results, use 2-3x per week. Consistency is key!</p>"
           }
         },
         "faq_block_ABp3fi": {
           "type": "faq_block",
           "settings": {
-            "question": "Are they non-toxic?",
-            "answer": "<p>No nasties, just nail magic. We skip the top 10 questionable ingredients—no HEMA, DBP, TPHP, toluene, or formaldehyde. Clean, safe, and worry-free.</p>"
+            "question": "Is it safe for all skin types and ages?",
+            "answer": "<p>Yes! PoreLift™ is designed for all skin types. Start on the lowest level if you have sensitive skin. Not recommended for active acne or inflamed areas.</p>"
           }
         },
         "faq_block_QL3tzy": {
           "type": "faq_block",
           "settings": {
-            "question": "How do I remove them?",
-            "answer": "<p>Gently lift with the provided wooden stick. For ideal results, use our <a href=\"/products/ctrl-delete-nail-remover-serum\" title=\"Ctrl+Delete Vitamin Serum Remover\">Ctrl+Delete Vitamin Remover Serum</a> for easy melt-off-the-nail removal. </p><p>No damage, just nourished nails underneath.</p>"
+            "question": "How do I use PoreLift properly?",
+            "answer": "<p>Warm your skin with a hot towel first, apply light gliding motions (don't hover!), and rinse the tip after each use. Start on Level 1 and work your way up as your skin adapts.</p>"
           }
         },
         "faq_block_N3AeaJ": {
           "type": "faq_block",
           "settings": {
-            "question": "Do they really protect my nails?",
-            "answer": "<p>Yes! They act like a screen protector for your nails—shielding against chips and breaks while helping weak or brittle nails grow stronger, all with zero damage on removal.</p>"
+            "question": "Can I use this with my skincare products?",
+            "answer": "<p>Absolutely! Use PoreLift™ before applying serums and moisturizers for better absorption. Clean, clear pores = better product penetration.</p>"
           }
         }
       },
