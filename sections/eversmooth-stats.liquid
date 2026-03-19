@@ -1,0 +1,238 @@
+{% comment %}
+  EverSmooth Stats/Benefits Section
+{% endcomment %}
+
+<style>
+  .eversmooth-stats {
+    background: white;
+    padding: 80px 20px;
+  }
+
+  .eversmooth-stats-container {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .eversmooth-stats-heading {
+    text-align: center;
+    font-size: 42px;
+    font-weight: 700;
+    margin-bottom: 60px;
+    color: #000;
+  }
+
+  .eversmooth-stats-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 40px;
+  }
+
+  @media (max-width: 1024px) {
+    .eversmooth-stats-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (max-width: 768px) {
+    .eversmooth-stats {
+      padding: 60px 20px;
+    }
+
+    .eversmooth-stats-heading {
+      font-size: 32px;
+      margin-bottom: 40px;
+    }
+
+    .eversmooth-stats-grid {
+      grid-template-columns: 1fr;
+      gap: 32px;
+    }
+  }
+
+  .eversmooth-stat-item {
+    text-align: center;
+  }
+
+  .eversmooth-stat-icon {
+    width: 80px;
+    height: 80px;
+    margin: 0 auto 20px;
+    background: linear-gradient(135deg, #fa009f 0%, #6d38db 100%);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+  }
+
+  .eversmooth-stat-icon svg {
+    width: 40px;
+    height: 40px;
+  }
+
+  .eversmooth-stat-number {
+    font-size: 48px;
+    font-weight: 700;
+    color: #fa009f;
+    line-height: 1;
+    margin-bottom: 8px;
+  }
+
+  .eversmooth-stat-label {
+    font-size: 18px;
+    font-weight: 600;
+    color: #000;
+    margin-bottom: 8px;
+  }
+
+  .eversmooth-stat-description {
+    font-size: 14px;
+    color: #666;
+    line-height: 1.5;
+  }
+</style>
+
+<div class="eversmooth-stats">
+  <div class="eversmooth-stats-container">
+    {% if section.settings.heading != blank %}
+    <h2 class="eversmooth-stats-heading">{{ section.settings.heading }}</h2>
+    {% endif %}
+
+    <div class="eversmooth-stats-grid">
+      {% for block in section.blocks %}
+        <div class="eversmooth-stat-item">
+          <div class="eversmooth-stat-icon">
+            {% case block.settings.icon %}
+              {% when 'clock' %}
+                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                </svg>
+              {% when 'heart' %}
+                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path>
+                </svg>
+              {% when 'star' %}
+                <svg fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path>
+                </svg>
+              {% when 'users' %}
+                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z"></path>
+                </svg>
+              {% when 'check' %}
+                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                </svg>
+              {% else %}
+                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                </svg>
+            {% endcase %}
+          </div>
+          {% if block.settings.number != blank %}
+          <div class="eversmooth-stat-number">{{ block.settings.number }}</div>
+          {% endif %}
+          <div class="eversmooth-stat-label">{{ block.settings.label }}</div>
+          {% if block.settings.description != blank %}
+          <div class="eversmooth-stat-description">{{ block.settings.description }}</div>
+          {% endif %}
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "EverSmooth Stats",
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Why Choose Us"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "stat",
+      "name": "Stat Item",
+      "settings": [
+        {
+          "type": "select",
+          "id": "icon",
+          "label": "Icon",
+          "options": [
+            { "value": "clock", "label": "Clock" },
+            { "value": "heart", "label": "Heart" },
+            { "value": "star", "label": "Star" },
+            { "value": "users", "label": "Users" },
+            { "value": "check", "label": "Check" }
+          ],
+          "default": "check"
+        },
+        {
+          "type": "text",
+          "id": "number",
+          "label": "Number",
+          "default": "15"
+        },
+        {
+          "type": "text",
+          "id": "label",
+          "label": "Label",
+          "default": "Minutes to Apply"
+        },
+        {
+          "type": "textarea",
+          "id": "description",
+          "label": "Description"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "EverSmooth Stats",
+      "blocks": [
+        {
+          "type": "stat",
+          "settings": {
+            "icon": "clock",
+            "number": "15",
+            "label": "Minutes to Apply",
+            "description": "Quick and easy application"
+          }
+        },
+        {
+          "type": "stat",
+          "settings": {
+            "icon": "heart",
+            "number": "14",
+            "label": "Days Wear Time",
+            "description": "Long-lasting results"
+          }
+        },
+        {
+          "type": "stat",
+          "settings": {
+            "icon": "users",
+            "number": "50K+",
+            "label": "Happy Customers",
+            "description": "Join our community"
+          }
+        },
+        {
+          "type": "stat",
+          "settings": {
+            "icon": "check",
+            "number": "100%",
+            "label": "Non-Toxic Formula",
+            "description": "Safe for you and the planet"
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

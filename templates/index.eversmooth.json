@@ -1,0 +1,286 @@
+{
+  "sections": {
+    "eversmooth_hero": {
+      "type": "eversmooth-hero",
+      "settings": {
+        "heading": "Nail Art Made Easy",
+        "subheading": "Professional salon nails at home in just 15 minutes. Non-toxic, damage-free, and lasts up to 14 days.",
+        "primary_button_text": "Shop Now",
+        "primary_button_link": "shopify://collections/all",
+        "secondary_button_text": "How It Works",
+        "secondary_button_link": "shopify://pages/how-to",
+        "show_discount_badge": true,
+        "discount_amount": "50%"
+      }
+    },
+    "marquee_banner": {
+      "type": "hae-marquee-banner",
+      "settings": {
+        "color_scheme": "scheme-eversmooth-pink",
+        "text": "✨ LIMITED TIME: 50% OFF + FREE SHIPPING ✨"
+      }
+    },
+    "eversmooth_stats": {
+      "type": "eversmooth-stats",
+      "blocks": {
+        "stat_1": {
+          "type": "stat",
+          "settings": {
+            "icon": "clock",
+            "number": "15",
+            "label": "Minutes to Apply",
+            "description": "Quick and easy application process"
+          }
+        },
+        "stat_2": {
+          "type": "stat",
+          "settings": {
+            "icon": "heart",
+            "number": "14",
+            "label": "Days Wear Time",
+            "description": "Long-lasting chip-free results"
+          }
+        },
+        "stat_3": {
+          "type": "stat",
+          "settings": {
+            "icon": "users",
+            "number": "50K+",
+            "label": "Happy Customers",
+            "description": "Join our growing community"
+          }
+        },
+        "stat_4": {
+          "type": "stat",
+          "settings": {
+            "icon": "check",
+            "number": "100%",
+            "label": "Non-Toxic",
+            "description": "Safe for you and the planet"
+          }
+        }
+      },
+      "block_order": ["stat_1", "stat_2", "stat_3", "stat_4"],
+      "settings": {
+        "heading": "Why 50,000+ Choose Our Nails"
+      }
+    },
+    "featured_collection": {
+      "type": "collection",
+      "settings": {
+        "color_scheme": "background-1",
+        "title": "New Arrivals",
+        "collection": "new-arrivals",
+        "grid": 4,
+        "rows": 2,
+        "show_vendor": false,
+        "show_view_all": true
+      }
+    },
+    "before_after_homepage": {
+      "type": "before-after-slider",
+      "settings": {
+        "heading": "See The Difference",
+        "description": "Professional salon-quality results in just 15 minutes at home. No damage, no fumes, just beautiful nails."
+      }
+    },
+    "feature_blocks_homepage": {
+      "type": "feature-content-blocks",
+      "blocks": {
+        "feature_1": {
+          "type": "feature",
+          "settings": {
+            "heading": "Easy 3-Step Application",
+            "description": "Apply, cure, and buff in just 15 minutes. No mess, no fuss, no salon appointment needed.",
+            "media_type": "image",
+            "reverse": false
+          }
+        },
+        "feature_2": {
+          "type": "feature",
+          "settings": {
+            "heading": "Non-Toxic & Safe",
+            "description": "Free from harmful chemicals like formaldehyde, HEMA, and toluene. Safe for you and the environment.",
+            "media_type": "image",
+            "reverse": true
+          }
+        },
+        "feature_3": {
+          "type": "feature",
+          "settings": {
+            "heading": "Lasts Up to 14 Days",
+            "description": "Chip-resistant formula that stays beautiful for up to two weeks with proper care.",
+            "media_type": "image",
+            "reverse": false
+          }
+        }
+      },
+      "block_order": ["feature_1", "feature_2", "feature_3"],
+      "settings": {}
+    },
+    "testimonials_homepage": {
+      "type": "hae-testimonials",
+      "blocks": {
+        "quote_1": {
+          "type": "quote",
+          "settings": {
+            "quote": "<p>I've tried every gel strip brand out there and nothing comes close. I love these designs so much and they actually stay on longer than my regular gel nails!</p>",
+            "author": "- Renee E."
+          }
+        },
+        "quote_2": {
+          "type": "quote",
+          "settings": {
+            "quote": "<p>They look like salon nails but took me 15 minutes at home. No drying time, no fumes, and they actually last through dishes and workouts.</p>",
+            "author": "- Talia I."
+          }
+        },
+        "quote_3": {
+          "type": "quote",
+          "settings": {
+            "quote": "<p>I was shocked at how gentle these are. No damage, no weird smell, just healthy nails that last way longer than I expected.</p>",
+            "author": "- Riley E."
+          }
+        }
+      },
+      "block_order": ["quote_1", "quote_2", "quote_3"],
+      "settings": {
+        "color_scheme": "scheme-eversmooth-pink",
+        "title": "What Our Customers Say",
+        "headline_size": "headline-style-h3"
+      }
+    },
+    "instagram_slideshow": {
+      "type": "instagram-slideshow",
+      "blocks": {
+        "slide_1": {
+          "type": "slide",
+          "settings": {
+            "video_url": "",
+            "product": ""
+          }
+        },
+        "slide_2": {
+          "type": "slide",
+          "settings": {
+            "video_url": "",
+            "product": ""
+          }
+        },
+        "slide_3": {
+          "type": "slide",
+          "settings": {
+            "video_url": "",
+            "product": ""
+          }
+        }
+      },
+      "block_order": ["slide_1", "slide_2", "slide_3"],
+      "settings": {
+        "color_scheme": "background-1",
+        "title": "Stick. Cure. Slay.",
+        "subtitle": "",
+        "autoplay": true,
+        "autoplay_speed": 5,
+        "autoplay_video": true,
+        "social_url": "https://instagram.com/getnousnails",
+        "social_text": "@GetNousNails"
+      }
+    },
+    "brand_about": {
+      "type": "hae-brand-about",
+      "blocks": {
+        "callout_1": {
+          "type": "callout",
+          "settings": {
+            "color_scheme": "scheme-2119b851-9410-4357-b9dd-7adf10307b8e",
+            "callout_header": "Clean ingredients only.",
+            "callout_text": "<p>No Nasties, Just Nail Magic. We left out the top 10 most questionable ingredients—so you can shine without worry. That means no formaldehyde, HEMA, DBP, TPHP, or toluene. Ever.</p>",
+            "text_size": "text-size-main"
+          }
+        },
+        "callout_2": {
+          "type": "callout",
+          "settings": {
+            "color_scheme": "scheme-6628b2c5-2a6e-43ae-9f30-7d31869aa0c7",
+            "callout_header": "Salon-Quality, Done in Minutes",
+            "callout_text": "<p>Ditch the 2-hour waits, awkward small talk, tipping stress, and funky fumes. No nail drama. Just fast, flawless, feel-good nails that love you back.</p>",
+            "text_size": "text-size-main"
+          }
+        },
+        "callout_3": {
+          "type": "callout",
+          "settings": {
+            "color_scheme": "scheme-38cadf72-7f29-4186-8b19-cfda33c52e01",
+            "callout_header": "Effortless Luxury, Without the Price",
+            "callout_text": "<p>Get salon-quality nails for just $38/month (or less), compared to $80+ with tipping at the salon. Save time, money and bye to nail breakage—all without sacrificing style or shine.</p>",
+            "text_size": "text-size-main"
+          }
+        }
+      },
+      "block_order": ["callout_1", "callout_2", "callout_3"],
+      "settings": {
+        "color_scheme": "background-1",
+        "subtitle": "A New Standard in Nail Beauty.",
+        "headline_size": "headline-style-h4",
+        "text": "<p>We're building a future where nail care is clean, expressive, and affordable. Our gel strips skip the toxins, cost less, and save you time—because beauty shouldn't come at your health or schedule.</p>",
+        "text_size": "text-size-x-large",
+        "button_text_1": "HOW TO APPLY NAILS",
+        "button_link_1": "how-to",
+        "button_text_2": "JOIN OUR CREATOR PROGRAM",
+        "button_link_2": "creator-program"
+      }
+    },
+    "faqs_homepage": {
+      "type": "hae-faqs",
+      "blocks": {
+        "faq_1": {
+          "type": "faq_block",
+          "settings": {
+            "question": "How long do they last?",
+            "answer": "<p>Up to 14 days of chip-free shine. For best results, use the prep pad, apply on dry nails, and avoid oils or baths for 1-2 hours after. They're tough enough for everyday life—like a screen protector for your nails.</p>"
+          }
+        },
+        "faq_2": {
+          "type": "faq_block",
+          "settings": {
+            "question": "How do I apply?",
+            "answer": "<p>So easy! Find your strip size, peel & stick, then cure for 60 seconds. Trim or buff any excess. Voilà, salon-level nails in 15 minutes.</p>"
+          }
+        },
+        "faq_3": {
+          "type": "faq_block",
+          "settings": {
+            "question": "Are they non-toxic?",
+            "answer": "<p>No nasties, just nail magic. We skip the top 10 questionable ingredients—no HEMA, DBP, TPHP, toluene, or formaldehyde. Clean, safe, and worry-free.</p>"
+          }
+        },
+        "faq_4": {
+          "type": "faq_block",
+          "settings": {
+            "question": "How do I remove them?",
+            "answer": "<p>Gently lift with the provided wooden stick. For ideal results, use our Ctrl+Delete Vitamin Remover Serum for easy melt-off-the-nail removal. No damage, just nourished nails underneath.</p>"
+          }
+        }
+      },
+      "block_order": ["faq_1", "faq_2", "faq_3", "faq_4"],
+      "settings": {
+        "color_scheme": "background-1",
+        "heading": "Frequently Asked Questions",
+        "page": "faq"
+      }
+    }
+  },
+  "order": [
+    "eversmooth_hero",
+    "marquee_banner",
+    "eversmooth_stats",
+    "featured_collection",
+    "before_after_homepage",
+    "feature_blocks_homepage",
+    "testimonials_homepage",
+    "instagram_slideshow",
+    "brand_about",
+    "faqs_homepage"
+  ]
+}
