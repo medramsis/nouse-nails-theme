@@ -1,0 +1,83 @@
+<link
+  rel='stylesheet'
+  href='{{ 'marquee-banner.css' | asset_url }}'
+  media='print'
+  onload="this.media='all'"
+>
+
+<section class='marquee-banner color-{{ section.settings.color_scheme }}'>
+  <div class='marquee-banner__layout'>
+    <div class='marquee-banner__text'>
+      <span>{{ section.settings.text }}</span>
+      <span style='color: #FDF130;'>☀</span>
+      <span>{{ section.settings.text }}</span>
+      <span style='color: #AEC1FB;'>☺</span>
+      <span>{{ section.settings.text }}</span>
+      <span style='color: #EFBDFC;'>♥</span>
+      <span>{{ section.settings.text }}</span>
+      <span style='color: #FF8A64;'>☀</span>
+      <span>{{ section.settings.text }}</span>
+      <span style='color: #FDF130;'>☺</span>
+      <span>{{ section.settings.text }}</span>
+      <span style='color: #AEC1FB;'>♥</span>
+
+      <span>{{ section.settings.text }}</span>
+      <span style='color: #FDF130;'>☀</span>
+      <span>{{ section.settings.text }}</span>
+      <span style='color: #AEC1FB;'>☺</span>
+      <span>{{ section.settings.text }}</span>
+      <span style='color: #EFBDFC;'>♥</span>
+      <span>{{ section.settings.text }}</span>
+      <span style='color: #FF8A64;'>☀</span>
+      <span>{{ section.settings.text }}</span>
+      <span style='color: #FDF130;'>☺</span>
+      <span>{{ section.settings.text }}</span>
+      <span style='color: #AEC1FB;'>♥</span>
+
+      <span>{{ section.settings.text }}</span>
+      <span style='color: #FDF130;'>☀</span>
+      <span>{{ section.settings.text }}</span>
+      <span style='color: #AEC1FB;'>☺</span>
+      <span>{{ section.settings.text }}</span>
+      <span style='color: #EFBDFC;'>♥</span>
+      <span>{{ section.settings.text }}</span>
+      <span style='color: #FF8A64;'>☀</span>
+      <span>{{ section.settings.text }}</span>
+      <span style='color: #FDF130;'>☺</span>
+      <span>{{ section.settings.text }}</span>
+      <span style='color: #AEC1FB;'>♥</span>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Marquee banner",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Colors"
+    },
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "Color scheme",
+      "default": "background-1"
+    },
+
+    {
+      "type": "text",
+      "id": "text",
+      "label": "Banner text",
+      "info": "Enter text once - text will auto repeat"
+    }
+  ],
+
+  "presets": [
+    {
+      "name": "News ticker banner",
+      "category": "Hero & Banners"
+    }
+  ]
+}
+{% endschema %}

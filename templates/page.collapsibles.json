@@ -1,0 +1,69 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "hae_faqs_rafz9D": {
+      "type": "hae-faqs",
+      "blocks": {
+        "faq_block_8hf9f6": {
+          "type": "faq_block",
+          "settings": {
+            "question": "What is your question?",
+            "answer": "<p>Provide your answer here.</p>"
+          }
+        },
+        "faq_block_WCjUXV": {
+          "type": "faq_block",
+          "settings": {
+            "question": "What is your question?",
+            "answer": "<p>Provide your answer here.</p>"
+          }
+        },
+        "faq_block_j79CCr": {
+          "type": "faq_block",
+          "settings": {
+            "question": "What is your question?",
+            "answer": "<p>Provide your answer here.</p>"
+          }
+        },
+        "faq_block_JdF9m9": {
+          "type": "faq_block",
+          "settings": {
+            "question": "What is your question?",
+            "answer": "<p>Provide your answer here.</p>"
+          }
+        },
+        "faq_block_XTwgLF": {
+          "type": "faq_block",
+          "settings": {
+            "question": "What is your question?",
+            "answer": "<p>Provide your answer here.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "faq_block_8hf9f6",
+        "faq_block_WCjUXV",
+        "faq_block_j79CCr",
+        "faq_block_JdF9m9",
+        "faq_block_XTwgLF"
+      ],
+      "name": "FAQ Section",
+      "settings": {
+        "color_scheme": "",
+        "heading": "Frequently Asked Questions",
+        "page": ""
+      }
+    }
+  },
+  "order": [
+    "hae_faqs_rafz9D"
+  ]
+}

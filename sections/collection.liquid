@@ -1,0 +1,172 @@
+<link
+  rel='stylesheet'
+  href='{{ 'collection.css' | asset_url }}'
+  media='print'
+  onload="this.media='all'"
+>
+{% comment %}[CSS-INLINE: product-card-grid.css | <link
+  rel='stylesheet'
+  href='{{ 'product-card-grid.css' | asset_url }}'
+  inline-css='true'
+>]{% endcomment %}
+<style>
+.product-card-grid{display:block;text-decoration:none;color:inherit;transition:transform .3s;overflow:hidden}.product-card-grid__link{position:relative;text-decoration:none;display:block}.product-card-grid__image-container{position:relative;width:100%;padding-bottom:100%;overflow:hidden;margin-bottom:var(--space-2);border:1px dotted transparent}.product-card-grid__image{position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;transition:transform .3s}.product-card-grid__image--hover{position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity .3s}.product-card-grid:hover .product-card-grid__image--hover{opacity:1}.product-card-grid__image-link{position:absolute;top:0;left:0;width:100%;height:100%;z-index:1;opacity:0}.product-card-grid__content{display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;flex-direction:column;gap:var(--space-4)}@media screen and (min-width:750px){.product-card-grid__image-container{margin-bottom:var(--space-4)}.product-card-grid__content{flex-direction:row}}.product-card-grid__details{width:100%;min-width:0}.product-card-grid__subtitle{margin-bottom:var(--space-2)}.product-card-grid__title{font-size:var(--text-size-small);margin-bottom:0}@media screen and (min-width:750px){.product-card-grid__title{font-size:var(--headline-size-h5);max-width:73%}}.product-card-grid__price{font-weight:700}.product-card-grid__vendor{color:rgba(var(--color-text-1),.6);margin-bottom:var(--space-1)}.product-card-grid__price-wrapper{margin-top:0;display:flex;flex-direction:row;justify-content:space-between;font-size:var(--text-size-small)}.product-card-grid__sold-out-badge{display:none}.product-card-grid--sold-out .product-card-grid__sold-out-badge{display:block;position:absolute;right:var(--space-2);left:auto;top:var(--space-3);z-index:1;width:4.75rem;height:4.75rem;display:flex;justify-content:center;align-items:center}@media screen and (min-width:750px){.product-card-grid__price-wrapper{font-size:var(--headline-size-h5)}.product-card-grid--sold-out .product-card-grid__sold-out-badge{width:5rem;height:5rem}}.product-card-grid__sold-out-badge__text{position:absolute;left:0;right:0;margin:auto;top:.5rem;bottom:0;z-index:1;width:2rem;height:2.5rem;text-align:center;text-transform:uppercase;display:block;line-height:1;font-size:var(--text-size-tiny)}@media screen and (min-width:750px){.product-card-grid__sold-out-badge__text{top:.25rem;bottom:0;z-index:1;width:2.5rem;height:2.5rem}}.klaviyo-bis-trigger-collection{margin-top:var(--space-3);padding:var(--space-2) var(--space-1);font-size:.6rem;max-width:14rem;background-color:rgb(var(--color-base-accent-1));color:rgb(var(--color-text-1-1));border:1px solid rgb(var(--color-button-primary-border));border-radius:100vw;text-align:center;text-transform:uppercase;font-weight:700;letter-spacing:.05em;text-decoration:none;cursor:pointer;transition:all .3s var(--default-easing);position:absolute;bottom:var(--space-3);width:98%;left:0;right:0;margin:auto;z-index:1;display:block}@media screen and (min-width:750px){.klaviyo-bis-trigger-collection{font-size:var(--text-size-tiny);border:2px solid rgb(var(--color-button-primary-border));width:100%;padding:var(--space-3) var(--space-2);font-size:var(--text-size-tiny);max-width:17rem;margin:auto}}.klaviyo-bis-trigger-collection:hover{background-color:rgb(var(--color-text-1));border-color:rgb(var(--color-text-1));color:rgb(var(--color-background))}
+</style>
+{% comment %}[/CSS-INLINE]{% endcomment %}
+
+<section class='collection-section color-{{ section.settings.color_scheme }}'>
+  <div class='collection_contain  container-main section-padding-small'>
+    {% if section.settings.title != blank %}
+      <div class='collection-section__header'>
+        <h2 class='collection-section__title headline-style-h3'>
+          {{ section.settings.title | escape }}
+        </h2>
+      </div>
+    {% endif %}
+
+    {%- assign collection = collections[section.settings.collection] -%}
+
+    {% case section.settings.grid %}
+      {% when 2 %}
+        {%- assign max_height = 530 -%}
+        {%- assign grid_class = 'grid-6' -%}
+      {% when 3 %}
+        {%- assign max_height = 345 -%}
+        {%- assign grid_class = 'grid-3' -%}
+      {% when 4 %}
+        {%- assign max_height = 250 -%}
+        {%- assign grid_class = 'grid-4' -%}
+      {% when 5 %}
+        {%- assign max_height = 195 -%}
+        {%- assign grid_class = 'grid-5' -%}
+    {% endcase %}
+
+    {%- assign product_limit = section.settings.grid
+      | times: section.settings.rows
+    -%}
+
+    <ul class='collection-grid grid {{ grid_class }} grid-gap-sm'>
+      {% for product in collection.products limit: product_limit %}
+        <li class='collection-grid-item'>
+          {% render 'product-card-grid',
+            max_height: max_height,
+            product: product,
+            show_vendor: section.settings.show_vendor
+          %}
+        </li>
+      {% else %}
+        {% for i in (1..product_limit) %}
+          <li class='collection-grid-item '>
+            <div class='product-card'>
+              <a class='product-card__link' href='#'>
+                <div class='product-card__image'>
+                  {% capture current %}{% cycle 1, 2, 3, 4, 5, 6 %}{% endcapture %}
+                  {{
+                    'product-'
+                    | append: current
+                    | placeholder_svg_tag: 'placeholder-svg'
+                  }}
+                </div>
+                <div class='product-card__content'>
+                  <h3 class='product-card__title'>Sample Product</h3>
+                  {% if section.settings.show_vendor %}
+                    <p class='product-card__vendor'>Sample Vendor</p>
+                  {% endif %}
+                  <p class='product-card__price'>$19.99</p>
+                </div>
+              </a>
+            </div>
+          </li>
+        {% endfor %}
+      {% endfor %}
+    </ul>
+
+    {% if section.settings.show_view_all
+      and collection.products.size > product_limit
+    %}
+      <div class='collection-view-all'>
+        <a
+          href='{{ collection.url }}'
+          class='button button--secondary button--small'
+          aria-label='View all products in {{ collection.title }}'
+        >
+          Shop All
+        </a>
+      </div>
+    {% endif %}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Featured collection",
+  "class": "index-section",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Colors"
+    },
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "Color scheme",
+      "default": "background-1"
+    },
+    {
+      "type": "header",
+      "content": "Content"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Heading",
+      "default": "Featured collection"
+    },
+    {
+      "id": "collection",
+      "type": "collection",
+      "label": "Collection"
+    },
+    {
+      "type": "header",
+      "content": "Layout"
+    },
+    {
+      "type": "range",
+      "id": "grid",
+      "label": "Products per row",
+      "min": 2,
+      "max": 5,
+      "step": 1,
+      "default": 3
+    },
+    {
+      "type": "range",
+      "id": "rows",
+      "label": "Rows",
+      "min": 1,
+      "max": 5,
+      "step": 1,
+      "default": 2
+    },
+    {
+      "type": "checkbox",
+      "id": "show_vendor",
+      "label": "Show product vendors",
+      "default": false
+    },
+    {
+      "type": "checkbox",
+      "id": "show_view_all",
+      "label": "Show 'View all' button",
+      "default": false
+    }
+  ],
+  "presets": [
+    {
+      "name": "Featured collection",
+      "category": "Collection & Catalog"
+    }
+  ]
+}
+{% endschema %}

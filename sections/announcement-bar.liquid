@@ -1,0 +1,76 @@
+{% comment %}[CSS-INLINE: component-announcement-bar.css | <link href='{{ 'component-announcement-bar.css' | asset_url }}' rel='stylesheet' inline-css='true'>]{% endcomment %}
+<style>
+#shopify-section-announcement-bar{z-index:4;position:relative;background-color:rgb(var(--color-background))}.announcement-bar{color:rgb(var(--color-text-1));background-color:rgb(var(--color-background));display:block;top:0}.announcement-bar__text{font-size:var(--text-size-small);text-align:center;padding:var(--space-2) 0}.announcement-bar__text p{margin-bottom:0}.announcement-bar__close{position:absolute;right:var(--space-4);top:0;right:var(--space-2);width:1.5rem;bottom:0;margin:auto;background:0 0;border:none;cursor:pointer;color:rgb(var(--color-text-1));padding:var(--space-2)}.announcement-bar__close svg{transition:all .4s var(--default-easing)}.announcement-bar__close:focus svg,.announcement-bar__close:hover svg{transform:scale(1.1) rotate(180deg)}@media screen and (min-width:940px){.announcement-bar__text{font-size:var(--text-size-regular)}.announcement-bar__close{width:2rem}}
+</style>
+{% comment %}[/CSS-INLINE]{% endcomment %}
+
+<announcement-bar class='announcement-bar color-{{ section.settings.color_scheme }}'>
+  <div class='announcement-bar__contain container-main'>
+    <div class='announcement-bar__text'>
+      {{ section.settings.announcement_text }}
+    </div>
+    {% if section.settings.show_close_button %}
+      <button class='announcement-bar__close'>
+        <span class='visually-hidden'>Close</span>
+        {% render 'icon-close' %}
+      </button>
+    {% endif %}
+  </div>
+</announcement-bar>
+{% schema %}
+{
+  "name": "Announcement Bar",
+  "settings": [
+    {
+      "type": "richtext",
+      "id": "announcement_text",
+      "label": "Announcement text",
+      "default": "<p>Welcome to our store</p>"
+    },
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "Color scheme",
+      "default": "background-1"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_close_button",
+      "label": "Show close button",
+      "default": true
+    }
+  ]
+}
+{% endschema %}
+
+<script>
+  class AnnouncementBar extends HTMLElement {
+    constructor() {
+      super();
+      this.closeButton = this.querySelector('.announcement-bar__close');
+
+      if (this.closeButton) {
+        this.closeButton.addEventListener('click', this.close.bind(this));
+      }
+    }
+
+    close() {
+      this.style.display = 'none';
+      document.documentElement.style.setProperty(
+        '--announcement-bar-height',
+        '0px'
+      );
+      document
+        .querySelector('sticky-header')
+        .querySelector('.header-border-mobile').style.top = '0px';
+      document
+        .querySelector('sticky-header')
+        .classList.remove('announcement-bar-active');
+
+      // Store closed state
+      localStorage.setItem('announcement-bar-closed', 'true');
+    }
+  }
+
+  customElements.define('announcement-bar', AnnouncementBar);
+</script>

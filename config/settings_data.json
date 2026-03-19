@@ -1,0 +1,1244 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "current": {
+    "colors_brand_1": "#6d0506",
+    "colors_brand_2": "#f8eee3",
+    "colors_base_accent_1": "#EFBDFC",
+    "colors_base_accent_2": "#ff69b4",
+    "colors_base_accent_3": "#ff6100",
+    "colors_base_text_1": "#6d0506",
+    "colors_base_text_2": "#f8eee3",
+    "show_announcement_bar": true,
+    "predictive_search_enabled": true,
+    "predictive_search_show_vendor": false,
+    "predictive_search_show_price": false,
+    "share_facebook": true,
+    "share_twitter": true,
+    "share_pinterest": true,
+    "social_twitter_link": "",
+    "social_facebook_link": "",
+    "social_tiktok_link": "https://www.tiktok.com/@getnousnail",
+    "social_pinterest_link": "",
+    "social_instagram_link": "https://www.instagram.com/getnousnails",
+    "social_tumblr_link": "",
+    "social_snapchat_link": "",
+    "social_youtube_link": "",
+    "social_vimeo_link": "",
+    "klaviyo_account_id": "WDY9Vw",
+    "favicon": "shopify://shop_images/Nous_Fav_Gradient.png",
+    "enable_ajax": true,
+    "colors_text_1": "#6d0506",
+    "color_text": "#000000",
+    "color_body_text": "#000000",
+    "color_sale_text": "#ea0606",
+    "color_button": "#3a3a3a",
+    "color_button_text": "#ffffff",
+    "color_small_button_text_border": "#3a3a3a",
+    "color_text_field_text": "#000000",
+    "color_text_field_border": "#cccccc",
+    "color_text_field": "#ffffff",
+    "color_image_overlay_text": "#ffffff",
+    "color_image_overlay": "#685858",
+    "image_overlay_opacity": 40,
+    "color_borders": "#ebebeb",
+    "color_body_bg": "#ffffff",
+    "checkout_header_image": "",
+    "checkout_logo_image": "",
+    "checkout_logo_position": "left",
+    "checkout_logo_size": "medium",
+    "checkout_body_background_image": "",
+    "checkout_body_background_color": "#fff",
+    "checkout_input_background_color_mode": "white",
+    "checkout_sidebar_background_image": "",
+    "checkout_sidebar_background_color": "#fafafa",
+    "checkout_heading_font": "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'",
+    "checkout_body_font": "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'",
+    "checkout_accent_color": "#197bbd",
+    "checkout_button_color": "#197bbd",
+    "checkout_error_color": "#e32c2b",
+    "sections": {
+      "header": {
+        "type": "header",
+        "blocks": {
+          "block_Ln8P6T": {
+            "type": "block",
+            "settings": {
+              "top_level_link": "Shop All",
+              "promotion_1_image": "shopify://shop_images/Iced-Out-4.jpg",
+              "promotion_1_text": "New Arrivals",
+              "promotion_1_url": "shopify://collections/new-arrivals",
+              "promotion_2_image": "shopify://shop_images/Stars-Aligned-3.jpg",
+              "promotion_2_text": "Nail Club Subscription",
+              "promotion_2_url": "shopify://collections/subscription",
+              "promotion_3_text": "",
+              "promotion_3_url": ""
+            }
+          },
+          "block_Dz7Lnx": {
+            "type": "block",
+            "settings": {
+              "top_level_link": "New",
+              "promotion_1_image": "shopify://shop_images/Strange-Terrain-2.jpg",
+              "promotion_1_text": "Art School Collection",
+              "promotion_1_url": "shopify://collections/art-school-star-collection",
+              "promotion_2_image": "shopify://shop_images/Geometric-Jelly-2.jpg",
+              "promotion_2_text": "Jelly Collection",
+              "promotion_2_url": "shopify://collections/jelly-collection",
+              "promotion_3_text": "",
+              "promotion_3_url": ""
+            }
+          }
+        },
+        "block_order": ["block_Ln8P6T", "block_Dz7Lnx"],
+        "settings": {
+          "mobile_nav_heading": "Shop",
+          "mobile_menu_primary": "main-menu",
+          "mobile_menu_secondary": "",
+          "menu": "main-menu",
+          "sticky_header_type": "on-scroll-up",
+          "show_line_separator": true,
+          "enable_country_selector": false,
+          "enable_language_selector": false,
+          "search_heading": "☀ LOOKING FOR SOMETHING? ☺"
+        }
+      },
+      "hae-image-with-text": {
+        "type": "hae-image-with-text",
+        "settings": {
+          "layout": "left"
+        }
+      },
+      "feature-columns": {
+        "type": "feature-columns",
+        "blocks": {
+          "feature-columns-0": {
+            "type": "text_block",
+            "settings": {
+              "enable_image": true,
+              "title": "Add a title or tagline",
+              "text": "<p>Share blog posts, products, or promotions with your customers. Use this text to describe products, share details on availability and style, or as a space to display recent reviews or FAQs.</p>",
+              "button_label": ""
+            }
+          },
+          "feature-columns-1": {
+            "type": "text_block",
+            "settings": {
+              "enable_image": true,
+              "title": "Add a title or tagline",
+              "text": "<p>Share blog posts, products, or promotions with your customers. Use this text to describe products, share details on availability and style, or as a space to display recent reviews or FAQs.</p>",
+              "button_label": ""
+            }
+          },
+          "feature-columns-2": {
+            "type": "text_block",
+            "settings": {
+              "enable_image": true,
+              "title": "Add a title or tagline",
+              "text": "<p>Share blog posts, products, or promotions with your customers. Use this text to describe products, share details on availability and style, or as a space to display recent reviews or FAQs.</p>",
+              "button_label": ""
+            }
+          }
+        },
+        "block_order": [
+          "feature-columns-0",
+          "feature-columns-1",
+          "feature-columns-2"
+        ],
+        "settings": {
+          "title": "",
+          "align_text": "left"
+        }
+      },
+      "collection": {
+        "type": "collection",
+        "settings": {
+          "title": "Featured collection",
+          "collection": "",
+          "grid": 4,
+          "rows": 2,
+          "show_vendor": false,
+          "show_view_all": false
+        }
+      },
+      "footer": {
+        "type": "footer",
+        "settings": {
+          "color_scheme": "scheme-cc80f6b4-b558-4219-8256-b69a754c7c0a",
+          "background_image": "shopify://shop_images/footer-bg.jpg",
+          "show_company_info": true,
+          "company_logo": "shopify://shop_images/nous-logo.svg",
+          "company_description": "",
+          "show_social_icons": true,
+          "show_quick_links": true,
+          "quick_links_title": "Quick Links",
+          "quick_links_menu": "footer",
+          "show_newsletter": true,
+          "newsletter_title": "Stay Updated",
+          "newsletter_title_size": "headline-style-h4",
+          "klaviyo_form_id": "UQJuZt",
+          "copyright_text": "All rights reserved.",
+          "show_bottom_menu": true,
+          "bottom_menu": "footer-menu-2"
+        }
+      },
+      "1605316310afd292ce": {
+        "type": "hae-hero",
+        "settings": {
+          "color_scheme": "background-1",
+          "header-text": "<p>Redefining the <em>nous</em> standard for nails.</p>",
+          "button-text": "Shop Now",
+          "button-url": "shopify://collections/all",
+          "media_type": "image",
+          "hero-image": "shopify://shop_images/hero-shot-1.png",
+          "video_url": "",
+          "floating-sticker": "stars",
+          "sticker_color": "#fdf130"
+        }
+      },
+      "1606088182cf23b23a": {
+        "type": "hae-featured-collections",
+        "blocks": {
+          "collection_wCCpKy": {
+            "type": "collection",
+            "settings": {
+              "color_scheme": "scheme-a1f75e04-1da9-4fbd-831b-96f4b8dc69e2",
+              "headline": "Subscribe & Save",
+              "button_text": "Shop Now",
+              "media_type": "image",
+              "video_url": "",
+              "image": "shopify://shop_images/false-nails-natural-5-middle.jpg",
+              "floating_sticker": "sun-blue",
+              "sticker_color": "#aec1fb"
+            }
+          },
+          "collection_wJTPLQ": {
+            "type": "collection",
+            "settings": {
+              "color_scheme": "scheme-94eb6821-3c93-4727-b9e1-be4096d276ce",
+              "headline": "@MeechyNails",
+              "button_text": "Shop Now",
+              "media_type": "image",
+              "video_url": "",
+              "image": "shopify://shop_images/false-nails-natural-2-middle.jpg",
+              "floating_sticker": "sun-pink",
+              "sticker_color": "#d1e1e8"
+            }
+          }
+        },
+        "block_order": ["collection_wCCpKy", "collection_wJTPLQ"],
+        "settings": {}
+      },
+      "1606088197e736fabb": {
+        "type": "hae-brand-about",
+        "blocks": {
+          "callout_pBYmHY": {
+            "type": "callout",
+            "settings": {
+              "color_scheme": "scheme-2119b851-9410-4357-b9dd-7adf10307b8e",
+              "callout_image": "shopify://shop_images/Star_Shape.svg",
+              "callout_header": "Clean ingredients only.",
+              "callout_text": "<p>No Nasties, Just Nail Magic.We left out the top 10 most questionable ingredients—so you can shine without worry.That means no formaldehyde, HEMA, DBP, TPHP, or toluene. Ever.</p>",
+              "text_size": "text-size-main"
+            }
+          },
+          "callout_rh8czt": {
+            "type": "callout",
+            "settings": {
+              "color_scheme": "scheme-6628b2c5-2a6e-43ae-9f30-7d31869aa0c7",
+              "callout_image": "shopify://shop_images/Springy_Shape.svg",
+              "callout_header": "Salon-Quality, Done in Minutes",
+              "callout_text": "<p>Ditch the 2-hour waits, awkward small talk, tipping stress, and funky fumes. No nail drama. Just fast, flawless, feel-good nails that love you back.</p>",
+              "text_size": "text-size-main"
+            }
+          },
+          "callout_QUEkYB": {
+            "type": "callout",
+            "settings": {
+              "color_scheme": "scheme-38cadf72-7f29-4186-8b19-cfda33c52e01",
+              "callout_image": "shopify://shop_images/Sun_Shape.svg",
+              "callout_header": "Effortless Luxury, Without the Price",
+              "callout_text": "<p>Get salon-quality nails for just $38/month (or less), compared to $80+ with tipping at the salon. Save time, money and bye to nail breakage—all without sacrificing style or shine.</p>",
+              "text_size": "text-size-main"
+            }
+          }
+        },
+        "block_order": ["callout_pBYmHY", "callout_rh8czt", "callout_QUEkYB"],
+        "settings": {
+          "color_scheme": "scheme-bcc14177-2f35-42c6-9cb2-e793cb929778",
+          "subtitle": "The Nous Standard in Nail Beauty",
+          "headline_size": "headline-style-h4",
+          "text": "<p>We’re building a future where nail care is clean, expressive, and affordable. Our gel strips skip the toxins, cost less, and save you time—because beauty shouldn’t come at your health or schedule.</p>",
+          "text_size": "text-size-x-large",
+          "button_text_1": "HOW TO APPLY NAILS",
+          "button_link_1": "about",
+          "button_text_2": "FREE LED LAMP",
+          "button_link_2": "why-hae"
+        }
+      },
+      "1607135984834dab41": {
+        "type": "hae-marquee-banner",
+        "settings": {
+          "color_scheme": "scheme-cc80f6b4-b558-4219-8256-b69a754c7c0a",
+          "text": "LOREM IPSUM LOREM"
+        }
+      },
+      "collection-template": {
+        "type": "collection-template",
+        "settings": {
+          "layout": "grid",
+          "grid": 4,
+          "rows": 2,
+          "show_collection_image": true,
+          "show_vendor": false,
+          "sort_enable": true,
+          "tags_enable": true
+        }
+      },
+      "product-template": {
+        "type": "product-template",
+        "settings": {}
+      },
+      "product-recommendations": {
+        "type": "product-recommendations",
+        "settings": {
+          "heading": "You may also like"
+        }
+      },
+      "blog-template": {
+        "type": "blog-template",
+        "settings": {}
+      },
+      "press": {
+        "type": "press",
+        "blocks": {
+          "dbce76bf-b651-499d-8486-1423c9daa4f4": {
+            "type": "press_feature",
+            "settings": {
+              "image": "shopify://shop_images/logo-allure.png",
+              "title": "The Hypebae Best: All of The Beauty Products We Loved In 2020",
+              "date": "September 2021",
+              "press_link": "http://google.com"
+            }
+          },
+          "a9139aac-7277-4ef5-a56a-bfa72f22af41": {
+            "type": "press_feature",
+            "settings": {
+              "image": "shopify://shop_images/logo-refinery.png",
+              "title": "The 99 Most Innovative Products of 2020",
+              "date": "March 2021",
+              "press_link": "https://www.refinery29.com/en-us"
+            }
+          },
+          "cef5cb6c-d0fd-49b8-87e5-9aba5e59c5de": {
+            "type": "press_feature",
+            "settings": {
+              "image": "shopify://shop_images/logo.png",
+              "title": "Testing out a taller logo here",
+              "date": "February 2021",
+              "press_link": "http://google.com"
+            }
+          },
+          "a2b9ed8c-aa89-4f4b-8f58-7d3c6c96d74e": {
+            "type": "press_feature",
+            "settings": {
+              "image": "shopify://shop_images/logo-hypebae_61ddc8ba-a1b3-4d85-b170-5f5ea30070d8.png",
+              "title": "Title of feature here lorem ipsum dolor",
+              "date": "January 2021",
+              "press_link": "https://hypebae.com/2020/12/best-makeup-skincare-hair-body-products-luxury-affordable-glossier-aesop-dyson"
+            }
+          }
+        },
+        "block_order": [
+          "dbce76bf-b651-499d-8486-1423c9daa4f4",
+          "a9139aac-7277-4ef5-a56a-bfa72f22af41",
+          "cef5cb6c-d0fd-49b8-87e5-9aba5e59c5de",
+          "a2b9ed8c-aa89-4f4b-8f58-7d3c6c96d74e"
+        ],
+        "settings": {}
+      },
+      "why-hae": {
+        "type": "why-hae",
+        "blocks": {
+          "5dc30cf9-0013-462e-8918-c0236b63797f": {
+            "type": "right_photo_cta",
+            "settings": {
+              "image": "shopify://shop_images/super-pure_4.jpg",
+              "header": "Become a Nous Nails Insider",
+              "text": "<p>Earn rewards, get exclusive access, and collab with us—one mani at a time. </p><p><strong><br/></strong></p><p><strong>What You Get</strong><br/>Commission on every sale<br/>Free product to start<br/>Exclusive discount code for followers<br/>Chance to be featured on our social + website<br/>Eligible for future collabs + capsule collections</p>",
+              "background_color": "#FCF8F4",
+              "link": "https://goaffpro.com/",
+              "link_text": "Apply Now"
+            }
+          },
+          "b7e0307b-c164-47db-8861-76a0c99edde5": {
+            "type": "ticker",
+            "settings": {
+              "ticker_text": "nous nails. new you."
+            }
+          },
+          "2339c528-b4ac-4618-afd9-74f46dccad18": {
+            "type": "right_photo",
+            "settings": {
+              "image": "shopify://shop_images/super-pure_4.jpg",
+              "header": "Affiliate Tier Incentive Program",
+              "text": "<p>💅 <strong>Polish Level</strong> (Starter)<br/>Apply + get accepted<br/>10% commission, starter kit, personal code<br/><br/>✨ <strong>Shine Level<br/></strong>3+ posts or 5 sales<br/>12% commission, free refills, chance to be featured<br/><br/>🌈 <strong>Gloss Level<br/></strong>10+ sales<br/>15% commission, bonus gift, access to early drops</p><p><br/>🎨 <strong>Artistry Level<br/></strong>25+ sales or viral UGC<br/>20% commission, <em>collab opportunity</em>, profit share on capsule design</p>",
+              "background_color": "#F6DC76"
+            }
+          },
+          "ff6bc873-ad49-4294-aa30-bcaeac6d2953": {
+            "type": "left_photo",
+            "settings": {
+              "image": "shopify://shop_images/hero-2.jpg",
+              "header": "“We support creators. Every manicure tells a story—ready to tell yours?”",
+              "text": "",
+              "background_color": "#EFBDFC"
+            }
+          },
+          "c626a831-9367-4a2c-90e6-c60d81b26819": {
+            "type": "left_photo",
+            "disabled": true,
+            "settings": {
+              "image": "shopify://shop_images/hero.png",
+              "header": "Become a Nous Nails Insider",
+              "text": "<p>Earn rewards, get exclusive access, and collab with us—one mani at a time. </p><p><strong>What You Get</strong><br/>Commission on every sale<br/>Free product to start<br/>Exclusive discount code for followers<br/>Chance to be featured on our social + website<br/>Eligible for future collabs + capsule collections</p>",
+              "background_color": "#FCF8F4"
+            }
+          }
+        },
+        "block_order": [
+          "5dc30cf9-0013-462e-8918-c0236b63797f",
+          "b7e0307b-c164-47db-8861-76a0c99edde5",
+          "2339c528-b4ac-4618-afd9-74f46dccad18",
+          "ff6bc873-ad49-4294-aa30-bcaeac6d2953",
+          "c626a831-9367-4a2c-90e6-c60d81b26819"
+        ],
+        "settings": {}
+      },
+      "newsletter_qwtx4B": {
+        "type": "newsletter",
+        "disabled": true,
+        "settings": {
+          "section_title": "Subscribe to our newsletter",
+          "subheading": "<p>Promotions, new products and sales. Directly to your inbox.</p>",
+          "show_background": true
+        }
+      },
+      "feature_row_nNgUqr": {
+        "type": "hae-image-with-text",
+        "blocks": {
+          "eyebrow_LbaFPY": {
+            "type": "eyebrow",
+            "settings": {
+              "text": "The Nous Way",
+              "text_size": "text-size-medium"
+            }
+          },
+          "heading_fAAqwm": {
+            "type": "heading",
+            "settings": {
+              "heading": "Professional Nails at home",
+              "heading_size": "headline-style-h2"
+            }
+          },
+          "text_d77ywb": {
+            "type": "text",
+            "settings": {
+              "text": "<p>Did you know the average woman spends $2,160 & 48 hours a year on nails? Save your money and your time—with Nous. It’s the Nous way of doing things.</p>",
+              "text_size": "text-size-large"
+            }
+          },
+          "text_with_icon_EAXUTn": {
+            "type": "text_with_icon",
+            "settings": {
+              "icon": "shopify://shop_images/0e17a53162a56d8cf9794ffeeb9326c1.svg",
+              "text": "3 easy steps – apply, cure, buff.",
+              "text_size": "text-size-large"
+            }
+          },
+          "text_with_icon_crywC8": {
+            "type": "text_with_icon",
+            "settings": {
+              "icon": "shopify://shop_images/c8e8a3162fda8fb7050dd3c651695e2a.svg",
+              "text": "Non Toxic",
+              "text_size": "text-size-large"
+            }
+          },
+          "text_with_icon_iq3WXG": {
+            "type": "text_with_icon",
+            "settings": {
+              "icon": "shopify://shop_images/ca0e36cc52a03559d35034ca36d41412.svg",
+              "text": "Lasts 14 Days",
+              "text_size": "text-size-large"
+            }
+          },
+          "text_with_icon_p4GFwP": {
+            "type": "text_with_icon",
+            "settings": {
+              "icon": "shopify://shop_images/0ee9af4c0a5b1a829cf3abacf1cf0a0d.svg",
+              "text": "No nail damage",
+              "text_size": "text-size-large"
+            }
+          },
+          "text_with_icon_DFiWLa": {
+            "type": "text_with_icon",
+            "settings": {
+              "icon": "shopify://shop_images/52e95258835c6343d583074b3a79ba14.svg",
+              "text": "Easy removal",
+              "text_size": "text-size-large"
+            }
+          }
+        },
+        "block_order": [
+          "eyebrow_LbaFPY",
+          "heading_fAAqwm",
+          "text_d77ywb",
+          "text_with_icon_EAXUTn",
+          "text_with_icon_crywC8",
+          "text_with_icon_iq3WXG",
+          "text_with_icon_p4GFwP",
+          "text_with_icon_DFiWLa"
+        ],
+        "settings": {
+          "layout": "left",
+          "color_scheme": "background-1",
+          "media_type": "image",
+          "media_aspect_ratio": "1/.8",
+          "image": "shopify://shop_images/image.png",
+          "video_url": ""
+        }
+      },
+      "announcement-bar": {
+        "type": "announcement-bar",
+        "settings": {
+          "announcement_text": "<p>Sign Up for Emails to Receive 15% Off First Order | Free U.S. Shipping Over $30+</p>",
+          "color_scheme": "scheme-cc80f6b4-b558-4219-8256-b69a754c7c0a",
+          "show_close_button": true
+        }
+      },
+      "featured_blog_WPc99D": {
+        "type": "featured-blog",
+        "blocks": {
+          "article_dkkCUP": {
+            "type": "article",
+            "settings": {
+              "article": "news/tester-blog-here-woo-wow-cool"
+            }
+          },
+          "article_LqD8Dd": {
+            "type": "article",
+            "settings": {
+              "article": "news/lorem-ipsum-dolor-sit-amet-consectetur-adipiscing"
+            }
+          },
+          "article_FTwhxE": {
+            "type": "article",
+            "settings": {
+              "article": "news/tester-blog-here-woo-wow-cool"
+            }
+          }
+        },
+        "block_order": ["article_dkkCUP", "article_LqD8Dd", "article_FTwhxE"],
+        "name": "Blog posts",
+        "settings": {
+          "color_scheme": "",
+          "title": "Tips & Tricks",
+          "media_aspect_ratio": "3/4",
+          "show_view_all": true,
+          "view_all_url": "shopify://blogs/news"
+        }
+      },
+      "collection_YjrU49": {
+        "type": "collection",
+        "name": "Featured collection",
+        "settings": {
+          "color_scheme": "scheme-bcc14177-2f35-42c6-9cb2-e793cb929778",
+          "title": "New Arrivals",
+          "collection": "new-arrivals",
+          "grid": 4,
+          "rows": 2,
+          "show_vendor": false,
+          "show_view_all": true
+        }
+      },
+      "instagram_slideshow_TcQky6": {
+        "type": "instagram-slideshow",
+        "blocks": {
+          "slide_tKAU3H": {
+            "type": "slide",
+            "settings": {
+              "video_url": "https://cdn.shopify.com/videos/c/o/v/7f8e17b3efae4494a643c5aa073e7a77.mp4",
+              "product": "15-wellesley"
+            }
+          },
+          "slide_8FFdhN": {
+            "type": "slide",
+            "settings": {
+              "video_url": "https://cdn.shopify.com/videos/c/o/v/7f8e17b3efae4494a643c5aa073e7a77.mp4",
+              "product": "blue-algae-spf-dew-mist"
+            }
+          },
+          "slide_dVekCU": {
+            "type": "slide",
+            "settings": {
+              "video_url": "",
+              "image": "shopify://shop_images/false-nails-natural-2-middle.jpg",
+              "product": "2"
+            }
+          },
+          "slide_AMcXKr": {
+            "type": "slide",
+            "settings": {
+              "video_url": "https://cdn.shopify.com/videos/c/o/v/7f8e17b3efae4494a643c5aa073e7a77.mp4",
+              "product": "blue-algae-spf-dew-mist"
+            }
+          },
+          "slide_Ekc6K9": {
+            "type": "slide",
+            "settings": {
+              "video_url": "https://cdn.shopify.com/videos/c/o/v/7f8e17b3efae4494a643c5aa073e7a77.mp4",
+              "image": "shopify://shop_images/false-nails-natural-3-middle.jpg",
+              "product": ""
+            }
+          }
+        },
+        "block_order": [
+          "slide_tKAU3H",
+          "slide_8FFdhN",
+          "slide_dVekCU",
+          "slide_AMcXKr",
+          "slide_Ekc6K9"
+        ],
+        "name": "Instagram Slideshow",
+        "settings": {
+          "color_scheme": "scheme-cc80f6b4-b558-4219-8256-b69a754c7c0a",
+          "title": "Stick. Cure. Slay.",
+          "subtitle": "",
+          "autoplay": true,
+          "autoplay_speed": 5,
+          "autoplay_video": true,
+          "social_url": "",
+          "social_text": "@GetNousNails"
+        }
+      },
+      "hae_testimonials_b9iNgC": {
+        "type": "hae-testimonials",
+        "blocks": {
+          "quote_jHzEpU": {
+            "type": "quote",
+            "settings": {
+              "quote": "<p>These nails are the most convenient, and the cutest accessory. Literally can stick them on 15 minutes before heading out the door.</p>",
+              "author": "– Rebecca D."
+            }
+          },
+          "quote_4BinWi": {
+            "type": "quote",
+            "settings": {
+              "quote": "<p>These nails are the most convenient, and the cutest accessory. Literally can stick them on 15 minutes before heading out the door.</p>",
+              "author": "– Rebecca D."
+            }
+          },
+          "quote_LCeqTH": {
+            "type": "quote",
+            "settings": {
+              "quote": "<p>These nails are the most convenient, and the cutest accessory. Literally can stick them on 15 minutes before heading out the door.</p>",
+              "author": "– Rebecca D."
+            }
+          }
+        },
+        "block_order": ["quote_jHzEpU", "quote_4BinWi", "quote_LCeqTH"],
+        "name": "HAE Testimonials",
+        "settings": {
+          "color_scheme": "scheme-cc80f6b4-b558-4219-8256-b69a754c7c0a",
+          "title": "Testimonials",
+          "headline_size": "headline-style-h3"
+        }
+      },
+      "hae_faqs_KXBwzm": {
+        "type": "hae-faqs",
+        "blocks": {
+          "faq_block_hrWaUk": {
+            "type": "faq_block",
+            "settings": {
+              "question": "What makes Nous Nails different?",
+              "answer": "<p>Provide your answer here.</p>"
+            }
+          },
+          "faq_block_enKfmd": {
+            "type": "faq_block",
+            "settings": {
+              "question": "How do I apply and remove Nous Nails?",
+              "answer": "<p>Provide your answer here.</p>"
+            }
+          },
+          "faq_block_jqBhUU": {
+            "type": "faq_block",
+            "settings": {
+              "question": "How long do they last and how many sets provided?",
+              "answer": "<p>Provide your answer here.</p>"
+            }
+          },
+          "faq_block_y6YEq6": {
+            "type": "faq_block",
+            "settings": {
+              "question": "How should I store the unused strips?",
+              "answer": "<p>Provide your answer here.</p>"
+            }
+          },
+          "faq_block_rb9HTG": {
+            "type": "faq_block",
+            "settings": {
+              "question": "Are they safe, vegan, and cruelty-free?",
+              "answer": "<p>Provide your answer here.</p>"
+            }
+          }
+        },
+        "block_order": [
+          "faq_block_hrWaUk",
+          "faq_block_enKfmd",
+          "faq_block_jqBhUU",
+          "faq_block_y6YEq6",
+          "faq_block_rb9HTG"
+        ],
+        "name": "FAQ Section",
+        "settings": {
+          "color_scheme": "background-1",
+          "heading": "FAQs",
+          "page": "nous-difference"
+        }
+      }
+    },
+    "content_for_index": [
+      "1605316310afd292ce",
+      "1607135984834dab41",
+      "1606088182cf23b23a",
+      "collection_YjrU49",
+      "feature_row_nNgUqr",
+      "instagram_slideshow_TcQky6",
+      "1606088197e736fabb",
+      "hae_faqs_KXBwzm",
+      "hae_testimonials_b9iNgC",
+      "featured_blog_WPc99D",
+      "newsletter_qwtx4B"
+    ],
+    "blocks": {
+      "855628211100114053": {
+        "type": "shopify://apps/klaviyo-email-marketing-sms/blocks/klaviyo-onsite-embed/2632fe16-c075-4321-a88b-50b567f42507",
+        "disabled": false,
+        "settings": {}
+      },
+      "14060646107696862457": {
+        "type": "shopify://apps/judge-me-reviews/blocks/judgeme_core/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
+        "disabled": false,
+        "settings": {}
+      },
+      "17368511000352060744": {
+        "type": "shopify://apps/goaffpro-affiliate-marketing/blocks/goaffpro-embedded-pixel/2f4d802b-86c2-47e4-8096-ae1aa3efbab2",
+        "disabled": false,
+        "settings": {}
+      },
+      "6174324309569838175": {
+        "type": "shopify://apps/smile-io/blocks/smile-shopify-app/2fae4e25-1841-4ea2-bc02-bd548478c4f6",
+        "disabled": false,
+        "settings": {}
+      },
+      "5557296251606798448": {
+        "type": "shopify://apps/bold-subscriptions/blocks/bsub-embed/9ceb49f0-5fe5-4b5e-943d-f8af8985167d",
+        "disabled": false,
+        "settings": {}
+      },
+      "12526071353035850722": {
+        "type": "shopify://apps/amp-back-in-stock/blocks/app-embed/bfa6a8c4-24e2-411a-9396-e35031b33f34",
+        "disabled": true,
+        "settings": {}
+      },
+      "7944482028155771153": {
+        "type": "shopify://apps/bold-product-upsell/blocks/Offer/0ea05cdc-3862-4d90-9a1b-14eafaef80dd",
+        "disabled": true,
+        "settings": {
+          "offer-modal-preview": false,
+          "offer-preview-product": "",
+          "title-font-size": 24,
+          "subtitle-font-size": 12,
+          "product-title-font-size": 15,
+          "title-color": "#121212",
+          "subtitle-color": "#343333",
+          "product-title-color": "#121212",
+          "modal-background-color": "#ffffff",
+          "modal-border-color": "#dedede"
+        }
+      },
+      "4146198581824321198": {
+        "type": "shopify://apps/postscript-sms-marketing/blocks/sdk/019be67b-1a2f-7589-97a3-72f1751f443e",
+        "disabled": false,
+        "settings": {}
+      },
+      "15948790894311257021": {
+        "type": "shopify://apps/bold-product-upsell/blocks/CartDrawerOffer/0ea05cdc-3862-4d90-9a1b-14eafaef80dd",
+        "disabled": true,
+        "settings": {
+          "cart-drawer-offer-position": "bottom",
+          "cart-drawer-show-bold-quantity-input": false,
+          "cart-drawer-custom-cart-drawer": false,
+          "cart-drawer-custom-cart-drawer-preview": false,
+          "custom-cart-drawer-checkout-text": "Checkout",
+          "custom-cart-drawer-cart-title-text": "Your cart",
+          "custom-cart-drawer-product-text": "Product",
+          "custom-cart-drawer-total-text": "Total",
+          "custom-cart-drawer-subtotal-text": "Subtotal",
+          "custom-cart-drawer-cart-empty-cart-text": "Cart empty",
+          "cart-drawer-items-element-tag": "cart-drawer-items",
+          "cart-drawer-footer-element-tag": ".cart-drawer-bold-products"
+        }
+      },
+      "11521838031393700371": {
+        "type": "shopify://apps/bold-product-upsell/blocks/cart-hooks/0ea05cdc-3862-4d90-9a1b-14eafaef80dd",
+        "disabled": true,
+        "settings": {
+          "cart-sync-interval": 1
+        }
+      }
+    },
+    "color_schemes": {
+      "background-1": {
+        "settings": {
+          "colors_text": "#6d0506",
+          "colors_text_2": "#6d0506",
+          "color_links": "#6d0506",
+          "color_button_primary_background": "#f8eee3",
+          "color_button_primary_hover_background": "#6d0506",
+          "color_button_primary_text": "#6d0506",
+          "color_button_primary_hover_text": "#f8eee3",
+          "color_button_primary_border": "#6d0506",
+          "color_button_primary_hover_border": "#6d0506",
+          "color_button_secondary_background": "#d1e1e8",
+          "color_button_secondary_hover_background": "#6d0506",
+          "color_button_secondary_text": "#6d0506",
+          "color_button_secondary_hover_text": "#f8eee3",
+          "color_button_secondary_border": "#6d0506",
+          "color_button_secondary_hover_border": "#6d0506",
+          "color_accent": "#efbdfc",
+          "colors_background_1": "#f8eee3",
+          "colors_background_2": "#fbf8f4",
+          "colors_background_3": "#f5fbfe"
+        }
+      },
+      "scheme-cc80f6b4-b558-4219-8256-b69a754c7c0a": {
+        "settings": {
+          "colors_text": "#faeee1",
+          "colors_text_2": "#6d0506",
+          "color_links": "#6d0506",
+          "color_button_primary_background": "#faeee1",
+          "color_button_primary_hover_background": "#7294a8",
+          "color_button_primary_text": "#6d0506",
+          "color_button_primary_hover_text": "#7294a8",
+          "color_button_primary_border": "#faeee1",
+          "color_button_primary_hover_border": "#7294a8",
+          "color_button_secondary_background": "#6d0506",
+          "color_button_secondary_hover_background": "#7294a8",
+          "color_button_secondary_text": "#faeee1",
+          "color_button_secondary_hover_text": "#7294a8",
+          "color_button_secondary_border": "#333232",
+          "color_button_secondary_hover_border": "#7294a8",
+          "color_accent": "#d1e1e8",
+          "colors_background_1": "#6d0506",
+          "colors_background_2": "#fbf8f4",
+          "colors_background_3": "#f5fbfe"
+        }
+      },
+      "scheme-94eb6821-3c93-4727-b9e1-be4096d276ce": {
+        "settings": {
+          "colors_text": "#faeee1",
+          "colors_text_2": "#faeee1",
+          "color_links": "#6d0506",
+          "color_button_primary_background": "#faeee1",
+          "color_button_primary_hover_background": "#6d0506",
+          "color_button_primary_text": "#6d0506",
+          "color_button_primary_hover_text": "#f8eee3",
+          "color_button_primary_border": "#6d0506",
+          "color_button_primary_hover_border": "#f8eee3",
+          "color_button_secondary_background": "#6d0506",
+          "color_button_secondary_hover_background": "#7294a8",
+          "color_button_secondary_text": "#faeee1",
+          "color_button_secondary_hover_text": "#7294a8",
+          "color_button_secondary_border": "#6d0506",
+          "color_button_secondary_hover_border": "#7294a8",
+          "color_accent": "#efbdfc",
+          "colors_background_1": "#854418",
+          "colors_background_2": "#fbf8f4",
+          "colors_background_3": "#f5fbfe"
+        }
+      },
+      "scheme-a1f75e04-1da9-4fbd-831b-96f4b8dc69e2": {
+        "settings": {
+          "colors_text": "#faeee1",
+          "colors_text_2": "#854418",
+          "color_links": "#6d0506",
+          "color_button_primary_background": "#faeee1",
+          "color_button_primary_hover_background": "#6d0506",
+          "color_button_primary_text": "#6d0506",
+          "color_button_primary_hover_text": "#f8eee3",
+          "color_button_primary_border": "#6d0506",
+          "color_button_primary_hover_border": "#f8eee3",
+          "color_button_secondary_background": "#f8eee3",
+          "color_button_secondary_hover_background": "#7294a8",
+          "color_button_secondary_text": "#faeee1",
+          "color_button_secondary_hover_text": "#7294a8",
+          "color_button_secondary_border": "#6d0506",
+          "color_button_secondary_hover_border": "#7294a8",
+          "color_accent": "#efbdfc",
+          "colors_background_1": "#62130e",
+          "colors_background_2": "#fbf8f4",
+          "colors_background_3": "#f5fbfe"
+        }
+      },
+      "scheme-2119b851-9410-4357-b9dd-7adf10307b8e": {
+        "settings": {
+          "colors_text": "#6d0506",
+          "colors_text_2": "#6d0506",
+          "color_links": "#6d0506",
+          "color_button_primary_background": "#faeee1",
+          "color_button_primary_hover_background": "#7294a8",
+          "color_button_primary_text": "#6d0506",
+          "color_button_primary_hover_text": "#7294a8",
+          "color_button_primary_border": "#6d0506",
+          "color_button_primary_hover_border": "#7294a8",
+          "color_button_secondary_background": "#6d0506",
+          "color_button_secondary_hover_background": "#7294a8",
+          "color_button_secondary_text": "#faeee1",
+          "color_button_secondary_hover_text": "#7294a8",
+          "color_button_secondary_border": "#6d0506",
+          "color_button_secondary_hover_border": "#7294a8",
+          "color_accent": "#efbdfc",
+          "colors_background_1": "#aec1fb",
+          "colors_background_2": "#fbf8f4",
+          "colors_background_3": "#f5fbfe"
+        }
+      },
+      "scheme-6628b2c5-2a6e-43ae-9f30-7d31869aa0c7": {
+        "settings": {
+          "colors_text": "#6d0506",
+          "colors_text_2": "#6d0506",
+          "color_links": "#6d0506",
+          "color_button_primary_background": "#faeee1",
+          "color_button_primary_hover_background": "#7294a8",
+          "color_button_primary_text": "#6d0506",
+          "color_button_primary_hover_text": "#7294a8",
+          "color_button_primary_border": "#6d0506",
+          "color_button_primary_hover_border": "#7294a8",
+          "color_button_secondary_background": "#6d0506",
+          "color_button_secondary_hover_background": "#7294a8",
+          "color_button_secondary_text": "#faeee1",
+          "color_button_secondary_hover_text": "#7294a8",
+          "color_button_secondary_border": "#6d0506",
+          "color_button_secondary_hover_border": "#7294a8",
+          "color_accent": "#aec1fb",
+          "colors_background_1": "#d1e1e8",
+          "colors_background_2": "#fbf8f4",
+          "colors_background_3": "#f5fbfe"
+        }
+      },
+      "scheme-38cadf72-7f29-4186-8b19-cfda33c52e01": {
+        "settings": {
+          "colors_text": "#6d0506",
+          "colors_text_2": "#6d0506",
+          "color_links": "#6d0506",
+          "color_button_primary_background": "#faeee1",
+          "color_button_primary_hover_background": "#7294a8",
+          "color_button_primary_text": "#6d0506",
+          "color_button_primary_hover_text": "#7294a8",
+          "color_button_primary_border": "#6d0506",
+          "color_button_primary_hover_border": "#7294a8",
+          "color_button_secondary_background": "#6d0506",
+          "color_button_secondary_hover_background": "#7294a8",
+          "color_button_secondary_text": "#faeee1",
+          "color_button_secondary_hover_text": "#7294a8",
+          "color_button_secondary_border": "#6d0506",
+          "color_button_secondary_hover_border": "#7294a8",
+          "color_accent": "#efbdfc",
+          "colors_background_1": "#efbdfc",
+          "colors_background_2": "#fbf8f4",
+          "colors_background_3": "#f5fbfe"
+        }
+      },
+      "scheme-bcc14177-2f35-42c6-9cb2-e793cb929778": {
+        "settings": {
+          "colors_text": "#6d0506",
+          "colors_text_2": "#6d0506",
+          "color_links": "#6d0506",
+          "color_button_primary_background": "#faeee1",
+          "color_button_primary_hover_background": "#6d0506",
+          "color_button_primary_text": "#f8eee3",
+          "color_button_primary_hover_text": "#f8eee3",
+          "color_button_primary_border": "#6d0506",
+          "color_button_primary_hover_border": "#6d0506",
+          "color_button_secondary_background": "#d1e1e8",
+          "color_button_secondary_hover_background": "#6d0506",
+          "color_button_secondary_text": "#6d0506",
+          "color_button_secondary_hover_text": "#f8eee3",
+          "color_button_secondary_border": "#6d0506",
+          "color_button_secondary_hover_border": "#6d0506",
+          "color_accent": "#ff6100",
+          "colors_background_1": "#fbf8f4",
+          "colors_background_2": "#fbf8f4",
+          "colors_background_3": "#f5fbfe"
+        }
+      },
+      "scheme-e24c36e3-6758-46b1-b6d4-c5f5b5a35c26": {
+        "settings": {
+          "colors_text": "#6d0506",
+          "colors_text_2": "#f8eee3",
+          "color_links": "#6d0506",
+          "color_button_primary_background": "#6d0506",
+          "color_button_primary_hover_background": "#f8eee3",
+          "color_button_primary_text": "#f8eee3",
+          "color_button_primary_hover_text": "#6d0506",
+          "color_button_primary_border": "#6d0506",
+          "color_button_primary_hover_border": "#6d0506",
+          "color_button_secondary_background": "#d1e1e8",
+          "color_button_secondary_hover_background": "#6d0506",
+          "color_button_secondary_text": "#6d0506",
+          "color_button_secondary_hover_text": "#f8eee3",
+          "color_button_secondary_border": "#6d0506",
+          "color_button_secondary_hover_border": "#6d0506",
+          "color_accent": "#efbdfc",
+          "colors_background_1": "#ffffff",
+          "colors_background_2": "#fbf8f4",
+          "colors_background_3": "#f5fbfe"
+        }
+      }
+    }
+  },
+  "presets": {
+    "Default": {
+      "sections": {
+        "header": {
+          "type": "header",
+          "settings": {}
+        },
+        "hero-1": {
+          "type": "hero",
+          "settings": {
+            "hero_size": "large",
+            "text_size": "large"
+          }
+        },
+        "hae-image-with-text": {
+          "type": "hae-image-with-text",
+          "settings": {}
+        },
+        "feature-columns": {
+          "type": "feature-columns",
+          "blocks": {
+            "feature-columns-0": {
+              "type": "text_block",
+              "settings": {}
+            },
+            "feature-columns-1": {
+              "type": "text_block",
+              "settings": {}
+            },
+            "feature-columns-2": {
+              "type": "text_block",
+              "settings": {}
+            }
+          },
+          "block_order": [
+            "feature-columns-0",
+            "feature-columns-1",
+            "feature-columns-2"
+          ],
+          "settings": {
+            "title": ""
+          }
+        },
+        "collection": {
+          "type": "collection",
+          "settings": {
+            "grid": 4
+          }
+        },
+        "hero-2": {
+          "type": "hero",
+          "settings": {
+            "text_size": "large"
+          }
+        },
+        "footer": {
+          "type": "footer",
+          "settings": {}
+        }
+      },
+      "content_for_index": [
+        "hero-1",
+        "hae-image-with-text",
+        "feature-columns",
+        "collection",
+        "hero-2"
+      ]
+    },
+    "Light": {
+      "color_text": "#162950",
+      "color_body_text": "#6d6d6d",
+      "color_sale_text": "#DA2F0C",
+      "color_borders": "#e4e4e4",
+      "color_button": "#DA2F0C",
+      "color_button_text": "#ffffff",
+      "color_small_button_text_border": "#162950",
+      "color_text_field": "#ffffff",
+      "color_text_field_text": "#162950",
+      "color_text_field_border": "#909090",
+      "color_image_overlay_text": "#ffffff",
+      "color_image_overlay": "#3d3d3d",
+      "image_overlay_opacity": 40,
+      "color_body_bg": "#f8f8f8",
+      "share_facebook": true,
+      "share_twitter": true,
+      "share_pinterest": true,
+      "social_twitter_link": "",
+      "social_facebook_link": "",
+      "social_pinterest_link": "",
+      "social_instagram_link": "",
+      "social_tumblr_link": "",
+      "social_snapchat_link": "",
+      "social_youtube_link": "",
+      "social_vimeo_link": "",
+      "favicon": "",
+      "checkout_header_image": "",
+      "checkout_logo_image": "",
+      "checkout_logo_position": "left",
+      "checkout_logo_size": "small",
+      "checkout_body_background_image": "",
+      "checkout_body_background_color": "#ffffff",
+      "checkout_input_background_color_mode": "white",
+      "checkout_sidebar_background_image": "",
+      "checkout_sidebar_background_color": "#e8f3f6",
+      "checkout_heading_font": "Roboto",
+      "checkout_body_font": "Source Sans Pro",
+      "checkout_accent_color": "#1990c6",
+      "checkout_button_color": "#23314e",
+      "checkout_error_color": "#ff6d6d",
+      "sections": {
+        "header": {
+          "type": "header",
+          "settings": {}
+        },
+        "hero": {
+          "type": "hero",
+          "settings": {
+            "alignment": "center",
+            "hero_size": "x-large",
+            "text_size": "large"
+          }
+        },
+        "featured-collections": {
+          "type": "collection",
+          "settings": {
+            "grid": 3,
+            "rows": 1,
+            "show_vendor": true,
+            "show_view_all": true
+          }
+        },
+        "product-template": {
+          "type": "product-template",
+          "settings": {}
+        },
+        "collection-template": {
+          "type": "collection-template",
+          "settings": {
+            "layout": "grid",
+            "grid": 2,
+            "rows": 2,
+            "show_collection_image": true,
+            "show_vendor": false,
+            "sort_enable": true,
+            "tags_enable": true
+          }
+        },
+        "1492033809691": {
+          "type": "map",
+          "settings": {}
+        },
+        "1492033924902": {
+          "type": "custom-content",
+          "blocks": {
+            "1492033924902-0": {
+              "type": "text",
+              "settings": {
+                "width": "100%",
+                "alignment": "center",
+                "align_text": "center"
+              }
+            }
+          },
+          "block_order": ["1492033924902-0"],
+          "settings": {
+            "title": ""
+          }
+        },
+        "1492096252560": {
+          "type": "collection-list",
+          "blocks": {
+            "1492096252560-0": {
+              "type": "featured_collection",
+              "settings": {}
+            },
+            "1492096252560-1": {
+              "type": "featured_collection",
+              "settings": {}
+            },
+            "1492096252560-2": {
+              "type": "featured_collection",
+              "settings": {}
+            }
+          },
+          "block_order": [
+            "1492096252560-0",
+            "1492096252560-1",
+            "1492096252560-2"
+          ],
+          "settings": {
+            "grid": 3
+          }
+        },
+        "blog-template": {
+          "type": "blog-template",
+          "settings": {}
+        },
+        "article-template": {
+          "type": "article-template",
+          "settings": {
+            "blog_show_author": true,
+            "blog_show_date": true,
+            "show_share_buttons": true
+          }
+        },
+        "cart-template": {
+          "type": "cart-template",
+          "settings": {
+            "cart_notes_enable": false
+          }
+        },
+        "footer": {
+          "type": "footer",
+          "settings": {}
+        }
+      },
+      "content_for_index": [
+        "hero",
+        "featured-collections",
+        "1492033924902",
+        "1492096252560",
+        "1492033809691"
+      ]
+    }
+  }
+}

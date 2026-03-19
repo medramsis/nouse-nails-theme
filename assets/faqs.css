@@ -1,0 +1,218 @@
+/*------------------------------------*\
+  #FAQS section
+\*------------------------------------*/
+
+.faqs-section__layout {
+  grid-template-columns: repeat(
+    auto-fit,
+    minmax(min(100%, calc(20rem + var(--grid-padding-large))), 1fr)
+  );
+}
+
+@media screen and (min-width: 750px) {
+  .faqs-section__layout {
+    align-items: center;
+  }
+}
+
+/*------------------------------------*\
+  #FAQ List Component
+\*------------------------------------*/
+
+.faq-list__item {
+  position: relative;
+  border-bottom: 1px solid rgb(var(--color-text-1));
+  transition: all 0.3s var(--main-easing);
+  position: relative;
+  border-bottom: 1px solid rgb(var(--color-text-1));
+}
+
+.faq-list__item:hover .faq-list__item__icon,
+.faq-list__item:focus .faq-list__item__icon {
+  transform: translateX(0.5rem);
+}
+
+.faq-list__item__question {
+  font-size: var(--text-size-medium);
+  padding: var(--space-4) var(--space-2);
+  padding-left: var(--space-4);
+  padding-right: var(--space-7);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+  text-align: left;
+  border: none;
+  background: none;
+}
+
+.faq-list__item__icon {
+  position: absolute;
+  font-size: var(--text-size-medium);
+  transition: transform 0.3s var(--main-easing);
+  right: var(--space-2);
+  display: inline-block;
+  width: 1.5rem;
+  height: 1.5rem;
+  display: flex;
+  align-items: center;
+}
+
+.faq-list__item[open] .faq-list__item__icon {
+  transform: rotate(90deg);
+}
+
+.faq-list__item__answer {
+  position: relative;
+  overflow: hidden;
+  font-size: var(--text-size-main);
+  transition: height 0.45s cubic-bezier(0.16, 1, 0.3, 1);
+  padding-left: var(--space-4);
+}
+
+.faq-list__item__answer p {
+  padding-bottom: var(--space-4) !important;
+  display: block;
+}
+
+/*------------------------------------*\
+  #FAQ Layout
+\*------------------------------------*/
+
+.faqs-list__container {
+  display: grid;
+}
+
+/*------------------------------------*\
+  #Comparison Table
+\*------------------------------------*/
+
+.comparison-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: var(--text-size-small);
+  line-height: 1.4;
+}
+
+.comparison-table th {
+  text-align: center;
+  padding: var(--space-1) var(--space-2);
+  border: 2px solid rgb(var(--color-accent));
+  position: relative;
+  font-family: var(--primary-font-family);
+  font-size: 1.3rem;
+  min-width: 10rem;
+}
+
+.comparison-table tbody tr:first-child {
+  font-family: var(--primary-font-family);
+}
+
+.comparison-table tbody tr:first-child td {
+  min-width: 8rem;
+}
+
+.comparison-table th:first-child {
+  text-align: center;
+  background-color: transparent;
+  border-left: 2px solid rgb(var(--color-accent));
+  border-top: 2px solid rgb(var(--color-accent));
+  border-bottom: 2px solid rgb(var(--color-accent));
+  border-right: none;
+}
+
+.comparison-table th:nth-child(2) {
+  text-align: center;
+  min-width: 13rem;
+}
+
+.comparison-table th:not(:first-child) {
+  border-top: 2px solid rgb(var(--color-accent));
+  border-bottom: 2px solid rgb(var(--color-accent));
+  border-right: 2px solid rgb(var(--color-accent));
+}
+
+.comparison-table tr th:not(:first-child) {
+  padding: var(--space-1) var(--space-6);
+}
+
+.comparison-table td {
+  padding: var(--space-4) var(--space-1);
+  text-align: center;
+  font-size: var(--text-size-main);
+  border: 2px solid rgb(var(--color-accent));
+  vertical-align: middle;
+}
+
+.comparison-table td:first-child {
+  text-align: center;
+  border-left: 2px solid rgb(var(--color-accent));
+  border-right: none;
+  font-family: var(--primary-font-family);
+  padding-left: var(--space-1);
+  padding-right: var(--space-1);
+}
+
+@media screen and (min-width: 750px) {
+  .comparison-table td {
+    padding: var(--space-1) var(--space-2);
+  }
+  .comparison-table td:first-child {
+    font-size: 1.3rem;
+    padding-left: var(--space-1);
+    padding-right: var(--space-1);
+  }
+}
+
+.comparison-table td:not(:first-child) {
+  border-right: 2px solid rgb(var(--color-accent));
+}
+
+/* Highlight column styling */
+.comparison-table th.highlight,
+.comparison-table td.highlight {
+  background-color: rgba(239, 189, 252, 0.3);
+}
+
+/* Responsive table */
+@media screen and (min-width: 750px) {
+  .comparison-table {
+    font-size: var(--text-size-main);
+  }
+
+  .comparison-table td {
+    padding: var(--space-1) var(--space-2);
+  }
+
+  .comparison-table tr td:not(:first-child) {
+    padding: var(--space-4) var(--space-3);
+  }
+}
+
+/* Table wrapper for better mobile experience */
+.table-wrapper {
+  overflow-x: auto;
+  width: 100%;
+  position: relative;
+  /* Custom scrollbar styling */
+  scrollbar-width: thin; /* Firefox */
+  scrollbar-color: rgb(var(--color-text-1)) transparent; /* Firefox */
+}
+
+@media screen and (min-width: 1550px) {
+  .table-wrapper {
+    scrollbar-width: none;
+  }
+
+  .table-wrapper::-webkit-scrollbar {
+    height: 1px !important; /* Increased from 1px to standard thin scrollbar height */
+    width: 1px !important;
+    opacity: 0;
+  }
+}
+
+.faqs-section__questions-list {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}

@@ -1,0 +1,29 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "blog-template",
+      "settings": {
+        "color_scheme": "",
+        "header_image": "shopify://shop_images/footer-bg.jpg",
+        "header_image_aspect_ratio": "21/9",
+        "heading_size": "headline-style-h2",
+        "padding_size": "section-padding-small",
+        "articles_per_page": 9,
+        "show_image": true,
+        "media_aspect_ratio": "3/4"
+      }
+    }
+  },
+  "order": [
+    "main"
+  ]
+}

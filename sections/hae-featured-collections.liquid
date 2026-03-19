@@ -1,0 +1,159 @@
+<link
+  rel='stylesheet'
+  href='{{ 'hae-featured-collections.css' | asset_url }}'
+  media='print'
+  onload="this.media='all'"
+>
+
+<section class='featured-collections' style='position: relative;'>
+  <h2 class='visually-hidden'>Featured Collections</h2>
+  <div class='featured-collections__layout grid grid-2 grid-gap-0'>
+    {% for block in section.blocks %}
+      <div
+        class='featured-collections__column color-{{ block.settings.color_scheme }}'
+      >
+        <a
+          class='featured-collections__column__layout section-padding-small'
+          href='{{ block.settings.collection_url }}'
+        >
+          <div class='featured-collections__column__media-wrapper'>
+            <div class='featured-collections__column__sticker'>
+              {% render 'floating-sticker',
+                sticker_type: block.settings.floating_sticker,
+                custom_class: 'product-sticker-hover',
+                color: block.settings.sticker_color
+              %}
+            </div>
+            <div class='featured-collections__column__media'>
+              {% if block.settings.media_type == 'video'
+                and block.settings.video_url != blank
+              %}
+                <video
+                  class='responsive-image'
+                  autoplay
+                  loop
+                  muted
+                  playsinline
+                >
+                  <source src='{{ block.settings.video_url }}' type='video/mp4'>
+                </video>
+              {% else %}
+                {% render 'image-with-aspect-ratio',
+                  image: block.settings.image,
+                  aspect_ratio: '1/1',
+                  alt: block.settings.image.alt,
+                  sizes: '(min-width: 940px) calc(50vw - 2rem), (min-width: 750px) 50vw, 100vw',
+                  widths: '400, 550, 668, 768, 900'
+                %}
+              {% endif %}
+              <div class='featured-collections__column__button-wrapper'>
+                <div class='button  button--primary  button--small'>
+                  {{ block.settings.button_text }}
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class='featured-collections__column__text-wrapper'>
+            <div class='featured-collections__column__text'>
+              <h3 class='featured-collections__column__eyebrow   text-size-medium'>
+                {{ block.settings.collection.title }}
+              </h3>
+              <p class='featured-collections__column__headline headline-style-h1'>
+                {{ block.settings.headline }}
+              </p>
+            </div>
+          </div>
+        </a>
+      </div>
+    {% endfor %}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Collection Callouts",
+  "max_blocks": 2,
+  "blocks": [
+    {
+      "type": "collection",
+      "name": "Collection",
+      "settings": [
+        {
+          "type": "color_scheme",
+          "id": "color_scheme",
+          "label": "Color scheme",
+          "default": "background-1"
+        },
+        {
+          "type": "url",
+          "id": "collection_url",
+          "label": "Collection link"
+        },
+        {
+          "type": "text",
+          "id": "headline",
+          "label": "Headline"
+        },
+        {
+          "type": "text",
+          "id": "button_text",
+          "label": "Button text"
+        },
+        {
+          "type": "select",
+          "id": "media_type",
+          "options": [
+            { "value": "image", "label": "Image" },
+            { "value": "video", "label": "Video" }
+          ],
+          "label": "Media type",
+          "default": "image"
+        },
+        {
+          "type": "text",
+          "id": "video_url",
+          "label": "Video URL"
+        },
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image"
+        },
+        {
+          "type": "select",
+          "id": "floating_sticker",
+          "options": [
+            { "value": "none", "label": "None" },
+            { "value": "stars", "label": "Stars" },
+            { "value": "sun-blue", "label": "Sun Blue" },
+            { "value": "sun-pink", "label": "Sun Pink" }
+          ],
+          "label": "Floating sticker",
+          "default": "none"
+        },
+        {
+          "type": "color",
+          "id": "sticker_color",
+          "label": "Sticker color",
+          "default": "#000000"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Collection Callouts",
+      "category": "Custom HAE Sections",
+      "blocks": [
+        {
+          "type": "collection"
+        },
+        {
+          "type": "collection"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

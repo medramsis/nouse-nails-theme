@@ -1,0 +1,315 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "product-template",
+      "blocks": {
+        "type_Khmf7A": {
+          "type": "type",
+          "settings": {}
+        },
+        "title_4a3Ed6": {
+          "type": "title",
+          "settings": {}
+        },
+        "price_GLyApW": {
+          "type": "price",
+          "settings": {}
+        },
+        "rating_kRcmp6": {
+          "type": "rating",
+          "settings": {}
+        },
+        "quantity_selector_g6nGM9": {
+          "type": "quantity_selector",
+          "settings": {}
+        },
+        "description_rh9JAT": {
+          "type": "description",
+          "settings": {}
+        },
+        "buy_buttons_B47i49": {
+          "type": "buy_buttons",
+          "settings": {
+            "show_dynamic_checkout": true,
+            "show_gift_card_recipient": true
+          }
+        },
+        "bold_subscriptions_bsub_widget_block_3nJ3hM": {
+          "type": "shopify://apps/bold-subscriptions/blocks/bsub-widget-block/9ceb49f0-5fe5-4b5e-943d-f8af8985167d",
+          "settings": {
+            "default_subscribe": false,
+            "primary_color": "",
+            "secondary_color": "#5433eb",
+            "background_color": "",
+            "border_radius": 4,
+            "header_text": "Purchase Options",
+            "one_time_text": "One-time Purchase",
+            "recurring_text": "Subscribe and Save",
+            "prepaid_recurring_text": "Prepaid Subscribe and Save",
+            "discount_summary_text": "(Save {discount})",
+            "discount_summary_plural_text": "(Save up to {discount})",
+            "frequency_header": "Delivery Frequency",
+            "frequency_text": "delivery",
+            "prepaid_checkbox_label_text": "Prepay for subscription",
+            "billing_frequency_header": "Billing Frequency",
+            "billing_frequency_text": "{count} Orders",
+            "delivery_frequency_discount_text": "({discount} off {regular_price})",
+            "billing_frequency_discount_text": "({discount} off {regular_price})",
+            "prepaid_total_text": "Billed {price} today",
+            "prepaid_continue_as_prepaid_text": "Prepaid order will auto-renew after {count} orders",
+            "prepaid_continue_as_standard_text": "Becomes a regular subscription after {count} orders",
+            "convertible_header": "Converts to",
+            "eligible_for_subscription_header": "Eligible for Subscription",
+            "initial_dynamic_discount_text": "Save {initial_percent_discount}% ({initial_fixed_discount})",
+            "subsequent_dynamic_discounts_text": "{subsequent_percent_discount}% ({subsequent_fixed_discount}) after {order_count} order(s)"
+          }
+        },
+        "return_policy_VABCGt": {
+          "type": "return_policy",
+          "settings": {
+            "heading": "Return Policy",
+            "description": "<p>Returns accepted within 14 days of delivery for unused, unopened items in original packaging. Shipping fees are non-refundable and return shipping is the customer’s responsibility. For full details, see our <a href=\"/pages/returns-exchanges\" target=\"_blank\" title=\"Returns & Exchanges\">Returns Policy</a>.</p>"
+          }
+        },
+        "rebuy_personalization_engine_rebuy_widget_D66TYi": {
+          "type": "shopify://apps/rebuy-personalization-engine/blocks/rebuy-widget/a26ae9b9-933b-40bf-bbc6-bf1220bbc4dc",
+          "settings": {
+            "enabled": true,
+            "id": "",
+            "product_id_enabled": true,
+            "collection_id_enabled": false
+          }
+        },
+        "klaviyo_bis_VMWTAy": {
+          "type": "klaviyo_bis",
+          "settings": {
+            "location_id": ""
+          }
+        },
+        "bold_subscriptions_bsub_express_add_ons_UF66My": {
+          "type": "shopify://apps/bold-subscriptions/blocks/bsub-express-add-ons/9ceb49f0-5fe5-4b5e-943d-f8af8985167d",
+          "disabled": true,
+          "settings": {
+            "product": "{{product}}",
+            "show_while_loading": true,
+            "show_logged_out": true,
+            "show_no_subscriptions": true,
+            "show_confirmation_dialog": false,
+            "loading_text": "Checking for subscriptions",
+            "logged_out_text": "Add to your next subscription order",
+            "no_subscriptions_text": "No subscriptions to add to",
+            "widget_title": "Express Add-ons",
+            "background_color": "",
+            "text_color": "",
+            "border_radius": 8,
+            "border_color": "",
+            "border_thickness": 1,
+            "button_class_names": "button button--full-width button--primary",
+            "button_background_color": "",
+            "button_text_color": "",
+            "button_border_color": "",
+            "button_border_radius": 50,
+            "button_border_thickness": 1,
+            "button_padding": 10,
+            "dropdown_border_radius": 25,
+            "dropdown_border_color": "",
+            "dropdown_border_thickness": 1,
+            "additional_css": ".bsub__ExpressAddOnsWidget-module__details{ padding: 14px } .custom-classname { }"
+          }
+        }
+      },
+      "block_order": [
+        "type_Khmf7A",
+        "title_4a3Ed6",
+        "price_GLyApW",
+        "rating_kRcmp6",
+        "quantity_selector_g6nGM9",
+        "description_rh9JAT",
+        "buy_buttons_B47i49",
+        "bold_subscriptions_bsub_widget_block_3nJ3hM",
+        "return_policy_VABCGt",
+        "rebuy_personalization_engine_rebuy_widget_D66TYi",
+        "klaviyo_bis_VMWTAy",
+        "bold_subscriptions_bsub_express_add_ons_UF66My"
+      ],
+      "settings": {
+        "enable_sticky_info": true,
+        "color_scheme": "scheme-cc80f6b4-b558-4219-8256-b69a754c7c0a",
+        "section_padding": "section-padding-main",
+        "constrain_to_viewport": false,
+        "media_fit": "contain",
+        "image_zoom_behavior": "inside",
+        "product_images_position": "right",
+        "slideshow_media_aspect_ratio": "1/1",
+        "thumbnail_media_aspect_ratio": "1/1",
+        "mobile_thumbnails": "show"
+      }
+    },
+    "product_expose_37qzyW": {
+      "type": "product-expose",
+      "blocks": {
+        "slideshow_6GbNXw": {
+          "type": "slideshow",
+          "settings": {
+            "color_scheme": "scheme-e24c36e3-6758-46b1-b6d4-c5f5b5a35c26",
+            "slideshow_heading": "Stick. Cure. Slay.",
+            "heading_size": "headline-style-h3",
+            "image_1": "shopify://shop_images/Matcha-Jelly-3.jpg",
+            "image_2": "shopify://shop_images/Nail-Remover.jpg",
+            "image_3": "shopify://shop_images/Stars-Aligned-4.jpg",
+            "image_4": "shopify://shop_images/Stars-Aligned-2.jpg",
+            "aspect_ratio": "3/4",
+            "padding_size": "section-padding-small"
+          }
+        },
+        "richtext_qYXDPM": {
+          "type": "richtext",
+          "settings": {
+            "color_scheme": "",
+            "richtext_heading": "What’s Included In The Box",
+            "heading_size": "headline-style-h3",
+            "richtext_content": "<p>✱ <strong>30 Nail Strips (2 Full Sets)</strong><br/>Included in the box are 30 nail strips that can last you up to 14 days (or more!) with the right care – click here for tips & tricks.<br/><br/>✱ <strong>Multi-Usage Wooden Tool</strong><br/>This wooden tool does it all—use the flat end to seal edges before curing, and the pointed end to gently lift nails for removal. For best results, pair with our nail remover.<br/><br/>✱ <strong>Nail File</strong><br/>Cure, file, slay. That’s the routine.</p>",
+            "text_size": "text-size-large",
+            "padding_size": "section-padding-main"
+          }
+        },
+        "certifications_y9R9tj": {
+          "type": "certifications",
+          "settings": {
+            "color_scheme": "scheme-e24c36e3-6758-46b1-b6d4-c5f5b5a35c26",
+            "certifications_heading": "Our Promise ☺",
+            "heading_size": "headline-style-h3",
+            "cert_image_1": "shopify://shop_images/Non_Toxic.svg",
+            "cert_label_1": "",
+            "cert_image_2": "shopify://shop_images/Group_251.svg",
+            "cert_label_2": "",
+            "cert_image_3": "shopify://shop_images/Group_250.svg",
+            "cert_label_3": "",
+            "cert_image_4": "shopify://shop_images/Group_252.svg",
+            "cert_label_4": "",
+            "padding_size": "section-padding-main"
+          }
+        },
+        "faq_j9pex9": {
+          "type": "faq",
+          "settings": {
+            "color_scheme": "",
+            "faq_heading": "Information",
+            "heading_size": "headline-style-h4",
+            "question_1": "How to Apply",
+            "answer_1": "<p>So easy! Find your strip size, peel & stick, then cure for 60 seconds. Trim or buff any excess. Voilà, salon-level nails in 15 minutes. For a complete how-to guide, <a href=\"/pages/how-to\" target=\"_blank\" title=\"How To\"><span style=\"text-decoration:underline\">click here</span></a>.</p>",
+            "question_2": "How to Remove",
+            "answer_2": "<p>Gently lift with the provided wooden stick. For ideal results, use our <a href=\"/products/ctrl-delete-nail-remover-serum\" title=\"Ctrl+Delete Vitamin Serum Remover\">Ctrl+Delete Vitamin Remover Serum</a> for easy melt-off-the-nail removal. No damage, just nourished nails underneath.</p>",
+            "question_3": "Ingredients",
+            "answer_3": "<p>✱ Polyacrylic Acid (bond)<br/>✱ Acrylates Copolymer (flexible wear) <br/>✱ Glycerol Propoxylate Triacrylate (adhesion)<br/>✱ Isopropylthioxanthone (curing activator)</p>",
+            "question_4": "Return Policy",
+            "answer_4": "<p>Returns must be within 14 days of delivery. Box and nail strips must be unused and unopened to qualify for refunds. For the full refund policy, <a href=\"/pages/returns-exchanges\" title=\"Returns & Exchanges\">read here</a>. </p>",
+            "padding_size": "section-padding-main"
+          }
+        }
+      },
+      "block_order": [
+        "slideshow_6GbNXw",
+        "richtext_qYXDPM",
+        "certifications_y9R9tj",
+        "faq_j9pex9"
+      ],
+      "disabled": true,
+      "name": "Product Expose",
+      "settings": {}
+    },
+    "product_recommendations_e6WMRL": {
+      "type": "product-recommendations",
+      "name": "Product Recommendations",
+      "settings": {
+        "heading": "You may also like",
+        "hide_title": false,
+        "heading_size": "headline-style-h3",
+        "color_scheme": "scheme-6628b2c5-2a6e-43ae-9f30-7d31869aa0c7",
+        "section_padding_top": "section-padding-top-small",
+        "section_padding_bottom": "section-padding-bottom-small",
+        "products_to_show": 4,
+        "show_rating": false
+      }
+    },
+    "17570441195a98675a": {
+      "type": "apps",
+      "blocks": {
+        "judge_me_reviews_review_widget_Pt3FqF": {
+          "type": "shopify://apps/judge-me-reviews/blocks/review_widget/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
+          "settings": {
+            "review_data": "real_data",
+            "max_width": 1000,
+            "show_shop_reviews": false,
+            "empty_state": "empty_widget"
+          }
+        }
+      },
+      "block_order": [
+        "judge_me_reviews_review_widget_Pt3FqF"
+      ],
+      "settings": {}
+    },
+    "hae_faqs_zapPEk": {
+      "type": "hae-faqs",
+      "blocks": {
+        "faq_block_rqcqra": {
+          "type": "faq_block",
+          "settings": {
+            "question": "How long do they last?",
+            "answer": "<p>Up to 14 days of chip-free shine. For best results, use the prep pad, apply on dry nails, and avoid oils or baths for 1-2 hours after. They’re tough enough for everyday life—like a screen protector for your nails.</p>"
+          }
+        },
+        "faq_block_BeX766": {
+          "type": "faq_block",
+          "settings": {
+            "question": "Are they non-toxic?",
+            "answer": "<p>No nasties, just nail magic. We skip the top 10 questionable ingredients—no HEMA, DBP, TPHP, toluene, or formaldehyde. Clean, safe, and worry-free.</p>"
+          }
+        },
+        "faq_block_6NhEBx": {
+          "type": "faq_block",
+          "settings": {
+            "question": "Do they really protect my nails?",
+            "answer": "<p>Yes! They act like a screen protector for your nails—shielding against chips and breaks while helping weak or brittle nails grow stronger, all with zero damage on removal.</p>"
+          }
+        },
+        "faq_block_ztneRX": {
+          "type": "faq_block",
+          "settings": {
+            "question": "If I sign up for subscription, can I pick my monthly design?",
+            "answer": "<p>Yes! You will receive an email notification each month before your order is fulfilled so you can pick your specific nail choice. ☻</p>"
+          }
+        }
+      },
+      "block_order": [
+        "faq_block_rqcqra",
+        "faq_block_BeX766",
+        "faq_block_6NhEBx",
+        "faq_block_ztneRX"
+      ],
+      "name": "FAQ Section",
+      "settings": {
+        "color_scheme": "",
+        "heading": "Frequently Asked Questions",
+        "page": ""
+      }
+    }
+  },
+  "order": [
+    "main",
+    "product_expose_37qzyW",
+    "product_recommendations_e6WMRL",
+    "17570441195a98675a",
+    "hae_faqs_zapPEk"
+  ]
+}

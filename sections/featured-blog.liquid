@@ -1,0 +1,181 @@
+<link
+  rel='stylesheet'
+  href='{{ 'featured-blog-posts.css' | asset_url }}'
+  media='print'
+  onload="this.media='all'"
+>
+<link
+  rel='stylesheet'
+  href='{{ 'component-blog-card.css' | asset_url }}'
+  media='print'
+  onload="this.media='all'"
+>
+
+<section class='featured-blog-posts color-{{ section.settings.color_scheme }}'>
+  <div class='featured-blog-posts__contain container-small section-padding-small'>
+    {% if section.settings.title != blank %}
+      <div class='featured-blog-posts__header'>
+        <h2 class='featured-blog-posts__title headline-style-h3'>
+          {{ section.settings.title | escape }}
+        </h2>
+      </div>
+    {% endif %}
+
+    {% if section.blocks.size > 0 %}
+      <swiper-slideshow
+        class='featured-blog-posts__swiper'
+        slides-per-view='1.25'
+        space-between='20'
+        loop='true'
+        autoplay='false'
+        show-navigation='false'
+        show-pagination='false'
+        effect='slide'
+        speed='800'
+        disableOn='mediumUp'
+      >
+        <div
+          class='featured-blog-posts__grid grid grid-3 grid-gap-lg swiper'
+          data-swiper-slideshow
+        >
+          <div class='swiper-wrapper' data-swiper-slideshow-wrapper>
+            {% for block in section.blocks %}
+              {% assign article = articles[block.settings.article] %}
+              {% if article != blank %}
+                <div
+                  class='grid__item swiper-slide'
+                  {{ block.shopify_attributes }}
+                  data-swiper-slide
+                >
+                  {%
+                    render 'blog-card',
+                    article: article,
+                    show_image: true,
+                    media_aspect_ratio: section.settings.media_aspect_ratio,
+                    heading_level: 'h3',
+                    title_id: 'BlogTitle-' | append: forloop.index0 | append: '-' | append: section.id,
+                    title_as_link: false,
+                    button_style: 'primary'
+                  %}
+                </div>
+              {% endif %}
+            {% endfor %}
+          </div>
+        </div>
+      </swiper-slideshow>
+    {% endif %}
+
+    {% if section.settings.show_view_all
+      and section.settings.view_all_url != blank
+    %}
+      <div class='featured-blog-posts__view-all'>
+        <a
+          href='{{ section.settings.view_all_url }}'
+          class='text-link text-size-xx-large'
+          data-custom-cursor
+        >
+          {{ 'blogs.article.view_all' | t }}
+        </a>
+      </div>
+    {% endif %}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Blog posts",
+  "class": "index-section",
+  "max_blocks": 6,
+  "settings": [
+    {
+      "type": "header",
+      "content": "Color Scheme"
+    },
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "Color scheme",
+      "default": "background-1"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Heading",
+      "default": "Blog posts"
+    },
+    {
+      "type": "select",
+      "id": "media_aspect_ratio",
+      "label": "Media aspect ratio",
+      "options": [
+        {
+          "value": "16/9",
+          "label": "16:9 (Landscape)"
+        },
+        {
+          "value": "9/16",
+          "label": "16:9 (Portrait)"
+        },
+        {
+          "value": "4/3",
+          "label": "4:3 (Portrait Horizontal)"
+        },
+        {
+          "value": "3/4",
+          "label": "3:4 (Portrait)"
+        },
+        {
+          "value": "1/1",
+          "label": "1:1 (Square)"
+        },
+        {
+          "value": "1/.85",
+          "label": "1:0.8 (Shorter Square)"
+        }
+      ],
+      "default": "4/3"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_view_all",
+      "label": "Show 'View all' button",
+      "default": false
+    },
+    {
+      "type": "url",
+      "id": "view_all_url",
+      "label": "View all URL"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "article",
+      "name": "Blog Article",
+      "settings": [
+        {
+          "type": "article",
+          "id": "article",
+          "label": "Article"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Blog posts",
+      "category": "Content & Text",
+      "blocks": [
+        {
+          "type": "article"
+        },
+        {
+          "type": "article"
+        },
+        {
+          "type": "article"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

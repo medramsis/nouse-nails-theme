@@ -1,0 +1,172 @@
+{% comment %} <link rel="stylesheet" href="{{ 'section-faqs-list.css' | asset_url }}" media="print" onload="this.media='all'"> {% endcomment %}
+<script src='{{ 'details-disclosure.js' | asset_url }}' defer='defer'></script>
+<link
+  rel='stylesheet'
+  href='{{ 'faqs.css' | asset_url }}'
+  media='print'
+  onload="this.media='all'"
+>
+
+<!-- FAQs Section -->
+<section class='faqs-section color-{{ section.settings.color_scheme }}'>
+  <div
+    class='faqs-section__contain container-main section-padding-main'
+    data-tabs-panel
+  >
+    <div class='faqs-section__layout grid grid-2 grid-gap-lg'>
+      <!-- Table Content -->
+      {% if section.settings.page != blank %}
+        <div class='faqs-section__page-content'>
+          <div class='table-wrapper'>
+            {% if section.settings.table_image != blank %}
+              <div class='comparison-table__image'>
+                {%- if section.settings.table_image != blank -%}
+                  <img
+                    srcset='
+                      {%- if section.settings.table_image_mobile != blank -%}
+                        {{ section.settings.table_image_mobile | image_url: width: 800 }} 800w,
+                      {%- endif -%}
+                      {{ section.settings.table_image | image_url: width: 1400 }} 1400w
+                    '
+                    sizes='
+                      (max-width: 767px) 800px,
+                      1400px
+                    '
+                    src='{{ section.settings.table_image | image_url: width: 1400 }}'
+                    alt='{{ section.settings.table_image.alt | escape }}'
+                    width='100%'
+                    height='100%'
+                    loading='lazy'
+                  >
+                {%- endif -%}
+              </div>
+            {% endif %}
+            <div class='comparison-table visually-hidden'>
+              {{ pages[section.settings.page].content }}
+            </div>
+          </div>
+        </div>
+      {% endif %}
+
+      <!-- FAQ Questions -->
+      <div class='faqs-section__questions-list'>
+        {% if section.settings.heading != blank %}
+          <h2 class='faqs-section__heading headline-style-h3'>
+            {{ section.settings.heading }}
+          </h2>
+        {% endif %}
+        <div class='faqs-list'>
+          {% for block in section.blocks %}
+            {% if block.type == 'faq_block' %}
+              <drawer-disclosure>
+                <details
+                  class='faq-list__item'
+                  data-id='faq-{{ forloop.index }}'
+                  {{ block.shopify_attributes }}
+                >
+                  <summary
+                    class='faq-list__item__question'
+                    aria-expanded='false'
+                    aria-label='Open FAQ answer for question {{ forloop.index }}'
+                    data-id='{{ forloop.index }}'
+                  >
+                    {{ block.settings.question }}
+                    <span class='faq-list__item__icon'>
+                      <span class='open-icon'> → </span>
+                    </span>
+                  </summary>
+                  <div
+                    class='faq-list__item__answer'
+                    data-drawer-content
+                    data-id='{{ forloop.index }}'
+                  >
+                    <div data-drawer-content-inner>
+                      {{ block.settings.answer }}
+                    </div>
+                  </div>
+                </details>
+              </drawer-disclosure>
+            {% endif %}
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "FAQs",
+  "settings": [
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "Color scheme",
+      "default": "background-1"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Section Heading",
+      "default": "Frequently Asked Questions"
+    },
+    {
+      "type": "header",
+      "content": "Table Settings"
+    },
+    {
+      "type": "page",
+      "id": "page",
+      "label": "Select Page",
+      "info": "Select a page that host the table element."
+    },
+    {
+      "type": "image_picker",
+      "id": "table_image",
+      "label": "Desktop Table Image"
+    },
+    {
+      "type": "image_picker",
+      "id": "table_image_mobile",
+      "label": "Mobile Table Image"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "faq_block",
+      "name": "FAQ Block",
+      "settings": [
+        {
+          "type": "text",
+          "id": "question",
+          "label": "Question",
+          "default": "What is your question?"
+        },
+        {
+          "type": "richtext",
+          "id": "answer",
+          "label": "Answer",
+          "default": "<p>Provide your answer here.</p>"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "FAQ Section",
+      "category": "Content & Text",
+      "blocks": [
+        {
+          "type": "faq_block"
+        },
+        {
+          "type": "faq_block"
+        },
+        {
+          "type": "faq_block"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

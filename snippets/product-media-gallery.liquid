@@ -1,0 +1,240 @@
+{% comment %}
+  Renders a product media gallery. Should be used with 'media-gallery.js'
+  Also see 'product-media-modal'
+
+  Accepts:
+  - product: {Object} Product liquid object
+  - variant_images: {Array} Product images associated with a variant
+  - limit: {Number} (optional) When passed, limits the number of media items to render
+
+  Usage:
+  {% render 'product-media-gallery' %}
+{% endcomment %}
+
+{%- liquid
+  if limit == 1
+    assign single_media_visible = true
+  endif
+
+  assign media_count = product.media.size
+
+  if media_count == 1 or single_media_visible
+    assign single_media_visible_mobile = true
+  endif
+
+  if media_count == 0 or single_media_visible_mobile or section.settings.mobile_thumbnails == 'show' or section.settings.mobile_thumbnails == 'columns' and media_count < 3
+    assign hide_mobile_slider = true
+  endif
+
+  assign media_width = 0.65
+  assign zoom_behavior = zoom_behavior | default: 'inside'
+-%}
+
+{{ 'component-product-media-gallery.css' | asset_url | stylesheet_tag }}
+
+<media-gallery
+  id='MediaGallery-{{ section.id }}'
+  role='region'
+  class='product__column-sticky'
+  aria-label='{{ 'products.product.media.gallery_viewer' | t }}'
+  data-desktop-layout='columns'
+  data-zoom-behavior='{{ zoom_behavior }}'
+>
+  <div
+    id='GalleryStatus-{{ section.id }}'
+    class='visually-hidden'
+    role='status'
+  ></div>
+
+  <swiper-slideshow
+    class='product-media-gallery__main'
+    slides-per-view='1.15'
+    space-between='20'
+    centered-slides='false'
+    loop='true'
+    autoplay='false'
+    show-navigation='true'
+    show-pagination='true'
+    desktop-slides-per-view='1'
+    effect='slide'
+    desktop-effect='fade'
+    desktop-space-between='0'
+    speed='400'
+    thumbnails='data-thumbnails-gallery'
+  >
+    <div class='swiper' data-swiper-slideshow>
+      <div class='swiper-wrapper' data-swiper-slideshow-wrapper>
+        {%- if product.selected_or_first_available_variant.featured_media
+            != null
+        -%}
+          {%- assign featured_media = product.selected_or_first_available_variant.featured_media -%}
+          <div class='swiper-slide' data-swiper-slide>
+            <div class='product__media-item-wrapper'>
+              {% render 'product-thumbnail',
+                media: featured_media,
+                media_count: media_count,
+                position: 1,
+                desktop_layout: 'columns',
+                mobile_layout: section.settings.mobile_thumbnails,
+                loop: false,
+                modal_id: section.id,
+                xr_button: true,
+                media_width: media_width,
+                media_fit: section.settings.media_fit,
+                constrain_to_viewport: section.settings.constrain_to_viewport,
+                lazy_load: false,
+                zoom: true,
+                a11y: true,
+                aspect_ratio: media_aspect_ratio
+              %}
+            </div>
+          </div>
+        {%- endif -%}
+
+        {%- assign first_slide_rendered = false -%}
+        {%- for media in product.media -%}
+          {%- unless media.id
+              == product.selected_or_first_available_variant.featured_media.id
+          -%}
+            <div class='swiper-slide' data-swiper-slide>
+              <div class='product__media-item-wrapper'>
+                {%- if first_slide_rendered == false -%}
+                  {%- assign first_slide_rendered = true -%}
+                  {% render 'product-thumbnail',
+                    media: media,
+                    media_count: media_count,
+                    position: forloop.index,
+                    desktop_layout: 'columns',
+                    mobile_layout: section.settings.mobile_thumbnails,
+                    loop: false,
+                    modal_id: section.id,
+                    xr_button: true,
+                    media_width: media_width,
+                    media_fit: section.settings.media_fit,
+                    constrain_to_viewport: section.settings.constrain_to_viewport,
+                    lazy_load: false,
+                    zoom: true,
+                    a11y: true,
+                    aspect_ratio: media_aspect_ratio
+                  %}
+                {%- else -%}
+                  {% render 'product-thumbnail',
+                    media: media,
+                    media_count: media_count,
+                    position: forloop.index,
+                    desktop_layout: 'columns',
+                    mobile_layout: section.settings.mobile_thumbnails,
+                    loop: false,
+                    modal_id: section.id,
+                    xr_button: true,
+                    media_width: media_width,
+                    media_fit: section.settings.media_fit,
+                    constrain_to_viewport: section.settings.constrain_to_viewport,
+                    lazy_load: true,
+                    zoom: true,
+                    a11y: true,
+                    aspect_ratio: media_aspect_ratio
+                  %}
+                {%- endif -%}
+              </div>
+            </div>
+          {%- endunless -%}
+        {%- endfor -%}
+      </div>
+      <div class='product-media-gallery__navigation'>
+        <button
+          class='product-media-gallery__nav-button swiper-slideshow__nav-button swiper-slideshow__nav-button--prev'
+          aria-label='Previous slide'
+        >
+          {% render 'icon-chevron-left' %}
+        </button>
+        <button
+          class='product-media-gallery__nav-button swiper-slideshow__nav-button swiper-slideshow__nav-button--next'
+          aria-label='Next slide'
+        >
+          {% render 'icon-chevron-right' %}
+        </button>
+      </div>
+      <div
+        class='product-media-gallery__pagination swiper-slideshow__pagination'
+      ></div>
+    </div>
+  </swiper-slideshow>
+
+  <swiper-slideshow
+    class='product-media-gallery__thumbnails'
+    slides-per-view='4'
+    space-between='5'
+    centered-slides='false'
+    loop='false'
+    autoplay='false'
+    show-navigation='false'
+    show-pagination='false'
+    effect='slide'
+    speed='400'
+    data-thumbnails-gallery
+    desktop-direction='vertical'
+    desktop-slides-per-view='auto'
+  >
+    <div class='swiper' data-swiper-slideshow>
+      <div class='swiper-wrapper' data-swiper-slideshow-wrapper>
+        {%- if product.selected_or_first_available_variant.featured_media
+            != null
+        -%}
+          {%- assign featured_media = product.selected_or_first_available_variant.featured_media -%}
+          <div class='swiper-slide' data-swiper-slide>
+            <div class='product__media-thumbnail-wrapper'>
+              {%
+                render 'product-thumbnail',
+                media: featured_media,
+                media_count: media_count,
+                position: 1,
+                desktop_layout: 'thumbnail',
+                mobile_layout: 'thumbnail',
+                loop: false,
+                modal_id: section.id,
+                xr_button: false,
+                media_width: 0.25,
+                media_fit: 'contain',
+                constrain_to_viewport: true,
+                lazy_load: false,
+                zoom: false,
+                aspect_ratio: thumbnail_aspect_ratio | default: media_aspect_ratio,
+                class: 'product-media-gallery__thumbnail'
+              %}
+            </div>
+          </div>
+        {%- endif -%}
+
+        {%- for media in product.media -%}
+          {%- unless media.id
+              == product.selected_or_first_available_variant.featured_media.id
+          -%}
+            <div class='swiper-slide' data-swiper-slide>
+              <div class='product__media-thumbnail-wrapper'>
+                {%
+                  render 'product-thumbnail',
+                  media: media,
+                  media_count: media_count,
+                  position: forloop.index,
+                  desktop_layout: 'thumbnail',
+                  mobile_layout: 'thumbnail',
+                  loop: false,
+                  modal_id: section.id,
+                  xr_button: false,
+                  media_width: 0.25,
+                  media_fit: 'contain',
+                  constrain_to_viewport: true,
+                  lazy_load: true,
+                  zoom: false,
+                  aspect_ratio: thumbnail_aspect_ratio | default: media_aspect_ratio,
+                  class: 'product-media-gallery__thumbnail'
+                %}
+              </div>
+            </div>
+          {%- endunless -%}
+        {%- endfor -%}
+      </div>
+    </div>
+  </swiper-slideshow>
+</media-gallery>

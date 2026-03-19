@@ -1,0 +1,143 @@
+{{ 'main-page-header.css' | asset_url | stylesheet_tag }}
+
+<section class='color-background-main color-{{ section.settings.color_scheme }}'>
+  <div class='text-page-header'>
+    {% if section.settings.header_background_image != blank %}
+      <div class='text-page-header_background'>
+        <img
+          src='{{ section.settings.header_background_image | img_url }}'
+          srcset='{{ section.settings.header_background_image | img_url: '1440x', scale: 2 }} 2560w, {{ section.settings.header_background_image | img_url: '400x', scale: 2 }} 1024w, {{ section.settings.header_background_image | img_url: '768x', scale: 2 }} 768w, {{ section.settings.header_background_image | img_url: '425x', scale: 2 }} 425w'
+          sizes='100vw'
+          alt='Background Image'
+          class='responsive-image'
+          width='1440'
+          height='800'
+        >
+      </div>
+    {% endif %}
+
+    <div class='text-page-header_layout'>
+      <div class='text-page-header_contain container-small {{ section.settings.padding_size }}'>
+        {% if section.settings.custom_title != blank %}
+          <h1 class='text-page__header__heading {{ section.settings.heading_size }}'>
+            {{ section.settings.custom_title }}
+          </h1>
+        {% else %}
+          <h1 class='text-page__header__heading {{ section.settings.heading_size }}'>
+            {{ page.title }}
+          </h1>
+        {% endif %}
+
+        {% if section.settings.subtitle != blank %}
+          <div class='text-page__header__subtitle'>
+            {{ section.settings.subtitle }}
+          </div>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Text Page Header",
+  "tag": "section",
+  "class": "section",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Header Content"
+    },
+    {
+      "type": "text",
+      "id": "custom_title",
+      "label": "Custom Title",
+      "info": "Leave empty to use page title"
+    },
+    {
+      "type": "richtext",
+      "id": "subtitle",
+      "label": "Subtitle",
+      "info": "Optional subtitle below the main heading"
+    },
+    {
+      "type": "image_picker",
+      "id": "header_background_image",
+      "label": "Background Image",
+      "info": "Optional background image for the header"
+    },
+    {
+      "type": "header",
+      "content": "Layout Settings"
+    },
+    {
+      "type": "select",
+      "id": "padding_size",
+      "label": "Section Padding Size",
+      "options": [
+        {
+          "value": "section-padding-x-small",
+          "label": "Extra Small"
+        },
+        {
+          "value": "section-padding-small",
+          "label": "Small"
+        },
+        {
+          "value": "section-padding-main",
+          "label": "Medium"
+        },
+        {
+          "value": "section-padding-large",
+          "label": "Large"
+        }
+      ],
+      "default": "section-padding-x-small"
+    },
+    {
+      "type": "header",
+      "content": "Typography"
+    },
+    {
+      "type": "select",
+      "id": "heading_size",
+      "label": "Heading Size",
+      "options": [
+        {
+          "value": "headline-style-h1",
+          "label": "H1 (Largest)"
+        },
+        {
+          "value": "headline-style-h2",
+          "label": "H2"
+        },
+        {
+          "value": "headline-style-h3",
+          "label": "H3"
+        },
+        {
+          "value": "headline-style-h4",
+          "label": "H4"
+        }
+      ],
+      "default": "headline-style-h1"
+    },
+    {
+      "type": "header",
+      "content": "Color Scheme"
+    },
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "Color scheme",
+      "default": "background-1"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Main Page Header",
+      "category": "Templates & Pages"
+    }
+  ]
+}
+{% endschema %}

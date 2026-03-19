@@ -1,0 +1,205 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "dynamic-collection-grid",
+      "blocks": {
+        "product_yqFHWf": {
+          "type": "product",
+          "settings": {
+            "product": "iced-out"
+          }
+        },
+        "product_A7FPiw": {
+          "type": "product",
+          "settings": {
+            "product": "art-school-star"
+          }
+        },
+        "video_embed_ntX3Lr": {
+          "type": "video_embed",
+          "settings": {
+            "video": "shopify://files/videos/knock knock updated.mov",
+            "autoplay": "true",
+            "media_aspect_ratio": "3/4",
+            "controls": false
+          }
+        },
+        "product_YQz4fN": {
+          "type": "product",
+          "settings": {
+            "product": "matcha-jelly"
+          }
+        },
+        "product_Ug7cTU": {
+          "type": "product",
+          "settings": {
+            "product": "geometric-jelly"
+          }
+        },
+        "product_XJMdtn": {
+          "type": "product",
+          "settings": {
+            "product": "mocha-tortoise"
+          }
+        }
+      },
+      "block_order": [
+        "product_yqFHWf",
+        "product_A7FPiw",
+        "video_embed_ntX3Lr",
+        "product_YQz4fN",
+        "product_Ug7cTU",
+        "product_XJMdtn"
+      ],
+      "settings": {
+        "title": "The Nous Standard",
+        "hide_title": false,
+        "color_scheme": "scheme-e24c36e3-6758-46b1-b6d4-c5f5b5a35c26",
+        "section_padding_top": "section-padding-top-small",
+        "section_padding_bottom": "section-padding-bottom-small"
+      }
+    },
+    "hae_marquee_banner_33tJkG": {
+      "type": "hae-marquee-banner",
+      "name": "News ticker banner",
+      "settings": {
+        "color_scheme": "scheme-cc80f6b4-b558-4219-8256-b69a754c7c0a",
+        "text": "Hello There!"
+      }
+    },
+    "dynamic_collection_grid_VWfNXt": {
+      "type": "dynamic-collection-grid",
+      "blocks": {
+        "video_embed_jHAENQ": {
+          "type": "video_embed",
+          "settings": {
+            "video": "shopify://files/videos/Step-by-Step-Reel-USE-THIS-1x1_0bfa091b-9d62-478a-aae4-3614148158a4.MOV",
+            "autoplay": "true",
+            "media_aspect_ratio": "3/4",
+            "controls": false
+          }
+        },
+        "product_gfx7Rr": {
+          "type": "product",
+          "settings": {
+            "product": "aura-gradient"
+          }
+        },
+        "product_qYHq4V": {
+          "type": "product",
+          "settings": {
+            "product": "strange-terrain"
+          }
+        },
+        "product_HNw9rm": {
+          "type": "product",
+          "settings": {
+            "product": "gallery-orbit"
+          }
+        },
+        "product_rkiDY8": {
+          "type": "product",
+          "settings": {
+            "product": ""
+          }
+        },
+        "product_MF3fnx": {
+          "type": "product",
+          "settings": {
+            "product": ""
+          }
+        },
+        "image_kchn3X": {
+          "type": "image",
+          "settings": {
+            "art_direction": "portrait",
+            "media_aspect_ratio": "64/41"
+          }
+        },
+        "product_DPxQ7h": {
+          "type": "product",
+          "settings": {
+            "product": ""
+          }
+        },
+        "product_TXEAdt": {
+          "type": "product",
+          "settings": {
+            "product": ""
+          }
+        },
+        "product_p97nrD": {
+          "type": "product",
+          "settings": {
+            "product": ""
+          }
+        },
+        "product_BXCbzx": {
+          "type": "product",
+          "settings": {
+            "product": ""
+          }
+        },
+        "product_b6Yf7g": {
+          "type": "product",
+          "settings": {
+            "product": ""
+          }
+        },
+        "product_memCUW": {
+          "type": "product",
+          "settings": {
+            "product": ""
+          }
+        },
+        "video_embed_fCA47C": {
+          "type": "video_embed",
+          "settings": {
+            "video": "shopify://files/videos/knock knock updated.mov",
+            "autoplay": "true",
+            "media_aspect_ratio": "3/4",
+            "controls": false
+          }
+        }
+      },
+      "block_order": [
+        "video_embed_jHAENQ",
+        "product_gfx7Rr",
+        "product_qYHq4V",
+        "product_HNw9rm",
+        "product_rkiDY8",
+        "product_MF3fnx",
+        "image_kchn3X",
+        "product_DPxQ7h",
+        "product_TXEAdt",
+        "product_p97nrD",
+        "product_BXCbzx",
+        "product_b6Yf7g",
+        "product_memCUW",
+        "video_embed_fCA47C"
+      ],
+      "name": "Dynamic Collection Grid",
+      "settings": {
+        "title": "",
+        "hide_title": true,
+        "color_scheme": "scheme-e24c36e3-6758-46b1-b6d4-c5f5b5a35c26",
+        "section_padding_top": "section-padding-top-small",
+        "section_padding_bottom": "section-padding-bottom-small"
+      }
+    }
+  },
+  "order": [
+    "main",
+    "hae_marquee_banner_33tJkG",
+    "dynamic_collection_grid_VWfNXt"
+  ]
+}

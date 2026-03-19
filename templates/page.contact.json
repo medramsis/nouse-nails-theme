@@ -1,0 +1,38 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main-page-header": {
+      "type": "main-page-header",
+      "settings": {
+        "custom_title": "",
+        "subtitle": "",
+        "header_background_image": "shopify://shop_images/5_noise_2x_2.jpg",
+        "padding_size": "section-padding-main",
+        "heading_size": "headline-style-h1",
+        "color_scheme": "scheme-94eb6821-3c93-4727-b9e1-be4096d276ce"
+      }
+    },
+    "main": {
+      "type": "contact",
+      "settings": {
+        "form_title": "Get in touch",
+        "form_description": "We'd love to hear from you. Send us a message and we'll respond as soon as possible.",
+        "color_scheme": "",
+        "section_padding_top": "section-padding-top-small",
+        "section_padding_bottom": "section-padding-bottom-small"
+      }
+    }
+  },
+  "order": [
+    "main-page-header",
+    "main"
+  ]
+}

@@ -1,0 +1,387 @@
+<link
+  rel='stylesheet'
+  href='{{ 'section-footer.css' | asset_url }}'
+  media='print'
+  onload="this.media='all'"
+>
+<link
+  rel='stylesheet'
+  href='{{ 'forms.css' | asset_url }}'
+  media='print'
+  onload="this.media='all'"
+>
+<link
+  rel='stylesheet'
+  href='{{ 'template-password.css' | asset_url }}'
+  media='print'
+  onload="this.media='all'"
+>
+
+<footer
+  class='footer color-{{ section.settings.color_scheme }}'
+  role='contentinfo'
+>
+  {% if section.settings.background_image != blank %}
+    <div class='footer__background-image'>
+      <img
+        src='{{ section.settings.background_image | img_url: '1920x' }}'
+        srcset='{{ section.settings.background_image | img_url: '768x' }} 768w, {{ section.settings.background_image | img_url: '1024x' }} 1024w, {{ section.settings.background_image | img_url: '1920x' }} 1920w'
+        sizes='100vw'
+        alt=''
+        width='{{ section.settings.background_image.width }}'
+        height='{{ section.settings.background_image.height }}'
+        loading='lazy'
+      >
+    </div>
+  {% endif %}
+  <div class='footer__container container-main'>
+    <!-- Main Footer Content -->
+    <div class='footer__main'>
+      <div class='footer__grid grid grid-2'>
+        <!-- Company Info Column -->
+        <div class='footer__column'>
+          {% if section.settings.show_company_info %}
+            <div class='footer__company'>
+              {% if section.settings.company_logo != blank %}
+                <div class='footer__logo'>
+                  {%
+                    render 'image-with-aspect-ratio',
+                    image: section.settings.company_logo,
+                    aspect_ratio: 'natural',
+                    alt: section.settings.company_logo.alt | default: shop.name,
+                    class: 'footer__logo-image',
+                    sizes: '200px',
+                    widths: '200,400',
+                    loading: 'lazy'
+                  %}
+                </div>
+              {% endif %}
+
+              {% if section.settings.company_description != blank %}
+                <div class='footer__description'>
+                  {{ section.settings.company_description }}
+                </div>
+              {% endif %}
+            </div>
+          {% endif %}
+
+          <div class='footer__quick-links-container'>
+            <!-- Links -->
+            {% if section.settings.show_quick_links %}
+              <div class='footer__quick-links'>
+                {% if section.settings.quick_links_title != blank %}
+                  <h3 class='footer__column-title visually-hidden'>
+                    {{ section.settings.quick_links_title }}
+                  </h3>
+                {% endif %}
+
+                {% if section.settings.quick_links_menu != blank %}
+                  <nav aria-label='{{ section.settings.quick_links_title | default: 'Quick links' | escape }}'>
+                    <ul class='footer__links-list'>
+                      {% for link in linklists[section.settings.quick_links_menu].links %}
+                        <li class='footer__links-item'>
+                          <a href='{{ link.url }}' class='footer__link'>
+                            {{ link.title }}
+                          </a>
+                        </li>
+                      {% endfor %}
+                    </ul>
+                  </nav>
+                {% endif %}
+              </div>
+            {% endif %}
+
+            <!-- Bottom Links -->
+            {% if section.settings.show_bottom_menu %}
+              <div class='footer__quick-links'>
+                {% if section.settings.bottom_menu_title != blank %}
+                  <h3 class='footer__column-title visually-hidden'>
+                    {{ section.settings.bottom_menu_title }}
+                  </h3>
+                {% endif %}
+
+                {% if section.settings.bottom_menu != blank %}
+                  <nav aria-label='{{ section.settings.bottom_menu_title | default: 'Footer menu' | escape }}'>
+                    <ul class='footer__links-list'>
+                      {% for link in linklists[section.settings.bottom_menu].links %}
+                        <li class='footer__links-item'>
+                          <a href='{{ link.url }}' class='footer__link'>
+                            {{ link.title }}
+                          </a>
+                        </li>
+                      {% endfor %}
+                    </ul>
+                  </nav>
+                {% endif %}
+              </div>
+            {% endif %}
+          </div>
+        </div>
+
+        <!-- Newsletter Column -->
+        <div class='footer__column'>
+          {% if section.settings.show_newsletter %}
+            <div class='footer__newsletter'>
+              {% if section.settings.newsletter_title != blank %}
+                <h3 class='footer__column-title {{ section.settings.newsletter_title_size }}'>
+                  {{ section.settings.newsletter_title }}
+                </h3>
+              {% endif %}
+
+              {% if section.settings.klaviyo_form_id != blank
+                and section.settings.show_newsletter
+              %}
+                <div class='footer__newsletter-form'>
+                  <div
+                    class='klaviyo-form-{{ section.settings.klaviyo_form_id }}'
+                  ></div>
+                </div>
+              {% endif %}
+            </div>
+          {% endif %}
+          {% if section.settings.show_social_icons %}
+            <!-- Social Media Icons -->
+            {% if settings.social_facebook_link != blank
+              or settings.social_twitter_link != blank
+              or settings.social_pinterest_link != blank
+              or settings.social_tiktok_link != blank
+              or settings.social_instagram_link != blank
+            %}
+              <ul class='footer__social-list'>
+                {% if settings.social_facebook_link != blank %}
+                  <li class='footer__social-item'>
+                    <a
+                      href='{{ settings.social_facebook_link }}'
+                      class='footer__social-link'
+                      target='_blank'
+                      rel='noopener noreferrer'
+                      aria-label="{{ 'general.social.links.facebook' | t }}"
+                    >
+                      {% render 'icon-facebook' %}
+                    </a>
+                  </li>
+                {% endif %}
+                {% if settings.social_twitter_link != blank %}
+                  <li class='footer__social-item'>
+                    <a
+                      href='{{ settings.social_twitter_link }}'
+                      class='footer__social-link'
+                      target='_blank'
+                      rel='noopener noreferrer'
+                      aria-label="{{ 'general.social.links.twitter' | t }}"
+                    >
+                      {% render 'icon-twitter' %}
+                    </a>
+                  </li>
+                {% endif %}
+                {% if settings.social_pinterest_link != blank %}
+                  <li class='footer__social-item'>
+                    <a
+                      href='{{ settings.social_pinterest_link }}'
+                      class='footer__social-link'
+                      target='_blank'
+                      rel='noopener noreferrer'
+                      aria-label="{{ 'general.social.links.pinterest' | t }}"
+                    >
+                      {% render 'icon-pinterest' %}
+                    </a>
+                  </li>
+                {% endif %}
+                {% if settings.social_tiktok_link != blank %}
+                  <li class='footer__social-item'>
+                    <a
+                      href='{{ settings.social_tiktok_link }}'
+                      class='footer__social-link'
+                      target='_blank'
+                      rel='noopener noreferrer'
+                      aria-label="{{ 'general.social.links.tiktok' | t }}"
+                    >
+                      {% render 'icon-tiktok' %}
+                    </a>
+                  </li>
+                {% endif %}
+                {% if settings.social_instagram_link != blank %}
+                  <li class='footer__social-item'>
+                    <a
+                      href='{{ settings.social_instagram_link }}'
+                      class='footer__social-link'
+                      target='_blank'
+                      rel='noopener noreferrer'
+                      aria-label="{{ 'general.social.links.instagram' | t }}"
+                    >
+                      {% render 'icon-instagram' %}
+                    </a>
+                  </li>
+                {% endif %}
+              </ul>
+            {% endif %}
+          {% endif %}
+          <!-- Footer Bottom -->
+          <div class='footer__bottom'>
+            <div class='footer__bottom-content'>
+              <!-- Copyright -->
+              <div class='footer__copyright'>
+                <p class='footer__copyright-text'>
+                  &copy; {{ 'now' | date: '%Y' }}
+                  {{ shop.name }}.
+                  {{
+                    section.settings.copyright_text
+                    | default: 'All rights reserved.'
+                  }}
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+{% schema %}
+{
+  "name": "Footer",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Color Scheme"
+    },
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "Color scheme",
+      "default": "background-1"
+    },
+    {
+      "type": "image_picker",
+      "id": "background_image",
+      "label": "Footer background image"
+    },
+    {
+      "type": "header",
+      "content": "Company Information"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_company_info",
+      "label": "Show company information",
+      "default": true
+    },
+    {
+      "type": "image_picker",
+      "id": "company_logo",
+      "label": "Company logo"
+    },
+    {
+      "type": "richtext",
+      "id": "company_description",
+      "label": "Company description",
+      "default": "<p>Share your brand story and mission with your customers.</p>"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_social_icons",
+      "label": "Show social media icons",
+      "default": true
+    },
+    {
+      "type": "header",
+      "content": "Quick Links"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_quick_links",
+      "label": "Show quick links",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "quick_links_title",
+      "label": "Quick links title",
+      "default": "Quick Links"
+    },
+    {
+      "type": "link_list",
+      "id": "quick_links_menu",
+      "label": "Quick links menu",
+      "default": "footer"
+    },
+    {
+      "type": "header",
+      "content": "Newsletter"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_newsletter",
+      "label": "Show newsletter signup",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "newsletter_title",
+      "label": "Newsletter title",
+      "default": "Stay Updated"
+    },
+
+    {
+      "type": "select",
+      "id": "newsletter_title_size",
+      "label": "Newsletter title size",
+      "options": [
+        {
+          "value": "headline-style-h1",
+          "label": "H1"
+        },
+        {
+          "value": "headline-style-h2",
+          "label": "H2"
+        },
+        {
+          "value": "headline-style-h3",
+          "label": "H3"
+        },
+        {
+          "value": "headline-style-h4",
+          "label": "H4"
+        }
+      ],
+      "default": "headline-style-h4"
+    },
+    {
+      "type": "text",
+      "id": "klaviyo_form_id",
+      "label": "Klaviyo Form ID",
+      "info": "Add the Klaviyo form ID to the newsletter form",
+      "default": "UQJuZt"
+    },
+    {
+      "type": "header",
+      "content": "Footer Bottom"
+    },
+    {
+      "type": "text",
+      "id": "copyright_text",
+      "label": "Copyright text",
+      "default": "All rights reserved."
+    },
+    {
+      "type": "checkbox",
+      "id": "show_bottom_menu",
+      "label": "Show bottom navigation menu",
+      "default": true
+    },
+    {
+      "type": "link_list",
+      "id": "bottom_menu",
+      "label": "Bottom navigation menu",
+      "info": "This menu will appear at the bottom of the footer"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Footer",
+      "category": "Navigation & Layout"
+    }
+  ]
+}
+{% endschema %}

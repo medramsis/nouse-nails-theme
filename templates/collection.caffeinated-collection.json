@@ -1,0 +1,86 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "dynamic-collection-grid",
+      "blocks": {
+        "product_yqFHWf": {
+          "type": "product",
+          "settings": {
+            "product": "mocha-tortoise"
+          }
+        },
+        "product_A7FPiw": {
+          "type": "product",
+          "settings": {
+            "product": "matcha-jelly"
+          }
+        },
+        "image_J6h3p9": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/OatMilkLatte-2_35113f0b-e948-4f37-99b4-94bb40d380c5.jpg",
+            "art_direction": "portrait",
+            "media_aspect_ratio": "3/4"
+          }
+        },
+        "image_fH3XUF": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/QD-2583_8a591fbc-491e-443d-87e9-945479aa5957.jpg",
+            "art_direction": "portrait",
+            "media_aspect_ratio": "3/4"
+          }
+        },
+        "product_YQz4fN": {
+          "type": "product",
+          "settings": {
+            "product": "oat-milk-latte"
+          }
+        },
+        "product_Ug7cTU": {
+          "type": "product",
+          "settings": {
+            "product": "iced-coffee"
+          }
+        }
+      },
+      "block_order": [
+        "product_yqFHWf",
+        "product_A7FPiw",
+        "image_J6h3p9",
+        "image_fH3XUF",
+        "product_YQz4fN",
+        "product_Ug7cTU"
+      ],
+      "settings": {
+        "title": "Caffeinated Collection",
+        "hide_title": false,
+        "color_scheme": "background-1",
+        "section_padding_top": "section-padding-top-small",
+        "section_padding_bottom": "section-padding-bottom-small"
+      }
+    },
+    "hae_marquee_banner_33tJkG": {
+      "type": "hae-marquee-banner",
+      "disabled": true,
+      "name": "News ticker banner",
+      "settings": {
+        "color_scheme": "scheme-cc80f6b4-b558-4219-8256-b69a754c7c0a",
+        "text": "Hello There!"
+      }
+    }
+  },
+  "order": [
+    "main",
+    "hae_marquee_banner_33tJkG"
+  ]
+}

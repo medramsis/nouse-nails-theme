@@ -1,0 +1,310 @@
+<div>
+  <div class="hae-header text-center py-40 px-40-gutters d-flex-column flex-justify-center" style="background-image: url('{{ page.metafields.global.hero_photo | asset_url }}'); ">
+    <h1 class="fs-60">
+      {{ page.title }}
+    </h1>
+    <p class="rte fs-18 mt-16">{{ page.content }}</p>
+  </div>
+
+  <div>
+    {% for block in section.blocks %}
+
+    {% if block.type == 'left_photo' %}
+    <div class="d-mlg-flex-row-reverse" style="background-color: {{ block.settings.background_color }};">
+      <div class="p-40-gutters col-mlg-6 d-flex-column flex-justify-center flex-align-center">
+        <div class="col-mlg-10">
+          <h2 class="mt-16 mt-mlg-0 mb-16 fs-48 mabry-med">{{ block.settings.header }}</h2>
+          <p class="fs-18">{{ block.settings.text }}</p>
+        </div>
+      </div>
+
+      <div class="p-40-gutters col-mlg-6">
+        <img
+        class="width-full big-img-b-radius"
+        src="{{ block.settings.image | img_url }}"
+        srcset=
+        "{{ block.settings.image | img_url: "1440x", scale: 2 }} 2560w",
+        "{{ block.settings.image | img_url: "400x", scale: 2 }} 1024w",
+        "{{ block.settings.image | img_url: "768x", scale: 2 }} 768w",
+        "{{ block.settings.image | img_url: "425x", scale: 2 }} 425w"
+        sizes="50vw"
+        alt="{{ alt | default: 'Hae photo' }}" >
+      </div>
+    </div>
+    {% elsif block.type == 'left_photo_cta' %}
+    <div class="d-mlg-flex-row-reverse" style="background-color: {{ block.settings.background_color }};">
+      <div class="p-40-gutters col-mlg-6 d-flex-column flex-justify-center">
+        <h2 class="mt-16 mt-mlg-0 mb-16 fs-48 mabry-med">{{ block.settings.header }}</h2>
+        <p class="fs-18">{{ block.settings.text }}</p>
+
+        <a class="width-fit-content button-pill button-blue mt-16 mt-md-32" href="{{ block.settings.link }}">{{ block.settings.link_text }}</a>
+      </div>
+
+      <div class="p-40-gutters col-mlg-6">
+        <img
+        class="width-full big-img-b-radius"
+        src="{{ block.settings.image | img_url }}"
+        srcset=
+        "{{ block.settings.image | img_url: "1440x", scale: 2 }} 2560w",
+        "{{ block.settings.image | img_url: "400x", scale: 2 }} 1024w",
+        "{{ block.settings.image | img_url: "768x", scale: 2 }} 768w",
+        "{{ block.settings.image | img_url: "425x", scale: 2 }} 425w"
+        sizes="50vw"
+        alt="{{ alt | default: 'Hae photo' }}" >
+      </div>
+    </div>
+    {% elsif block.type == 'right_photo' %}
+    <div class="d-mlg-flex-row" style="background-color: {{ block.settings.background_color }};">
+      <div class="p-40-gutters col-mlg-6 d-flex-column flex-justify-center">
+        <h2 class="mt-16 mt-mlg-0 mb-16 fs-48 mabry-med">{{ block.settings.header }}</h2>
+        <p class="fs-18">{{ block.settings.text }}</p>
+      </div>
+
+      <div class="p-40-gutters col-mlg-6">
+        <img
+        class="width-full big-img-b-radius"
+        src="{{ block.settings.image | img_url }}"
+        srcset=
+        "{{ block.settings.image | img_url: "1440x", scale: 2 }} 2560w",
+        "{{ block.settings.image | img_url: "400x", scale: 2 }} 1024w",
+        "{{ block.settings.image | img_url: "768x", scale: 2 }} 768w",
+        "{{ block.settings.image | img_url: "425x", scale: 2 }} 425w"
+        sizes="50vw"
+        alt="{{ alt | default: 'Hae photo' }}" >
+      </div>
+    </div>
+    {% elsif block.type == 'right_photo_cta' %}
+    <div class="d-mlg-flex-row" style="background-color: {{ block.settings.background_color }};">
+      <div class="p-40-gutters col-mlg-6 d-flex-column flex-justify-center">
+        <h2 class="mt-16 mt-mlg-0 mb-16 fs-48 mabry-med">{{ block.settings.header }}</h2>
+        <p class="fs-18">{{ block.settings.text }}</p>
+
+        <a class="width-fit-content button-pill button-blue mt-16 mt-md-32" href="{{ block.settings.link }}">{{ block.settings.link_text }}</a>
+      </div>
+
+      <div class="p-40-gutters col-mlg-6">
+        <img
+        class="width-full big-img-b-radius"
+        src="{{ block.settings.image | img_url }}"
+        srcset=
+        "{{ block.settings.image | img_url: "1440x", scale: 2 }} 2560w",
+        "{{ block.settings.image | img_url: "400x", scale: 2 }} 1024w",
+        "{{ block.settings.image | img_url: "768x", scale: 2 }} 768w",
+        "{{ block.settings.image | img_url: "425x", scale: 2 }} 425w"
+        sizes="50vw"
+        alt="{{ alt | default: 'Hae photo' }}" >
+      </div>
+    </div>
+    {% elsif block.type == 'ticker' %}
+    <section class="ticker-container bg-wine-dark text-white fs-40 type-link">
+      <div class="ticker">
+        <span>{{ block.settings.ticker_text }}</span>
+        <span style="color: #FDF130;">☀</span>
+        <span>{{ block.settings.ticker_text }}</span>
+        <span style="color: #AEC1FB;">☺</span>
+        <span>{{ block.settings.ticker_text }}</span>
+        <span style="color: #EFBDFC;">♥</span>
+        <span>{{ block.settings.ticker_text }}</span>
+        <span style="color: #FF8A64;">☀</span>
+        <span>{{ block.settings.ticker_text }}</span>
+        <span style="color: #FDF130;">☺</span>
+        <span>{{ block.settings.ticker_text }}</span>
+        <span style="color: #AEC1FB;">♥</span>
+      </div>
+    </section>
+    {% endif %}
+
+    {% endfor %}
+  </div>
+</div>
+
+
+{% schema %}
+{
+  "name": "Why page",
+  "settings": [
+],
+  "blocks": [
+    {
+      "name": "Left photo",
+      "type": "left_photo",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image"
+        },
+        {
+          "type": "text",
+          "id": "header",
+          "label": "Header"
+        },
+        {
+          "type": "richtext",
+          "id": "text",
+          "label": "Text"
+        },
+        {
+         "type": "select",
+         "id": "background_color",
+         "options": [
+            { "value": "#FCF8F4", "label": "Cream"},
+            { "value": "#F6DC76", "label": "Yellow"},
+            { "value": "#EFBDFC", "label": "Pink"},
+            { "value": "#FF8A64", "label": "Orange"},
+            { "value": "#AEC1FB", "label": "Blue"},
+            { "value": "#FAEEE2", "label": "Condensed milk"}
+         ],
+         "label": "Background color"
+        }
+      ]
+    },
+    {
+      "name": "Left photo & CTA",
+      "type": "left_photo_cta",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image"
+        },
+        {
+          "type": "text",
+          "id": "header",
+          "label": "Header"
+        },
+        {
+          "type": "richtext",
+          "id": "text",
+          "label": "Text"
+        },
+        {
+         "type": "select",
+         "id": "background_color",
+         "options": [
+            { "value": "#FCF8F4", "label": "Cream"},
+            { "value": "#F6DC76", "label": "Yellow"},
+            { "value": "#EFBDFC", "label": "Pink"},
+            { "value": "#FF8A64", "label": "Orange"},
+            { "value": "#AEC1FB", "label": "Blue"},
+            { "value": "#FAEEE2", "label": "Condensed milk"}
+         ],
+         "label": "Background color"
+       },
+       {
+        "id": "link",
+        "type": "url",
+        "label": "CTA link"
+      },
+      {
+        "type": "text",
+        "id": "link_text",
+        "label": "CTA text"
+      }
+      ]
+    },
+    {
+      "name": "Right photo",
+      "type": "right_photo",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image"
+        },
+        {
+          "type": "text",
+          "id": "header",
+          "label": "Header"
+        },
+        {
+          "type": "richtext",
+          "id": "text",
+          "label": "Text"
+        },
+        {
+         "type": "select",
+         "id": "background_color",
+         "options": [
+            { "value": "#FCF8F4", "label": "Cream"},
+            { "value": "#F6DC76", "label": "Yellow"},
+            { "value": "#EFBDFC", "label": "Pink"},
+            { "value": "#FF8A64", "label": "Orange"},
+            { "value": "#AEC1FB", "label": "Blue"},
+            { "value": "#FAEEE2", "label": "Condensed milk"}
+         ],
+         "label": "Background color"
+        }
+      ]
+    },
+    {
+      "name": "Right photo & CTA",
+      "type": "right_photo_cta",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image"
+        },
+        {
+          "type": "text",
+          "id": "header",
+          "label": "Header"
+        },
+        {
+          "type": "richtext",
+          "id": "text",
+          "label": "Text"
+        },
+        {
+         "type": "select",
+         "id": "background_color",
+         "options": [
+            { "value": "#FCF8F4", "label": "Cream"},
+            { "value": "#F6DC76", "label": "Yellow"},
+            { "value": "#EFBDFC", "label": "Pink"},
+            { "value": "#FF8A64", "label": "Orange"},
+            { "value": "#AEC1FB", "label": "Blue"},
+            { "value": "#FAEEE2", "label": "Condensed milk"}
+         ],
+         "label": "Background color"
+       },
+       {
+        "id": "link",
+        "type": "url",
+        "label": "CTA link"
+      },
+      {
+        "type": "text",
+        "id": "link_text",
+        "label": "CTA text"
+      }
+      ]
+    },
+    {
+      "name": "Ticker",
+      "type": "ticker",
+      "settings": [
+        {
+          "type": "text",
+          "id": "ticker_text",
+          "label": "Ticker text",
+          "info": "Text will repeat automatically"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Why HAE Page",
+      "category": "Custom HAE Sections"
+    }
+  ]
+}
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

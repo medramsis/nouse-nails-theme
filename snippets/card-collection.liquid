@@ -1,0 +1,34 @@
+{% comment %}
+  Renders a collection card
+
+  Accepts:
+  - card_collection: {Object} Collection Liquid object
+  - columns: {Number} Number of columns
+
+  Usage:
+  {% render 'card-collection', card_collection: collection, columns: 3 %}
+{% endcomment %}
+
+<div class="card-wrapper">
+  <a href="{{ card_collection.url }}" class="card">
+    <div class="card__inner">
+      {% if card_collection.image %}
+        <div class="card__media">
+          <img
+            src="{{ card_collection.image | image_url: width: 533 }}"
+            alt="{{ card_collection.image.alt | escape }}"
+            loading="lazy"
+            width="{{ card_collection.image.width }}"
+            height="{{ card_collection.image.height }}"
+          >
+        </div>
+      {% endif %}
+      <div class="card__content">
+        <h3 class="card__heading">{{ card_collection.title }}</h3>
+        {% if card_collection.description != blank %}
+          <p class="card__description">{{ card_collection.description | strip_html | truncatewords: 12 }}</p>
+        {% endif %}
+      </div>
+    </div>
+  </a>
+</div>

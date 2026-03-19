@@ -1,0 +1,94 @@
+{% comment %}
+  Renders a blog article card (image, title, excerpt, read-more button).
+
+  Accepts:
+  - article: {Object} Article object (required)
+  - show_image: {Boolean} Show article image (default: true)
+  - media_aspect_ratio: {String} Image aspect ratio, e.g. '16/9', '3/4' (default: '3/4')
+  - heading_level: {String} Heading tag 'h2' or 'h3' (default: 'h2')
+  - title_id: {String} Unique id for heading and aria-labelledby (recommended for a11y)
+  - title_as_link: {Boolean} Wrap title in link to article (default: true)
+  - button_style: {String} 'primary' or 'secondary' (default: 'secondary')
+
+  Usage:
+  {% render 'blog-card',
+    article: article,
+    show_image: section.settings.show_image,
+    media_aspect_ratio: section.settings.media_aspect_ratio,
+    title_id: 'ArticleTitle-' | append: article.id,
+    title_as_link: true,
+    button_style: 'secondary'
+  %}
+{% endcomment %}
+
+{%- liquid
+  assign show_image = show_image | default: true
+  assign media_aspect_ratio = media_aspect_ratio | default: '3/4'
+  assign heading_level = heading_level | default: 'h2'
+  assign title_as_link = title_as_link | default: true
+  assign button_style = button_style | default: 'secondary'
+-%}
+
+<article
+  class='blog-card'
+  {% if title_id %}
+    aria-labelledby='{{ title_id }}'
+  {% endif %}
+>
+  <div class='blog-card__content'>
+    {% if show_image and article.image %}
+      <div class='blog-card__image-container'>
+        {% render 'image-with-aspect-ratio',
+          image: article.image,
+          aspect_ratio: media_aspect_ratio,
+          alt: article.title,
+          sizes: '(min-width: 990px) 33vw, (min-width: 750px) 50vw, 100vw',
+          widths: '180, 360, 540, 720, 900, 1080, 1296'
+        %}
+      </div>
+    {% endif %}
+
+    {% if heading_level == 'h3' %}
+      <h3
+        class='blog-card__title headline-style-h4'
+        {% if title_id %}
+          id='{{ title_id }}'
+        {% endif %}
+      >
+        {% if title_as_link %}
+          <a href='{{ article.url }}' class='blog-card__title-link'>
+            {{ article.title }}
+          </a>
+        {% else %}
+          {{ article.title }}
+        {% endif %}
+      </h3>
+    {% else %}
+      <h2
+        class='blog-card__title headline-style-h4'
+        {% if title_id %}
+          id='{{ title_id }}'
+        {% endif %}
+      >
+        {% if title_as_link %}
+          <a href='{{ article.url }}' class='blog-card__title-link'>
+            {{ article.title }}
+          </a>
+        {% else %}
+          {{ article.title }}
+        {% endif %}
+      </h2>
+    {% endif %}
+
+    <div class='blog-card__excerpt text-size-regular'>
+      {{ article.excerpt }}
+    </div>
+  </div>
+  <a
+    href='{{ article.url }}'
+    aria-label=' Read More: {{ article.title }}'
+    class='blog-card__button button button--small button--{{ button_style }}'
+  >
+    {{ 'blogs.article.read_more' | t }}
+  </a>
+</article>

@@ -1,0 +1,165 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "why-hae",
+      "blocks": {
+        "left_photo_DHyjHh": {
+          "type": "left_photo",
+          "settings": {
+            "header": "",
+            "text": "",
+            "background_color": "#FCF8F4"
+          }
+        }
+      },
+      "block_order": [
+        "left_photo_DHyjHh"
+      ],
+      "disabled": true,
+      "settings": {}
+    },
+    "main_page_header_NxbEKK": {
+      "type": "main-page-header",
+      "name": "Main Page Header",
+      "settings": {
+        "custom_title": "",
+        "subtitle": "",
+        "header_background_image": "shopify://shop_images/5_noise_2x_2_9d2ed623-5eaf-438b-a68e-da2c862a27c2.jpg",
+        "padding_size": "section-padding-main",
+        "heading_size": "headline-style-h1",
+        "color_scheme": "scheme-cc80f6b4-b558-4219-8256-b69a754c7c0a"
+      }
+    },
+    "hae_image_with_text_QkqYCm": {
+      "type": "hae-image-with-text",
+      "blocks": {
+        "heading_BfqzRc": {
+          "type": "heading",
+          "settings": {
+            "heading": "Our Story",
+            "heading_size": "headline-style-h2"
+          }
+        },
+        "text_xnWTc7": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Pair large text with an image to give focus to your chosen product, collection, or blog post.</p>",
+            "text_size": "text-size-medium"
+          }
+        }
+      },
+      "block_order": [
+        "heading_BfqzRc",
+        "text_xnWTc7"
+      ],
+      "name": "Image with text",
+      "settings": {
+        "layout": "left",
+        "color_scheme": "",
+        "media_type": "image",
+        "media_aspect_ratio": "3/4",
+        "image": "shopify://shop_images/false-nails-natural-3-middle.jpg",
+        "video_url": ""
+      }
+    },
+    "hae_image_with_text_U476HJ": {
+      "type": "hae-image-with-text",
+      "blocks": {
+        "heading_JmywqJ": {
+          "type": "heading",
+          "settings": {
+            "heading": "Nail the Perfect Look",
+            "heading_size": "headline-style-h2"
+          }
+        },
+        "text_thQjBN": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Nail the Perfect Look with Organic Stick-Ons for a Polished Finish!</p>",
+            "text_size": "text-size-medium"
+          }
+        },
+        "button_MFqtfE": {
+          "type": "button",
+          "disabled": true,
+          "settings": {
+            "button_label": "Button",
+            "button_link": "",
+            "button_size": "button--medium"
+          }
+        }
+      },
+      "block_order": [
+        "heading_JmywqJ",
+        "text_thQjBN",
+        "button_MFqtfE"
+      ],
+      "name": "Image with text",
+      "settings": {
+        "layout": "right",
+        "color_scheme": "scheme-6628b2c5-2a6e-43ae-9f30-7d31869aa0c7",
+        "media_type": "image",
+        "media_aspect_ratio": "1/1",
+        "image": "shopify://shop_images/other-natural-1.jpg",
+        "video_url": ""
+      }
+    },
+    "hae_image_with_text_7T7qcP": {
+      "type": "hae-image-with-text",
+      "blocks": {
+        "heading_BPrWXA": {
+          "type": "heading",
+          "settings": {
+            "heading": "Nail the Perfect Look",
+            "heading_size": "headline-style-h2"
+          }
+        },
+        "text_W7cg4q": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Nail the Perfect Look with Organic Stick-Ons for a Polished Finish!</p>",
+            "text_size": "text-size-medium"
+          }
+        },
+        "button_CLq8dU": {
+          "type": "button",
+          "settings": {
+            "button_label": "Shop Now",
+            "button_link": "shopify://collections/new-arrivals",
+            "button_size": "button--medium"
+          }
+        }
+      },
+      "block_order": [
+        "heading_BPrWXA",
+        "text_W7cg4q",
+        "button_CLq8dU"
+      ],
+      "name": "Image with text",
+      "settings": {
+        "layout": "left",
+        "color_scheme": "background-1",
+        "media_type": "image",
+        "media_aspect_ratio": "3/4",
+        "image": "shopify://shop_images/false-nails-natural-2-middle.jpg",
+        "video_url": ""
+      }
+    }
+  },
+  "order": [
+    "main",
+    "main_page_header_NxbEKK",
+    "hae_image_with_text_QkqYCm",
+    "hae_image_with_text_U476HJ",
+    "hae_image_with_text_7T7qcP"
+  ]
+}

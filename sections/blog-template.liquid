@@ -1,0 +1,145 @@
+{{ 'template-blog.css' | asset_url | stylesheet_tag }}
+<link
+  rel='stylesheet'
+  href='{{ 'component-blog-card.css' | asset_url }}'
+  media='print'
+  onload="this.media='all'"
+>
+
+<section class='main-blog color-{{ section.settings.color_scheme }}'>
+  <div class='main-blog__contain container-main {{ section.settings.padding_size }}'>
+    <header class='main-blog__header{% if section.settings.header_image != blank %} main-blog__header--has-image{% endif %}'>
+      {% if section.settings.header_image != blank %}
+        <div class='main-blog__header-media'>
+          {% render 'image-with-aspect-ratio',
+            image: section.settings.header_image,
+            aspect_ratio: 'natural',
+            alt: blog.title,
+            loading: 'eager',
+            sizes: '(min-width: 990px) 86rem, 100vw',
+            widths: '600, 900, 1200, 1500, 1920',
+            class: 'main-blog__header-image'
+          %}
+        </div>
+        <div class='main-blog__header-overlay' aria-hidden='true'></div>
+      {% endif %}
+      <h1 class='main-blog__title {{ section.settings.heading_size }}'>
+        {{ blog.title }}
+      </h1>
+    </header>
+
+    {%- paginate blog.articles by section.settings.articles_per_page -%}
+      <div class='main-blog__grid grid grid-3 grid-gap-lg'>
+        {%- for article in blog.articles -%}
+          <div class='grid__item'>
+            {%
+              render 'blog-card',
+              article: article,
+              show_image: section.settings.show_image,
+              media_aspect_ratio: section.settings.media_aspect_ratio,
+              title_id: 'ArticleTitle-' | append: article.id | append: '-' | append: section.id,
+              title_as_link: true,
+              button_style: 'primary'
+            %}
+          </div>
+        {%- endfor -%}
+      </div>
+
+      {%- if paginate.pages > 1 -%}
+        <div class='main-blog__pagination'>
+          {% render 'pagination', paginate: paginate %}
+        </div>
+      {%- endif -%}
+    {%- endpaginate -%}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Blog",
+  "tag": "section",
+  "class": "section",
+  "enabled_on": {
+    "templates": ["blog"]
+  },
+  "settings": [
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "Color scheme",
+      "default": "background-1"
+    },
+    {
+      "type": "image_picker",
+      "id": "header_image",
+      "label": "Header background image"
+    },
+    {
+      "type": "select",
+      "id": "header_image_aspect_ratio",
+      "label": "Header image aspect ratio",
+      "options": [
+        { "value": "natural", "label": "Natural" },
+        { "value": "21/9", "label": "21:9" },
+        { "value": "16/9", "label": "16:9" },
+        { "value": "3/1", "label": "3:1" },
+        { "value": "2/1", "label": "2:1" }
+      ],
+      "default": "21/9"
+    },
+    {
+      "type": "select",
+      "id": "heading_size",
+      "label": "Heading size",
+      "options": [
+        { "value": "headline-style-h1", "label": "H1" },
+        { "value": "headline-style-h2", "label": "H2" },
+        { "value": "headline-style-h3", "label": "H3" },
+        { "value": "headline-style-h4", "label": "H4" },
+        { "value": "headline-style-h5", "label": "H5" },
+        { "value": "headline-style-h6", "label": "H6" }
+      ],
+      "default": "headline-style-h2"
+    },
+    {
+      "type": "select",
+      "id": "padding_size",
+      "label": "Section padding",
+      "options": [
+        { "value": "section-padding-x-small", "label": "Extra small" },
+        { "value": "section-padding-small", "label": "Small" },
+        { "value": "section-padding-main", "label": "Medium" },
+        { "value": "section-padding-large", "label": "Large" }
+      ],
+      "default": "section-padding-small"
+    },
+    {
+      "type": "range",
+      "id": "articles_per_page",
+      "min": 3,
+      "max": 24,
+      "step": 3,
+      "default": 9,
+      "label": "Articles per page"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_image",
+      "default": true,
+      "label": "Show article image"
+    },
+    {
+      "type": "select",
+      "id": "media_aspect_ratio",
+      "label": "Image aspect ratio",
+      "options": [
+        { "value": "16/9", "label": "16:9" },
+        { "value": "4/3", "label": "4:3" },
+        { "value": "1/1", "label": "1:1" },
+        { "value": "3/4", "label": "3:4" }
+      ],
+      "default": "3/4"
+    }
+  ]
+}
+{% endschema %}

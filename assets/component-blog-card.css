@@ -1,0 +1,45 @@
+/*------------------------------------*\
+    #Blog Card
+\*------------------------------------*/
+
+.blog-card {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.blog-card__content {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.blog-card__image-container {
+  margin-bottom: var(--space-5);
+  border-radius: var(--border-radius-main);
+  overflow: hidden;
+}
+
+.blog-card__excerpt {
+  flex-grow: 1;
+}
+
+.blog-card__title {
+  margin-bottom: var(--space-4);
+}
+
+.blog-card__title-link {
+  color: inherit;
+  text-decoration: none;
+}
+
+.blog-card__title-link:hover,
+.blog-card__title-link:focus {
+  text-decoration: underline;
+}
+
+.blog-card__button {
+  margin-top: auto;
+  margin-bottom: 0;
+}

@@ -1,0 +1,100 @@
+/**
+ * Klaviyo BIS form overrides
+ * Targets Klaviyo-injected elements to match theme spacing and layout.
+ */
+
+/* Elements with data-testid starting with "klaviyo" – negative space-8 */
+[data-testid^='klaviyo'],
+[aria-modal='true'] .klaviyo-form > .needsclick {
+  padding: var(--space-8) !important;
+}
+
+[aria-modal='true'] .klaviyo-form {
+  min-width: 38vw !important;
+}
+
+[aria-modal='true'] .klaviyo-form-version-cid_6 {
+  padding: 0 !important;
+}
+
+[aria-modal='true'] .klaviyo-form-version-cid_6 form {
+  padding: 0 !important;
+}
+
+[data-testid='form-row'] h1 * {
+  padding-top: var(--space-4) !important;
+  display: block !important;
+  font-size: var(--headline-size-h4) !important;
+  max-width: 100% !important;
+  margin: 0 auto !important;
+  padding-bottom: var(--space-7) !important;
+  font-family: var(--primary-font-family) !important;
+}
+
+[aria-modal='true'] .klaviyo-form input[type='email'] {
+  background-color: white !important;
+  height: 5rem !important;
+  border: 2px solid rgb(var(--color-base-text-1)) !important;
+}
+
+[aria-modal='true'] .klaviyo-form [for^='opt_in_promotional_email__10__11'] {
+  margin-bottom: var(--space-4) !important;
+}
+
+[aria-modal='true'] .needsclick {
+  color: rgb(var(--color-brand-1)) !important;
+}
+
+[aria-modal='true'] .klaviyo-form fieldset {
+  display: flex !important;
+  flex-direction: row !important;
+  width: 100% !important;
+  color: rgb(var(--color-brand-2)) !important;
+}
+
+[aria-modal='true'] .klaviyo-form button {
+  height: 5rem !important;
+  transition: all 0.2s var(--default-easing) !important;
+  font-family: var(--primary-font-family) !important;
+  font-size: var(--text-size-medium) !important;
+  letter-spacing: 0.085rem !important;
+}
+
+[aria-modal='true'] [data-testid='form-row'] button:hover,
+[aria-modal='true'] [data-testid='form-row'] button:focus {
+  background-color: rgb(var(--color-brand-1)) !important;
+  color: rgb(var(--color-brand-2)) !important;
+  border-color: rgb(var(--color-brand-1)) !important;
+}
+
+[aria-modal='true'] .klaviyo-form strong {
+  font-size: var(--headline-size-h3) !important;
+  font-family: var(--primary-font-family) !important;
+}
+[aria-modal='true'] > .needsclick {
+  border-radius: var(--border-radius-main) !important;
+  overflow: hidden !important;
+  font-family: var(--primary-font-family) !important;
+}
+
+[aria-modal='true'] button[aria-label='Close dialog'] {
+  width: 3rem !important;
+  height: 3rem !important;
+}
+
+[aria-modal='true'] [aria-label='Close dialog'] svg {
+  width: 100% !important;
+  height: 100% !important;
+  fill: rgb(var(--color-brand-1)) !important;
+  color: rgb(var(--color-brand-1)) !important;
+  transition: transform 0.2s var(--default-easing) !important;
+}
+
+[aria-modal='true'] [aria-label='Close dialog'] svg path {
+  fill: rgb(var(--color-brand-1)) !important;
+  color: rgb(var(--color-brand-1)) !important;
+}
+
+[aria-modal='true'] [aria-label='Close dialog']:hover svg {
+  transform: rotate(90deg) !important;
+}

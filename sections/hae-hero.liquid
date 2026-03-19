@@ -1,0 +1,194 @@
+{% comment %}[CSS-INLINE: hae-hero.css | <link href='{{ 'hae-hero.css' | asset_url }}' rel='stylesheet' inline-css='true'>]{% endcomment %}
+<style>
+.hero-header__media{position:relative;height:100%;overflow:hidden;aspect-ratio:1/1;width:100%}@media screen and (min-width:940px){.hero-header__media{aspect-ratio:1/1}}.hero-header__layout{display:flex;flex-direction:column-reverse;width:100%;align-items:center}@media (min-width:750px){.hero-header__layout{flex-direction:row}}.hero-header__left-column{width:100%;align-items:center}.hero-header__text{margin:auto;max-width:38rem;width:100%}.hero-header__heading{margin-bottom:var(--space-6)}.hero-header__right-column{width:100%}.hero-header__sticker{right:24px;position:absolute;z-index:1;bottom:auto;right:var(--space-2);top:var(--space-8);max-width:5rem;width:100%;height:100%}@media (min-width:750px){.hero-header__sticker{right:var(--space-4);top:var(--space-8);max-width:7rem}}
+</style>
+{% comment %}[/CSS-INLINE]{% endcomment %}
+
+<section class='hero-header  color-{{ section.settings.color_scheme }}'>
+  <div class='hero-header__layout  grid grid-2'>
+    <div class='hero-header__left-column  section-padding-small'>
+      <div class='hero-header__text  container-main'>
+        <div class='hero-header__heading headline-style-display'>
+          {{ section.settings['header-text'] }}
+        </div>
+        <a
+          class='button  button--primary button--large  width-fit-content'
+          href='{{ section.settings.button-url }}'
+        >
+          {{- section.settings['button-text'] -}}
+        </a>
+      </div>
+    </div>
+
+    <div class='hero-header__right-column col-mlg-6  p-relative'>
+      <div class='hero-header__media'>
+        {% if section.settings.show_sticker %}
+          <div class='hero-header__sticker'>
+            {% if section.settings.sticker_image != blank %}
+              {% render 'image-with-aspect-ratio',
+                image: section.settings.sticker_image,
+                aspect_ratio: '1/1',
+                alt: 'Sticker',
+                loading: 'lazy',
+                sizes: '(min-width: 750px) 7rem, 5rem',
+                widths: '80, 112, 160'
+              %}
+            {% else %}
+              {% render 'floating-sticker',
+                sticker_type: section.settings['floating-sticker'],
+                custom_class: 'hero-half-sticker',
+                color: section.settings.sticker_color
+              %}
+            {% endif %}
+          </div>
+        {% endif %}
+
+        {% if section.settings.media_type == 'image' %}
+          {{
+            section.settings['hero-image']
+            | image_url: width: 1440
+            | image_tag:
+              class: 'responsive-image',
+              loading: 'eager',
+              fetchpriority: 'high',
+              preload: true,
+              sizes: '(max-width: 749px) 100vw, 50vw',
+              widths: '425, 668, 900, 1200',
+              alt: section.settings['hero-image'].alt
+            | default: 'Featured content'
+          }}
+        {% else %}
+          <video
+            class='responsive-video'
+            autoplay
+            loop
+            muted
+            playsinline
+            poster='{{ section.settings.video_poster | img_url }}'
+          >
+            <source src='{{ section.settings.video_url }}' type='video/mp4'>
+            Your browser does not support the video tag.
+          </video>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Hero - half photo",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Colors"
+    },
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "Color scheme",
+      "default": "background-1"
+    },
+    {
+      "type": "header",
+      "content": "Content"
+    },
+    {
+      "type": "richtext",
+      "id": "header-text",
+      "label": "Header text"
+    },
+    {
+      "type": "text",
+      "id": "button-text",
+      "label": "Button text",
+      "default": "Shop"
+    },
+    {
+      "type": "url",
+      "id": "button-url",
+      "label": "Button Link"
+    },
+    {
+      "type": "header",
+      "content": "Media"
+    },
+    {
+      "type": "select",
+      "id": "media_type",
+      "options": [
+        { "value": "image", "label": "Image" },
+        { "value": "video", "label": "Video" }
+      ],
+      "default": "image",
+      "label": "Media type"
+    },
+    {
+      "type": "image_picker",
+      "id": "hero-image",
+      "label": "Image",
+      "info": "Suggestion: 72res, at least 1440px wide"
+    },
+    {
+      "type": "url",
+      "id": "video_url",
+      "label": "Video URL",
+      "info": "MP4 format required"
+    },
+    {
+      "type": "image_picker",
+      "id": "video_poster",
+      "label": "Video poster image",
+      "info": "Shown while video loads"
+    },
+    {
+      "type": "header",
+      "content": "Sticker"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_sticker",
+      "label": "Show sticker",
+      "default": true
+    },
+    {
+      "type": "select",
+      "id": "floating-sticker",
+      "options": [
+        { "value": "none", "label": "None" },
+        { "value": "stars", "label": "Stars" },
+        { "value": "sun-blue", "label": "Sun Blue" },
+        { "value": "sun-pink", "label": "Sun Pink" }
+      ],
+      "label": "Floating sticker"
+    },
+    {
+      "type": "color",
+      "id": "sticker_color",
+      "label": "Sticker color",
+      "default": "#FDF130"
+    },
+    {
+      "type": "image_picker",
+      "id": "sticker_image",
+      "label": "Custom Sticker Image",
+      "info": "Upload PNG (transparent bg) or SVG if not using the default sticker types"
+    }
+  ],
+
+  "presets": [
+    {
+      "name": "Hero - half photo",
+      "category": "Hero & Banners",
+      "settings": {
+        "header-text": "<h1>Welcome to our store</h1>",
+        "button-text": "Shop Now",
+        "button-url": "/collections/all",
+        "show_sticker": true,
+        "floating-sticker": "stars",
+        "sticker_color": "#FDF130"
+      }
+    }
+  ]
+}
+{% endschema %}

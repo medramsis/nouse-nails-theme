@@ -1,0 +1,101 @@
+
+
+
+
+
+/*------------------------------------*\
+    #Hero Half Photo
+\*------------------------------------*/
+
+.hero-header__media {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  aspect-ratio: 1/1;
+  width: 100%;
+}
+
+@media screen and (min-width: 940px) {
+  .hero-header__media {
+    aspect-ratio: 1/1;
+  }
+}
+
+.hero-header__layout {
+  display: flex;
+  flex-direction: column-reverse;
+  width: 100%;
+  align-items: center;
+}
+
+@media (min-width: 750px) {
+  .hero-header__layout {
+    flex-direction: row;
+  }
+}
+
+
+
+
+
+/*------------------------------------*\
+    #Hero Left Column
+\*------------------------------------*/
+
+.hero-header__left-column {
+  width: 100%;
+  align-items: center;
+}
+
+.hero-header__text {
+  margin: auto;
+  max-width: 38rem;
+  width: 100%;
+}
+
+.hero-header__heading {
+  margin-bottom: var(--space-6);
+}
+
+
+
+
+
+/*------------------------------------*\
+    #Hero Right Column
+\*------------------------------------*/
+
+.hero-header__right-column {
+  width: 100%;
+}
+
+
+
+
+
+/*------------------------------------*\
+    #Hero Stickers
+\*------------------------------------*/
+
+.hero-header__sticker {
+  max-width: 15rem;
+  right: 24px;
+  position: absolute;
+  z-index: 1;
+  bottom: auto;
+  max-width: 100%;
+  right: var(--space-2);
+  top: var(--space-8);
+  max-width: 5rem;
+  width: 100%;
+  height: 100%;
+}
+
+@media (min-width: 750px) {
+  .hero-header__sticker {
+    right: var(--space-4);
+    top: var(--space-8);
+    max-width: 7rem;
+  }
+}

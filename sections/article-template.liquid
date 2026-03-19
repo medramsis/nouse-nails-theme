@@ -1,0 +1,263 @@
+{{ 'article-template.css' | asset_url | stylesheet_tag }}
+
+<article class='article-template'>
+  <!-- Hero Header Section -->
+  <header class='article-hero color-{{ section.settings.header_color_scheme }}'>
+    <div class='article-hero__container container-main'>
+      <div class='article-hero__content'>
+        {% if section.settings.blog_show_date %}
+          <time
+            class='article-hero__date'
+            datetime='{{ article.published_at | date: '%Y-%m-%d' }}'
+          >
+            {{ article.published_at | time_tag: format: 'date' }}
+          </time>
+        {% endif %}
+
+        <h1 class='article-hero__title headline-style-display'>
+          {{ article.title }}
+        </h1>
+
+        {% if article.excerpt.size > 0 %}
+          <div class='article-hero__excerpt'>
+            {{ article.excerpt }}
+          </div>
+        {% endif %}
+      </div>
+
+      {% if article.image %}
+        <div class='article-hero__image'>
+          {% render 'image-with-aspect-ratio',
+            image: article.image,
+            aspect_ratio: section.settings.media_aspect_ratio,
+            alt: article.title,
+            sizes: '(min-width: 750px) 50vw, 100vw',
+            widths: '480, 720, 960, 1200, 1440'
+          %}
+        </div>
+      {% endif %}
+    </div>
+  </header>
+
+  <!-- Main Content Section -->
+  <div class='article-content color-{{ section.settings.body_color_scheme }}'>
+    <div class='article-content__container container-main {{ section.settings.body_padding_size }}'>
+      <div class='article-content__wrapper'>
+        <div class='article-content__body'>
+          {{ article.content }}
+        </div>
+
+        <!-- Article Footer -->
+        <footer class='article-footer'>
+          {% if section.settings.blog_show_author %}
+            <div class='article-footer__author'>
+              <span class='article-footer__author-label'>By</span>
+              <span class='article-footer__author-name'>
+                {{- article.author -}}
+              </span>
+            </div>
+          {% endif %}
+
+          {% if section.settings.show_share_buttons %}
+            <div class='article-footer__social'>
+              <span class='article-footer__social-label'>Share:</span>
+              <div class='article-footer__social-buttons'>
+                <a
+                  href='https://www.facebook.com/sharer/sharer.php?u={{ shop.url | append: article.url }}'
+                  class='article-footer__social-button'
+                  target='_blank'
+                  rel='noopener noreferrer'
+                  aria-label='Share on Facebook'
+                >
+                  Share
+                </a>
+                <a
+                  href='https://twitter.com/intent/tweet?text={{ article.title | url_encode }}&url={{ shop.url | append: article.url | url_encode }}'
+                  class='article-footer__social-button'
+                  target='_blank'
+                  rel='noopener noreferrer'
+                  aria-label='Share on Twitter'
+                >
+                  Tweet
+                </a>
+                <a
+                  href='https://pinterest.com/pin/create/button/?url={{ shop.url | append: article.url | url_encode }}&media={{ article.image | img_url: '1200x' | url_encode }}&description={{ article.title | url_encode }}'
+                  class='article-footer__social-button'
+                  target='_blank'
+                  rel='noopener noreferrer'
+                  aria-label='Pin on Pinterest'
+                >
+                  Pin it
+                </a>
+              </div>
+            </div>
+          {% endif %}
+        </footer>
+
+        <!-- Back to Journal Button -->
+        <div class='article-footer__navigation'>
+          <a
+            href='{{ blog.url }}'
+            class='article-footer__back-button button button--primary button--large'
+          >
+            <span class='article-footer__back-arrow'>←</span>
+            {{ section.settings.back_button_text | default: 'BACK TO JOURNAL' }}
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</article>
+
+<script type='application/ld+json'>
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": {{ article.title | json }},
+  "datePublished": {{ article.published_at | date: '%Y-%m-%dT%H:%M:%SZ' | json }},
+  "dateModified": {{ article.updated_at | date: '%Y-%m-%dT%H:%M:%SZ' | json }},
+  "author": {
+    "@type": "Person",
+    "name": {{ article.author | json }}
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": {{ shop.name | json }},
+    "logo": {
+      "@type": "ImageObject",
+      "url": {{ settings.logo | img_url: 'master' | prepend: 'https:' | json }}
+    }
+  },
+  "url": {{ shop.url | append: article.url | json }}
+  {%- if article.image -%}
+  ,"image": {
+    "@type": "ImageObject",
+    "url": {{ article.image | img_url: 'master' | prepend: 'https:' | json }},
+    "width": {{ article.image.width }},
+    "height": {{ article.image.height }}
+  }
+  {%- endif -%}
+  {%- if article.excerpt.size > 0 -%}
+  ,"description": {{ article.excerpt | strip_html | json }}
+  {%- endif -%}
+}
+</script>
+
+{% schema %}
+{
+  "name": "Article Template",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Header"
+    },
+    {
+      "type": "color_scheme",
+      "id": "header_color_scheme",
+      "label": "Color scheme",
+      "default": "background-1"
+    },
+    {
+      "type": "checkbox",
+      "id": "blog_show_author",
+      "label": "Show author",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "blog_show_date",
+      "label": "Show date",
+      "default": false
+    },
+    {
+      "type": "checkbox",
+      "id": "show_share_buttons",
+      "label": "Show social sharing buttons",
+      "default": true
+    },
+    {
+      "type": "header",
+      "content": "Media"
+    },
+    {
+      "type": "select",
+      "id": "media_aspect_ratio",
+      "label": "Media aspect ratio",
+      "options": [
+        {
+          "value": "16/9",
+          "label": "16:9 (Landscape)"
+        },
+        {
+          "value": "4/3",
+          "label": "4:3 (Portrait Horizontal)"
+        },
+        {
+          "value": "1/1",
+          "label": "1:1 (Square)"
+        },
+        {
+          "value": "1/.85",
+          "label": "1:0.8 (Shorter Square)"
+        },
+        {
+          "value": "3/4",
+          "label": "3:4 (Portrait)"
+        }
+      ],
+      "default": "1/1"
+    },
+    {
+      "type": "header",
+      "content": "Body"
+    },
+    {
+      "type": "color_scheme",
+      "id": "body_color_scheme",
+      "label": "Color scheme",
+      "default": "background-1"
+    },
+    {
+      "type": "header",
+      "content": "Navigation"
+    },
+    {
+      "type": "text",
+      "id": "back_button_text",
+      "label": "Back button text",
+      "default": "BACK TO JOURNAL",
+      "info": "Text displayed on the back to journal button"
+    },
+    {
+      "type": "select",
+      "id": "body_padding_size",
+      "label": "Padding Size",
+      "options": [
+        {
+          "value": "section-padding-x-small",
+          "label": "Extra Small"
+        },
+        {
+          "value": "section-padding-small",
+          "label": "Small"
+        },
+        {
+          "value": "section-padding-main",
+          "label": "Medium"
+        },
+        {
+          "value": "section-padding-large",
+          "label": "Large"
+        }
+      ],
+      "default": "section-padding-small"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Article Template",
+      "category": "Templates & Pages"
+    }
+  ]
+}
+{% endschema %}

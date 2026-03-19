@@ -1,0 +1,53 @@
+/*------------------------------------*\
+    #Marquee Banner
+\*------------------------------------*/
+
+@keyframes ticker {
+  0% {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+    visibility: visible;
+  }
+
+  100% {
+    -webkit-transform: translate3d(-50%, 0, 0);
+    transform: translate3d(-50%, 0, 0);
+  }
+}
+
+.marquee-banner {
+  overflow: hidden;
+  width: 100%;
+}
+
+.marquee-banner__layout {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.marquee-banner__text {
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+  padding: var(--space-6) 0;
+  padding-right: 100%;
+  white-space: nowrap;
+  max-width: none;
+  -webkit-animation-iteration-count: infinite;
+  animation-iteration-count: infinite;
+  -webkit-animation-timing-function: linear;
+  animation-timing-function: linear;
+  -webkit-animation-name: ticker;
+  animation-name: ticker;
+  -webkit-animation-duration: 60s;
+  animation-duration: 60s;
+  color: var(--color-text-1);
+  font-size: var(--headline-size-h4);
+  text-transform: uppercase;
+  font-weight: 500;
+}
+
+.marquee-banner__text span {
+  display: inline-block;
+}

@@ -1,0 +1,170 @@
+<link
+  rel='stylesheet'
+  href='{{ 'testimonials.css' | asset_url }}'
+  media='print'
+  onload="this.media='all'"
+>
+<section
+  class='testimonials color-{{ section.settings.color_scheme }}'
+  data-section-id='{{ section.id }}'
+  data-section-type='testimonials'
+>
+  <div class='testinmonials__contain container-main section-padding-small'>
+    {% if section.settings.title != blank %}
+      <div class='testimonials__header'>
+        <h2 class='testimonials__title {{ section.settings.headline_size }}'>
+          {{ section.settings.title | escape }}
+        </h2>
+      </div>
+    {% endif %}
+
+    {% if section.blocks.size > 0 %}
+      <swiper-slideshow
+        class='testimonials__swiper'
+        slides-per-view='1'
+        space-between='25'
+        centered-slides='true'
+        loop='true'
+        autoplay='true'
+        autoplay-delay='2000'
+        show-navigation='true'
+        show-pagination='false'
+        effect='slide'
+        speed='800'
+        create-elements='true'
+        disableOn='mediumUp'
+      >
+        <div
+          class='testimonials__grid grid grid-3 swiper'
+          data-swiper-slideshow
+        >
+          <div class='swiper-wrapper' data-swiper-slideshow-wrapper>
+            {% for block in section.blocks limit: 3 %}
+              <div
+                class='testimonials__item swiper-slide'
+                {{ block.shopify_attributes }}
+                data-swiper-slide
+              >
+                <div class='testimonials__content'>
+                  <div class='testimonials__quote-icon icon icon-small'>
+                    {% render 'icon-quote' %}
+                  </div>
+                  {% if block.settings.quote != blank %}
+                    <blockquote class='testimonials__quote  text-size-main'>
+                      {{ block.settings.quote }}
+                    </blockquote>
+                  {% endif %}
+                  {% if block.settings.author != blank %}
+                    <cite class='testimonials__author text-size-main'>
+                      {{- block.settings.author | escape -}}
+                    </cite>
+                  {% endif %}
+                </div>
+              </div>
+            {% endfor %}
+          </div>
+        </div>
+      </swiper-slideshow>
+    {% endif %}
+
+    {% if section.blocks.size == 0 %}
+      <div class='testimonials__empty'>
+        <p>Add testimonial blocks to showcase customer reviews</p>
+      </div>
+    {% endif %}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Testimonials",
+  "max_blocks": 3,
+  "settings": [
+    {
+      "type": "header",
+      "content": "Color Scheme"
+    },
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "Color scheme",
+      "default": "background-1"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Headline",
+      "default": "What Our Customers Say"
+    },
+    {
+      "type": "select",
+      "id": "headline_size",
+      "label": "Headline size",
+      "options": [
+        {
+          "value": "headline-style-h1",
+          "label": "H1"
+        },
+        {
+          "value": "headline-style-h2",
+          "label": "H2"
+        },
+        {
+          "value": "headline-style-h3",
+          "label": "H3"
+        },
+        {
+          "value": "headline-style-h4",
+          "label": "H4"
+        },
+        {
+          "value": "headline-style-h5",
+          "label": "H5"
+        },
+        {
+          "value": "headline-style-h6",
+          "label": "H6"
+        }
+      ],
+      "default": "headline-style-h3"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "quote",
+      "name": "Testimonial",
+      "settings": [
+        {
+          "type": "richtext",
+          "id": "quote",
+          "label": "Testimonial",
+          "default": "<p>Add customer reviews and testimonials to showcase your store's happy customers.</p>"
+        },
+        {
+          "type": "text",
+          "id": "author",
+          "label": "Author name",
+          "default": "Customer Name"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "HAE Testimonials",
+      "category": "Content & Text",
+      "blocks": [
+        {
+          "type": "quote"
+        },
+        {
+          "type": "quote"
+        },
+        {
+          "type": "quote"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

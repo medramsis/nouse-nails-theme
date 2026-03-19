@@ -1,0 +1,166 @@
+<link rel='stylesheet' href='{{ 'component-breadcrumbs.css' | asset_url }}' media='print' onload="this.media='all'">
+{% unless template == 'index'
+  or template == 'cart'
+  or template == 'list-collections'
+  or template == '404'
+%}
+  {% assign t = template | split: '.' | first %}
+
+  <nav
+    class='breadcrumbs {% if template contains 'product' %}breadcrumbs--product-page {% endif %}'
+    role='navigation'
+    aria-label='breadcrumbs'
+  >
+    <ol class='breadcrumbs__inner container-large section-padding-small'>
+      {% if template.name == 'order' or template.name == 'addresses' %}
+        <li>
+          <a href='/' title='Home'>Home </a>
+        </li>
+        <li>
+          <a href='/account' title='Account'>My Account</a>
+        </li>
+      {% else %}
+        <li>
+          <a href='/' title='Home'>Home </a>
+        </li>
+      {% endif %}
+
+      {% case t %}
+          <li>
+            <a href='{{ page.url }}' aria-current='page'>{{ page.title }}</a>
+          </li>
+
+        {% when 'product' %}
+          {% assign product_collections = product.collections %}
+          {% if product_collections.size > 0 %}
+            {% assign gown_collection = product_collections
+              | where: 'title', 'Gowns'
+              | first
+            %}
+            {% if gown_collection %}
+              <li>
+                {{ gown_collection.title | link_to: gown_collection.url }}
+              </li>
+            {% else %}
+              <li>
+                {{
+                  product_collections.first.title
+                  | link_to: product_collections.first.url
+                }}
+              </li>
+            {% endif %}
+          {% endif %}
+
+          <li>
+            <a href='{{ product.url }}' aria-current='page'>
+              {{- product.title -}}
+            </a>
+          </li>
+
+        {% when 'collection' and collection.handle %}
+          {% if current_tags %}
+            <li>{{ collection.title | link_to: collection.url }}</li>
+            <li>
+              {% capture tag_url %}{{ collection.url }}/{{ current_tags | join: "+" }}{% endcapture %}
+              <a href='{{ tag_url }}' aria-current='page'>
+                {{- current_tags | join: ' + ' -}}
+              </a>
+            </li>
+          {% else %}
+            <li>
+              <a href='{{ collection.url }}' aria-current='page'>
+                {{- collection.title -}}
+              </a>
+            </li>
+          {% endif %}
+        {% else %}
+          <li aria-current='page'>
+            <a href='{{ request.path }}' aria-current='page'>
+              {{- page_title -}}
+            </a>
+          </li>
+      {% endcase %}
+    </ol>
+  </nav>
+
+  {%- liquid
+    assign bc_position = 1
+  -%}
+  <script type='application/ld+json'>
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": {{ bc_position }},
+        "name": {{ 'general.breadcrumbs.home' | t | default: 'Home' | json }},
+        "item": {{ shop.url | json }}
+      }
+      {%- if template.name == 'order' or template.name == 'addresses' -%}
+        ,{
+          "@type": "ListItem",
+          "position": 2,
+          "name": {{ 'customer.account.title' | t | default: 'My Account' | json }},
+          "item": {{ shop.url | append: '/account' | json }}
+        }
+      {%- elsif t == 'product' -%}
+        {%- assign bc_collection = product.collections | where: 'title', 'Gowns' | first -%}
+        {%- unless bc_collection -%}
+          {%- assign bc_collection = product.collections.first -%}
+        {%- endunless -%}
+        {%- if bc_collection -%}
+          ,{
+            "@type": "ListItem",
+            "position": 2,
+            "name": {{ bc_collection.title | json }},
+            "item": {{ shop.url | append: bc_collection.url | json }}
+          }
+          ,{
+            "@type": "ListItem",
+            "position": 3,
+            "name": {{ product.title | json }},
+            "item": {{ shop.url | append: product.url | json }}
+          }
+        {%- else -%}
+          ,{
+            "@type": "ListItem",
+            "position": 2,
+            "name": {{ product.title | json }},
+            "item": {{ shop.url | append: product.url | json }}
+          }
+        {%- endif -%}
+      {%- elsif t == 'collection' and collection.handle != blank -%}
+        {%- if current_tags -%}
+          ,{
+            "@type": "ListItem",
+            "position": 2,
+            "name": {{ collection.title | json }},
+            "item": {{ shop.url | append: collection.url | json }}
+          }
+          ,{
+            "@type": "ListItem",
+            "position": 3,
+            "name": {{ current_tags | join: ' + ' | json }},
+            "item": {{ shop.url | append: collection.url | append: '/' | append: current_tags | join: '+' | json }}
+          }
+        {%- else -%}
+          ,{
+            "@type": "ListItem",
+            "position": 2,
+            "name": {{ collection.title | json }},
+            "item": {{ shop.url | append: collection.url | json }}
+          }
+        {%- endif -%}
+      {%- else -%}
+        ,{
+          "@type": "ListItem",
+          "position": 2,
+          "name": {{ page_title | json }},
+          "item": {{ shop.url | append: request.path | json }}
+        }
+      {%- endif -%}
+    ]
+  }
+  </script>
+{% endunless %}

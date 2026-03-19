@@ -1,0 +1,402 @@
+Liquid templating:
+
+Always use proper Liquid syntax with {{ and {% tags
+Include null checks for object properties: {{ product.title | default: 'No title' }}
+Use {% liquid %} tags for cleaner multi-line logic
+Follow Shopify's naming conventions for variables and handles
+
+Theme development:
+
+Structure files according to Shopify's theme architecture (templates, sections, snippets, assets)
+Use semantic section names and settings in schema tags
+Include proper {% comment %} blocks for documentation
+Follow responsive design patterns with Shopify's CSS framework
+
+Performance optimization:
+
+Minimize liquid loops and database queries
+Use {% paginate %} for large collections
+Implement lazy loading for images with loading="lazy"
+Optimize asset delivery with {{ 'style.css' | asset_url }}
+
+Code Quality Rules
+JavaScript/TypeScript:
+
+Use modern ES6+ syntax
+Implement proper error handling for API calls
+Follow Shopify's AJAX API patterns for cart updates
+Use TypeScript for better type safety in complex themes
+
+CSS/SCSS:
+
+Always check base.css first before creating new utility / base classes
+
+Use BEM methodology for class naming and provided example as base. 5 breaks before comments that split up sections.
+Implement CSS custom properties for theming
+Follow mobile-first responsive design
+
+#### Examples:
+
+```
+/*------------------------------------*\
+    #Header
+\*------------------------------------*/
+
+
+[data-sticky-header] {
+    z-index: 2;
+}
+
+/*
+height: 8rem;
+background: #f7f6f347;
+backdrop-filter: blur(30px);
+} */
+
+.header-wrapper {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 5;
+    height: 6rem;
+    transition: all .3s var(--default-easing);
+}
+
+@media screen and (min-width: 940px) {
+.scrolled-past-header:not(.shopify-section-header-hidden) .header-wrapper {
+    height: 8rem
+}
+}
+
+
+
+
+/*------------------------------------*\
+    #Hero Half Photo
+\*------------------------------------*/
+
+
+.hero-header__media {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    aspect-ratio: 1/1.055;
+    width: 100%;
+}
+
+
+.hero-header__layout {
+    display: flex;
+    flex-direction: column-reverse;
+    width: 100%;
+    align-items: center;
+}
+
+
+@media (min-width: 768px) {
+    .hero-header__layout {
+        flex-direction: row;
+    }
+}
+
+
+
+
+/*------------------------------------*\
+    #Hero Left Column
+\*------------------------------------*/
+
+
+.hero-header__left-column {
+    width: 100%;
+    padding-top: var(--space-8);
+    padding-bottom: var(--space-8);
+    align-items: center;
+}
+
+
+.hero-header__text {
+    margin: auto;
+    max-width: 38rem;
+    width: 100%;
+}
+
+.hero-header__heading {
+    margin-bottom: var(--space-6);
+}
+
+
+
+/*------------------------------------*/
+/* Featured Collections */
+/*------------------------------------*/
+
+
+
+/*------------------------------------*/
+/* Media Wrapper                        */
+/*------------------------------------*/
+
+
+.featured-collections__column__media-wrapper {
+    position: relative;
+    width: 100%;
+}
+
+.featured-collections__column__media {
+    position: relative;
+    aspect-ratio: 1/.9;
+    width: 100%;
+    border-radius: var(--border-radius-main);
+    overflow: hidden;
+    margin-bottom: var(--space-9);
+}
+
+
+
+
+/*------------------------------------*/
+/* Column */
+/*------------------------------------*/
+
+
+.featured-collections__column  {
+    background-color: rgb(var(--color-background));
+    color: rgb(var(--color-text-1));
+}
+
+
+.featured-collections__column__layout {
+    text-decoration: none;
+    position: relative;
+    padding-left: var(--space-9);
+    padding-right: var(--space-9);
+    display: block;
+}
+
+@media screen and (min-width: 748px) {
+    .featured-collections__column__layout  {
+        padding: var(--space-9);
+        height: 100%;
+    }
+}
+
+
+
+
+
+/*------------------------------------*/
+/* Sticker */
+/*------------------------------------*/
+
+
+.featured-collections__column__sticker {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    z-index: 1;
+    max-width: 3rem;
+    width: 100%;
+    aspect-ratio: 1/1;
+    left: calc(-1 * var(--space-7));
+    bottom: calc(-1 * var(--space-7));
+}
+
+@media screen and (min-width: 748px) {
+    .featured-collections__column__sticker {
+        max-width: 6rem;
+    };
+}
+
+.featured-collections__layout .featured-collections__column:nth-child(2) .featured-collections__column__layout  .featured-collections__column__sticker{
+    top: var(--space-9);
+    right: calc(-1 * var(--space-7));
+    left: auto;
+    bottom: auto;
+}
+
+
+@media screen and (min-width: 748px) {
+    .featured-collections__layout .featured-collections__column:nth-child(2) .featured-collections__column__layout  .featured-collections__column__sticker{
+        left: auto;
+        bottom: auto;
+    }
+}
+
+
+
+/*------------------------------------*/
+/* Headline */
+/*------------------------------------*/
+
+
+.featured-collections__column__headline {
+    color: rgb(var(--color-accent));
+    margin-bottom: var(--space-7);
+}
+
+.featured-collections__column__eyebrow {
+    margin-bottom: var(--space-2);
+}
+
+@media screen and (min-width: 748px) {
+    .featured-collections__column__text-wrapper {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: flex-end
+    }
+}
+
+.featured-collections__column__text {
+    flex-basis: min-content;
+    max-width: 20rem;
+}
+
+
+@media screen and (min-width: 748px) {
+    .featured-collections__column__button-wrapper {
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        z-index: 1;
+        padding: inherit;
+        top: auto;
+        padding-right: var(--space-9);
+        bottom: var(--space-9);
+    }
+}
+
+
+
+
+/*------------------------------------*\
+    #Hero Right Column
+\*------------------------------------*/
+
+
+.hero-header__right-column {
+    width: 100%;
+}
+
+
+
+
+
+
+/*------------------------------------*\
+    #Hero Stickers
+\*------------------------------------*/
+
+.hero-header__sticker {
+    max-width: 15rem;
+    right: 24px;
+    position: absolute;
+    z-index: 1;
+    bottom: auto;
+    max-width: 100%;
+    right: var(--space-2);
+    top: var(--space-8);
+    max-width: 5rem;
+    width: 100%;
+    height: 100%;
+}
+
+@media (min-width: 768px) {
+    .hero-header__sticker {
+        right: var(--space-4);
+        top: var(--space-8);
+        max-width: 7rem;
+    }
+}
+
+
+
+/*------------------------------------*\
+    #Image with Text
+\*------------------------------------*/
+
+
+.image-with-text__content  {
+    align-items: center;
+}
+
+.image-with-text__media-wrapper {
+    border-radius: var(--border-radius-large);
+    overflow: hidden;
+}
+
+.image-with-text__text {
+   max-width: 40rem;
+}
+
+
+*/
+
+
+
+
+
+/*------------------------------------*\
+    #Header Cart - Cart Count
+\*------------------------------------*/
+
+
+# CSS Section Comment Formatting Rule
+
+All major CSS/SCSS section separators **must** use the following format:
+
+/*------------------------------------*\
+    #Section Name
+\*------------------------------------*/
+
+There must be **exactly 5 blank lines before** each section separator comment, and **exactly 1 blank line after** the comment before the next CSS rule or comment.
+
+**Example:**
+
+
+
+
+
+/*------------------------------------*\
+    #Header Cart - Cart Count
+\*------------------------------------*/
+
+.header__cart-count {
+    display: flex;
+    align-items: center;
+    /* ... */
+}
+
+
+
+
+
+/*------------------------------------*\
+    #Header Cart - Cart Count
+\*------------------------------------*/
+
+etc.
+```
+
+Security and best practices:
+
+Sanitize user inputs in forms
+Use HTTPS for all external resources
+Implement proper CSRF protection
+Follow Shopify's content security policy guidelines
+
+Development Workflow
+File organization:
+
+Keep sections modular and reusable
+Use descriptive filenames following Shopify conventions
+Organize assets by type (scripts, styles, images)
+Maintain clean separation between logic and presentation
+
+Testing and debugging:
+
+Include console.log statements for development debugging
+Test across different browsers and devices
+Use Shopify's theme inspector for performance monitoring
+Implement proper error boundaries for JavaScript

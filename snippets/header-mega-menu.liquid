@@ -1,0 +1,292 @@
+{% comment %}
+  Renders an off canvas menu for the header.
+
+  Usage:
+  {% render 'header-mega-menu' %}
+{% endcomment %}
+
+{%- if section.settings.menu != blank -%}
+  <nav class='header__menu'>
+    <ul class='header__menu__list-menu ' role='list'>
+      {%- for link in section.settings.menu.links -%}
+        <li>
+          {%- if link.links != blank -%}
+            <menu-drawer data-activate-on='hover'>
+              <details>
+                <summary
+                  class='header__menu-summary focus-inset'
+                  id='#{{ link.title | escape }}'
+                >
+                  <a
+                    href='{{ link.url }}'
+                    class='header__menu-item'
+                    {% if link.current %}
+                      aria-current='page'
+                    {% endif %}
+                  >
+                    <span
+                      {%- if link.current or link.child_active %}
+                        class='header__active-menu-item'
+                      {% endif %}
+                    >
+                      {{- link.title | escape -}}
+                    </span>
+                    {% render 'icon-plus' %}
+                  </a>
+                </summary>
+
+                {% assign title = link.title | escape %}
+
+                {% assign is_mega_menu = false %}
+                {% for block in section.blocks %}
+                  {% if block.type == 'block'
+                    and block.settings.top_level_link contains title
+                  %}
+                    {% assign is_mega_menu = true %}
+                    {% break %}
+                  {% endif %}
+                {% endfor %}
+
+                {% if is_mega_menu %}
+                  <div
+                    class='header__mega-menu'
+                    role='region'
+                    aria-label='{{ link.title | escape }}'
+                  >
+                    <div class='header__mega-menu__inner page-width'>
+                      <div class='header__mega-menu__links'>
+                        <span class='header__mega-menu__title'>
+                          {{- link.title | escape -}}
+                        </span>
+                        <ol class='header__mega-menu__list-menu   motion-reduce'>
+                          {%- for childlink in link.links -%}
+                            <li>
+                              {%- if childlink.links == blank -%}
+                                <a
+                                  href='{{ childlink.url }}'
+                                  data-custom-cursor
+                                  class='header__mega-menu__list-item    focus-inset {% if childlink.current %} header__mega-menu__list-item--active{% endif %}'
+                                  {% if childlink.current %}
+                                    aria-current='page'
+                                  {% endif %}
+                                >
+                                  {{ childlink.title | escape }}
+                                </a>
+                              {%- else -%}
+                                <div
+                                  class='header__mega-menu__list-item  focus-inset'
+                                  id='{{ childlink.title | escape }}'
+                                >
+                                  {{ childlink.title | escape }}
+                                  {% render 'icon-plus' %}
+                                </div>
+                                <div class='header__childmenu'>
+                                  <ul
+                                    class='header__mega-menu__list-menu  header__childmenu__list-menu'
+                                    aria-describedby='{{ childlink.title | escape }}'
+                                  >
+                                    {%- for grandchildlink in childlink.links -%}
+                                      <li>
+                                        <a
+                                          href='{{ grandchildlink.url }}'
+                                          data-custom-cursor
+                                          class='header__mega-menu__list-item  header__childmenu__list-item focus-inset {% if grandchildlink.current %} list-menu__item--active{% endif %}'
+                                          {% if grandchildlink.current %}
+                                            aria-current='page'
+                                          {% endif %}
+                                        >
+                                          {{ grandchildlink.title | escape }}
+                                        </a>
+                                      </li>
+                                    {%- endfor -%}
+                                  </ul>
+                                </div>
+                              {%- endif -%}
+                            </li>
+                          {%- endfor -%}
+                        </ol>
+                      </div>
+                      <div class='header__mega-menu__promotions'>
+                        {% for block in section.blocks %}
+                          {% if block.type == 'block'
+                            and block.settings.top_level_link contains title
+                          %}
+                            {% if block.settings.promotion_1_image %}
+                              <a
+                                href='{{ block.settings.promotion_1_url }}'
+                                class='mega-menu-promotion'
+                                aria-label='{{ block.settings.promotion_1_text | escape }}'
+                              >
+                                <div class='mega-menu-promotion__image'>
+                                  <div class='mega-menu-promotion__image__inner'>
+                                    <img
+                                      srcset='
+                                        {% if block.settings.promotion_1_image.width >= 493 %}{{ block.settings.promotion_1_image | image_url: width: 493 }} 493w,{% endif %}
+                                        {% if block.settings.promotion_1_image.width >= 600 %}{{ block.settings.promotion_1_image | image_url: width: 600 }} 600w,{% endif %}
+                                        {{ block.settings.promotion_1_image | image_url }} {{ block.settings.promotion_1_image.width }}w
+                                      '
+                                      src='{{ block.settings.promotion_1_image | image_url: width: block.settings.promotion_1_image.width }}'
+                                      sizes='(min-width: 940px) 20rem, 100vw'
+                                      loading='lazy'
+                                      width='{{ block.settings.promotion_1_image.width}}'
+                                      height='{{  block.settings.promotion_1_image.width | divided_by: block.settings.promotion_1_image.aspect_ratio | ceil }}'
+                                      class='responsive-image'
+                                      alt='{{ block.settings.promotion_1_image.alt | default: block.settings.promotion_1_text | escape }}'
+                                    >
+                                  </div>
+                                </div>
+                                <div class='mega-menu-promotion__name'>
+                                  {{ block.settings.promotion_1_text }}
+                                </div>
+                              </a>
+                            {% endif %}
+                            {% if block.settings.promotion_2_image %}
+                              <a
+                                href='{{ block.settings.promotion_2_url }}'
+                                class='mega-menu-promotion'
+                                aria-label='{{ block.settings.promotion_2_text | escape }}'
+                              >
+                                <div class='mega-menu-promotion__image'>
+                                  <div class='mega-menu-promotion__image__inner'>
+                                    <img
+                                      srcset='
+                                        {% if block.settings.promotion_2_image.width >= 493 %}{{ block.settings.promotion_2_image | image_url: width: 493 }} 493w,{% endif %}
+                                        {% if block.settings.promotion_2_image.width >= 600 %}{{ block.settings.promotion_2_image | image_url: width: 600 }} 600w,{% endif %}
+                                        {{ block.settings.promotion_2_image | image_url }} {{ block.settings.promotion_2_image.width }}w
+                                      '
+                                      src='{{ block.settings.promotion_2_image | image_url: width: block.settings.promotion_2_image.width }}'
+                                      sizes='(min-width: 940px) 20rem, 100vw'
+                                      loading='lazy'
+                                      width='{{ block.settings.promotion_2_image.width}}'
+                                      height='{{  block.settings.promotion_2_image.width | divided_by: block.settings.promotion_2_image.aspect_ratio | ceil }}'
+                                      class='responsive-image'
+                                      alt='{{ block.settings.promotion_2_image.alt | default: block.settings.promotion_2_text | escape }}'
+                                    >
+                                  </div>
+                                </div>
+                                <div class='mega-menu-promotion__name'>
+                                  {{ block.settings.promotion_2_text }}
+                                </div>
+                              </a>
+                            {% endif %}
+                            {% if block.settings.promotion_3_image %}
+                              <a
+                                href='{{ block.settings.promotion_3_url }}'
+                                class='mega-menu-promotion'
+                                aria-label='{{ block.settings.promotion_3_text | escape }}'
+                              >
+                                <div class='mega-menu-promotion__image'>
+                                  <div class='mega-menu-promotion__image__inner'>
+                                    <img
+                                      srcset='
+                                        {% if block.settings.promotion_3_image.width >= 493 %}{{ block.settings.promotion_3_image | image_url: width: 493 }} 493w,{% endif %}
+                                        {% if block.settings.promotion_3_image.width >= 600 %}{{ block.settings.promotion_3_image | image_url: width: 600 }} 600w,{% endif %}
+                                        {{ block.settings.promotion_3_image | image_url }} {{ block.settings.promotion_3_image.width }}w
+                                      '
+                                      src='{{ block.settings.promotion_3_image | image_url: width: block.settings.promotion_3_image.width }}'
+                                      sizes='(min-width: 940px) 20rem, 100vw'
+                                      loading='lazy'
+                                      width='{{ block.settings.promotion_3_image.width}}'
+                                      height='{{  block.settings.promotion_3_image.width | divided_by: block.settings.promotion_3_image.aspect_ratio | ceil }}'
+                                      class='responsive-image'
+                                      alt='{{ block.settings.promotion_3_image.alt | default: block.settings.promotion_3_text | escape }}'
+                                    >
+                                  </div>
+                                </div>
+                                <div class='mega-menu-promotion__name'>
+                                  {{ block.settings.promotion_3_text }}
+                                </div>
+                              </a>
+                            {% endif %}
+                          {% endif %}
+                        {% endfor %}
+                      </div>
+                    </div>
+                  </div>
+                {% else %}
+                  <div
+                    class='header__submenu'
+                    role='region'
+                    aria-labelledby='{{ link.title | escape }}'
+                  >
+                    <div class='header__submenu__inner  page-width'>
+                      <div>
+                        <span class='header__submenu__title'>
+                          {{- link.title | escape -}}
+                        </span>
+                        <ol class='header__submenu__list-menu   motion-reduce'>
+                          {%- for childlink in link.links -%}
+                            <li>
+                              {%- if childlink.links == blank -%}
+                                <a
+                                  href='{{ childlink.url }}'
+                                  data-custom-cursor
+                                  class='header__submenu__list-item    focus-inset {% if childlink.current %} header__submenu__list-item--active{% endif %}'
+                                  {% if childlink.current %}
+                                    aria-current='page'
+                                  {% endif %}
+                                >
+                                  {{ childlink.title | escape }}
+                                </a>
+                              {%- else -%}
+                                <div
+                                  class='header__submenu__list-item  focus-inset'
+                                  id='{{ childlink.title | escape }}'
+                                >
+                                  {{ childlink.title | escape }}
+                                  {% render 'icon-plus' %}
+                                </div>
+                                <div class='header__childmenu'>
+                                  <ul
+                                    class='header__submenu__list-menu  header__childmenu__list-menu'
+                                    aria-describedby='{{ childlink.title | escape }}'
+                                  >
+                                    {%- for grandchildlink in childlink.links -%}
+                                      <li>
+                                        <a
+                                          href='{{ grandchildlink.url }}'
+                                          data-custom-cursor
+                                          class='header__submenu__list-item  header__childmenu__list-item focus-inset {% if grandchildlink.current %} list-menu__item--active{% endif %}'
+                                          {% if grandchildlink.current %}
+                                            aria-current='page'
+                                          {% endif %}
+                                        >
+                                          {{ grandchildlink.title | escape }}
+                                        </a>
+                                      </li>
+                                    {%- endfor -%}
+                                  </ul>
+                                </div>
+                              {%- endif -%}
+                            </li>
+                          {%- endfor -%}
+                        </ol>
+                      </div>
+                      <div class='header__submenu__featured-links'></div>
+                    </div>
+                  </div>
+                {% endif %}
+              </details>
+            </menu-drawer>
+          {%- else -%}
+            <a
+              href='{{ link.url }}'
+              class=' header__menu-item  focus-inset'
+              {% if link.current %}
+                aria-current='page'
+              {% endif %}
+            >
+              <span
+                {%- if link.current %}
+                  class='header__active-menu-item'
+                {% endif %}
+              >
+                {{- link.title | escape -}}
+              </span>
+            </a>
+          {%- endif -%}
+        </li>
+      {%- endfor -%}
+    </ul>
+  </nav>
+{%- endif -%}

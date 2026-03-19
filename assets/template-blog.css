@@ -1,0 +1,86 @@
+/*------------------------------------*\
+    #Main Blog (template)
+\*------------------------------------*/
+
+.main-blog__contain {
+  margin: auto;
+}
+
+/*------------------------------------*\
+    #Main Blog Header
+\*------------------------------------*/
+
+.main-blog__header {
+  position: relative;
+  text-align: center;
+  margin-bottom: var(--space-9);
+  border-radius: var(--border-radius-main);
+  overflow: hidden;
+  background-color: rgb(var(--color-brand-1, 120, 40, 50));
+  box-shadow: var(--card-shadow-horizontal-offset, 0)
+    var(--card-shadow-vertical-offset, 0.25rem)
+    var(--card-shadow-blur-radius, 0.5rem)
+    rgba(var(--color-shadow), var(--card-shadow-opacity, 0.08));
+  padding-top: var(--space-10);
+  padding-bottom: var(--space-10);
+}
+
+@media screen and (min-width: 750px) {
+  .main-blog__header {
+    padding-top: calc(var(--space-10) + var(--space-5));
+    padding-bottom: calc(var(--space-10) + var(--space-5));
+  }
+}
+
+.main-blog__header-media {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  border-radius: var(--border-radius-main);
+  overflow: hidden;
+  top: 0;
+  bottom: 0;
+  z-index: 0;
+}
+
+.main-blog__header--has-image
+  .main-blog__header-media
+  .image-with-aspect-ratio {
+  border-radius: var(--border-radius-main);
+  overflow: hidden;
+}
+
+.main-blog__title {
+  position: relative;
+  z-index: 1;
+  color: rgb(var(--color-base-text-2));
+}
+
+.main-blog__title em {
+  text-transform: lowercase;
+}
+
+/*------------------------------------*\
+    #Main Blog Grid
+\*------------------------------------*/
+
+.main-blog__grid {
+  align-items: stretch;
+  margin-bottom: var(--space-10);
+}
+
+.main-blog__grid .grid__item {
+  min-width: 0;
+}
+
+/*------------------------------------*\
+    #Main Blog Pagination
+\*------------------------------------*/
+
+.main-blog__pagination {
+  margin-top: var(--space-8);
+  display: flex;
+  justify-content: center;
+}

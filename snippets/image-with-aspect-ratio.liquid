@@ -1,0 +1,83 @@
+{% comment %}
+  Renders an image with a configurable aspect ratio
+  Accepts:
+  - image: {Object} Image object
+  - aspect_ratio: {String} Aspect ratio (e.g., '16/9', '4/3', '1/1', '3/4')
+  - alt: {String} Alt text for the image
+  - class: {String} Additional CSS classes
+  - loading: {String} Loading attribute ('lazy', 'eager', 'auto')
+  - fetchpriority: {String} Fetch priority ('high', 'low', 'auto') — set 'high' for LCP images
+  - sizes: {String} Sizes attribute for responsive images
+  - widths: {String} Comma-separated list of widths for srcset
+  - placeholder: {Boolean} Show placeholder if no image
+
+  Usage:
+  {% render 'image-with-aspect-ratio',
+    image: product.featured_image,
+    aspect_ratio: '4/3',
+    alt: product.title,
+    class: 'product-image',
+    sizes: '(min-width: 940px) 33vw, (min-width: 750px) 50vw, 100vw',
+    widths: '165,360,533,720,940,1066'
+  %}
+{% endcomment %}
+
+{%- liquid
+  assign aspect_ratio = aspect_ratio | default: '16/9'
+  assign loading = loading | default: 'lazy'
+  assign fetchpriority = fetchpriority | default: ''
+  assign class = class | default: ''
+  assign sizes = sizes | default: '(min-width: 750px) 50vw, 100vw'
+  assign widths = widths | default: '200, 400,600,800, 1000'
+
+  # Check if natural aspect ratio
+  assign is_natural = false
+  if aspect_ratio == 'natural'
+    assign is_natural = true
+  else
+    # Calculate aspect ratio percentage
+    assign ratio_parts = aspect_ratio | split: '/'
+    assign width = ratio_parts[0] | plus: 0
+    assign height = ratio_parts[1] | plus: 0
+  endif
+
+  # Create srcset from widths
+  assign width_array = widths | split: ','
+  assign srcset = ''
+  for width in width_array
+    assign img_url = image | image_url: width: width
+    assign srcset = srcset | append: img_url | append: ' ' | append: width | append: 'w'
+    unless forloop.last
+      assign srcset = srcset | append: ', '
+    endunless
+  endfor
+-%}
+
+{%- if is_natural -%}
+  <div class="image-with-aspect-ratio image-with-aspect-ratio--natural {{ class }}">
+{%- else -%}
+  <div class="image-with-aspect-ratio {{ class }}" style="--aspect-ratio: {{ aspect_ratio }};">
+{%- endif -%}
+  {%- if image -%}
+    <img
+      src="{{ image | image_url: width: width_array.first }}"
+      srcset="{{ srcset }}"
+      sizes="{{ sizes }}"
+      alt="{{ alt | default: image.alt | escape }}"
+      loading="{{ loading }}"
+      {% if fetchpriority != '' %}fetchpriority="{{ fetchpriority }}"{% endif %}
+      width="{{ image.width }}"
+      height="{{ image.height }}"
+      class="image-with-aspect-ratio__image{% if is_natural %} image-with-aspect-ratio__image--natural{% endif %}"
+    >
+  {%- else -%}
+    <div class="image-with-aspect-ratio__placeholder">
+      {%- if placeholder != false -%}
+        <svg class="placeholder-svg" viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
+          <rect width="400" height="300" fill="#f4f4f4"/>
+          <text x="50%" y="50%" text-anchor="middle" dy=".3em" fill="#999" font-size="16">Image</text>
+        </svg>
+      {%- endif -%}
+    </div>
+  {%- endif -%}
+</div>

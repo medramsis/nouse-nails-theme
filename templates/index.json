@@ -1,0 +1,467 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "hae_hero_JXfJYD": {
+      "type": "hae-hero",
+      "name": "Hero - half photo",
+      "settings": {
+        "color_scheme": "",
+        "header-text": "<p>Redefining the <em>nous</em> standard for nails. </p>",
+        "button-text": "Shop Now",
+        "button-url": "shopify://collections/new-arrivals",
+        "media_type": "image",
+        "hero-image": "shopify://shop_images/HP_Hero_bc9a065a-d766-466f-b2f7-bf9dcb0041fc.png",
+        "video_url": "",
+        "show_sticker": true,
+        "floating-sticker": "stars",
+        "sticker_color": "#fdf130"
+      }
+    },
+    "hae_marquee_banner_QJ6KwN": {
+      "type": "hae-marquee-banner",
+      "name": "News ticker banner",
+      "settings": {
+        "color_scheme": "scheme-cc80f6b4-b558-4219-8256-b69a754c7c0a",
+        "text": "15-minutes. Non-toxic. Damage-free."
+      }
+    },
+    "collection_qMBnrM": {
+      "type": "collection",
+      "name": "Featured collection",
+      "settings": {
+        "color_scheme": "scheme-e24c36e3-6758-46b1-b6d4-c5f5b5a35c26",
+        "title": "New Arrivals",
+        "collection": "new-arrivals",
+        "grid": 4,
+        "rows": 2,
+        "show_vendor": false,
+        "show_view_all": true
+      }
+    },
+    "hae_featured_collections_n8rk6P": {
+      "type": "hae-featured-collections",
+      "blocks": {
+        "collection_x6rP3q": {
+          "type": "collection",
+          "settings": {
+            "color_scheme": "scheme-a1f75e04-1da9-4fbd-831b-96f4b8dc69e2",
+            "collection_url": "shopify://collections/subscription",
+            "headline": "Subscribe & Save",
+            "button_text": "Shop",
+            "media_type": "image",
+            "video_url": "",
+            "image": "shopify://shop_images/NOUS-STUDIO-668_EDIT.jpg",
+            "floating_sticker": "sun-blue",
+            "sticker_color": "#aec1fb"
+          }
+        },
+        "collection_FRgbHV": {
+          "type": "collection",
+          "settings": {
+            "color_scheme": "scheme-94eb6821-3c93-4727-b9e1-be4096d276ce",
+            "collection_url": "https://nousnails.com/apps/boxi/box-builder/3532",
+            "headline": "Buy More, Save More",
+            "button_text": "Shop",
+            "media_type": "image",
+            "video_url": "",
+            "image": "shopify://shop_images/NOUS-STUDIO-081_a663cf74-b8bd-4538-816e-f1c50e318a8b.jpg",
+            "floating_sticker": "sun-pink",
+            "sticker_color": "#d1e1e8"
+          }
+        }
+      },
+      "block_order": [
+        "collection_x6rP3q",
+        "collection_FRgbHV"
+      ],
+      "name": "Collection Callouts",
+      "settings": {}
+    },
+    "hae_image_with_text_cijUpU": {
+      "type": "hae-image-with-text",
+      "blocks": {
+        "eyebrow_F8CptN": {
+          "type": "eyebrow",
+          "settings": {
+            "text": "The Nous Way",
+            "text_size": "text-size-medium"
+          }
+        },
+        "heading_fWDNn7": {
+          "type": "heading",
+          "settings": {
+            "heading": "Professional Nails at home",
+            "heading_size": "headline-style-h3"
+          }
+        },
+        "text_BkXNpA": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Did you know the average woman spends $2,160 & 48 hours a year on nails? Save your money and your time—with Nous. It’s the <em><strong>Nous way of doing things.</strong></em></p>",
+            "text_size": "text-size-large"
+          }
+        },
+        "text_with_icon_W9xJfL": {
+          "type": "text_with_icon",
+          "settings": {
+            "icon": "shopify://shop_images/0e17a53162a56d8cf9794ffeeb9326c1.svg",
+            "text": "3 easy steps – apply, cure, buff.",
+            "text_size": "text-size-medium"
+          }
+        },
+        "text_with_icon_CcfNk9": {
+          "type": "text_with_icon",
+          "settings": {
+            "icon": "shopify://shop_images/c8e8a3162fda8fb7050dd3c651695e2a.svg",
+            "text": "Non Toxic",
+            "text_size": "text-size-medium"
+          }
+        },
+        "text_with_icon_CTxiK4": {
+          "type": "text_with_icon",
+          "settings": {
+            "icon": "shopify://shop_images/ca0e36cc52a03559d35034ca36d41412.svg",
+            "text": "Lasts 14 Days",
+            "text_size": "text-size-medium"
+          }
+        },
+        "text_with_icon_KgNHp7": {
+          "type": "text_with_icon",
+          "settings": {
+            "icon": "shopify://shop_images/0ee9af4c0a5b1a829cf3abacf1cf0a0d.svg",
+            "text": "No nail damage",
+            "text_size": "text-size-medium"
+          }
+        },
+        "text_with_icon_QfE8jK": {
+          "type": "text_with_icon",
+          "settings": {
+            "icon": "shopify://shop_images/52e95258835c6343d583074b3a79ba14.svg",
+            "text": "Easy removal",
+            "text_size": "text-size-medium"
+          }
+        },
+        "button_dWdbrp": {
+          "type": "button",
+          "settings": {
+            "button_label": "How To Apply",
+            "button_link": "shopify://pages/how-to",
+            "button_size": "button--medium"
+          }
+        }
+      },
+      "block_order": [
+        "eyebrow_F8CptN",
+        "heading_fWDNn7",
+        "text_BkXNpA",
+        "text_with_icon_W9xJfL",
+        "text_with_icon_CcfNk9",
+        "text_with_icon_CTxiK4",
+        "text_with_icon_KgNHp7",
+        "text_with_icon_QfE8jK",
+        "button_dWdbrp"
+      ],
+      "name": "Image with text",
+      "settings": {
+        "layout": "left",
+        "color_scheme": "",
+        "media_type": "video",
+        "media_aspect_ratio": "1/1",
+        "image": "shopify://shop_images/Step-by-Step-Reel-1x1_Cover_Photo.png",
+        "video_url": "https://cdn.shopify.com/videos/c/o/v/89f4b8510ab54e1cad1767b44fa6ade4.mov",
+        "video_poster": "shopify://shop_images/Step-by-Step-Reel-1x1_Cover_Photo.png"
+      }
+    },
+    "instagram_slideshow_FWNLT6": {
+      "type": "instagram-slideshow",
+      "blocks": {
+        "slide_exknKT": {
+          "type": "slide",
+          "settings": {
+            "video_url": "https://cdn.shopify.com/videos/c/o/v/09ddf525f629438b8f208eb02acfacfa.mov",
+            "image": "shopify://shop_images/CP_Big_Hands_updated.png",
+            "product": "art-school-star"
+          }
+        },
+        "slide_6Ww976": {
+          "type": "slide",
+          "settings": {
+            "video_url": "https://cdn.shopify.com/videos/c/o/v/5d7383a27c35453abbad0beb67a3ca9f.mov",
+            "image": "shopify://shop_images/CP_Coming_Soon_Commercial.png",
+            "product": "strange-terrain"
+          }
+        },
+        "slide_kxFa6w": {
+          "type": "slide",
+          "settings": {
+            "video_url": "https://cdn.shopify.com/videos/c/o/v/cab06d3256284857b9cc34aed5d67e91.mov",
+            "image": "shopify://shop_images/CP_Friends_showing_Nails.png",
+            "product": "cherry-blitz"
+          }
+        },
+        "slide_tfqyEz": {
+          "type": "slide",
+          "settings": {
+            "video_url": "https://cdn.shopify.com/videos/c/o/v/27db45c2f1be4d568a2e3c9d7acbe735.mov",
+            "image": "shopify://shop_images/CP_Step-by-Step-Reel.png",
+            "product": "strange-terrain"
+          }
+        },
+        "slide_DE6BVe": {
+          "type": "slide",
+          "settings": {
+            "video_url": "https://cdn.shopify.com/videos/c/o/v/93ceb01e5dfc4c39aafb92ae26f0e48d.mov",
+            "image": "shopify://shop_images/CP_Angel_Higlight.png",
+            "product": "art-school-star"
+          }
+        },
+        "slide_CwTGyj": {
+          "type": "slide",
+          "settings": {
+            "video_url": "https://cdn.shopify.com/videos/c/o/v/11235a5fc5514a299153bd8e3d328a47.mov",
+            "image": "shopify://shop_images/CP_out_of_the_phone.png",
+            "product": "iced-out"
+          }
+        }
+      },
+      "block_order": [
+        "slide_exknKT",
+        "slide_6Ww976",
+        "slide_kxFa6w",
+        "slide_tfqyEz",
+        "slide_DE6BVe",
+        "slide_CwTGyj"
+      ],
+      "name": "Instagram Slideshow",
+      "settings": {
+        "color_scheme": "scheme-cc80f6b4-b558-4219-8256-b69a754c7c0a",
+        "title": "Stick. Cure. Slay.",
+        "subtitle": "",
+        "autoplay": true,
+        "autoplay_speed": 5,
+        "autoplay_video": true,
+        "social_url": "https://instagram.com/getnousnails",
+        "social_text": "@GetNousNails"
+      }
+    },
+    "hae_brand_about_zarK7i": {
+      "type": "hae-brand-about",
+      "blocks": {
+        "callout_cHjVC3": {
+          "type": "callout",
+          "settings": {
+            "color_scheme": "scheme-2119b851-9410-4357-b9dd-7adf10307b8e",
+            "callout_image": "shopify://shop_images/Star_Shape.svg",
+            "callout_header": "Clean ingredients only.",
+            "callout_text": "<p>No Nasties, Just Nail Magic. We left out the top 10 most questionable ingredients—so you can shine without worry. That means no formaldehyde, HEMA, DBP, TPHP, or toluene. Ever.</p>",
+            "text_size": "text-size-main"
+          }
+        },
+        "callout_jQDiLk": {
+          "type": "callout",
+          "settings": {
+            "color_scheme": "scheme-6628b2c5-2a6e-43ae-9f30-7d31869aa0c7",
+            "callout_image": "shopify://shop_images/Springy_Shape.svg",
+            "callout_header": "Salon-Quality, Done in Minutes",
+            "callout_text": "<p>Ditch the 2-hour waits, awkward small talk, tipping stress, and funky fumes. No nail drama. Just fast, flawless, feel-good nails that love you back.</p>",
+            "text_size": "text-size-main"
+          }
+        },
+        "callout_yfVKj4": {
+          "type": "callout",
+          "settings": {
+            "color_scheme": "scheme-38cadf72-7f29-4186-8b19-cfda33c52e01",
+            "callout_image": "shopify://shop_images/Sun_Shape.svg",
+            "callout_header": "Effortless Luxury, Without the Price",
+            "callout_text": "<p>Get salon-quality nails for just $38/month (or less), compared to $80+ with tipping at the salon. Save time, money and bye to nail breakage—all without sacrificing style or shine.</p>",
+            "text_size": "text-size-main"
+          }
+        }
+      },
+      "block_order": [
+        "callout_cHjVC3",
+        "callout_jQDiLk",
+        "callout_yfVKj4"
+      ],
+      "name": "About and 3 callouts",
+      "settings": {
+        "color_scheme": "scheme-e24c36e3-6758-46b1-b6d4-c5f5b5a35c26",
+        "subtitle": "A Nous Standard in Nail Beauty.",
+        "headline_size": "headline-style-h4",
+        "text": "<p>We’re building a future where nail care is clean, expressive, and affordable. Our gel strips skip the toxins, cost less, and save you time—because beauty shouldn’t come at your health or schedule.</p>",
+        "text_size": "text-size-x-large",
+        "button_text_1": "HOW TO APPLY NAILS",
+        "button_link_1": "how-to",
+        "button_text_2": "JOIN OUR CREATOR PROGRAM",
+        "button_link_2": "creator-program"
+      }
+    },
+    "hae_faqs_ACNzbj": {
+      "type": "hae-faqs",
+      "blocks": {
+        "faq_block_jRAPtz": {
+          "type": "faq_block",
+          "settings": {
+            "question": "How long do they last?",
+            "answer": "<p>Up to 14 days of chip-free shine. For best results, use the prep pad, apply on dry nails, and avoid oils or baths for 1-2 hours after. They’re tough enough for everyday life—like a screen protector for your nails.</p>"
+          }
+        },
+        "faq_block_43ptYe": {
+          "type": "faq_block",
+          "settings": {
+            "question": "How do I apply?",
+            "answer": "<p>So easy! Find your strip size, peel & stick, then cure for 60 seconds. Trim or buff any excess. Voilà, salon-level nails in 15 minutes. For a complete guide, <a href=\"/pages/how-to\" target=\"_blank\" title=\"How To\"><span style=\"text-decoration:underline\">click here</span></a>.</p>"
+          }
+        },
+        "faq_block_ABp3fi": {
+          "type": "faq_block",
+          "settings": {
+            "question": "Are they non-toxic?",
+            "answer": "<p>No nasties, just nail magic. We skip the top 10 questionable ingredients—no HEMA, DBP, TPHP, toluene, or formaldehyde. Clean, safe, and worry-free.</p>"
+          }
+        },
+        "faq_block_QL3tzy": {
+          "type": "faq_block",
+          "settings": {
+            "question": "How do I remove them?",
+            "answer": "<p>Gently lift with the provided wooden stick. For ideal results, use our <a href=\"/products/ctrl-delete-nail-remover-serum\" title=\"Ctrl+Delete Vitamin Serum Remover\">Ctrl+Delete Vitamin Remover Serum</a> for easy melt-off-the-nail removal. </p><p>No damage, just nourished nails underneath.</p>"
+          }
+        },
+        "faq_block_N3AeaJ": {
+          "type": "faq_block",
+          "settings": {
+            "question": "Do they really protect my nails?",
+            "answer": "<p>Yes! They act like a screen protector for your nails—shielding against chips and breaks while helping weak or brittle nails grow stronger, all with zero damage on removal.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "faq_block_jRAPtz",
+        "faq_block_43ptYe",
+        "faq_block_ABp3fi",
+        "faq_block_QL3tzy",
+        "faq_block_N3AeaJ"
+      ],
+      "name": "FAQ Section",
+      "settings": {
+        "color_scheme": "",
+        "heading": "Frequently Asked Questions",
+        "page": "faq",
+        "table_image": "shopify://shop_images/HP_Info_Grid.png"
+      }
+    },
+    "hae_testimonials_tLEp99": {
+      "type": "hae-testimonials",
+      "blocks": {
+        "quote_ic4NMg": {
+          "type": "quote",
+          "settings": {
+            "quote": "<p>I’ve tried every gel strip brand out there and nothing comes close to Nous. I love these designs so much and they actually stay on longer than my regular gel nails!</p>",
+            "author": "- Renee E."
+          }
+        },
+        "quote_QYrGAc": {
+          "type": "quote",
+          "settings": {
+            "quote": "<p>They look like salon nails but took me 15 minutes at home. No drying time, no fumes, and they actually last through dishes and workouts.</p>",
+            "author": "- Talia I."
+          }
+        },
+        "quote_8aFjtE": {
+          "type": "quote",
+          "settings": {
+            "quote": "<p>I was shocked at how gentle these are. No damage, no weird smell, just healthy nails that last way longer than I expected.</p>",
+            "author": "- Riley E."
+          }
+        }
+      },
+      "block_order": [
+        "quote_ic4NMg",
+        "quote_QYrGAc",
+        "quote_8aFjtE"
+      ],
+      "name": "HAE Testimonials",
+      "settings": {
+        "color_scheme": "scheme-cc80f6b4-b558-4219-8256-b69a754c7c0a",
+        "title": "What Our Customers Say",
+        "headline_size": "headline-style-h3"
+      }
+    },
+    "featured_blog_FFNppk": {
+      "type": "featured-blog",
+      "blocks": {
+        "article_RQpGmT": {
+          "type": "article",
+          "settings": {
+            "article": "nous-blog/how-to-apply-semi-cured-gel-nail-strips"
+          }
+        },
+        "article_g33qnH": {
+          "type": "article",
+          "settings": {
+            "article": "nous-blog/what-are-semi-cured-gel-nail-strips"
+          }
+        },
+        "article_eJh9RM": {
+          "type": "article",
+          "settings": {
+            "article": "nous-blog/semi-cured-gel-nails-vs-press-on-nails-what-s-the-difference"
+          }
+        }
+      },
+      "block_order": [
+        "article_RQpGmT",
+        "article_g33qnH",
+        "article_eJh9RM"
+      ],
+      "name": "Blog posts",
+      "settings": {
+        "color_scheme": "",
+        "title": "Tips & Tricks",
+        "media_aspect_ratio": "3/4",
+        "show_view_all": true,
+        "view_all_url": "shopify://blogs/nous-blog"
+      }
+    },
+    "floating_cta_z4EYG4": {
+      "type": "floating-cta",
+      "name": "Floating CTA",
+      "settings": {
+        "enable_floating_cta": true,
+        "klaviyo_form_id": "R5kFLb",
+        "modal_color_scheme": "scheme-cc80f6b4-b558-4219-8256-b69a754c7c0a",
+        "cta_color": "#efbdfc",
+        "cta_text": "SIGN UP & GET 15% OFF FIRST ORDER ☺",
+        "cta_url": "shopify://collections/new-arrivals",
+        "position": "right",
+        "scroll_threshold": 500,
+        "modal_media": "shopify://shop_images/QD-758_Edit.jpg",
+        "modal_media_aspect_ratio": "16/9",
+        "modal_heading": "☀ SIGN UP & GET 15% OFF FIRST ORDER ☺",
+        "modal_heading_size": "headline-style-h4",
+        "modal_disclaimer": "<p>*Offer valid on first subscription order for new email subscribers. Exclusions apply. By signing up, you agree to our <a href=\"#\">Email Terms</a>.</p>"
+      }
+    }
+  },
+  "order": [
+    "hae_hero_JXfJYD",
+    "hae_marquee_banner_QJ6KwN",
+    "collection_qMBnrM",
+    "hae_featured_collections_n8rk6P",
+    "hae_image_with_text_cijUpU",
+    "instagram_slideshow_FWNLT6",
+    "hae_brand_about_zarK7i",
+    "hae_faqs_ACNzbj",
+    "hae_testimonials_tLEp99",
+    "featured_blog_FFNppk",
+    "floating_cta_z4EYG4"
+  ]
+}

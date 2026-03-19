@@ -1,0 +1,159 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+        "padding_size": "section-padding-small"
+      }
+    },
+    "main_page_header_z7GBQx": {
+      "type": "main-page-header",
+      "name": "Main Page Header",
+      "settings": {
+        "custom_title": "",
+        "subtitle": "",
+        "header_background_image": "shopify://shop_images/5_noise_2x_2_9d2ed623-5eaf-438b-a68e-da2c862a27c2.jpg",
+        "padding_size": "section-padding-x-small",
+        "heading_size": "headline-style-h1",
+        "color_scheme": "scheme-cc80f6b4-b558-4219-8256-b69a754c7c0a"
+      }
+    },
+    "hae_image_with_text_k47d3J": {
+      "type": "hae-image-with-text",
+      "blocks": {
+        "heading_jenjyE": {
+          "type": "heading",
+          "settings": {
+            "heading": "Apply for Free Nails ✱ Nous Creator Program",
+            "heading_size": "headline-style-h2"
+          }
+        },
+        "text_MqwR84": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Love nails and creating content? The Nous Creator Program is for our most dedicated, creative voices — the ones who love and breath beauty.</p><p>Receive <strong>monthly free nails</strong>, commissions and exclusive perks when you're part of the Nous creator community.</p><p>Apply by emailing us your social @ handle:</p>",
+            "text_size": "text-size-medium"
+          }
+        },
+        "button_aRDteA": {
+          "type": "button",
+          "settings": {
+            "button_label": "Email Us",
+            "button_link": "mailto:partnerships@nousnails.com",
+            "button_size": "button--medium"
+          }
+        }
+      },
+      "block_order": [
+        "heading_jenjyE",
+        "text_MqwR84",
+        "button_aRDteA"
+      ],
+      "name": "Image with text",
+      "settings": {
+        "layout": "left",
+        "color_scheme": "",
+        "media_type": "image",
+        "media_aspect_ratio": "1/1",
+        "image": "shopify://shop_images/QD-758_Edit.jpg",
+        "video_url": ""
+      }
+    },
+    "hae_image_with_text_GRi7tR": {
+      "type": "hae-image-with-text",
+      "blocks": {
+        "heading_riGgRC": {
+          "type": "heading",
+          "settings": {
+            "heading": "How It Works",
+            "heading_size": "headline-style-h2"
+          }
+        },
+        "text_xBHirn": {
+          "type": "text",
+          "settings": {
+            "text": "<p>1. <a href=\"mailto:partnerships@nousnails.com\" target=\"_blank\" title=\"mailto:partnerships@nousnails.com\">Apply via email</a><strong> </strong>with your <strong>name, social handle</strong>(s) and short intro.<br/>2. If selected, our team will reach out with your welcome kit and next steps.<br/>3. Create, tag us & shine. We love reposting and showing love to our creators.<br/></p><p><strong>Perks include:<br/></strong>• Free monthly nail kits for content creation<br/>• Reposts and features<br/>• Early access to upcoming launches<br/>• Invitations to special collabs<br/>• Up to 20% commission on all sales </p>",
+            "text_size": "text-size-medium"
+          }
+        },
+        "button_aCJEJi": {
+          "type": "button",
+          "disabled": true,
+          "settings": {
+            "button_label": "Join Affilate Program",
+            "button_link": "",
+            "button_size": "button--medium"
+          }
+        }
+      },
+      "block_order": [
+        "heading_riGgRC",
+        "text_xBHirn",
+        "button_aCJEJi"
+      ],
+      "name": "Image with text",
+      "settings": {
+        "layout": "right",
+        "color_scheme": "scheme-6628b2c5-2a6e-43ae-9f30-7d31869aa0c7",
+        "media_type": "image",
+        "media_aspect_ratio": "1/1",
+        "image": "shopify://shop_images/QD-331_Edit.jpg",
+        "video_url": ""
+      }
+    },
+    "hae_faqs_kMwEaE": {
+      "type": "hae-faqs",
+      "blocks": {
+        "faq_block_U7r6rD": {
+          "type": "faq_block",
+          "settings": {
+            "question": "What’s the difference between the Nous Creator Program and the Affiliate Program?",
+            "answer": "<p>The <strong>Creator Program</strong> is by application only and designed for creators who love making content. Selected creators receive <strong>free monthly nail kits</strong>, early access to launches, and special collab invites in exchange for creating and tagging us in content.<br/><br/>The <a href=\"/pages/affiliate-program\" target=\"_blank\" title=\"Affiliate Program\"><strong>Affiliate Program</strong></a> is open to everyone — no application needed — and allows members to earn commission through unique referral links when someone shops Nous using their link.</p>"
+          }
+        },
+        "faq_block_R63JyP": {
+          "type": "faq_block",
+          "settings": {
+            "question": "Do I need a large following to apply?",
+            "answer": "<p>Not at all! ☺︎ The Affiliate Program is open to everyone, while the <a href=\"/pages/creator-program\" target=\"_blank\" title=\"Creator Program\"><strong>Creator Program</strong></a> is invite-only for select creators who receive <em>monthly free nails</em> and other exclusive perks. You can be <strong>both</strong> — creators automatically earn affiliate commissions too.</p>"
+          }
+        },
+        "faq_block_99G3Y8": {
+          "type": "faq_block",
+          "settings": {
+            "question": "How often will I receive free nail kits if accepted?",
+            "answer": "<p>Creators in the program receive a <strong>monthly free kit</strong>, plus <strong>early PR access</strong> whenever we have new launches or collaborations.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "faq_block_U7r6rD",
+        "faq_block_R63JyP",
+        "faq_block_99G3Y8"
+      ],
+      "name": "FAQ Section",
+      "settings": {
+        "color_scheme": "",
+        "heading": "Frequently Asked Questions",
+        "page": ""
+      }
+    }
+  },
+  "order": [
+    "main",
+    "main_page_header_z7GBQx",
+    "hae_image_with_text_k47d3J",
+    "hae_image_with_text_GRi7tR",
+    "hae_faqs_kMwEaE"
+  ]
+}

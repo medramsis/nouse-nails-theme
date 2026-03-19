@@ -1,0 +1,334 @@
+<link
+  rel='stylesheet'
+  href='{{ 'instagram-slideshow.css' | asset_url }}'
+  media='print'
+  onload="this.media='all'"
+>
+<script src='{{ 'social-video-player.js' | asset_url }}' defer='defer'></script>
+<script src='{{ 'instagram-slideshow.js' | asset_url }}' defer='defer'></script>
+
+<instagram-slideshow
+  class='instagram-slideshow color-{{ section.settings.color_scheme }}'
+  slides-per-view='1.25'
+  space-between='20'
+  loop='true'
+  centered-slides='true'
+  {% if section.settings.autoplay %}
+    autoplay='{{ section.settings.autoplay }}'
+    autoplay-delay='{{ section.settings.autoplay_speed | times: 1000 }}'
+  {% endif %}
+  show-navigation='true'
+  show-pagination='false'
+  effect='slide'
+  speed='600'
+  grab-cursor='true'
+  prevent-clicks='false'
+  prevent-clicks-propagation='false'
+  touch-events-target='container'
+  threshold='10'
+  touch-ratio='1'
+  touch-angle='45'
+  desktop-centered-slides='true'
+  desktop-slides-per-view='auto'
+  desktop-centered-slides='false'
+  desktop-space-between='25'
+  desktop-slides-offset-before='25'
+>
+  <div class='instagram-slideshow__contain  section-padding-small'>
+    {% if section.settings.title != blank %}
+      <div class='instagram-slideshow__header container-main'>
+        <h2 class='instagram-slideshow__title headline-style-h3'>
+          {{ section.settings.title | escape }}
+        </h2>
+        {% if section.settings.subtitle != blank %}
+          <p class='instagram-slideshow__subtitle'>
+            {{ section.settings.subtitle | escape }}
+          </p>
+        {% endif %}
+      </div>
+    {% endif %}
+
+    {% if section.blocks.size > 0 %}
+      <div class='instagram-slideshow__container'>
+        <div class='instagram-slideshow__slider swiper' data-swiper-slideshow>
+          <div class='swiper-wrapper' data-swiper-slideshow-wrapper>
+            {% for block in section.blocks %}
+              <div
+                class='instagram-slideshow__slide swiper-slide'
+                {{ block.shopify_attributes }}
+                data-swiper-slide
+              >
+                {% assign product = block.settings.product %}
+                <div
+                  class='instagram-slideshow__slide__inner'
+                >
+                  <div class='instagram-slideshow__slide__hover-shadow'></div>
+                  {% if product != blank %}
+                    <a
+                      href='{{ product.url }}'
+                      class='instagram-slideshow__product-link'
+                    >
+                      <div class='instagram-slideshow__product-link__image'>
+                        {% if product.featured_media.preview_image %}
+                          {% render 'image-with-aspect-ratio',
+                            image: product.featured_media.preview_image,
+                            aspect_ratio: '1/1',
+                            alt: product.title,
+                            sizes: '4rem',
+                            widths: '60, 80, 120'
+                          %}
+                        {% else %}
+                          {{
+                            'product-1'
+                            | placeholder_svg_tag: 'instagram-slideshow__product-placeholder'
+                          }}
+                        {% endif %}
+                      </div>
+                      <div class='instagram-slideshow__product-link__info'>
+                        <h3 class='instagram-slideshow__product-link__title headline-style-h6'>
+                          {{ product.title }}
+                        </h3>
+                        <span class='instagram-slideshow__product-link__price'>
+                          {{- product.price | money -}}
+                        </span>
+                      </div>
+                    </a>
+                  {% endif %}
+                  {% if block.settings.video_url != blank %}
+                    <social-video-player
+                      class='instagram-slideshow__video-block'
+                      {% if section.settings.autoplay_video %}
+                        data-autoplay
+                      {% endif %}
+                    >
+                      <div class='instagram-slideshow__video-container'>
+                        <video
+                          class='instagram-slideshow__video'
+                          preload='none'
+                          data-video
+                          playsinline
+                          webkit-playsinline
+                          controlsList='nofullscreen'
+                          poster='{{ block.settings.image | image_url: width: 400, format: "webp" }}'
+                        >
+                          <source
+                            data-src='{{ block.settings.video_url }}'
+                            type='video/mp4'
+                          >
+                          Your browser does not support the video tag.
+                        </video>
+                      </div>
+                    </social-video-player>
+                  {% elsif block.settings.image != blank %}
+                    <div class='instagram-slideshow__image-block'>
+                      <div class='instagram-slideshow__image-container'>
+                        {{
+                          block.settings.image
+                          | image_url: width: 600
+                          | image_tag:
+                            class: 'instagram-slideshow__image responsive-image',
+                            sizes: '(max-width: 750px) 50vw, (max-width: 940px) 33vw, 25vw',
+                            widths: '200, 400, 600',
+                            loading: 'lazy',
+                            alt: block.settings.image.alt
+                        }}
+                      </div>
+                    </div>
+                  {% elsif block.settings.product != blank %}
+                    <div class='instagram-slideshow__product-block'>
+                      {% assign product = block.settings.product %}
+                      <a
+                        href='{{ product.url }}'
+                        class='instagram-slideshow__product-link'
+                      >
+                        <div class='instagram-slideshow__product-image-container'>
+                          {% if product.featured_media.preview_image %}
+                            {{
+                              product.featured_media.preview_image
+                              | image_url: width: 600
+                              | image_tag:
+                                class: 'instagram-slideshow__product-image responsive-image',
+                                sizes: '(max-width: 750px) 50vw, (max-width: 940px) 33vw, 25vw',
+                                widths: '200, 400, 600',
+                                loading: 'lazy',
+                                alt: product.featured_media.preview_image.alt
+                            }}
+                          {% else %}
+                            {{
+                              'product-1'
+                              | placeholder_svg_tag: 'instagram-slideshow__product-placeholder'
+                            }}
+                          {% endif %}
+                        </div>
+                        <div class='instagram-slideshow__product-info'>
+                          <h3 class='instagram-slideshow__product-title'>
+                            {{ product.title }}
+                          </h3>
+                          {% include 'product-price-listing',
+                            product: product
+                          %}
+                        </div>
+                      </a>
+                    </div>
+                  {% endif %}
+                </div>
+              </div>
+            {% endfor %}
+          </div>
+        </div>
+        {% if section.blocks.size > 1 %}
+          <div class='instagram-slideshow__navigation'>
+            <button
+              class='instagram-slideshow__nav-button instagram-slideshow__nav-button--prev swiper-slideshow__nav-button swiper-slideshow__nav-button--prev'
+              aria-label='Previous slide'
+            >
+              {% render 'icon-chevron-left' %}
+            </button>
+            <button
+              class='instagram-slideshow__nav-button instagram-slideshow__nav-button--next swiper-slideshow__nav-button swiper-slideshow__nav-button--next'
+              aria-label='Next slide'
+            >
+              {% render 'icon-chevron-right' %}
+            </button>
+          </div>
+          <div
+            class='instagram-slideshow__pagination swiper-slideshow__pagination'
+          ></div>
+        {% endif %}
+      </div>
+    {% else %}
+      <div class='instagram-slideshow__empty'>
+        <p>Add blocks to create your Social Media slideshow</p>
+      </div>
+    {% endif %}
+
+    <div class='instagram-slideshow__footer container-main'>
+      <div class='instagram-slideshow__footer__inner'>
+        <div class='instagram-slideshow__footer__content'>
+          <a
+            href='{{ section.settings.social_url }}'
+            class='instagram-slideshow__footer__link text-size-xx-large'
+          >
+            {{ section.settings.social_text }}
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</instagram-slideshow>
+
+{% schema %}
+{
+  "name": "Social Media Slideshow",
+  "class": "index-section",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Colors"
+    },
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "Color scheme",
+      "default": "background-1"
+    },
+    {
+      "type": "header",
+      "content": "Content"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Heading",
+      "default": "Instagram Feed"
+    },
+    {
+      "type": "text",
+      "id": "subtitle",
+      "label": "Subheading"
+    },
+    {
+      "type": "header",
+      "content": "Layout"
+    },
+    {
+      "type": "checkbox",
+      "id": "autoplay",
+      "label": "Auto-play slides",
+      "default": false
+    },
+    {
+      "type": "range",
+      "id": "autoplay_speed",
+      "label": "Auto-play speed (seconds)",
+      "min": 2,
+      "max": 10,
+      "step": 1,
+      "default": 5
+    },
+    {
+      "type": "checkbox",
+      "id": "autoplay_video",
+      "label": "Auto-play video",
+      "default": true,
+      "info": "When enabled, videos will automatically play when visible"
+    },
+    {
+      "type": "header",
+      "content": "Social Media"
+    },
+    {
+      "type": "url",
+      "id": "social_url",
+      "label": "Social Media URL",
+      "info": "Link to your Instagram or other social media profile"
+    },
+    {
+      "type": "text",
+      "id": "social_text",
+      "label": "Social Media Handle",
+      "default": "@GetNousNails"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "slide",
+      "name": "Slide",
+      "settings": [
+        {
+          "type": "url",
+          "id": "video_url",
+          "label": "Video URL"
+        },
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image"
+        },
+        {
+          "type": "product",
+          "id": "product",
+          "label": "Product"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Instagram Slideshow",
+      "category": "Media & Visual",
+      "blocks": [
+        {
+          "type": "slide"
+        },
+        {
+          "type": "slide"
+        },
+        {
+          "type": "slide"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

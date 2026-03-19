@@ -1,0 +1,16 @@
+#!/bin/sh
+# Ensure pushed Liquid files have CSS inlined (production state).
+# If you committed with --no-verify, this catches it before push.
+npm run extract-critical-css 2>/dev/null || true
+
+if git diff --name-only | grep -qE '\.liquid$'; then
+  echo ""
+  echo "Critical CSS: CSS must be inlined before push."
+  echo "The script just updated the files. Please commit and push again:"
+  echo "  git add sections/ layout/ snippets/ templates/ snippets/critical-css.liquid"
+  echo "  git commit -m 'chore: inline critical css for production'"
+  echo "  git push"
+  exit 1
+fi
+
+exit 0

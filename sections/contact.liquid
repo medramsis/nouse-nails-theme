@@ -1,0 +1,205 @@
+<link
+  rel='stylesheet'
+  href='{{ 'forms.css' | asset_url }}'
+  media='print'
+  onload="this.media='all'"
+>
+{{ 'section-contact.css' | asset_url | stylesheet_tag }}
+
+<section class='contact-form-section color-{{ section.settings.color_scheme }} {{ section.settings.section_padding_top }} {{ section.settings.section_padding_bottom }}'>
+  <div class='contact-form-section__container container-x-small'>
+    {% if page.content.size > 0 %}
+      <div class='rte'>
+        {{ page.content }}
+      </div>
+    {% endif %}
+    <div class='contact-form form-vertical'>
+      {%- assign formId = 'ContactForm' -%}
+      {% form 'contact', id: formId %}
+        {% render 'form-status', form: form, form_id: formId %}
+        {%- unless form.posted_successfully? -%}
+          <div class='form-section form-section--50'>
+            <custom-input-wrapper class='custom-field{% if form[name] or customer %} is-active{% endif %}'>
+              <label for='{{ formId }}-name'>
+                {{- 'contact.form.name' | t -}}
+              </label>
+              <input
+                class='input--primary'
+                type='text'
+                id='{{ formId }}-name'
+                name='contact[{{ 'contact.form.name' | t }}]'
+                value='{% if form[name] %}{{ form[name] }}{% elsif customer %}{{ customer.name }}{% endif %}'
+              >
+            </custom-input-wrapper>
+            <custom-input-wrapper class='custom-field{% if form.email or customer %} is-active{% endif %}'>
+              <label for='{{ formId }}-email'>
+                {{- 'contact.form.email' | t }}
+                <span aria-hidden='true'>*</span>
+              </label>
+              <input
+                class='input--primary'
+                type='email'
+                id='{{ formId }}-email'
+                name='contact[email]'
+                autocorrect='off'
+                autocapitalize='off'
+                value='{% if form.email %}{{ form.email }}{% elsif customer %}{{ customer.email }}{% endif %}'
+                aria-required='true'
+                {%- if form.errors contains 'email' -%}
+                  class='input--error'
+                  aria-invalid='true'
+                  aria-describedby='{{ formId }}-email-error'
+                {%- endif -%}
+              >
+              {%- if form.errors contains 'email' -%}
+                <span id='{{ formId }}-email-error' class='input-error-message'>
+                  <span class='visually-hidden'>
+                    {{- 'accessibility.error' | t }}
+                  </span>
+                  {% render 'icon-error' %}
+                  <span>
+                    {{- form.errors.translated_fields.email | capitalize }}
+                    {{ form.errors.messages.email }}.
+                  </span>
+                </span>
+              {%- endif -%}
+            </custom-input-wrapper>
+          </div>
+
+          <div class='form-section'>
+            <custom-input-wrapper class='custom-field{% if form.message_title %} is-active{% endif %}'>
+              <label for='{{ formId }}-message-title'>
+                {{- 'contact.form.message_title' | t -}}
+              </label>
+              <input
+                class='input--primary'
+                type='text'
+                id='{{ formId }}-message-title'
+                name='contact[{{ 'contact.form.message_title' | t }}]'
+                value='{% if form.message_title %}{{ form.message_title }}{% endif %}'
+              >
+            </custom-input-wrapper>
+          </div>
+
+          <div class='form-section'>
+            <label class='field__label' for='{{ formId }}-message'>
+              {{- 'contact.form.message' | t -}}
+            </label>
+            <textarea
+              class='input--primary text-area textarea--large'
+              rows='10'
+              id='{{ formId }}-message'
+              name='contact[{{ 'contact.form.message' | t }}]'
+            >{% if form.body %}{{ form.body }}{% endif %}</textarea>
+          </div>
+
+          <button type='submit' class='button button--secondary button--medium'>
+            <span class='button__inner'>
+              {{ 'contact.form.submit' | t }}
+            </span>
+          </button>
+        {% endunless %}
+      {% endform %}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Contact Page",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Contact Form Settings"
+    },
+    {
+      "type": "text",
+      "id": "form_title",
+      "label": "Form Title",
+      "default": "Get in touch"
+    },
+    {
+      "type": "textarea",
+      "id": "form_description",
+      "label": "Form Description",
+      "default": "We'd love to hear from you. Send us a message and we'll respond as soon as possible."
+    },
+    {
+      "type": "header",
+      "content": "Color Scheme"
+    },
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "Color scheme",
+      "default": "background-1"
+    },
+    {
+      "type": "header",
+      "content": "Layout"
+    },
+    {
+      "type": "select",
+      "id": "section_padding_top",
+      "label": "Section Padding Top",
+      "options": [
+        {
+          "value": "section-padding-top-none",
+          "label": "None"
+        },
+        {
+          "value": "section-padding-top-x-small",
+          "label": "Extra Small"
+        },
+        {
+          "value": "section-padding-top-small",
+          "label": "Small"
+        },
+        {
+          "value": "section-padding-top-main",
+          "label": "Medium"
+        },
+        {
+          "value": "section-padding-top-large",
+          "label": "Large"
+        }
+      ],
+      "default": "section-padding-top-small"
+    },
+    {
+      "type": "select",
+      "id": "section_padding_bottom",
+      "label": "Section Padding Bottom",
+      "options": [
+        {
+          "value": "section-padding-bottom-none",
+          "label": "None"
+        },
+        {
+          "value": "section-padding-bottom-x-small",
+          "label": "Extra Small"
+        },
+        {
+          "value": "section-padding-bottom-small",
+          "label": "Small"
+        },
+        {
+          "value": "section-padding-bottom-main",
+          "label": "Medium"
+        },
+        {
+          "value": "section-padding-bottom-large",
+          "label": "Large"
+        }
+      ],
+      "default": "section-padding-bottom-small"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Contact Page",
+      "category": "Templates & Pages"
+    }
+  ]
+}
+{% endschema %}

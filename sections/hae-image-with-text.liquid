@@ -1,0 +1,450 @@
+<style>
+  /*------------------------------------*\
+    #Image with Text
+\*------------------------------------*/
+
+  .image-with-text__content {
+    align-items: center;
+  }
+
+  .image-with-text__media-wrapper {
+    border-radius: var(--border-radius-large);
+    overflow: hidden;
+  }
+
+  .image-with-text__text {
+    max-width: 40rem;
+  }
+
+  .comparison-table__image img {
+    width: 100%;
+  }
+
+  .image-with-text__button-wrapper {
+    margin-top: var(--space-5);
+  }
+</style>
+
+<section class='image-with-text color-{{ section.settings.color_scheme }}'>
+  <div class='image-with-text__container container-small section-padding-small'>
+    <div class='image-with-text__content grid grid-2 grid-gap-lg {% if section.settings.layout == 'right' %} reverse-desktop-up {% endif %}'>
+      <div class='image-with-text__media-wrapper'>
+        {% if section.settings.media_type == 'image' %}
+          {% if section.settings.image != blank %}
+            <div class='image-with-text__media'>
+              {% render 'image-with-aspect-ratio',
+                image: section.settings.image,
+                aspect_ratio: section.settings.media_aspect_ratio,
+                alt: section.settings.image.alt,
+                sizes: '(min-width: 750px) 50vw, 100vw',
+                widths: '360, 533, 720, 900, 1066'
+              %}
+            </div>
+          {% else %}
+            {{ 'image' | placeholder_svg_tag: 'placeholder-svg' }}
+          {% endif %}
+        {% else %}
+          <div
+            class='video-wrapper'
+            style='--aspect-ratio: {{ section.settings.media_aspect_ratio }};'
+          >
+            <video
+              class='responsive-video'
+              autoplay
+              loop
+              muted
+              playsinline
+              poster='{{ section.settings.video_poster | img_url }}'
+            >
+              <source src='{{ section.settings.video_url }}' type='video/mp4'>
+              Your browser does not support the video tag.
+            </video>
+          </div>
+        {% endif %}
+      </div>
+      <div class='image-with-text__text'>
+        {% for block in section.blocks %}
+          {% case block.type %}
+            {% when 'eyebrow' %}
+              <div class='text-eyebrow {{ block.settings.text_size }}'>
+                {{ block.settings.text }}
+              </div>
+            {% when 'heading' %}
+              <h2 class='{{ block.settings.heading_size }}'>
+                {{ block.settings.heading | escape }}
+              </h2>
+            {% when 'text' %}
+              <div class='{{ block.settings.text_size }}'>
+                {{ block.settings.text }}
+              </div>
+            {% when 'text_with_icon' %}
+              <div class='text-with-icon'>
+                {% if block.settings.icon != blank %}
+                  <div class='text-with-icon_icon icon-medium icon'>
+                    <img
+                      src='{{ block.settings.icon | img_url: '50x' }}'
+                      alt='{{ block.settings.icon.alt | escape }}'
+                      class='image-with-text__icon'
+                      width='24'
+                      height='24'
+                      loading='lazy'
+                    >
+                  </div>
+                {% endif %}
+                <div class='text-with-icon_text {{ block.settings.text_size }}'>
+                  {{ block.settings.text }}
+                </div>
+              </div>
+            {% when 'button' %}
+              <div class='image-with-text__button-wrapper'>
+                <a
+                  href='{{ block.settings.button_link }}'
+                  class='button {{ block.settings.button_size }} button--primary'
+                  aria-label='{{ block.settings.button_label | escape }}'
+                >
+                  {{- block.settings.button_label | escape -}}
+                </a>
+              </div>
+            {% when 'klaviyo_form' %}
+              <div class='image-with-text__klaviyo-form'>
+                {% if block.settings.klaviyo_form_id != blank %}
+                  <div
+                    class='klaviyo-form-{{ block.settings.klaviyo_form_id }}'
+                  ></div>
+                {% endif %}
+              </div>
+          {% endcase %}
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Image with text",
+  "class": "index-section",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Layout"
+    },
+    {
+      "type": "select",
+      "id": "layout",
+      "label": "Media alignment",
+      "default": "left",
+      "options": [
+        {
+          "value": "left",
+          "label": "Left"
+        },
+        {
+          "value": "right",
+          "label": "Right"
+        }
+      ]
+    },
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "Color scheme",
+      "default": "background-1"
+    },
+    {
+      "type": "header",
+      "content": "Media"
+    },
+    {
+      "type": "select",
+      "id": "media_type",
+      "label": "Media type",
+      "options": [
+        {
+          "value": "image",
+          "label": "Image"
+        },
+        {
+          "value": "video",
+          "label": "Video"
+        }
+      ],
+      "default": "image"
+    },
+    {
+      "type": "select",
+      "id": "media_aspect_ratio",
+      "label": "Media aspect ratio",
+      "options": [
+        {
+          "value": "16/9",
+          "label": "16:9 (Landscape)"
+        },
+        {
+          "value": "4/3",
+          "label": "4:3 (Portrait Horizontal)"
+        },
+        {
+          "value": "1/1",
+          "label": "1:1 (Square)"
+        },
+        {
+          "value": "1/.85",
+          "label": "1:0.8 (Shorter Square)"
+        },
+        {
+          "value": "3/4",
+          "label": "3:4 (Portrait)"
+        }
+      ],
+      "default": "1/1"
+    },
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Image"
+    },
+    {
+      "type": "url",
+      "id": "video_url",
+      "label": "Video URL",
+      "info": "MP4 format required"
+    },
+    {
+      "type": "image_picker",
+      "id": "video_poster",
+      "label": "Video poster image"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "eyebrow",
+      "name": "Eyebrow Text",
+      "settings": [
+        {
+          "type": "text",
+          "id": "text",
+          "label": "Text",
+          "default": "Eyebrow text"
+        },
+        {
+          "type": "select",
+          "id": "text_size",
+          "label": "Text size",
+          "options": [
+            {
+              "value": "text-size-small",
+              "label": "Small"
+            },
+            {
+              "value": "text-size-medium",
+              "label": "Regular"
+            },
+            {
+              "value": "text-size-large",
+              "label": "Large"
+            },
+            {
+              "value": "text-size-x-large",
+              "label": "X-Large"
+            },
+            {
+              "value": "text-size-xx-large",
+              "label": "XX-Large"
+            }
+          ],
+          "default": "text-size-small"
+        }
+      ]
+    },
+    {
+      "type": "heading",
+      "name": "Heading",
+      "settings": [
+        {
+          "type": "text",
+          "id": "heading",
+          "label": "Heading",
+          "default": "Image with text"
+        },
+        {
+          "type": "select",
+          "id": "heading_size",
+          "label": "Heading size",
+          "options": [
+            {
+              "value": "headline-style-h1",
+              "label": "H1"
+            },
+            {
+              "value": "headline-style-h2",
+              "label": "H2"
+            },
+            {
+              "value": "headline-style-h3",
+              "label": "H3"
+            },
+            {
+              "value": "headline-style-h4",
+              "label": "H4"
+            }
+          ],
+          "default": "headline-style-h2"
+        }
+      ]
+    },
+    {
+      "type": "text",
+      "name": "Rich text",
+      "settings": [
+        {
+          "type": "richtext",
+          "id": "text",
+          "label": "Text",
+          "default": "<p>Pair large text with an image to give focus to your chosen product, collection, or blog post.</p>"
+        },
+        {
+          "type": "select",
+          "id": "text_size",
+          "label": "Text size",
+          "options": [
+            {
+              "value": "text-size-small",
+              "label": "Small"
+            },
+            {
+              "value": "text-size-medium",
+              "label": "Regular"
+            },
+            {
+              "value": "text-size-large",
+              "label": "Large"
+            },
+            {
+              "value": "text-size-x-large",
+              "label": "X-Large"
+            },
+            {
+              "value": "text-size-xx-large",
+              "label": "XX-Large"
+            }
+          ],
+          "default": "text-size-medium"
+        }
+      ]
+    },
+    {
+      "type": "text_with_icon",
+      "name": "Text with Icon",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "icon",
+          "label": "Icon"
+        },
+        {
+          "type": "text",
+          "id": "text",
+          "label": "Text",
+          "default": "Text with icon"
+        },
+        {
+          "type": "select",
+          "id": "text_size",
+          "label": "Text size",
+          "options": [
+            {
+              "value": "text-size-small",
+              "label": "Small"
+            },
+            {
+              "value": "text-size-medium",
+              "label": "Regular"
+            },
+            {
+              "value": "text-size-large",
+              "label": "Large"
+            },
+            {
+              "value": "text-size-x-large",
+              "label": "X-Large"
+            },
+            {
+              "value": "text-size-xx-large",
+              "label": "XX-Large"
+            }
+          ],
+          "default": "text-size-medium"
+        }
+      ]
+    },
+    {
+      "type": "button",
+      "name": "Button",
+      "settings": [
+        {
+          "type": "text",
+          "id": "button_label",
+          "label": "Button label",
+          "default": "Button"
+        },
+        {
+          "type": "url",
+          "id": "button_link",
+          "label": "Button link"
+        },
+        {
+          "type": "select",
+          "id": "button_size",
+          "label": "Button size",
+          "options": [
+            {
+              "value": "button--small",
+              "label": "Small"
+            },
+            {
+              "value": "button--medium",
+              "label": "Medium"
+            },
+            {
+              "value": "button--large",
+              "label": "Large"
+            }
+          ],
+          "default": "button--medium"
+        }
+      ]
+    },
+    {
+      "type": "klaviyo_form",
+      "name": "Klaviyo Form",
+      "settings": [
+        {
+          "type": "text",
+          "id": "klaviyo_form_id",
+          "label": "Klaviyo Form ID",
+          "info": "Enter the Klaviyo form ID to display the form",
+          "default": "UQJuZt"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Image with text",
+      "category": "Media & Visual",
+      "blocks": [
+        {
+          "type": "heading"
+        },
+        {
+          "type": "text"
+        },
+        {
+          "type": "button"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

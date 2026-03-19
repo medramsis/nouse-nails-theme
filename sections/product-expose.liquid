@@ -1,0 +1,794 @@
+<link
+  rel='stylesheet'
+  href='{{ 'product-expose.css' | asset_url }}'
+  media='print'
+  onload="this.media='all'"
+>
+<script src='{{ 'details-disclosure.js' | asset_url }}' defer='defer'></script>
+
+<section class='product-expose color-{{ section.settings.color_scheme }}'>
+  <div class='product-expose__contain container-main section-padding-main'>
+    <div class='product-expose__blocks grid grid-2'>
+      {% for block in section.blocks %}
+        {% case block.type %}
+          {% when 'slideshow' %}
+            <div
+              class='product-expose__block product-expose__slideshow color-{{ block.settings.color_scheme }} {{ block.settings.padding_size }}'
+              {{ block.shopify_attributes }}
+            >
+              <div class='product-expose__block__inner container-small'>
+                {% if block.settings.slideshow_heading != blank %}
+                  <h2 class='product-expose__block-heading {{ block.settings.heading_size }}'>
+                    {{ block.settings.slideshow_heading }}
+                  </h2>
+                {% endif %}
+
+                <div class='product-expose__slideshow-container'>
+                  <swiper-slideshow
+                    class='product-expose__swiper-wrapper'
+                    slides-per-view='1'
+                    space-between='0'
+                    loop='true'
+                    autoplay='false'
+                    effect='fade'
+                    show-navigation='true'
+                    show-pagination='true'
+                  >
+                    <div
+                      class='swiper product-expose-swiper'
+                      data-swiper-slideshow
+                    >
+                      <div class='swiper-wrapper' data-swiper-slideshow-wrapper>
+                        {% if block.settings.image_1 != blank %}
+                          <div class='swiper-slide'>
+                            {% render 'image-with-aspect-ratio',
+                              image: block.settings.image_1,
+                              aspect_ratio: block.settings.aspect_ratio,
+                              alt: block.settings.image_1.alt,
+                              sizes: '(min-width: 750px) 40vw, 60vw',
+                              widths: '280, 400,600,700,1000'
+                            %}
+                          </div>
+                        {% endif %}
+                        {% if block.settings.image_2 != blank %}
+                          <div class='swiper-slide'>
+                            {% render 'image-with-aspect-ratio',
+                              image: block.settings.image_2,
+                              aspect_ratio: block.settings.aspect_ratio,
+                              alt: block.settings.image_2.alt,
+                              sizes: '(min-width: 750px) 40vw, 60vw',
+                              widths: '280, 400,600,700,1000'
+                            %}
+                          </div>
+                        {% endif %}
+                        {% if block.settings.image_3 != blank %}
+                          <div class='swiper-slide'>
+                            {% render 'image-with-aspect-ratio',
+                              image: block.settings.image_3,
+                              aspect_ratio: block.settings.aspect_ratio,
+                              alt: block.settings.image_3.alt,
+                              sizes: '(min-width: 750px) 40vw, 60vw',
+                              widths: '280, 400,600,700,1000'
+                            %}
+                          </div>
+                        {% endif %}
+                        {% if block.settings.image_4 != blank %}
+                          <div class='swiper-slide'>
+                            {% render 'image-with-aspect-ratio',
+                              image: block.settings.image_4,
+                              aspect_ratio: block.settings.aspect_ratio,
+                              alt: block.settings.image_4.alt,
+                              sizes: '(min-width: 750px) 40vw, 60vw',
+                              widths: '280, 400,600,700,1000'
+                            %}
+                          </div>
+                        {% endif %}
+                      </div>
+                      <div class='product-expose__slideshow-navigation'>
+                        <button
+                          class='product-expose__nav-button product-expose__nav-button--prev swiper-slideshow__nav-button swiper-slideshow__nav-button--prev'
+                          aria-label='Previous slide'
+                        >
+                          {% render 'icon-chevron-left' %}
+                        </button>
+                        <button
+                          class='product-expose__nav-button product-expose__nav-button--next swiper-slideshow__nav-button swiper-slideshow__nav-button--next'
+                          aria-label='Next slide'
+                        >
+                          {% render 'icon-chevron-right' %}
+                        </button>
+                      </div>
+                      <div
+                        class='product-expose__slideshow-pagination swiper-slideshow__pagination'
+                      ></div>
+                    </div>
+                  </swiper-slideshow>
+                </div>
+              </div>
+            </div>
+
+          {% when 'richtext' %}
+            <div
+              class='product-expose__block product-expose__richtext color-{{ block.settings.color_scheme }} {{ block.settings.padding_size }}'
+              {{ block.shopify_attributes }}
+            >
+              <div class='product-expose__block__inner container-small'>
+                {% if block.settings.richtext_heading != blank %}
+                  <h2 class='product-expose__block-heading {{ block.settings.heading_size }}'>
+                    {{ block.settings.richtext_heading }}
+                  </h2>
+                {% endif %}
+                <div class='product-expose__richtext-content rte {{ block.settings.text_size }}'>
+                  {{ block.settings.richtext_content }}
+                </div>
+              </div>
+            </div>
+
+          {% when 'certifications' %}
+            <div
+              class='product-expose__block product-expose__certifications color-{{ block.settings.color_scheme }} {{ block.settings.padding_size }}'
+              {{ block.shopify_attributes }}
+            >
+              <div class='product-expose__block__inner container-small'>
+                {% if block.settings.certifications_heading != blank %}
+                  <h2 class='product-expose__block-heading {{ block.settings.heading_size }}'>
+                    {{ block.settings.certifications_heading }}
+                  </h2>
+                {% endif %}
+                <div class='product-expose__certifications-grid'>
+                  {% if block.settings.cert_image_1 != blank %}
+                    <div class='product-expose__cert-item'>
+                      {% render 'image-with-aspect-ratio',
+                        image: block.settings.cert_image_1,
+                        aspect_ratio: 'natural',
+                        alt: block.settings.cert_image_1.alt,
+                        sizes: '200px',
+                        widths: '200,400'
+                      %}
+                      {% if block.settings.cert_label_1 != blank %}
+                        <p class='product-expose__cert-label'>
+                          {{ block.settings.cert_label_1 }}
+                        </p>
+                      {% endif %}
+                    </div>
+                  {% endif %}
+                  {% if block.settings.cert_image_2 != blank %}
+                    <div class='product-expose__cert-item'>
+                      {% render 'image-with-aspect-ratio',
+                        image: block.settings.cert_image_2,
+                        aspect_ratio: 'natural',
+                        alt: block.settings.cert_image_2.alt,
+                        sizes: '200px',
+                        widths: '200,400'
+                      %}
+                      {% if block.settings.cert_label_2 != blank %}
+                        <p class='product-expose__cert-label'>
+                          {{ block.settings.cert_label_2 }}
+                        </p>
+                      {% endif %}
+                    </div>
+                  {% endif %}
+                  {% if block.settings.cert_image_3 != blank %}
+                    <div class='product-expose__cert-item'>
+                      {% render 'image-with-aspect-ratio',
+                        image: block.settings.cert_image_3,
+                        aspect_ratio: 'natural',
+                        alt: block.settings.cert_image_3.alt,
+                        sizes: '200px',
+                        widths: '200,400'
+                      %}
+                      {% if block.settings.cert_label_3 != blank %}
+                        <p class='product-expose__cert-label'>
+                          {{ block.settings.cert_label_3 }}
+                        </p>
+                      {% endif %}
+                    </div>
+                  {% endif %}
+                  {% if block.settings.cert_image_4 != blank %}
+                    <div class='product-expose__cert-item'>
+                      {% render 'image-with-aspect-ratio',
+                        image: block.settings.cert_image_4,
+                        aspect_ratio: 'natural',
+                        alt: block.settings.cert_image_4.alt,
+                        sizes: '200px',
+                        widths: '200,400'
+                      %}
+                      {% if block.settings.cert_label_4 != blank %}
+                        <p class='product-expose__cert-label'>
+                          {{ block.settings.cert_label_4 }}
+                        </p>
+                      {% endif %}
+                    </div>
+                  {% endif %}
+                </div>
+              </div>
+            </div>
+
+          {% when 'faq' %}
+            <div
+              class='product-expose__block product-expose__faq color-{{ block.settings.color_scheme }} {{ block.settings.padding_size }}'
+              {{ block.shopify_attributes }}
+            >
+              <div class='product-expose__block__inner container-small'>
+                {% if block.settings.faq_heading != blank %}
+                  <h2 class='product-expose__block-heading {{ block.settings.heading_size }}'>
+                    {{ block.settings.faq_heading }}
+                  </h2>
+                {% endif %}
+                <div class='product-expose__faq-list'>
+                  {% if block.settings.question_1 != blank %}
+                    <drawer-disclosure>
+                      <details class='product-expose__faq-item'>
+                        <summary class='product-expose__faq-question'>
+                          {{ block.settings.question_1 }}
+                          <span class='product-expose__faq-icon'>
+                            <span class='open-icon'>→</span>
+                          </span>
+                        </summary>
+                        <div
+                          class='product-expose__faq-answer'
+                          data-drawer-content
+                        >
+                          <div data-drawer-content-inner>
+                            {{ block.settings.answer_1 }}
+                          </div>
+                        </div>
+                      </details>
+                    </drawer-disclosure>
+                  {% endif %}
+                  {% if block.settings.question_2 != blank %}
+                    <drawer-disclosure>
+                      <details class='product-expose__faq-item'>
+                        <summary class='product-expose__faq-question'>
+                          {{ block.settings.question_2 }}
+                          <span class='product-expose__faq-icon'>
+                            <span class='open-icon'>→</span>
+                          </span>
+                        </summary>
+                        <div
+                          class='product-expose__faq-answer'
+                          data-drawer-content
+                        >
+                          <div data-drawer-content-inner>
+                            {{ block.settings.answer_2 }}
+                          </div>
+                        </div>
+                      </details>
+                    </drawer-disclosure>
+                  {% endif %}
+                  {% if block.settings.question_3 != blank %}
+                    <drawer-disclosure>
+                      <details class='product-expose__faq-item'>
+                        <summary class='product-expose__faq-question'>
+                          {{ block.settings.question_3 }}
+                          <span class='product-expose__faq-icon'>
+                            <span class='open-icon'>→</span>
+                          </span>
+                        </summary>
+                        <div
+                          class='product-expose__faq-answer'
+                          data-drawer-content
+                        >
+                          <div data-drawer-content-inner>
+                            {{ block.settings.answer_3 }}
+                          </div>
+                        </div>
+                      </details>
+                    </drawer-disclosure>
+                  {% endif %}
+                  {% if block.settings.question_4 != blank %}
+                    <drawer-disclosure>
+                      <details class='product-expose__faq-item'>
+                        <summary class='product-expose__faq-question'>
+                          {{ block.settings.question_4 }}
+                          <span class='product-expose__faq-icon'>
+                            <span class='open-icon'>→</span>
+                          </span>
+                        </summary>
+                        <div
+                          class='product-expose__faq-answer'
+                          data-drawer-content
+                        >
+                          <div data-drawer-content-inner>
+                            {{ block.settings.answer_4 }}
+                          </div>
+                        </div>
+                      </details>
+                    </drawer-disclosure>
+                  {% endif %}
+                </div>
+              </div>
+            </div>
+        {% endcase %}
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Product Expose",
+  "tag": "section",
+  "class": "section-product-expose",
+  "blocks": [
+    {
+      "type": "slideshow",
+      "name": "Slideshow",
+      "settings": [
+        {
+          "type": "color_scheme",
+          "id": "color_scheme",
+          "label": "Color scheme",
+          "default": "background-1"
+        },
+        {
+          "type": "text",
+          "id": "slideshow_heading",
+          "label": "Slideshow Heading",
+          "default": "Product Gallery"
+        },
+        {
+          "type": "select",
+          "id": "heading_size",
+          "label": "Heading size",
+          "options": [
+            {
+              "value": "headline-style-h1",
+              "label": "H1"
+            },
+            {
+              "value": "headline-style-h2",
+              "label": "H2"
+            },
+            {
+              "value": "headline-style-h3",
+              "label": "H3"
+            },
+            {
+              "value": "headline-style-h4",
+              "label": "H4"
+            },
+            {
+              "value": "headline-style-h5",
+              "label": "H5"
+            },
+            {
+              "value": "headline-style-h6",
+              "label": "H6"
+            }
+          ],
+          "default": "headline-style-h4"
+        },
+        {
+          "type": "image_picker",
+          "id": "image_1",
+          "label": "Image 1"
+        },
+        {
+          "type": "image_picker",
+          "id": "image_2",
+          "label": "Image 2"
+        },
+        {
+          "type": "image_picker",
+          "id": "image_3",
+          "label": "Image 3"
+        },
+        {
+          "type": "image_picker",
+          "id": "image_4",
+          "label": "Image 4"
+        },
+        {
+          "type": "select",
+          "id": "aspect_ratio",
+          "label": "Aspect ratio",
+          "options": [
+            {
+              "value": "16/9",
+              "label": "16:9 (Landscape)"
+            },
+            {
+              "value": "4/3",
+              "label": "4:3 (Portrait Horizontal)"
+            },
+            {
+              "value": "1/1",
+              "label": "1:1 (Square)"
+            },
+            {
+              "value": "3/4",
+              "label": "3:4 (Portrait)"
+            },
+            {
+              "value": "9/16",
+              "label": "9:16 (Portrait)"
+            }
+          ],
+          "default": "4/3"
+        },
+        {
+          "type": "select",
+          "id": "padding_size",
+          "label": "Section Padding Size",
+          "options": [
+            {
+              "value": "section-padding-x-small",
+              "label": "Extra Small"
+            },
+            {
+              "value": "section-padding-small",
+              "label": "Small"
+            },
+            {
+              "value": "section-padding-main",
+              "label": "Medium"
+            },
+            {
+              "value": "section-padding-large",
+              "label": "Large"
+            }
+          ],
+          "default": "section-padding-x-small"
+        }
+      ]
+    },
+    {
+      "type": "richtext",
+      "name": "Rich Text",
+      "settings": [
+        {
+          "type": "color_scheme",
+          "id": "color_scheme",
+          "label": "Color scheme",
+          "default": "background-1"
+        },
+        {
+          "type": "text",
+          "id": "richtext_heading",
+          "label": "Heading",
+          "default": "About This Product"
+        },
+        {
+          "type": "select",
+          "id": "heading_size",
+          "label": "Heading size",
+          "options": [
+            {
+              "value": "headline-style-h1",
+              "label": "H1"
+            },
+            {
+              "value": "headline-style-h2",
+              "label": "H2"
+            },
+            {
+              "value": "headline-style-h3",
+              "label": "H3"
+            },
+            {
+              "value": "headline-style-h4",
+              "label": "H4"
+            },
+            {
+              "value": "headline-style-h5",
+              "label": "H5"
+            },
+            {
+              "value": "headline-style-h6",
+              "label": "H6"
+            }
+          ],
+          "default": "headline-style-h4"
+        },
+        {
+          "type": "richtext",
+          "id": "richtext_content",
+          "label": "Content",
+          "default": "<p>Add detailed product information here.</p>"
+        },
+        {
+          "type": "select",
+          "id": "text_size",
+          "label": "Text size",
+          "options": [
+            {
+              "value": "text-size-small",
+              "label": "Small"
+            },
+            {
+              "value": "text-size-main",
+              "label": "Medium"
+            },
+            {
+              "value": "text-size-large",
+              "label": "Large"
+            },
+            {
+              "value": "text-size-x-large",
+              "label": "X-Large"
+            },
+            {
+              "value": "text-size-xx-large",
+              "label": "XX-Large"
+            }
+          ],
+          "default": "text-size-main"
+        },
+        {
+          "type": "select",
+          "id": "padding_size",
+          "label": "Section Padding Size",
+          "options": [
+            {
+              "value": "section-padding-x-small",
+              "label": "Extra Small"
+            },
+            {
+              "value": "section-padding-small",
+              "label": "Small"
+            },
+            {
+              "value": "section-padding-main",
+              "label": "Medium"
+            },
+            {
+              "value": "section-padding-large",
+              "label": "Large"
+            }
+          ],
+          "default": "section-padding-x-small"
+        }
+      ]
+    },
+    {
+      "type": "certifications",
+      "name": "Certifications",
+      "settings": [
+        {
+          "type": "color_scheme",
+          "id": "color_scheme",
+          "label": "Color scheme",
+          "default": "background-1"
+        },
+        {
+          "type": "text",
+          "id": "certifications_heading",
+          "label": "Heading",
+          "default": "Certifications & Badges"
+        },
+        {
+          "type": "select",
+          "id": "heading_size",
+          "label": "Heading size",
+          "options": [
+            {
+              "value": "headline-style-h1",
+              "label": "H1"
+            },
+            {
+              "value": "headline-style-h2",
+              "label": "H2"
+            },
+            {
+              "value": "headline-style-h3",
+              "label": "H3"
+            },
+            {
+              "value": "headline-style-h4",
+              "label": "H4"
+            },
+            {
+              "value": "headline-style-h5",
+              "label": "H5"
+            },
+            {
+              "value": "headline-style-h6",
+              "label": "H6"
+            }
+          ],
+          "default": "headline-style-h4"
+        },
+        {
+          "type": "image_picker",
+          "id": "cert_image_1",
+          "label": "Certification Image 1"
+        },
+        {
+          "type": "text",
+          "id": "cert_label_1",
+          "label": "Certification Label 1"
+        },
+        {
+          "type": "image_picker",
+          "id": "cert_image_2",
+          "label": "Certification Image 2"
+        },
+        {
+          "type": "text",
+          "id": "cert_label_2",
+          "label": "Certification Label 2"
+        },
+        {
+          "type": "image_picker",
+          "id": "cert_image_3",
+          "label": "Certification Image 3"
+        },
+        {
+          "type": "text",
+          "id": "cert_label_3",
+          "label": "Certification Label 3"
+        },
+        {
+          "type": "image_picker",
+          "id": "cert_image_4",
+          "label": "Certification Image 4"
+        },
+        {
+          "type": "text",
+          "id": "cert_label_4",
+          "label": "Certification Label 4"
+        },
+        {
+          "type": "select",
+          "id": "padding_size",
+          "label": "Section Padding Size",
+          "options": [
+            {
+              "value": "section-padding-x-small",
+              "label": "Extra Small"
+            },
+            {
+              "value": "section-padding-small",
+              "label": "Small"
+            },
+            {
+              "value": "section-padding-main",
+              "label": "Medium"
+            },
+            {
+              "value": "section-padding-large",
+              "label": "Large"
+            }
+          ],
+          "default": "section-padding-x-small"
+        }
+      ]
+    },
+    {
+      "type": "faq",
+      "name": "FAQ Item",
+      "settings": [
+        {
+          "type": "color_scheme",
+          "id": "color_scheme",
+          "label": "Color scheme",
+          "default": "background-1"
+        },
+        {
+          "type": "text",
+          "id": "faq_heading",
+          "label": "FAQ Section Heading"
+        },
+        {
+          "type": "select",
+          "id": "heading_size",
+          "label": "Heading size",
+          "options": [
+            {
+              "value": "headline-style-h1",
+              "label": "H1"
+            },
+            {
+              "value": "headline-style-h2",
+              "label": "H2"
+            },
+            {
+              "value": "headline-style-h3",
+              "label": "H3"
+            },
+            {
+              "value": "headline-style-h4",
+              "label": "H4"
+            },
+            {
+              "value": "headline-style-h5",
+              "label": "H5"
+            },
+            {
+              "value": "headline-style-h6",
+              "label": "H6"
+            }
+          ],
+          "default": "headline-style-h4"
+        },
+        {
+          "type": "text",
+          "id": "question_1",
+          "label": "Question 1",
+          "default": "What is your question?"
+        },
+        {
+          "type": "richtext",
+          "id": "answer_1",
+          "label": "Answer 1",
+          "default": "<p>Provide your answer here.</p>"
+        },
+        {
+          "type": "text",
+          "id": "question_2",
+          "label": "Question 2"
+        },
+        {
+          "type": "richtext",
+          "id": "answer_2",
+          "label": "Answer 2"
+        },
+        {
+          "type": "text",
+          "id": "question_3",
+          "label": "Question 3"
+        },
+        {
+          "type": "richtext",
+          "id": "answer_3",
+          "label": "Answer 3"
+        },
+        {
+          "type": "text",
+          "id": "question_4",
+          "label": "Question 4"
+        },
+        {
+          "type": "richtext",
+          "id": "answer_4",
+          "label": "Answer 4"
+        },
+        {
+          "type": "select",
+          "id": "padding_size",
+          "label": "Section Padding Size",
+          "options": [
+            {
+              "value": "section-padding-x-small",
+              "label": "Extra Small"
+            },
+            {
+              "value": "section-padding-small",
+              "label": "Small"
+            },
+            {
+              "value": "section-padding-main",
+              "label": "Medium"
+            },
+            {
+              "value": "section-padding-large",
+              "label": "Large"
+            }
+          ],
+          "default": "section-padding-x-small"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Product Expose",
+      "blocks": [
+        {
+          "type": "slideshow"
+        },
+        {
+          "type": "richtext"
+        },
+        {
+          "type": "certifications"
+        },
+        {
+          "type": "faq"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

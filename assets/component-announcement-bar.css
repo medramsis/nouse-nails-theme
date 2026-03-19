@@ -1,0 +1,65 @@
+/*------------------------------------*\
+    #Announcement Bar
+\*------------------------------------*/
+
+#shopify-section-announcement-bar {
+  z-index: 4;
+  position: relative;
+  background-color: rgb(var(--color-background));
+}
+
+.announcement-bar {
+  color: rgb(var(--color-text-1));
+  background-color: rgb(var(--color-background));
+  display: block;
+  top: 0;
+}
+
+.announcement-bar__contain {
+}
+
+.announcement-bar__text {
+  font-size: var(--text-size-small);
+  text-align: center;
+  padding: var(--space-2) 0;
+}
+
+.announcement-bar__text p {
+  margin-bottom: 0;
+}
+
+.announcement-bar__close {
+  position: absolute;
+  right: var(--space-4);
+  top: 0;
+  right: var(--space-2);
+  width: 1.5rem;
+  bottom: 0;
+  margin: auto;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  color: rgb(var(--color-text-1));
+  padding: var(--space-2);
+}
+
+.announcement-bar__close svg {
+  transition: all 0.4s var(--default-easing);
+}
+
+.announcement-bar__close:hover svg,
+.announcement-bar__close:focus svg {
+  transform: scale(1.1) rotate(180deg);
+}
+
+@media screen and (min-width: 940px) {
+  .announcement-bar__text {
+    font-size: var(--text-size-regular);
+  }
+}
+
+@media screen and (min-width: 940px) {
+  .announcement-bar__close {
+    width: 2rem;
+  }
+}

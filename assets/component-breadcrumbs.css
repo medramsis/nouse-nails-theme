@@ -1,0 +1,66 @@
+
+
+
+
+
+/*------------------------------------*\
+  #Breadcrumbs
+\*------------------------------------*/
+
+.breadcrumbs {
+  width: 100%;
+  margin-bottom: var(--space-7);
+}
+
+@media screen and (min-width: 940px) {
+  .breadcrumbs {
+    margin-bottom: var(--space-10);
+  }
+}
+
+.breadcrumbs--product-page {
+  margin-bottom: var(--level5);
+}
+
+@media screen and (min-width: 940px) {
+  .breadcrumbs--product-page {
+    display: block;
+    margin-bottom: calc(var(--space-2));
+  }
+}
+
+.breadcrumbs__inner {
+  display: flex;
+  margin: 0 auto;
+  padding-top: var(--space-4);
+  padding-bottom: var(--space-4);
+}
+
+.breadcrumbs__inner li:last-child a:after {
+  content: '';
+}
+
+.breadcrumbs__inner a {
+  color: rgb(var(--base-color-text));
+  text-decoration: none;
+  margin-right: var(--space-3);
+  display: block;
+  position: relative;
+  padding-right: var(--space-1);
+  font-size: var(--text-size-tiny);
+}
+
+.breadcrumbs__inner a:hover,
+.breadcrumbs__inner a:focus {
+  text-decoration: underline;
+}
+
+.breadcrumbs__inner a[aria-current='page'] {
+  text-decoration: underline;
+}
+
+.breadcrumbs__inner a:after {
+  content: '/';
+  position: absolute;
+  right: -0.5rem;
+}

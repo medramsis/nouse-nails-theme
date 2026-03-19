@@ -1,0 +1,196 @@
+/*------------------------------------*\
+    #Testimonials
+\*------------------------------------*/
+
+.testimonials {
+  width: 100%;
+  display: block;
+}
+
+@media screen and (max-width: 749px) {
+  .testinmonials__contain {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+}
+
+.testimonials__header {
+  text-align: center;
+  margin-bottom: var(--space-9);
+}
+
+.testimonials__title {
+  text-align: center;
+}
+
+/*------------------------------------*\
+    #Swiper Slideshow Component
+\*------------------------------------*/
+
+.testimonials__swiper {
+  width: 100%;
+  display: block;
+}
+
+/* Navigation styles */
+.swiper-slideshow__navigation {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: var(--space-4);
+  margin-top: var(--space-6);
+}
+
+.swiper-slideshow__nav-button {
+  background: transparent;
+  border: 1px solid var(--color-border);
+  border-radius: 50%;
+  width: 3rem;
+  height: 3rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  color: var(--color-text-1);
+}
+
+.swiper-slideshow__nav-button:hover {
+  background: var(--color-background-2);
+  border-color: var(--color-text-1);
+  transform: scale(1.05);
+}
+
+.swiper-slideshow__nav-button:active {
+  transform: scale(0.95);
+}
+
+.swiper-slideshow__nav-button svg {
+  width: 1.25rem;
+  height: 1.25rem;
+}
+
+/* Hide navigation on desktop when grid layout is active */
+@media screen and (min-width: 750px) {
+  .swiper-slideshow__navigation {
+    display: none;
+  }
+}
+
+/*------------------------------------*\
+    #Testimonials Grid
+\*------------------------------------*/
+
+.testimonials__grid {
+  position: relative;
+}
+
+/* Swiper-specific grid styles */
+.testimonials__grid[data-swiper-slideshow] {
+  overflow: hidden;
+}
+
+.testimonials__grid[data-swiper-slideshow] .swiper-wrapper {
+  display: flex;
+  transition-property: transform;
+}
+
+.testimonials__grid[data-swiper-slideshow] .swiper-slide {
+  flex-shrink: 0;
+  width: 100%;
+  height: auto;
+  position: relative;
+  transition-property: transform;
+}
+
+/*------------------------------------*\
+    #Testimonial Items
+\*------------------------------------*/
+
+.testimonials__item {
+  background: transparent;
+  border: none;
+  box-shadow: none;
+  position: relative;
+  margin-top: var(--space-5);
+  margin-bottom: var(--space-5);
+}
+
+@media screen and (min-width: 750px) {
+  .testimonials__item,
+  .testimonials__grid .testimonials__item:last-child {
+    margin-bottom: var(--space-5);
+    margin-top: 0;
+  }
+}
+
+.testimonials__item:hover {
+  transform: none;
+  box-shadow: none;
+}
+
+.testimonials__content {
+  position: relative;
+  height: 100%;
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 20rem;
+  margin: auto;
+}
+
+/*------------------------------------*\
+    #Quote Icon
+\*------------------------------------*/
+
+.testimonials__quote-icon {
+  margin-bottom: var(--space-5);
+}
+
+/*------------------------------------*\
+    #Quote Content
+\*------------------------------------*/
+
+.testimonials__quote {
+  margin: 0 0 var(--space-5) 0;
+  font-style: normal;
+  font-weight: 400;
+}
+
+.testimonials__quote p {
+  margin: 0;
+}
+
+.testimonials__quote p:not(:last-child) {
+  margin-bottom: var(--space-3);
+}
+
+/*------------------------------------*\
+    #Author
+\*------------------------------------*/
+
+.testimonials__author {
+  display: block;
+  margin: 0;
+  text-transform: uppercase;
+  font-family: var(--primary-font-family);
+}
+
+/*------------------------------------*\
+    #Empty State
+\*------------------------------------*/
+
+.testimonials__empty {
+  text-align: center;
+  padding: var(--space-8);
+  color: white;
+}
+
+.testimonials__empty p {
+  margin: 0;
+  font-size: var(--font-size-base);
+  color: white;
+}

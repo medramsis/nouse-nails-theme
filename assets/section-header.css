@@ -1,0 +1,224 @@
+
+
+
+
+
+/*------------------------------------*\
+    #Header Section Styles
+\*------------------------------------*/
+
+.site-header {
+  position: relative;
+  background-color: var(--color-body);
+}
+@media only screen and (max-width: 749px) {
+  .site-header {
+    border-bottom: 1px solid var(--color-border);
+  }
+}
+@media only screen and (min-width: 750px) {
+  .site-header {
+    padding: 0 40px;
+  }
+  .site-header.logo--center {
+    padding-top: 30px;
+  }
+}
+
+
+
+
+
+/*------------------------------------*\
+    #Header Logo
+\*------------------------------------*/
+
+.site-header__logo {
+  margin: 11px 0;
+}
+.logo-align--center .site-header__logo {
+  text-align: center;
+  margin: 0 auto;
+}
+@media only screen and (max-width: 749px) {
+  .logo-align--center .site-header__logo {
+    text-align: left;
+    margin: 15px 0;
+  }
+  .site-header__logo {
+    padding-left: 22px;
+    text-align: left;
+  }
+  .site-header__logo img {
+    margin: 0;
+  }
+}
+.site-header__logo-link {
+  display: inline-block;
+  word-break: break-word;
+}
+@media only screen and (min-width: 750px) {
+  .logo-align--center .site-header__logo-link {
+    margin: 0 auto;
+  }
+}
+.site-header__logo-image {
+  display: block;
+}
+@media only screen and (min-width: 750px) {
+  .site-header__logo-image {
+    margin: 0 auto;
+  }
+}
+.site-header__logo-image img {
+  width: 100%;
+}
+.site-header__logo-image--centered img {
+  margin: 0 auto;
+}
+.site-header__logo img {
+  display: block;
+}
+
+
+
+
+
+/*------------------------------------*\
+    #Header Icons
+\*------------------------------------*/
+
+.site-header__icons {
+  position: relative;
+  white-space: nowrap;
+}
+@media only screen and (max-width: 749px) {
+  .site-header__icons {
+    width: auto;
+    padding-right: 13px;
+  }
+  .site-header__icons .btn--link,
+  .site-header__icons .site-header__cart {
+    font-size: calc(((var(--font-size-base)) / (var(--font-size-base))) * 1em);
+  }
+}
+.site-header__icons-wrapper {
+  position: relative;
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: flex-end;
+}
+.site-header__cart,
+.site-header__search,
+.site-header__account {
+  position: relative;
+}
+.site-header__search.site-header__icon {
+  display: none;
+}
+@media only screen and (min-width: 1400px) {
+  .site-header__search.site-header__icon {
+    display: block;
+  }
+}
+.site-header__search-toggle {
+  display: block;
+}
+@media only screen and (min-width: 750px) {
+  .site-header__account,
+  .site-header__cart {
+    padding: 10px 11px;
+  }
+}
+
+
+
+
+
+/*------------------------------------*\
+    #Header Cart & Search Titles (Accessibility)
+\*------------------------------------*/
+
+.site-header__cart-title,
+.site-header__search-title {
+  position: absolute !important;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  width: 1px;
+  margin: -1px;
+  padding: 0;
+  border: 0;
+  display: block;
+  vertical-align: middle;
+}
+.site-header__cart-title {
+  margin-right: 3px;
+}
+
+
+
+
+
+/*------------------------------------*\
+    #Header Cart Count
+\*------------------------------------*/
+
+.site-header__cart-count {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  right: 0.4rem;
+  top: 0.2rem;
+  font-weight: bold;
+  background-color: var(--color-btn-primary);
+  color: var(--color-btn-primary-text);
+  border-radius: 50%;
+  min-width: 1em;
+  height: 1em;
+}
+.site-header__cart-count span {
+  font-family: 'HelveticaNeue', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-size: calc(11em / 16);
+  line-height: 1;
+}
+@media only screen and (max-width: 749px) {
+  .site-header__cart-count {
+    top: calc(7em / 16);
+    right: 0;
+    border-radius: 50%;
+    min-width: calc(19em / 16);
+    height: calc(19em / 16);
+  }
+  .site-header__cart-count span {
+    padding: 0.25em calc(6em / 16);
+    font-size: 12px;
+  }
+}
+
+
+
+
+
+/*------------------------------------*\
+    #Header Menu & Icons (Mobile)
+\*------------------------------------*/
+
+.site-header__menu {
+  display: none;
+}
+@media only screen and (max-width: 749px) {
+  .site-header__icon {
+    display: inline-block;
+    vertical-align: middle;
+    padding: 10px 11px;
+    margin: 0;
+  }
+}
+@media only screen and (min-width: 750px) {
+  .site-header__icon .icon-search {
+    margin-right: 3px;
+  }
+}

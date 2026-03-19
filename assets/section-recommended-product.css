@@ -1,0 +1,82 @@
+/*------------------------------------*\
+    #Product Recommendations
+\*------------------------------------*/
+
+.related-products .swiper-slide {
+  width: auto;
+}
+
+.product-recommendations__heading {
+  text-transform: uppercase;
+  text-align: center;
+  margin-bottom: var(--space-8);
+}
+
+.product-recommendations__grid {
+  padding-bottom: calc(var(--space-10));
+}
+
+@media screen and (min-width: 750px) {
+  .product-recommendations__grid {
+    padding-bottom: var(--space-8);
+  }
+}
+
+@media screen and (min-width: 750px) {
+  .product-recommendations__swiper {
+    max-width: calc(var(--max-width-large) - (var(--container-padding) * 6));
+    width: 100%;
+    margin: auto;
+    padding-left: var(--container-padding);
+    padding-right: var(--container-padding);
+  }
+}
+
+/*------------------------------------*\
+    #Swiper Slideshow
+\*------------------------------------*/
+
+.product-recommendations .swiper .swiper-scrollbar {
+  height: 0.5rem;
+  max-width: 86%;
+  margin-left: auto;
+  margin-right: auto;
+  left: 0;
+  right: 0;
+  pointer-events: all;
+}
+
+@media screen and (min-width: 750px) {
+  .product-recommendations .swiper .swiper-scrollbar {
+    max-width: 100%;
+  }
+}
+
+.product-recommendations .swiper .swiper-scrollbar-drag {
+  height: 0.5rem;
+  background: rgba(var(--color-accent), 1);
+}
+
+@media screen and (min-width: 750px) {
+  .product-recommendations .swiper .swiper-scrollbar {
+    height: 0.75rem;
+  }
+
+  .product-recommendations .swiper .swiper-scrollbar-drag {
+    height: 0.75rem;
+  }
+}
+
+@media screen and (min-width: 750px) {
+  .product-recommendations__item.swiper-slide {
+    width: 20rem;
+  }
+}
+
+.product-recommendations__swiper:hover .swiper-scrollbar-drag {
+  cursor: grab;
+}
+
+.product-recommendations__swiper:active .swiper-scrollbar-drag {
+  cursor: grabbing;
+}

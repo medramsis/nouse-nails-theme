@@ -1,0 +1,87 @@
+{% comment %}
+  Renders a video with a configurable aspect ratio
+  Accepts:
+  - video: {Object} Video object from Shopify
+  - aspect_ratio: {String} Aspect ratio (e.g., '16/9', '4/3', '1/1')
+  - autoplay: {Boolean} Whether to autoplay the video
+  - loop: {Boolean} Whether to loop the video
+  - controls: {Boolean} Whether to show video controls
+  - muted: {Boolean} Whether to mute the video
+  - class: {String} Additional CSS classes
+  - placeholder_image: {Object} Optional placeholder image
+  - motion_reduce: {Boolean} Whether to add motion-reduce class
+
+  Usage:
+  {% render 'video-with-aspect-ratio',
+    video: block.settings.video,
+    aspect_ratio: '16/9',
+    autoplay: true,
+    loop: true,
+    muted: true,
+    controls: false,
+    motion_reduce: true
+  %}
+{% endcomment %}
+
+{%- liquid
+  assign aspect_ratio = aspect_ratio | default: '16/9'
+  assign autoplay = autoplay | default: false
+  assign loop = loop | default: false
+  assign controls = controls | default: false
+  assign muted = muted | default: false
+  assign class = class | default: ''
+  assign motion_reduce = motion_reduce | default: false
+
+  # Calculate aspect ratio percentage
+  assign ratio_parts = aspect_ratio | split: '/'
+  assign width = ratio_parts[0] | plus: 0
+  assign height = ratio_parts[1] | plus: 0
+
+  # Set video class
+  assign video_class = ''
+  if motion_reduce
+    assign video_class = 'motion-reduce'
+  endif
+-%}
+
+<div class="video-with-aspect-ratio {{ class }}" style="--aspect-ratio: {{ aspect_ratio }};">
+  <div class="video-with-aspect-ratio__inner">
+    {%- if video != blank -%}
+      <video
+        class="video-with-aspect-ratio__video {{ video_class }}"
+        {% if autoplay %}
+          autoplay
+        {% endif %}
+        {% if loop %}
+          loop
+        {% endif %}
+        {% if controls %}
+          controls
+        {% endif %}
+        {% if muted %}
+          muted
+        {% endif %}
+        preload="metadata"
+        playsinline
+      >
+        <source src="{{ video.sources[1].url }}" type="{{ video.sources[1].mime_type }}">
+        <source src="{{ video.sources[0].url }}" type="{{ video.sources[0].mime_type }}">
+        Your browser does not support the video tag.
+      </video>
+    {%- elsif placeholder_image != blank -%}
+      <img
+        src="{{ placeholder_image | image_url: width: 800 }}"
+        alt="{{ placeholder_image.alt | escape }}"
+        loading="lazy"
+        class="video-with-aspect-ratio__placeholder-image"
+      >
+    {%- else -%}
+      <div class="video-with-aspect-ratio__placeholder">
+        <svg class="placeholder-svg" viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
+          <rect width="400" height="300" fill="#f4f4f4"/>
+          <text x="50%" y="50%" text-anchor="middle" dy=".3em" fill="#999" font-size="16">Video</text>
+        </svg>
+      </div>
+    {%- endif -%}
+  </div>
+</div>

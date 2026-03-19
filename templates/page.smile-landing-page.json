@@ -1,0 +1,126 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "1767222322848a8096": {
+      "type": "apps",
+      "blocks": {
+        "smile_io_smile_landing_page_header_RaRfAq": {
+          "type": "shopify://apps/smile-io/blocks/smile-landing-page-header/2fae4e25-1841-4ea2-bc02-bd548478c4f6",
+          "settings": {
+            "primary_colour": "#f8eee3",
+            "secondary_colour": "#6d0506",
+            "background_image": "shopify://shop_images/QD-758_Edit.jpg",
+            "title_text": "The Nous Standard Rewards ✱",
+            "description_text": "Earn points every time you shop, share, and review — then turn them into $$ off your next set. Because loyalty should look good on you. ☻",
+            "join_button_text": "",
+            "login_button_text": "",
+            "is_previewing_logged_in_state": false,
+            "discover_button_text": ""
+          }
+        }
+      },
+      "block_order": [
+        "smile_io_smile_landing_page_header_RaRfAq"
+      ],
+      "settings": {}
+    },
+    "1767222291a1fe2a55": {
+      "type": "apps",
+      "blocks": {
+        "smile_io_smile_landing_page_how_it_works_MTfRU9": {
+          "type": "shopify://apps/smile-io/blocks/smile-landing-page-how-it-works/2fae4e25-1841-4ea2-bc02-bd548478c4f6",
+          "settings": {
+            "primary_colour": "#6d0506",
+            "secondary_colour": "#d1e1e8",
+            "title_text": "",
+            "step1_heading_text": "",
+            "step1_description_text": "Join the Nous Standard and start earning instantly. ✱",
+            "step2_heading_text": "",
+            "step2_description_text": "Earn while you shop, review, and follow. The more you do, the more you save. ☻",
+            "step3_heading_text": "",
+            "step3_description_text": "Turn points into $$ off your next set. Or save them for bigger rewards."
+          }
+        }
+      },
+      "block_order": [
+        "smile_io_smile_landing_page_how_it_works_MTfRU9"
+      ],
+      "settings": {}
+    },
+    "17672223302378802f": {
+      "type": "apps",
+      "blocks": {
+        "smile_io_smile_landing_page_earning_rule_highlight_aqgDkE": {
+          "type": "shopify://apps/smile-io/blocks/smile-landing-page-earning-rule-highlight/2fae4e25-1841-4ea2-bc02-bd548478c4f6",
+          "settings": {
+            "primary_colour": "#6d0506",
+            "secondary_colour": "#f8eee3",
+            "image": "shopify://shop_images/Iced-Out-4.jpg",
+            "title_text": "Ways to Earn ✱",
+            "description_text": "Earn 50 points for a review, 1 point per $1 spent, 50 points just for signing up, 25 for following us on Instagram, 25 for TikTok, and 100 on your birthday. Because loyalty should feel fun ☻",
+            "button_text": ""
+          }
+        }
+      },
+      "block_order": [
+        "smile_io_smile_landing_page_earning_rule_highlight_aqgDkE"
+      ],
+      "settings": {}
+    },
+    "17672223451d6d482b": {
+      "type": "apps",
+      "blocks": {
+        "smile_io_smile_landing_page_redeeming_rule_highlight_tXyAkH": {
+          "type": "shopify://apps/smile-io/blocks/smile-landing-page-redeeming-rule-highlight/2fae4e25-1841-4ea2-bc02-bd548478c4f6",
+          "settings": {
+            "primary_colour": "#6d0506",
+            "secondary_colour": "#f8eee3",
+            "image": "shopify://shop_images/OatMilkLatte-2.jpg",
+            "title_text": "Refer a Friend ✱ Earn Money",
+            "description_text": "Give $5, get $5. Share Nous with a friend and you’ll both earn a little something toward your next set.",
+            "button_text": ""
+          }
+        }
+      },
+      "block_order": [
+        "smile_io_smile_landing_page_redeeming_rule_highlight_tXyAkH"
+      ],
+      "settings": {}
+    },
+    "apps_HDp4NW": {
+      "type": "apps",
+      "blocks": {
+        "smile_io_smile_landing_page_earning_rule_highlight_RzqpJQ": {
+          "type": "shopify://apps/smile-io/blocks/smile-landing-page-earning-rule-highlight/2fae4e25-1841-4ea2-bc02-bd548478c4f6",
+          "settings": {
+            "primary_colour": "#6d0506",
+            "secondary_colour": "#f8eee3",
+            "image": "shopify://shop_images/Art-School-Star-2.jpg",
+            "title_text": "Ways to Redeem ✱",
+            "description_text": "Redeem 100 points for $5 off your order. Minimum 200 points required. Applies to orders over $25. Rewards are exclusive to your account.",
+            "button_text": ""
+          }
+        }
+      },
+      "block_order": [
+        "smile_io_smile_landing_page_earning_rule_highlight_RzqpJQ"
+      ],
+      "settings": {}
+    }
+  },
+  "order": [
+    "1767222322848a8096",
+    "1767222291a1fe2a55",
+    "17672223302378802f",
+    "17672223451d6d482b",
+    "apps_HDp4NW"
+  ]
+}

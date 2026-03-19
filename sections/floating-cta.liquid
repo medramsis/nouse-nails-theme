@@ -1,0 +1,493 @@
+{% comment %}[CSS-INLINE: component-floating-cta.css | <link
+  rel='stylesheet'
+  href='{{ 'component-floating-cta.css' | asset_url }}'
+  inline-css='true'
+>]{% endcomment %}
+<style>
+.floating-cta{position:fixed;bottom:var(--space-3);right:var(--space-2);z-index:1;text-decoration:none;transition:opacity .7s var(--default-easing),transform .7s var(--default-easing);text-align:center;background-color:transparent;color:rgb(var(--color-text-1));display:flex;align-items:center;justify-content:center;gap:var(--space-2);width:100%;max-width:12rem;opacity:0;color:var(--floating-cta-color);transform:translateY(120%);pointer-events:none}.floating-cta.is-showing{opacity:1;transform:translateY(0);pointer-events:auto}.floating-cta__trigger{border:none;background:0 0;padding:0;align-items:center;justify-items:center;gap:var(--space-1);color:inherit;cursor:pointer;text-transform:uppercase;letter-spacing:.06em;font-size:var(--text-size-small);display:none}@media screen and (min-width:750px){.floating-cta{max-width:13rem}.floating-cta__trigger{display:flex}}.floating-cta__trigger-icon{display:block;width:100%}.floating-cta__trigger svg{fill:var(--floating-cta-color);width:100%;height:100%}.floating-cta__trigger-text{display:block;line-height:1.2;position:absolute;max-width:60%;color:rgb(var(--color-text-1));margin-bottom:var(--space-6);font-size:var(--text-size-tiny)}.floating-cta--left{left:var(--space-2)}.floating-cta--right{right:var(--space-2)}.floating-cta__trigger-close-button{position:absolute;top:var(--space-5);left:0;margin:auto;right:0;z-index:1;background:0 0;border:none;color:currentColor;cursor:pointer;color:rgb(var(--color-text-1))}.floating-cta__trigger-close-button svg{transition:transform .3s var(--default-easing)}.floating-cta__trigger-close-button:hover svg{transform:rotate(180deg)}.floating-cta-modal{position:fixed;inset:0;display:flex;align-items:flex-end;justify-content:flex-end;pointer-events:none;transition:all .3s var(--default-easing);z-index:200}.floating-cta-modal.is-open{pointer-events:auto}.floating-cta-modal.is-open .floating-cta-modal__dialog{pointer-events:auto;transform:translateY(0)}.floating-cta-modal__dialog{position:relative;z-index:1;width:100%;text-align:center;transform:translateY(115%);transition:transform .3s var(--default-easing);padding-top:var(--space-7)}@media screen and (min-width:750px){.floating-cta-modal__dialog{padding-top:0;transform:translateY(110%)}}.floating-cta-modal__dialog__inner{padding:var(--space-7) var(--space-4) var(--space-3) var(--space-4);display:flex}@media screen and (min-width:750px){.floating-cta-modal__dialog__inner{padding:var(--space-7) var(--space-7) var(--space-7) var(--space-7);display:grid;grid-template-columns:1fr;gap:var(--space-6);align-items:center}}@media screen and (min-width:940px){.floating-cta-modal__dialog__inner{display:grid;grid-template-columns:1fr 1fr;gap:var(--space-6);max-width:100rem;margin:0 auto}}.floating-cta-modal__dialog__icon{position:absolute;top:-1.85rem;width:3.5rem;left:.25rem;color:var(--floating-cta-color)}@media screen and (min-width:750px){.floating-cta-modal__dialog__icon{top:-1rem;width:6rem;left:-2rem;z-index:1}}.floating-cta-modal__close{position:absolute;top:var(--space-2);right:var(--space-1);background:0 0;border:none;color:currentColor;cursor:pointer;padding:0;width:3rem;height:3rem}.floating-cta-modal__close svg{transition:transform .3s var(--default-easing)}.floating-cta-modal__close:hover svg{transform:rotate(180deg)}.floating-cta-modal__title{text-transform:uppercase}.floating-cta-modal__dialog__media-wrapper{position:relative;display:none}@media screen and (min-width:750px){.floating-cta-modal__dialog__media-wrapper{display:block}}.floating-cta-modal__dialog__media{border-radius:var(--border-radius-large);overflow:hidden;position:relative;background-color:grey}.floating-cta-modal__dialog__content-wrapper{margin:0 auto}.floating-cta-modal__disclaimer{margin-top:var(--space-4);font-size:var(--text-size-tiny);line-height:1.5;color:rgb(var(--color-text-1));max-width:25rem;margin:0 auto}.floating-cta-modal__disclaimer a{color:inherit}
+</style>
+{% comment %}[/CSS-INLINE]{% endcomment %}
+
+<div class='floating-cta-container'>
+  {%- if section.settings.enable_floating_cta -%}
+    {%- assign modal_id = 'FloatingCtaModal-' | append: section.id -%}
+    <floating-cta>
+      <aside
+        class='floating-cta floating-cta--{{ section.settings.position }}'
+        style='--floating-cta-color: {{ section.settings.cta_color }};'
+        data-floating-cta
+        role='dialog'
+        aria-modal='true'
+        aria-labelledby='floating-cta-title'
+        aria-describedby='floating-cta-description'
+        tabindex='0'
+        aria-label='Floating CTA'
+      >
+        <button
+          type='button'
+          class='floating-cta__trigger-close-button'
+          data-close-floating-cta-trigger
+          aria-label='Hide floating CTA'
+        >
+          <span class='icon icon-tiny'>{% render 'icon-close' %}</span>
+        </button>
+        <button
+          type='button'
+          class='floating-cta__trigger'
+          data-floating-cta-modal-toggle
+          aria-haspopup='dialog'
+          aria-controls='{{ modal_id }}'
+          aria-expanded='false'
+          style='--floating-cta-color: {{ section.settings.cta_color }};'
+        >
+          <span class='floating-cta__trigger-icon' aria-hidden='true'>
+            {% render 'icon-star-boy' %}
+          </span>
+          <span class='floating-cta__trigger-text'>
+            {{- section.settings.cta_text -}}
+          </span>
+        </button>
+      </aside>
+
+      <div
+        class='floating-cta-modal '
+        id='{{ modal_id }}'
+        data-floating-cta-modal
+        aria-hidden='true'
+      >
+        <div
+          class='floating-cta-modal__dialog color-{{ section.settings.modal_color_scheme }}'
+
+          role='dialog'
+          aria-modal='true'
+          aria-labelledby='{{ modal_id }}-title'
+          aria-describedby='{{ modal_id }}-disclaimer'
+          tabindex='-1'
+        >
+          <div
+            class='floating-cta-modal__dialog__icon hide-for-medium-up'
+            aria-hidden='true'
+            style='--floating-cta-color: {{ section.settings.cta_color }};'
+          >
+            {% render 'icon-star-boy' %}
+          </div>
+          <button
+            type='button'
+            class='floating-cta-modal__close'
+            data-floating-cta-close
+            aria-label='{{ 'accessibility.close' | t }}'
+          >
+            <span class='icon icon-tiny'>{% render 'icon-close' %}</span>
+          </button>
+
+          <div class='floating-cta-modal__dialog__inner'>
+            <div class='floating-cta-modal__dialog__media-wrapper'>
+              <div
+                class='floating-cta-modal__dialog__icon'
+                aria-hidden='true'
+                style='--floating-cta-color: {{ section.settings.cta_color }};'
+              >
+                {% render 'icon-star-boy' %}
+              </div>
+              <div class='floating-cta-modal__dialog__media'>
+                {% render 'image-with-aspect-ratio',
+                  image: section.settings.modal_media,
+                  aspect_ratio: section.settings.modal_media_aspect_ratio,
+                  sizes: '(min-width: 940px) calc(50vw - 4rem), 0px',
+                  widths: '300, 450, 600, 700'
+                %}
+              </div>
+            </div>
+            <div class='floating-cta-modal__dialog__content-wrapper'>
+              <h2
+                class='floating-cta-modal__title {{section.settings.modal_heading_size}}'
+                id='{{ modal_id }}-title'
+              >
+                {{ section.settings.modal_heading }}
+              </h2>
+
+              <div class='floating-cta-modal__form-wrapper'>
+                <div
+                  class='floating-cta-modal__form klaviyo-form-{{ section.settings.klaviyo_form_id }}'
+                ></div>
+              </div>
+
+              <div
+                class='floating-cta-modal__disclaimer rte'
+                id='{{ modal_id }}-disclaimer'
+              >
+                {{ section.settings.modal_disclaimer }}
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </floating-cta>
+  {%- endif -%}
+</div>
+
+<script>
+  class FloatingCta extends HTMLElement {
+      constructor() {
+          super();
+          this.ctaElement = this.querySelector('[data-floating-cta]');
+          this.triggerButton = this.querySelector('[data-floating-cta-modal-toggle]');
+          this.modal = this.querySelector('[data-floating-cta-modal]');
+          this.input = this.querySelector('[data-floating-cta-input]');
+          this.closeButtons = this.querySelectorAll('[data-floating-cta-close]');
+          this.closeTriggerButton = this.querySelector('[data-close-floating-cta-trigger]');
+          this.isVisible = false;
+          this.isDismissed = false;
+          this.klaviyoFormReady = false;
+          this.klaviyoObserver = null;
+          this.formContainer = this.querySelector('.klaviyo-form-{{ section.settings.klaviyo_form_id }}');
+          this.scrollThreshold = {{ section.settings.scroll_threshold }};
+          this.sessionKey = 'floating-cta-seen';
+          this.hasAutoOpened = sessionStorage.getItem(this.sessionKey) !== null;
+
+          this.init();
+      }
+
+      init() {
+          this.onScroll = this.handleScroll.bind(this);
+          this.onKeydown = this.handleKeydown.bind(this);
+          this.onOpenModal = this.openModal.bind(this);
+          this.onCloseModal = this.closeModal.bind(this);
+          this.onHideTriggerClick = this.handleHideTriggerClick.bind(this);
+          this.onBackdropClick = this.handleBackdropClick.bind(this);
+
+          window.addEventListener('scroll', this.onScroll, { passive: true });
+          window.addEventListener('keydown', this.onKeydown);
+
+          if (this.triggerButton) {
+              this.triggerButton.addEventListener('click', this.onOpenModal);
+          }
+
+          if (this.closeButtons.length) {
+              this.closeButtons.forEach((button) => {
+                  button.addEventListener('click', this.onCloseModal);
+              });
+          }
+
+          if (this.closeTriggerButton) {
+              this.closeTriggerButton.addEventListener('click', this.onHideTriggerClick);
+          }
+
+          if (this.modal) {
+              this.modal.addEventListener('click', this.onBackdropClick);
+          }
+
+          this.waitForKlaviyo();
+      }
+
+      waitForKlaviyo() {
+          if (!this.formContainer) return;
+
+          if (this.formContainer.children.length > 0) {
+              this.klaviyoFormReady = true;
+              this.handleScroll();
+              return;
+          }
+
+          this.klaviyoObserver = new MutationObserver((mutations, observer) => {
+              for (const mutation of mutations) {
+                  if (mutation.addedNodes.length > 0) {
+                      this.klaviyoFormReady = true;
+                      observer.disconnect();
+                      this.handleScroll();
+                      return;
+                  }
+              }
+          });
+
+          this.klaviyoObserver.observe(this.formContainer, { childList: true, subtree: true });
+
+          setTimeout(() => {
+              if (!this.klaviyoFormReady) {
+                  this.klaviyoObserver?.disconnect();
+              }
+          }, 8000);
+      }
+
+      handleScroll() {
+          const scrollY = window.scrollY || window.pageYOffset;
+          const isModalOpen = this.modal?.classList.contains('is-open');
+
+          if (scrollY >= this.scrollThreshold && this.klaviyoFormReady) {
+              if (!this.hasAutoOpened) {
+                  this.hasAutoOpened = true;
+                  this.hideCta();
+                  this.openModal();
+                  return;
+              }
+
+              if (!isModalOpen && !this.isDismissed) {
+                  this.showCta();
+              }
+
+              return;
+          }
+
+          this.isDismissed = false;
+          if (this.isVisible) {
+              this.hideCta();
+          }
+      }
+
+      handleKeydown(event) {
+          if (event.key === 'Escape' && this.modal?.classList.contains('is-open')) {
+              this.closeModal();
+          }
+      }
+
+      handleBackdropClick(event) {
+          if (!this.modal?.classList.contains('is-open')) return;
+          if (event.target === this.modal) {
+              this.closeModal();
+          }
+      }
+
+      showCta() {
+          if (this.ctaElement && !this.isVisible) {
+              this.ctaElement.classList.add('is-showing');
+              this.isVisible = true;
+          }
+      }
+
+      hideCta() {
+          if (this.ctaElement && this.isVisible) {
+              this.ctaElement.classList.remove('is-showing');
+              this.isVisible = false;
+          }
+      }
+
+      openModal() {
+          if (!this.modal) return;
+          this.modal.classList.add('is-open');
+          this.modal.setAttribute('aria-hidden', 'false');
+          this.triggerButton?.setAttribute('aria-expanded', 'true');
+          this.input?.focus();
+      }
+
+      closeModal() {
+          if (!this.modal) return;
+          sessionStorage.setItem(this.sessionKey, '1');
+          this.modal.classList.remove('is-open');
+          this.modal.setAttribute('aria-hidden', 'true');
+          this.triggerButton?.setAttribute('aria-expanded', 'false');
+          this.triggerButton?.focus();
+
+          const scrollY = window.scrollY || window.pageYOffset;
+          if (scrollY >= this.scrollThreshold) {
+              this.showCta();
+          }
+      }
+
+      handleHideTriggerClick() {
+          sessionStorage.setItem(this.sessionKey, '1');
+          this.isDismissed = true;
+          this.hideCta();
+      }
+
+      close() {
+          this.closeModal();
+      }
+
+      disconnectedCallback() {
+          window.removeEventListener('scroll', this.onScroll);
+          window.removeEventListener('keydown', this.onKeydown);
+          this.triggerButton?.removeEventListener('click', this.onOpenModal);
+          this.closeButtons.forEach((button) => {
+              button.removeEventListener('click', this.onCloseModal);
+          });
+          this.closeTriggerButton?.removeEventListener('click', this.onHideTriggerClick);
+          this.modal?.removeEventListener('click', this.onBackdropClick);
+          this.klaviyoObserver?.disconnect();
+      }
+  }
+
+  customElements.define('floating-cta', FloatingCta);
+</script>
+
+{% schema %}
+{
+  "name": "Floating CTA",
+  "settings": [
+    {
+      "type": "header",
+      "content": "General Settings"
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_floating_cta",
+      "label": "Enable Floating CTA",
+      "default": false,
+      "info": "Turn on/off the floating call-to-action button"
+    },
+
+    {
+      "type": "text",
+      "id": "klaviyo_form_id",
+      "label": "Klaviyo Form ID",
+      "info": "Add the Klaviyo form ID to the floating CTA form",
+      "default": "UQJuZt"
+    },
+    {
+      "type": "header",
+      "content": "Appearance"
+    },
+    {
+      "type": "color_scheme",
+      "id": "modal_color_scheme",
+      "label": "Modal Color Scheme",
+      "default": "background-1"
+    },
+    {
+      "type": "color",
+      "id": "cta_color",
+      "label": "Button Color",
+      "default": "#000000",
+      "info": "Background color of the floating button"
+    },
+    {
+      "type": "header",
+      "content": "Content"
+    },
+    {
+      "type": "text",
+      "id": "cta_text",
+      "label": "CTA Text",
+      "default": "Shop Now",
+      "info": "Text displayed on the floating button"
+    },
+    {
+      "type": "url",
+      "id": "cta_url",
+      "label": "CTA Link",
+      "info": "URL the button links to"
+    },
+
+    {
+      "type": "header",
+      "content": "Position"
+    },
+    {
+      "type": "select",
+      "id": "position",
+      "label": "Button Position",
+      "options": [
+        {
+          "value": "right",
+          "label": "Bottom Right"
+        },
+        {
+          "value": "left",
+          "label": "Bottom Left"
+        }
+      ],
+      "default": "right",
+      "info": "Choose which side of the screen the button appears on"
+    },
+    {
+      "type": "header",
+      "content": "Scroll Threshold"
+    },
+    {
+      "type": "number",
+      "id": "scroll_threshold",
+      "label": "Scroll Threshold",
+      "default": 500,
+      "info": "The number of pixels to scroll before the button appears"
+    },
+    {
+      "type": "header",
+      "content": "Modal Content"
+    },
+    {
+      "type": "image_picker",
+      "id": "modal_media",
+      "label": "Modal Media",
+      "info": "The image to display in the modal. This will be displayed in the modal for desktop devices."
+    },
+    {
+      "type": "select",
+      "id": "modal_media_aspect_ratio",
+      "label": "Media aspect ratio",
+      "options": [
+        {
+          "value": "16/8",
+          "label": "16:8 (Landscape)"
+        },
+        {
+          "value": "4/3",
+          "label": "4:3 (Portrait Horizontal)"
+        },
+        {
+          "value": "1/1",
+          "label": "1:1 (Square)"
+        },
+        {
+          "value": "1/.85",
+          "label": "1:0.8 (Shorter Square)"
+        },
+        {
+          "value": "3/4",
+          "label": "3:4 (Portrait)"
+        }
+      ],
+      "default": "1/1"
+    },
+    {
+      "type": "text",
+      "id": "modal_heading",
+      "label": "Modal Heading",
+      "default": "* SIGN UP & GET A FREE GEL LAMP :)"
+    },
+    {
+      "type": "select",
+      "id": "modal_heading_size",
+      "label": "Heading size",
+      "options": [
+        {
+          "value": "headline-style-h1",
+          "label": "H1"
+        },
+        {
+          "value": "headline-style-h2",
+          "label": "H2"
+        },
+        {
+          "value": "headline-style-h3",
+          "label": "H3"
+        },
+        {
+          "value": "headline-style-h4",
+          "label": "H4"
+        },
+        {
+          "value": "headline-style-h5",
+          "label": "H5"
+        },
+        {
+          "value": "headline-style-h6",
+          "label": "H6"
+        }
+      ],
+      "default": "headline-style-h2"
+    },
+
+    {
+      "type": "richtext",
+      "id": "modal_disclaimer",
+      "label": "Modal Disclaimer",
+      "default": "<p>*Offer valid on first subscription order for new email subscribers. Exclusions apply. By signing up, you agree to our <a href=\"#\">Email Terms</a>.</p>"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Floating CTA",
+      "category": "Marketing & Promotions"
+    }
+  ]
+}
+{% endschema %}

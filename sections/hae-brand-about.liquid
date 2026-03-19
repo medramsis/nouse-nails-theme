@@ -1,0 +1,264 @@
+<link
+  rel='stylesheet'
+  href='{{ 'hae-brand-about.css' | asset_url }}'
+  media='print'
+  onload="this.media='all'"
+>
+
+<section class='brand-about color-{{ section.settings.color_scheme }}'>
+  <div class='brand-about__intro '>
+    <div class='brand-about__intro__contain container-main section-padding-x-small'>
+      <div class='brand-about__intro__layout grid grid-2 grid-end'>
+        <div class='brand-about__intro__text'>
+          <h2 class='brand-about__subtitle {{ section.settings.headline_size }}'>
+            {{ section.settings.subtitle }}
+          </h2>
+          <div class='brand-about__text {{ section.settings.text_size }}'>
+            {{ section.settings.text }}
+          </div>
+        </div>
+
+        <div class='brand-about__intro__ctas'>
+          {% if section.settings.button_link_1 != blank
+            and section.settings.button_text_1 != blank
+          %}
+            <a
+              class='button button--primary button--medium'
+              href='{{ section.settings.button_link_1.url }}'
+            >
+              {{- section.settings.button_text_1 -}}
+            </a>
+          {% endif %}
+          {% if section.settings.button_link_2 != blank
+            and section.settings.button_text_2 != blank
+          %}
+            <a
+              class='button button--primary button--medium'
+              href='{{ section.settings.button_link_2.url }}'
+            >
+              {{- section.settings.button_text_2 -}}
+            </a>
+          {% endif %}
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class='brand-about__callouts grid grid-3'>
+    {%- for block in section.blocks -%}
+      <div
+        class='brand-about__callout color-{{ block.settings.color_scheme }}'
+        {{ block.shopify_attributes }}
+      >
+        <div class='brand-about__callout__contain'>
+          {% if block.settings.callout_image != blank %}
+            <div class='brand-about__callout-image-wrapper'>
+              <img
+                class='brand-about__callout-image'
+                height='64'
+                width='64'
+                loading='lazy'
+                src='{{ block.settings.callout_image | img_url: '128x' }}'
+                alt='{{ block.settings.callout_image.alt | default: block.settings.callout_header }}'
+              >
+            </div>
+          {% endif %}
+          <h3 class='brand-about__callout-heading headline-style-h4'>
+            {{ block.settings.callout_header }}
+          </h3>
+          <div class='brand-about__callout-text {{ block.settings.text_size }}'>
+            {{ block.settings.callout_text }}
+          </div>
+        </div>
+      </div>
+    {%- endfor -%}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Brand About",
+  "settings": [
+    {
+      "type": "header",
+      "content": "About Intro"
+    },
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "Color scheme",
+      "default": "background-1"
+    },
+    {
+      "type": "text",
+      "id": "subtitle",
+      "label": "Headline"
+    },
+    {
+      "type": "select",
+      "id": "headline_size",
+      "label": "Headline size",
+      "options": [
+        {
+          "value": "headline-style-h1",
+          "label": "H1"
+        },
+        {
+          "value": "headline-style-h2",
+          "label": "H2"
+        },
+        {
+          "value": "headline-style-h3",
+          "label": "H3"
+        },
+        {
+          "value": "headline-style-h4",
+          "label": "H4"
+        },
+        {
+          "value": "headline-style-h5",
+          "label": "H5"
+        },
+        {
+          "value": "headline-style-h6",
+          "label": "H6"
+        }
+      ],
+      "default": "headline-style-h4"
+    },
+    {
+      "type": "richtext",
+      "id": "text",
+      "label": "Description"
+    },
+    {
+      "type": "select",
+      "id": "text_size",
+      "label": "Paragraph text size",
+      "options": [
+        {
+          "value": "text-size-small",
+          "label": "Small"
+        },
+        {
+          "value": "text-size-main",
+          "label": "Medium"
+        },
+        {
+          "value": "text-size-large",
+          "label": "Large"
+        },
+        {
+          "value": "text-size-x-large",
+          "label": "X-Large"
+        },
+        {
+          "value": "text-size-xx-large",
+          "label": "XX-Large"
+        }
+      ],
+      "default": "text-size-xx-large"
+    },
+    {
+      "type": "header",
+      "content": "CTAs"
+    },
+    {
+      "type": "text",
+      "id": "button_text_1",
+      "label": "Button 1 text",
+      "placeholder": "More about Hae"
+    },
+    {
+      "type": "page",
+      "id": "button_link_1",
+      "label": "Button 1 link"
+    },
+    {
+      "type": "text",
+      "id": "button_text_2",
+      "label": "Button 2 text"
+    },
+    {
+      "type": "page",
+      "id": "button_link_2",
+      "label": "Button 2 link"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "callout",
+      "name": "Callout",
+      "limit": 3,
+      "settings": [
+        {
+          "type": "color_scheme",
+          "id": "color_scheme",
+          "label": "Color scheme",
+          "default": "background-1"
+        },
+        {
+          "type": "image_picker",
+          "id": "callout_image",
+          "label": "Image",
+          "info": "Upload PNG (transparent bg)  128x128 at 72res or SVG"
+        },
+        {
+          "type": "text",
+          "id": "callout_header",
+          "label": "Headline"
+        },
+        {
+          "type": "richtext",
+          "id": "callout_text",
+          "label": "Description"
+        },
+        {
+          "type": "select",
+          "id": "text_size",
+          "label": "Paragraph Text size",
+          "options": [
+            {
+              "value": "text-size-small",
+              "label": "Small"
+            },
+            {
+              "value": "text-size-main",
+              "label": "Medium"
+            },
+            {
+              "value": "text-size-large",
+              "label": "Large"
+            },
+            {
+              "value": "text-size-x-large",
+              "label": "X-Large"
+            },
+            {
+              "value": "text-size-xx-large",
+              "label": "XX-Large"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "About and 3 callouts",
+      "category": "Custom HAE Sections",
+      "blocks": [
+        {
+          "type": "callout"
+        },
+        {
+          "type": "callout"
+        },
+        {
+          "type": "callout"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

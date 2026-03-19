@@ -1,0 +1,159 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+        "padding_size": "section-padding-small"
+      }
+    },
+    "main_page_header_z7GBQx": {
+      "type": "main-page-header",
+      "name": "Main Page Header",
+      "settings": {
+        "custom_title": "",
+        "subtitle": "",
+        "header_background_image": "shopify://shop_images/5_noise_2x_2_9d2ed623-5eaf-438b-a68e-da2c862a27c2.jpg",
+        "padding_size": "section-padding-x-small",
+        "heading_size": "headline-style-h1",
+        "color_scheme": "scheme-cc80f6b4-b558-4219-8256-b69a754c7c0a"
+      }
+    },
+    "hae_image_with_text_k47d3J": {
+      "type": "hae-image-with-text",
+      "blocks": {
+        "heading_jenjyE": {
+          "type": "heading",
+          "settings": {
+            "heading": "Earn as You Share ✱ Nous Affiliate Program",
+            "heading_size": "headline-style-h2"
+          }
+        },
+        "text_MqwR84": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Love Nous Nails? <em><strong>Earn money</strong></em> every time someone shops through your link or code. The Nous Affiliate Program is open to everyone — no approval process, *no gatekeeping* just real rewards for sharing what you already love.</p><p>Receive tiered commissions, unlock perks, and level up as your sales grow.</p>",
+            "text_size": "text-size-medium"
+          }
+        },
+        "button_aRDteA": {
+          "type": "button",
+          "settings": {
+            "button_label": "Affilate Sign Up",
+            "button_link": "mailto:partnerships@nousnails.com",
+            "button_size": "button--medium"
+          }
+        }
+      },
+      "block_order": [
+        "heading_jenjyE",
+        "text_MqwR84",
+        "button_aRDteA"
+      ],
+      "name": "Image with text",
+      "settings": {
+        "layout": "left",
+        "color_scheme": "",
+        "media_type": "image",
+        "media_aspect_ratio": "1/1",
+        "image": "shopify://shop_images/QD-2347_Edit.jpg",
+        "video_url": ""
+      }
+    },
+    "hae_image_with_text_GRi7tR": {
+      "type": "hae-image-with-text",
+      "blocks": {
+        "heading_riGgRC": {
+          "type": "heading",
+          "settings": {
+            "heading": "How It Works",
+            "heading_size": "headline-style-h2"
+          }
+        },
+        "text_xBHirn": {
+          "type": "text",
+          "settings": {
+            "text": "<p>1. <strong>Sign up</strong> through our affiliate portal to get your custom code or link.<br/>2. <strong>Share</strong> your Nous Nails looks or content on socials, tagging @nousnails.<br/>3. <strong>Earn cash</strong> commissions based on your monthly sales tier — plus extra perks as you grow..<br/></p><p>Perks include<strong>:<br/></strong>• Tiered commissions up to 30%<br/>• Priority for future collabs and PR boxes<br/>• Features on our site + reposts<br/>• Access to early launches and giveaways</p>",
+            "text_size": "text-size-medium"
+          }
+        },
+        "button_aCJEJi": {
+          "type": "button",
+          "settings": {
+            "button_label": "Join Affilate Program",
+            "button_link": "",
+            "button_size": "button--medium"
+          }
+        }
+      },
+      "block_order": [
+        "heading_riGgRC",
+        "text_xBHirn",
+        "button_aCJEJi"
+      ],
+      "name": "Image with text",
+      "settings": {
+        "layout": "right",
+        "color_scheme": "scheme-6628b2c5-2a6e-43ae-9f30-7d31869aa0c7",
+        "media_type": "image",
+        "media_aspect_ratio": "1/1",
+        "image": "shopify://shop_images/QD-590_Edit.jpg",
+        "video_url": ""
+      }
+    },
+    "hae_faqs_kMwEaE": {
+      "type": "hae-faqs",
+      "blocks": {
+        "faq_block_U7r6rD": {
+          "type": "faq_block",
+          "settings": {
+            "question": "How do I join the affiliate program?",
+            "answer": "<p>It’s simple. Anyone can join. ✱ Just click the <strong>“</strong><span style=\"text-decoration:underline\"><strong>Join Affiliate Program</strong></span><strong>”</strong> button and sign up through our affiliate portal. You’ll receive your unique link and code to start sharing immediately.</p>"
+          }
+        },
+        "faq_block_R63JyP": {
+          "type": "faq_block",
+          "settings": {
+            "question": "When and how do I get paid?",
+            "answer": "<p>Commissions are tracked automatically through your affiliate dashboard. Payouts are processed monthly based on your total confirmed sales for that period.</p>"
+          }
+        },
+        "faq_block_99G3Y8": {
+          "type": "faq_block",
+          "settings": {
+            "question": "Can I still apply for the Creator Program too?",
+            "answer": "<p>Yes! ☺︎ The Affiliate Program is open to everyone, while the <a href=\"/pages/creator-program\" target=\"_blank\" title=\"Creator Program\"><strong>Creator Program</strong></a> is invite-only for select creators who receive <em>monthly free nails</em> and other exclusive perks. You can be <strong>both</strong> — creators automatically earn affiliate commissions too.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "faq_block_U7r6rD",
+        "faq_block_R63JyP",
+        "faq_block_99G3Y8"
+      ],
+      "name": "FAQ Section",
+      "settings": {
+        "color_scheme": "",
+        "heading": "Frequently Asked Questions",
+        "page": "faq",
+        "table_image": "shopify://shop_images/Affiliate_Gride.png"
+      }
+    }
+  },
+  "order": [
+    "main",
+    "main_page_header_z7GBQx",
+    "hae_image_with_text_k47d3J",
+    "hae_image_with_text_GRi7tR",
+    "hae_faqs_kMwEaE"
+  ]
+}

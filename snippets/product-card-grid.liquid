@@ -1,0 +1,102 @@
+{% comment %}
+  Renders a product card using "Grid" style
+  Accepts:
+  - max_height: {Number} Maximum height of the product's image (required)
+  - product: {Object} Product Liquid object (required)
+  - show_vendor: {Boolean} Show the product's vendor depending on the section setting (optional)
+  - show_rating: {Boolean} Show the product rating (optional, default true)
+
+  Usage:
+  {% render 'product-card-grid', product: product, show_vendor: section.settings.show_vendor, show_rating: section.settings.show_rating %}
+{% endcomment %}
+
+<div class='product-card-grid{% unless product.available %} product-card-grid--sold-out{% endunless %}'>
+  <div
+    class='product-card-grid__link'
+  >
+    {% unless product.available %}
+      <span class='product-card-grid__sold-out-badge'>
+        <span class='product-card-grid__sold-out-badge__text'>
+          {{ 'products.product.sold_out' | t }}
+        </span>
+        <svg
+          xmlns='http://www.w3.org/2000/svg'
+          width='98'
+          height='109'
+          viewBox='0 0 98 109'
+          fill='none'
+        >
+          <path d="M97.9081 33.7146C97.3374 31.9658 95.3673 32.3558 93.9239 31.9907C93.7675 31.9511 93.5974 31.964 93.4351 31.9419C84.9205 30.7947 76.4123 29.6014 67.8874 28.5293C65.6911 28.2532 64.4203 27.2931 63.4632 25.4121C59.5531 17.7264 55.5095 10.1014 51.4892 2.46593C50.923 1.39062 50.5463 -0.0594208 48.9031 0.00188089C47.4286 0.0567297 47.0655 1.41228 46.5334 2.42353C42.7339 9.6456 38.815 16.8174 35.2611 24.1474C33.8036 27.1525 31.7419 28.3467 28.3844 28.7385C19.9282 29.7244 11.513 31.026 3.08661 32.2309C1.91172 32.3991 0.445922 32.3212 0.0599794 33.762C-0.284542 35.0498 0.933223 35.6794 1.72216 36.4109C8.27393 42.4853 14.8349 48.5519 21.432 54.5825C22.7136 55.7541 23.3296 56.9612 22.9661 58.7067C22.2858 61.9755 21.799 65.2803 21.2137 68.5675C20.1792 74.3792 19.1315 80.1886 18.0555 86.1892C18.0136 88.0485 19.3888 88.7252 21.547 87.6595C25.3709 85.7712 29.2059 83.9017 33.0313 82.0152C33.0975 85.6702 32.9007 89.329 32.7213 92.9988C32.5805 95.8933 31.7696 97.861 29.0831 99.1575C28.514 99.4327 27.9541 99.8129 27.5369 100.265C26.2393 101.672 24.8685 103.209 25.7461 105.2C26.6252 107.194 28.0272 108.707 30.6615 108.949C34.3397 109.285 37.6811 107.873 41.196 107.402C43.9249 107.037 45.4487 105.352 45.0851 102.312C44.6729 98.8621 44.3737 95.3245 44.7133 91.8866C45.2542 86.422 45.8146 80.9707 45.9706 75.49C48.4051 74.3714 50.445 74.605 52.8064 75.8242C53.1992 76.027 53.5939 76.2261 53.9872 76.428C53.8848 84.5626 54.6586 92.7264 54.8511 100.142C55.0037 105.979 55.6362 106.743 61.3395 108.247C65.199 109.265 68.5116 108.22 69.7811 105.583C71.2776 102.476 70.1675 99.0815 66.8602 96.9967C65.9324 96.4118 65.8183 95.6532 65.715 94.7585C65.2287 90.543 65.1137 86.3141 65.1478 82.0806C68.6325 83.8233 72.123 85.5559 75.6136 87.2871C76.7105 87.831 77.8902 88.8662 79.2196 87.8135C80.4379 86.8493 79.932 85.5485 79.7103 84.3336C78.1758 75.9293 76.6915 67.5162 75.0805 59.1248C74.6999 57.1428 75.2491 55.7702 76.7748 54.3916C83.177 48.6058 89.4953 42.737 95.7986 36.8543C96.7381 35.9776 98.4119 35.2605 97.9071 33.7141L97.9081 33.7146Z" fill="#FF6100"/>
+        </svg>
+      </span>
+    {% endunless %}
+
+    {% assign preview_image = product.featured_media.preview_image %}
+
+    <div class='product-card-grid__image-container'>
+      <a
+        href='{{ product.url | within: collection }}'
+        class='product-card-grid__image-link'
+      >
+        View {{ product.title }}
+      </a>
+      {% if preview_image %}
+        {{
+          preview_image
+          | image_url: width: 360
+          | image_tag:
+            class: 'product-card-grid__image',
+            sizes: '(max-width: 750px) 50vw, (max-width: 940px) 33vw, 291px',
+            widths: '180, 240, 320, 360',
+            loading: 'lazy',
+            alt: preview_image.alt
+        }}
+        {% if product.images[1] %}
+          {{
+            product.images[1]
+            | image_url: width: 360
+            | image_tag:
+              class: 'product-card-grid__image product-card-grid__image--hover',
+              sizes: '(max-width: 750px) 50vw, (max-width: 940px) 33vw, 291px',
+              widths: '180, 240, 320, 360',
+              loading: 'lazy',
+              alt: product.images[1].alt
+          }}
+        {% endif %}
+      {% else %}
+        {{ 'product-1' | placeholder_svg_tag: 'product-card-grid__image' }}
+      {% endif %}
+
+      {% unless product.available %}
+        <a
+          href='{{ product.url | within: collection | append: '?back-in-stock=1' }}'
+          class='klaviyo-bis-trigger-collection'
+          role='button'
+        >
+          {{ 'products.product.notify_me' | t | default: 'Vote For Restock' }}
+        </a>
+      {% endunless %}
+    </div>
+
+    <div class='product-card-grid__content'>
+      <div class='product-card-grid__details'>
+        <h2 class='product-card-grid__title headline-style-h5'>
+          {{ product.title }}
+        </h2>
+
+        <div class='product-card-grid__price-wrapper'>
+          {% render 'product-price-listing',
+            product: product,
+            show_vendor: show_vendor
+          %}
+          {% if show_rating != false %}
+            {% render 'product-rating',
+              product: product,
+              class: 'product-card-grid__rating'
+            %}
+          {% endif %}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

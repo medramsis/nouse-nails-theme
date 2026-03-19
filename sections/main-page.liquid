@@ -1,0 +1,71 @@
+{% comment %} <link rel="stylesheet" href="{{ 'section-text-page.css' | asset_url }}" media="print" onload="this.media='all'"> {% endcomment %}
+<link
+  rel='stylesheet'
+  href='{{ 'component-rte.css' | asset_url }}'
+  media='print'
+  onload="this.media='all'"
+>
+
+{% comment %} <noscript>{{ 'section-text-page.css' | asset_url | stylesheet_tag }}</noscript> {% endcomment %}
+<noscript>{{ 'component-rte.css' | asset_url | stylesheet_tag }}</noscript>
+
+{% style %}
+  .text-page__body {
+    margin-bottom: var(--level10);
+  }
+
+  @media only screen and (min-width: 940px) {
+    .text-page__body {
+      font-size: var(--normal);
+      max-width: 50rem;
+    }
+  }
+{% endstyle %}
+
+<section class='page-width text-page master-padding-top'>
+  {% if page.content != blank %}
+    <div class='rte  text-page__body container-x-small {{ section.settings.padding_size }}'>
+      {{ page.content }}
+    </div>
+  {% endif %}
+</section>
+
+{% schema %}
+{
+  "name": "Main Page",
+  "tag": "section",
+  "class": "section",
+  "settings": [
+    {
+      "type": "select",
+      "id": "padding_size",
+      "label": "Padding Size",
+      "options": [
+        {
+          "value": "section-padding-x-small",
+          "label": "Extra Small"
+        },
+        {
+          "value": "section-padding-small",
+          "label": "Small"
+        },
+        {
+          "value": "section-padding-main",
+          "label": "Medium"
+        },
+        {
+          "value": "section-padding-large",
+          "label": "Large"
+        }
+      ],
+      "default": "section-padding-small"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Main Text Page",
+      "category": "Templates & Pages"
+    }
+  ]
+}
+{% endschema %}

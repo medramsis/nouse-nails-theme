@@ -1,0 +1,414 @@
+{% comment %}
+  Renders a header drawer menu for mobile and desktop.
+
+  Usage:
+  {% render 'header-drawer' %}
+{% endcomment %}
+
+<header-drawer data-breakpoint='{% if section.settings.menu_type_desktop == 'drawer' %}desktop{% else %}tablet{% endif %}'>
+  <details
+    id='Details-menu-drawer-container'
+    class='menu-drawer-container menu-closing'
+  >
+    <summary
+      class='header__icon  header__icon--menu focus-inset'
+      aria-label='{{ 'sections.header.menu' | t }}'
+    >
+      <div class='header__icon__inner'></div>
+      <span class='visually-hidden'> Toggle Menu </span>
+    </summary>
+    <div id='menu-drawer' class='menu-drawer motion-reduce'>
+      <div class='menu-drawer__inner'>
+        <div class='menu-drawer__badge'>
+          <svg aria-hidden='true' focusable='false' role='presentation'>
+            <use href="#logo-badge">
+          </svg>
+        </div>
+        <div class='menu-drawer__navigation-wrapper'>
+          <nav class='menu-drawer__navigation'>
+            <ul class='menu-drawer__menu' role='list'>
+              {%- for link in section.settings.mobile_menu_primary.links -%}
+                <li class='menu-drawer__menu-item'>
+                  {%- if link.links != blank -%}
+                    <drawer-disclosure>
+                      <details id='Details-menu-drawer-menu-item-{{ forloop.index }}'>
+                        <summary
+                          id='HeaderDrawer-{{ link.handle }}'
+                          class='menu-drawer__submenu-title  focus-inset{% if link.child_active %} menu-drawer__menu-item--active{% endif %}'
+                          aria-label='menu-drawer_{{link.current}}'
+                          aria-expanded='false'
+                        >
+                          {{ link.title | escape }}
+                          <div class='menu-drawer__submenu-title__icon'>
+                            {% render 'icon-plus' %}
+                          </div>
+                        </summary>
+
+                        {% assign is_mega_menu = false %}
+                        {% for block in section.blocks %}
+                          {% if block.type == 'block'
+                            and link.title == block.settings.top_level_link
+                          %}
+                            {% assign is_mega_menu = true %}
+                            {% break %}
+                          {% endif %}
+                        {% endfor %}
+
+                        {% if is_mega_menu %}
+                          <div
+                            class='header__mega-menu'
+                            role='region'
+                            data-drawer-content
+                          >
+                            <div
+                              class='header__mega-menu__inner'
+                              data-drawer-content-inner
+                            >
+                              <div class='header__mega-menu__links'>
+                                <span class='header__mega-menu__title'>
+                                  {{- link.title | escape -}}
+                                </span>
+                                <ol class='header__mega-menu__list-menu   motion-reduce'>
+                                  {%- for childlink in link.links -%}
+                                    <li>
+                                      {%- if childlink.links == blank -%}
+                                        <a
+                                          href='{{ childlink.url }}'
+                                          data-custom-cursor
+                                          class='header__mega-menu__list-item    focus-inset {% if childlink.current %} header__mega-menu__list-item--active{% endif %}'
+                                          {% if childlink.current %}
+                                            aria-current='page'
+                                          {% endif %}
+                                        >
+                                          {{ childlink.title | escape }}
+                                        </a>
+                                      {%- else -%}
+                                        <div
+                                          class='header__mega-menu__list-item  focus-inset'
+                                          id='{{ childlink.title | escape }}'
+                                        >
+                                          {{ childlink.title | escape }}
+                                          {% render 'icon-plus' %}
+                                        </div>
+                                        <div class='header__childmenu'>
+                                          <ul
+                                            class='header__mega-menu__list-menu  header__childmenu__list-menu'
+                                            aria-describedby='{{ childlink.title | escape }}'
+                                          >
+                                            {%- for grandchildlink in childlink.links -%}
+                                              <li>
+                                                <a
+                                                  href='{{ grandchildlink.url }}'
+                                                  data-custom-cursor
+                                                  class='header__mega-menu__list-item  header__childmenu__list-item focus-inset {% if grandchildlink.current %} list-menu__item--active{% endif %}'
+                                                  {% if grandchildlink.current %}
+                                                    aria-current='page'
+                                                  {% endif %}
+                                                >
+                                                  {{
+                                                    grandchildlink.title
+                                                    | escape
+                                                  }}
+                                                </a>
+                                              </li>
+                                            {%- endfor -%}
+                                          </ul>
+                                        </div>
+                                      {%- endif -%}
+                                    </li>
+                                  {%- endfor -%}
+                                </ol>
+                              </div>
+                              <div class='header__mega-menu__promotions'>
+                                {% for block in section.blocks %}
+                                  {% if block.type == 'block'
+                                    and block.settings.top_level_link
+                                      == link.title
+                                  %}
+                                    {% if block.settings.promotion_1_image %}
+                                      <a
+                                        href='{{ block.settings.promotion_1_url }}'
+                                        class='mega-menu-promotion'
+                                      >
+                                        <div class='mega-menu-promotion__image'>
+                                          <div class='mega-menu-promotion__image__inner'>
+                                            <img
+                                              srcset='
+                                                {% if block.settings.promotion_1_image.width >= 493 %}{{ block.settings.promotion_1_image | image_url: width: 493 }} 493w,{% endif %}
+                                                {% if block.settings.promotion_1_image.width >= 600 %}{{ block.settings.promotion_1_image | image_url: width: 600 }} 600w,{% endif %}
+                                                {{ block.settings.promotion_1_image | image_url }} {{ block.settings.promotion_1_image.width }}w
+                                              '
+                                              src='{{ block.settings.promotion_1_image | image_url: width: block.settings.promotion_1_image.width }}'
+                                              sizes='(min-width: 940px) 20rem, 100vw'
+                                              loading='lazy'
+                                              width='{{ block.settings.promotion_1_image.width}}'
+                                              height='{{  block.settings.promotion_1_image.width | divided_by: block.settings.promotion_1_image.aspect_ratio | ceil }}'
+                                              class='responsive-image'
+                                            >
+                                          </div>
+                                        </div>
+                                        <div class='mega-menu-promotion__name'>
+                                          {{ block.settings.promotion_1_text }}
+                                        </div>
+                                      </a>
+                                    {% endif %}
+                                    {% if block.settings.promotion_2_image %}
+                                      <a
+                                        href='{{ block.settings.promotion_2_url }}'
+                                        class='mega-menu-promotion'
+                                      >
+                                        <div class='mega-menu-promotion__image'>
+                                          <div class='mega-menu-promotion__image__inner'>
+                                            <img
+                                              srcset='
+                                                {% if block.settings.promotion_2_image.width >= 493 %}{{ block.settings.promotion_2_image | image_url: width: 493 }} 493w,{% endif %}
+                                                {% if block.settings.promotion_2_image.width >= 600 %}{{ block.settings.promotion_2_image | image_url: width: 600 }} 600w,{% endif %}
+                                                {{ block.settings.promotion_2_image | image_url }} {{ block.settings.promotion_2_image.width }}w
+                                              '
+                                              src='{{ block.settings.promotion_2_image | image_url: width: block.settings.promotion_2_image.width }}'
+                                              sizes='(min-width: 940px) 20rem, 100vw'
+                                              loading='lazy'
+                                              width='{{ block.settings.promotion_2_image.width}}'
+                                              height='{{  block.settings.promotion_2_image.width | divided_by: block.settings.promotion_2_image.aspect_ratio | ceil }}'
+                                              class='responsive-image'
+                                            >
+                                          </div>
+                                        </div>
+                                        <div class='mega-menu-promotion__name'>
+                                          {{ block.settings.promotion_2_text }}
+                                        </div>
+                                      </a>
+                                    {% endif %}
+                                    {% if block.settings.promotion_3_image %}
+                                      <a
+                                        href='{{ block.settings.promotion_3_url }}'
+                                        class='mega-menu-promotion'
+                                      >
+                                        <div class='mega-menu-promotion__image'>
+                                          <div class='mega-menu-promotion__image__inner'>
+                                            <img
+                                              srcset='
+                                                {% if block.settings.promotion_3_image.width >= 493 %}{{ block.settings.promotion_3_image | image_url: width: 493 }} 493w,{% endif %}
+                                                {% if block.settings.promotion_3_image.width >= 600 %}{{ block.settings.promotion_3_image | image_url: width: 600 }} 600w,{% endif %}
+                                                {{ block.settings.promotion_3_image | image_url }} {{ block.settings.promotion_3_image.width }}w
+                                              '
+                                              src='{{ block.settings.promotion_3_image | image_url: width: block.settings.promotion_3_image.width }}'
+                                              sizes='(min-width: 940px) 20rem, 100vw'
+                                              loading='lazy'
+                                              width='{{ block.settings.promotion_3_image.width}}'
+                                              height='{{  block.settings.promotion_3_image.width | divided_by: block.settings.promotion_3_image.aspect_ratio | ceil }}'
+                                              class='responsive-image'
+                                            >
+                                          </div>
+                                        </div>
+                                        <div class='mega-menu-promotion__name'>
+                                          {{ block.settings.promotion_3_text }}
+                                        </div>
+                                      </a>
+                                    {% endif %}
+                                  {% endif %}
+                                {% endfor %}
+                              </div>
+                            </div>
+                          </div>
+                        {% else %}
+                          <div
+                            id='link-{{ link.handle | escape }}'
+                            class='menu-drawer__submenu'
+                            tabindex='-1'
+                            data-drawer-content
+                          >
+                            <div
+                              class='menu-drawer__submenu__inner'
+                              data-drawer-content-inner
+                            >
+                              <ul
+                                class='menu-drawer__submenu__list list-menu'
+                                role='list'
+                                tabindex='-1'
+                              >
+                                {%- for childlink in link.links -%}
+                                  <li class='menu-drawer__submenu__menu-item'>
+                                    <a
+                                      id='HeaderDrawer-{{ link.handle }}-{{ childlink.handle }}'
+                                      href='{{ childlink.url }}'
+                                      class='menu-drawer__submenu__menu-link {% if childlink.current %} menu-drawer__menu-item--active{% endif %}'
+                                      {% if childlink.current %}
+                                        aria-current='page'
+                                      {% endif %}
+                                    >
+                                      {{ childlink.title | escape }}
+                                    </a>
+                                  </li>
+                                {%- endfor -%}
+                              </ul>
+                            </div>
+                          </div>
+                        {% endif %}
+                      </details>
+                    </drawer-disclosure>
+                  {%- else -%}
+                    <a
+                      id='HeaderDrawer-{{ link.handle }}'
+                      href='{{ link.url }}'
+                      class='menu-drawer__menu-link focus-inset{% if link.current %} menu-drawer__menu-item--active{% endif %}'
+                      {% if link.current %}
+                        aria-current='page'
+                      {% endif %}
+                    >
+                      <span class=''>
+                        {{ link.title | escape }}
+                      </span>
+                    </a>
+                  {%- endif -%}
+                </li>
+              {%- endfor -%}
+            </ul>
+
+            <div class='menu-drawer__utility-links  hide-for-large-up'>
+              <ul>
+                {%- for link in section.settings.mobile_menu_secondary.links -%}
+                  <li class='menu-drawer__menu-item'>
+                    {%- if link.url contains 'search'
+                      or link.title contains 'search'
+                    -%}
+                      <details id='Details-menu-drawer-menu-item-{{ forloop.index }}'>
+                        <summary
+                          id='menuDrawer-{{ link.handle }}'
+                          class='menu-drawer__submenu-title focus-inset{% if link.current %} menu-drawer__menu-item--active{% endif %}'
+                        >
+                          {{ link.title | escape }}
+                        </summary>
+                        <div
+                          id='link-{{ link.handle | escape }}'
+                          tabindex='-1'
+                        >
+                          <div class='menu-drawer-search'>
+                            <predictive-search data-loading-text='{{ 'accessibility.loading' | t }}'>
+                              <form
+                                action='{{ routes.search_url }}'
+                                method='get'
+                                role='search'
+                                class='search search-modal__form'
+                              >
+                                <div class='search__input-container '>
+                                  <input
+                                    class='search__input'
+                                    id='Search-In-Modal-1'
+                                    type='search'
+                                    name='q'
+                                    value=''
+                                    role='combobox'
+                                    aria-expanded='false'
+                                    aria-owns='predictive-search-results-list'
+                                    aria-controls='predictive-search-results-list'
+                                    aria-haspopup='listbox'
+                                    aria-autocomplete='list'
+                                    autocorrect='off'
+                                    autocomplete='off'
+                                    autocapitalize='off'
+                                    spellcheck='false'
+                                    placeholder='Type here...'
+                                  >
+                                  <label
+                                    data-search-input-label
+                                    class='search__label'
+                                    for='Search-In-Modal-1'
+                                  >
+                                    Enter
+                                  </label>
+                                  {% comment %}
+                                    <label data-search-input-label class="search__label" for="Search-In-Modal-1">
+                                      {{- 'general.search.search' | t -}}
+                                    </label>
+                                  {% endcomment %}
+                                  <input
+                                    type='hidden'
+                                    name='options[prefix]'
+                                    value='last'
+                                  >
+                                  <button
+                                    class='search__button'
+                                    aria-label='{{ 'general.search.search' | t }}'
+                                  >
+                                    <svg
+                                      class='icon icon-search visually-hidden'
+                                      aria-hidden='true'
+                                      focusable='false'
+                                      role='presentation'
+                                    >
+                                      <use href="#icon-search">
+                                    </svg>
+                                  </button>
+                                </div>
+                                <div
+                                  class='predictive-search predictive-search--header'
+                                  tabindex='-1'
+                                  data-predictive-search
+                                >
+                                  <div class='predictive-search__loading-state'>
+                                    <svg
+                                      aria-hidden='true'
+                                      focusable='false'
+                                      role='presentation'
+                                      class='spinner'
+                                      viewBox='0 0 66 66'
+                                      xmlns='http://www.w3.org/2000/svg'
+                                    >
+                                      <circle class="path" fill="none" stroke-width="6" cx="33" cy="33" r="30"></circle>
+                                    </svg>
+                                  </div>
+                                </div>
+                                <span
+                                  class='predictive-search-status visually-hidden'
+                                  role='status'
+                                  aria-hidden='true'
+                                ></span>
+                              </form>
+                            </predictive-search>
+                          </div>
+                        </div>
+                      </details>
+                    {%- else -%}
+                      {%- if link.title contains 'Join' -%}
+                        <a
+                          href='{{ link.url }}'
+                          class='menu-drawer__menu-link button-join button  button--small button--tertiary'
+                          {% if link.current %}
+                            aria-current='page'
+                          {% endif %}
+                        >
+                          {{ link.title | escape }}
+                        </a>
+
+                        <a
+                          href='/acccount/register'
+                          class='button-register  button button--small button--primary'
+                          {% if link.current %}
+                            aria-current='page'
+                          {% endif %}
+                        >
+                          Sign In
+                        </a>
+                      {% else %}
+                        <a
+                          href='{{ link.url }}'
+                          class='menu-drawer__menu-link'
+                          {% if link.current %}
+                            aria-current='page'
+                          {% endif %}
+                        >
+                          {{ link.title | escape }}
+                        </a>
+                      {%- endif -%}
+                    {%- endif -%}
+                  </li>
+                {% endfor %}
+              </ul>
+            </div>
+          </nav>
+        </div>
+      </div>
+    </div>
+  </details>
+</header-drawer>

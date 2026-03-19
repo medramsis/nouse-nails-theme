@@ -1,0 +1,129 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "article-template",
+      "settings": {
+        "header_color_scheme": "",
+        "blog_show_author": false,
+        "blog_show_date": false,
+        "show_share_buttons": false,
+        "media_aspect_ratio": "3/4",
+        "body_color_scheme": "scheme-bcc14177-2f35-42c6-9cb2-e793cb929778",
+        "back_button_text": "BACK TO JOURNAL",
+        "body_padding_size": "section-padding-small"
+      }
+    },
+    "hae_testimonials_QUXG6q": {
+      "type": "hae-testimonials",
+      "blocks": {
+        "quote_GnP6N6": {
+          "type": "quote",
+          "settings": {
+            "quote": "<p>I’ve tried every gel strip brand out there and nothing comes close to Nous. I love these designs so much and they actually stay on longer than my regular gel nails!</p>",
+            "author": "- Renee E."
+          }
+        },
+        "quote_3Yz7FF": {
+          "type": "quote",
+          "settings": {
+            "quote": "<p>They look like salon nails but took me 15 minutes at home. No drying time, no fumes, and they actually last through dishes and workouts.</p>",
+            "author": "- Talia I."
+          }
+        },
+        "quote_MyFRRa": {
+          "type": "quote",
+          "settings": {
+            "quote": "<p>I was shocked at how gentle these are. No damage, no weird smell, just healthy nails that last way longer than I expected.</p>",
+            "author": "- Riley E."
+          }
+        }
+      },
+      "block_order": [
+        "quote_GnP6N6",
+        "quote_3Yz7FF",
+        "quote_MyFRRa"
+      ],
+      "name": "HAE Testimonials",
+      "settings": {
+        "color_scheme": "scheme-6628b2c5-2a6e-43ae-9f30-7d31869aa0c7",
+        "title": "What Our Customers Say",
+        "headline_size": "headline-style-h3"
+      }
+    },
+    "hae_faqs_wLLdbF": {
+      "type": "hae-faqs",
+      "blocks": {
+        "faq_block_dkbknw": {
+          "type": "faq_block",
+          "settings": {
+            "question": "What if a strip doesn’t fit my nail exactly?",
+            "answer": "<p>If you’re between sizes, opt for the smaller one to avoid overlapping onto the skin or cuticles. Choose a strip that fits slightly inside your nail line and leave a small gap at the cuticle. Never overlap onto the skin or cuticle—adhesive only sticks properly to the nail bed, and overlap can cause early lifting.</p>"
+          }
+        },
+        "faq_block_8F3RJ7": {
+          "type": "faq_block",
+          "settings": {
+            "question": "If a strip is slightly small, how do I make it fit?",
+            "answer": "<p>Warm it up to make it more flexible—rub it in the palm of your hands or place it briefly over a warm mug of coffee. Once softened, apply and gently stretch to fit. Note: this only works for slightly smaller strips; overstretching can tear the film or distort the artwork.</p>"
+          }
+        },
+        "faq_block_EinByk": {
+          "type": "faq_block",
+          "settings": {
+            "question": "Can I use these on extensions?",
+            "answer": "<p>Yes! If you prefer a longer nail look, you can apply Nous nail strips over clear press-ons or extensions just like you would on natural nails. Be sure the base surface is clean and dry before applying.</p>"
+          }
+        },
+        "faq_block_eVrWj9": {
+          "type": "faq_block",
+          "settings": {
+            "question": "How can I make them last longer?",
+            "answer": "<p>A few pro tips:<br/>• Always start with clean, oil-free nails using the provided prep pad.<br/>• Use the wooden stick to roll out air bubbles and seal the edges before curing.<br/>• Avoid oils or soaking your hands for at least one hour after application.<br/>• For extra shine and protection, finish with a clear top coat. With good prep, your Nous nails can handle gym sessions, dish-washing, typing, and all-day life—minus the click-clack.</p>"
+          }
+        },
+        "faq_block_RHhHbn": {
+          "type": "faq_block",
+          "settings": {
+            "question": "How do I remove them?",
+            "answer": "<p>Use our <a href=\"https://nousnails.com/products/ctrl-delete-nail-remover-serum\" target=\"_blank\" title=\"Ctrl+Delete Vitamin Serum Remover\"><strong>Ctrl + Delete Vitamin Serum Remover</strong></a> by applying drops between the nail strip and nail bed. Use the wooden stick to gently lift the edges, adding more remover as needed until the strip slides off completely. Once removed, you’ll notice your nails feel healthier—no harsh drilling, no salon damage, just clean removal and care.</p>"
+          }
+        },
+        "faq_block_AtADzN": {
+          "type": "faq_block",
+          "settings": {
+            "question": "Is Nous nails non-toxic, vegan, and cruelty-free?",
+            "answer": "<p>Yes ✱ We’re non-toxic and free from the top 10 most questionable ingredients—so you can shine without worry. That means <strong>no formaldehyde, HEMA, DBP, TPHP, or toluene</strong>. No nasties, just nail magic. We’re also <strong>vegan </strong>and <strong>cruelty-free</strong>. ☺︎</p>"
+          }
+        }
+      },
+      "block_order": [
+        "faq_block_dkbknw",
+        "faq_block_8F3RJ7",
+        "faq_block_EinByk",
+        "faq_block_eVrWj9",
+        "faq_block_RHhHbn",
+        "faq_block_AtADzN"
+      ],
+      "name": "FAQ Section",
+      "settings": {
+        "color_scheme": "",
+        "heading": "Frequently Asked Questions",
+        "page": ""
+      }
+    }
+  },
+  "order": [
+    "main",
+    "hae_testimonials_QUXG6q",
+    "hae_faqs_wLLdbF"
+  ]
+}

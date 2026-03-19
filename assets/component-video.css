@@ -1,0 +1,49 @@
+
+
+
+
+
+/*------------------------------------*\
+    #Video With Aspect Ratio
+\*------------------------------------*/
+
+.video-with-aspect-ratio {
+  position: relative;
+  width: 100%;
+  aspect-ratio: var(--aspect-ratio);
+}
+
+.video-with-aspect-ratio__inner {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.video-with-aspect-ratio video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.video-with-aspect-ratio__placeholder,
+.video-with-aspect-ratio__placeholder-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.video-with-aspect-ratio__placeholder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.video-with-aspect-ratio__placeholder .placeholder-svg {
+  width: 100%;
+  height: 100%;
+}

@@ -1,0 +1,86 @@
+<div>
+  <div class='hae-gradient-header text-center py-40 px-40-gutters d-flex-column flex-justify-center'>
+    <h1 class='fs-60'>
+      {{ page.title }}
+    </h1>
+    <p class='rte fs-18 mt-16'>{{ page.content }}</p>
+  </div>
+
+  <div class='d-md-flex-row flex-wrap mt-24 mb-24'>
+    {% for block in section.blocks %}
+      <a
+        href='{{block.settings.press_link}}'
+        class='d-block col-md-6 col-mlg-4'
+      >
+        <div class='p-40-gutters'>
+          <div class='press-img-container d-flex-column flex-justify-center mx-auto'>
+            <img
+              src='{{ block.settings.image | img_url }}'
+              alt='{{ alt | default: 'Press logo'}}'
+            >
+          </div>
+          <h3 class='fs-24 mabry-med text-center'>
+            {{ block.settings.title }}
+          </h3>
+          <p class='text-center mt-24'>{{ block.settings.date }}</p>
+          <p class='text-center mt-24'>
+            <button class='button-pill' type='button' name='button'>
+              Read
+            </button>
+          </p>
+        </div>
+      </a>
+    {% endfor %}
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Press page",
+  "settings": [],
+  "blocks": [
+    {
+      "name": "Press",
+      "type": "press_feature",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image",
+          "info": "Upload the press logo as PNG in black"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title",
+          "info": "The title of the press feature"
+        },
+        {
+          "type": "text",
+          "id": "date",
+          "label": "Date",
+          "info": "Format: Month YYYY, e.g. March 2021"
+        },
+        {
+          "type": "url",
+          "id": "press_link",
+          "label": "Link",
+          "info": "External link to the press feature"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Press Page",
+      "category": "Templates & Pages"
+    }
+  ]
+}
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

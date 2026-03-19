@@ -1,0 +1,105 @@
+/*------------------------------------*\
+    #Featured Blog Posts
+\*------------------------------------*/
+
+.featured-blog-posts__contain {
+  margin: auto;
+}
+
+.featured-blog-posts__header {
+  text-align: center;
+  margin-bottom: var(--space-8);
+}
+
+/*------------------------------------*\
+    #Swiper Slideshow Component
+\*------------------------------------*/
+
+.featured-blog-posts__swiper {
+  width: 100%;
+}
+
+/* Navigation styles */
+.swiper-slideshow__navigation {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: var(--space-4);
+  margin-top: var(--space-6);
+}
+
+.swiper-slideshow__nav-button {
+  background: transparent;
+  border: 1px solid var(--color-border);
+  border-radius: 50%;
+  width: 3rem;
+  height: 3rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  color: var(--color-text-1);
+  font-size: 1.25rem;
+  font-weight: bold;
+}
+
+.swiper-slideshow__nav-button:hover {
+  background: var(--color-background-2);
+  border-color: var(--color-text-1);
+  transform: scale(1.05);
+}
+
+.swiper-slideshow__nav-button:active {
+  transform: scale(0.95);
+}
+
+/* Hide navigation on desktop when grid layout is active */
+@media screen and (min-width: 750px) {
+  .swiper-slideshow__navigation {
+    display: none;
+  }
+}
+
+/*------------------------------------*\
+    #Featured Blog Posts Grid
+\*------------------------------------*/
+
+.featured-blog-posts__grid {
+  align-items: stretch;
+  margin-bottom: var(--space-9);
+  position: relative;
+  margin-right: -1.5rem !important;
+}
+
+@media screen and (min-width: 750px) {
+  .featured-blog-posts__grid {
+    margin-right: 0 !important;
+  }
+}
+
+.featured-blog-posts__grid .grid__item:last-child {
+  margin-bottom: 0;
+}
+
+/* Swiper-specific grid styles */
+.featured-blog-posts__grid[data-swiper-slideshow] {
+  overflow: hidden;
+}
+
+.featured-blog-posts__grid[data-swiper-slideshow] .swiper-wrapper {
+  display: flex;
+  transition-property: transform;
+}
+
+.featured-blog-posts__grid[data-swiper-slideshow] .swiper-slide {
+  flex-shrink: 0;
+  width: 100%;
+  height: auto;
+  position: relative;
+  transition-property: transform;
+}
+
+.featured-blog-posts__view-all {
+  text-align: center;
+}

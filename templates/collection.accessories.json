@@ -1,0 +1,81 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "dynamic-collection-grid",
+      "blocks": {
+        "product_A7FPiw": {
+          "type": "product",
+          "settings": {
+            "product": "led-gel-lamp"
+          }
+        },
+        "product_yqFHWf": {
+          "type": "product",
+          "settings": {
+            "product": "ctrl-delete-nail-remover-serum"
+          }
+        },
+        "image_8JytjG": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/NOUS-STUDIO-850_Edit.jpg",
+            "art_direction": "portrait",
+            "media_aspect_ratio": "3/4"
+          }
+        },
+        "product_YQz4fN": {
+          "type": "product",
+          "settings": {
+            "product": "complete-starter-pack"
+          }
+        },
+        "video_embed_U8B6zN": {
+          "type": "video_embed",
+          "settings": {
+            "video": "shopify://files/videos/Step-by-Step-Reel-USE-THIS-1x1_2799d65f-c71b-464a-854b-17b89190664a.MOV",
+            "autoplay": "true",
+            "media_aspect_ratio": "64/41",
+            "controls": false
+          }
+        }
+      },
+      "block_order": [
+        "product_A7FPiw",
+        "product_yqFHWf",
+        "image_8JytjG",
+        "product_YQz4fN",
+        "video_embed_U8B6zN"
+      ],
+      "settings": {
+        "title": "The Nous Standard",
+        "hide_title": false,
+        "richtext_content": "",
+        "color_scheme": "background-1",
+        "section_padding_top": "section-padding-top-small",
+        "section_padding_bottom": "section-padding-bottom-small"
+      }
+    },
+    "hae_marquee_banner_33tJkG": {
+      "type": "hae-marquee-banner",
+      "disabled": true,
+      "name": "News ticker banner",
+      "settings": {
+        "color_scheme": "scheme-cc80f6b4-b558-4219-8256-b69a754c7c0a",
+        "text": "Hello There!"
+      }
+    }
+  },
+  "order": [
+    "main",
+    "hae_marquee_banner_33tJkG"
+  ]
+}

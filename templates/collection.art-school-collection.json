@@ -1,0 +1,122 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "dynamic-collection-grid",
+      "blocks": {
+        "product_yqFHWf": {
+          "type": "product",
+          "settings": {
+            "product": "art-school-star"
+          }
+        },
+        "product_dFFDQk": {
+          "type": "product",
+          "settings": {
+            "product": "iced-out"
+          }
+        },
+        "video_embed_4pD9BR": {
+          "type": "video_embed",
+          "settings": {
+            "video": "shopify://files/videos/Big Hands (short).mov",
+            "autoplay": "true",
+            "media_aspect_ratio": "3/4",
+            "controls": false
+          }
+        },
+        "product_iJzzGA": {
+          "type": "product",
+          "settings": {
+            "product": "stars-aligned"
+          }
+        },
+        "product_KCL8d8": {
+          "type": "product",
+          "settings": {
+            "product": "wellesley"
+          }
+        },
+        "product_E7UQMi": {
+          "type": "product",
+          "settings": {
+            "product": "gallery-orbit"
+          }
+        },
+        "product_bhGweq": {
+          "type": "product",
+          "settings": {
+            "product": "scandi-color-theory"
+          }
+        },
+        "product_yjyCig": {
+          "type": "product",
+          "settings": {
+            "product": "strange-terrain"
+          }
+        },
+        "product_hnb6ed": {
+          "type": "product",
+          "settings": {
+            "product": "cherry-blitz"
+          }
+        },
+        "product_PnfDUk": {
+          "type": "product",
+          "settings": {
+            "product": "brick-butter"
+          }
+        },
+        "image_ezEkxg": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/QD-331_Edit_d262d116-0d9e-4932-9976-5de9ea3296cd.jpg",
+            "art_direction": "portrait",
+            "media_aspect_ratio": "64/41"
+          }
+        }
+      },
+      "block_order": [
+        "product_yqFHWf",
+        "product_dFFDQk",
+        "video_embed_4pD9BR",
+        "product_iJzzGA",
+        "product_KCL8d8",
+        "product_E7UQMi",
+        "product_bhGweq",
+        "product_yjyCig",
+        "product_hnb6ed",
+        "product_PnfDUk",
+        "image_ezEkxg"
+      ],
+      "settings": {
+        "title": "Art School Collection",
+        "hide_title": false,
+        "color_scheme": "background-1",
+        "section_padding_top": "section-padding-top-small",
+        "section_padding_bottom": "section-padding-bottom-small"
+      }
+    },
+    "hae_marquee_banner_33tJkG": {
+      "type": "hae-marquee-banner",
+      "disabled": true,
+      "name": "News ticker banner",
+      "settings": {
+        "color_scheme": "scheme-cc80f6b4-b558-4219-8256-b69a754c7c0a",
+        "text": "Hello There!"
+      }
+    }
+  },
+  "order": [
+    "main",
+    "hae_marquee_banner_33tJkG"
+  ]
+}

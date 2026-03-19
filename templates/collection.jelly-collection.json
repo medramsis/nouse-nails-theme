@@ -1,0 +1,84 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "dynamic-collection-grid",
+      "blocks": {
+        "product_yqFHWf": {
+          "type": "product",
+          "settings": {
+            "product": "matcha-jelly"
+          }
+        },
+        "product_xDUBtm": {
+          "type": "product",
+          "settings": {
+            "product": "geometric-jelly"
+          }
+        },
+        "product_c8TWMU": {
+          "type": "product",
+          "settings": {
+            "product": "aura-gradient"
+          }
+        },
+        "product_rNJ4zD": {
+          "type": "product",
+          "settings": {
+            "product": "iced-out"
+          }
+        },
+        "product_M9cqTE": {
+          "type": "product",
+          "settings": {
+            "product": "art-school-star"
+          }
+        },
+        "image_UzjJRP": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/NOUS-13_Edit.jpg",
+            "art_direction": "portrait",
+            "media_aspect_ratio": "3/4"
+          }
+        }
+      },
+      "block_order": [
+        "product_yqFHWf",
+        "product_xDUBtm",
+        "product_c8TWMU",
+        "product_rNJ4zD",
+        "product_M9cqTE",
+        "image_UzjJRP"
+      ],
+      "settings": {
+        "title": "Jelly Collection",
+        "hide_title": false,
+        "color_scheme": "background-1",
+        "section_padding_top": "section-padding-top-small",
+        "section_padding_bottom": "section-padding-bottom-small"
+      }
+    },
+    "hae_marquee_banner_33tJkG": {
+      "type": "hae-marquee-banner",
+      "disabled": true,
+      "name": "News ticker banner",
+      "settings": {
+        "color_scheme": "scheme-cc80f6b4-b558-4219-8256-b69a754c7c0a",
+        "text": "Hello There!"
+      }
+    }
+  },
+  "order": [
+    "main",
+    "hae_marquee_banner_33tJkG"
+  ]
+}

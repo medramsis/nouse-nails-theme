@@ -1,0 +1,182 @@
+/*------------------------------------*\
+    #Rating
+\*------------------------------------*/
+
+.product-rating {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--space-1);
+  flex-shrink: 0;
+}
+
+.product-rating__stars {
+  display: flex;
+  gap: calc(var(--space-1) / 2);
+}
+
+.product-rating__star {
+  width: var(--space-4);
+  height: var(--space-4);
+  fill: rgb(var(--color-accent));
+}
+
+.product-rating__star--empty {
+  fill: none;
+  stroke: rgb(var(--color-accent));
+  stroke-width: 1;
+}
+
+.product-rating__review-count {
+  color: rgb(var(--color-text-1));
+  font-weight: 500;
+}
+
+/*------------------------------------*\
+    #Judge Me App
+\*------------------------------------*/
+
+.jdgm-prev-badge {
+  display: flex !important;
+  flex-direction: column;
+  margin-bottom: var(--space-4);
+}
+
+.jdgm-prev-badge__text {
+  text-align: right;
+  font-family: var(--text-font-family);
+  font-weight: 400;
+  font-size: var(--text-size-tiny);
+  letter-spacing: var(--text-letter-spacing);
+  line-height: var(--text-line-height);
+}
+
+@media screen and (min-width: 750px) {
+  .jdgm-prev-badge__text {
+    display: block;
+  }
+}
+.jdgm-rev__timestamp {
+  color: rgb(var(--color-text-1)) !important;
+}
+
+.jdgm-rev-widg {
+  padding-left: var(--space-6) !important;
+  padding-right: var(--space-6) !important;
+}
+
+/*------------------------------------*\
+    #Judge Me Star
+\*------------------------------------*/
+
+.product-rating.product-template__rating .jdgm-preview-badge .jdgm-star {
+  color: inherit !important;
+  font-size: 1rem !important;
+}
+
+.jdgm-star.jdgm--on:before,
+.jdgm-star.jdgm--off:before {
+  content: '';
+  background-color: rgb(
+    var(--color-accent)
+  ); /* This will be the color of your star */
+  -webkit-mask: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTMiIGhlaWdodD0iMTIiIHZpZXdCb3g9IjAgMCAxMyAxMiIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTcuODQ2MzQgLTYuMTAzNTJlLTA1TDcuMzU1OTkgNC4zNzI4OUwxMS44MTgyIDMuMTMzODlMMTIuMjEwNSA2LjEyMjA4TDguMTQwNTYgNi40MTM2MUwxMC44MTMgOS45MzYyNkw4LjA5MTUyIDExLjM2OTZMNS4yMjgxNyA3LjY1MjYxTDQuNTg1NDcgMTEuMzQ1M0wxLjc2NTkyIDkuOTM2MjZMNC40MTM4NSA2LjQxMzYxTDAuMzY4NDA4IDYuMDk3NzhMMC44MzQyNDcgMy4xMzM4OUw1LjE5ODQyIDQuMzcyODlMNC43MDgwNiAtNi4xMDM1MmUtMDVINy44NDYzNFoiIGZpbGw9ImJsYWNrIi8+Cjwvc3ZnPgo=')
+    no-repeat center;
+  mask: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTMiIGhlaWdodD0iMTIiIHZpZXdCb3g9IjAgMCAxMyAxMiIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTcuODQ2MzQgLTYuMTAzNTJlLTA1TDcuMzU1OTkgNC4zNzI4OUwxMS44MTgyIDMuMTMzODlMMTIuMjEwNSA2LjEyMjA4TDguMTQwNTYgNi40MTM2MUwxMC44MTMgOS45MzYyNkw4LjA5MTUyIDExLjM2OTZMNS4yMjgxNyA3LjY1MjYxTDQuNTg1NDcgMTEuMzQ1M0wxLjc2NTkyIDkuOTM2MjZMNC40MTM4NSA2LjQxMzYxTDAuMzY4NDA4IDYuMDk3NzhMMC44MzQyNDcgMy4xMzM4OUw1LjE5ODQyIDQuMzcyODlMNC43MDgwNiAtNi4xMDM1MmUtMDVINy44NDYzNFoiIGZpbGw9ImJsYWNrIi8+Cjwvc3ZnPgo=')
+    no-repeat center;
+  -webkit-mask-size: contain;
+  mask-size: contain;
+  background-repeat: no-repeat;
+  width: 13px;
+  height: 12px;
+  display: inline-block;
+}
+
+.jdgm-star.jdgm--half:before {
+  content: '';
+  background-color: rgb(var(--color-accent));
+  -webkit-mask: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMi4wNiAxMS42MSI+PHBhdGggZmlsbD0ibm9uZSIgc3Ryb2tlPSJibGFjayIgc3Ryb2tlLXdpZHRoPSIuNSIgZD0iTTcuNDIuMjVsLS40Nyw0LjIxLS4wMy4yMi4yMS0uMDYsNC4zLTEuMTkuMzUsMi42Ni0zLjkxLjI4LS4yOC4wMi4xNy4yMiwyLjU3LDMuMzgtMi40MywxLjI4LTEuNzktMy41OC0uMTQtLjI4LS4xMy4yOS0xLjU4LDMuNTUtMi41Mi0xLjI2LDIuNTQtMy4zOC4xNi0uMjItLjI3LS4wMi0zLjg4LS4zLjQyLTIuNjQsNC4yLDEuMTkuMjEuMDYtLjAyLS4yMi0uNDgtNC4yMXMyLjgsMCwyLjgsMFoiLz48Zz48cG9seWdvbiBmaWxsPSJibGFjayIgcG9pbnRzPSI2LjAzIC4yNSA2LjAzIDcuNTQgNS44NCA3LjcgNC4yNiAxMS4yNSAxLjc0IDkuOTkgNC4yOCA2LjYxIDQuNDQgNi4zOSA0LjE3IDYuMzcgLjI5IDYuMDcgLjcxIDMuNDMgNC45MSA0LjYyIDUuMTIgNC42OCA1LjEgNC40NiA0LjYyIC4yNSA2LjAzIC4yNSIvPjxwYXRoIGZpbGw9ImJsYWNrIiBkPSJNNC4zMywwbC41LDQuMzNMLjUsMy4xMWwtLjUsMy4xOCwzLjk3LjMxLTIuNjIsMy40OCwzLjAzLDEuNTEsMS41My0zLjQ0di0xLjI0bC0xLjc4LDMuOTktMi4wMi0xLDIuMzctMy4xNS40Mi0uNTgtNC4zMy0uMzMuMzQtMi4xLDQuNDksMS4yOC0uNS00LjUyaDEuMDFWMGgtMS41OFoiLz48L2c+PC9zdmc+')
+    no-repeat center;
+  mask: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMi4wNiAxMS42MSI+PHBhdGggZmlsbD0ibm9uZSIgc3Ryb2tlPSJibGFjayIgc3Ryb2tlLXdpZHRoPSIuNSIgZD0iTTcuNDIuMjVsLS40Nyw0LjIxLS4wMy4yMi4yMS0uMDYsNC4zLTEuMTkuMzUsMi42Ni0zLjkxLjI4LS4yOC4wMi4xNy4yMiwyLjU3LDMuMzgtMi40MywxLjI4LTEuNzktMy41OC0uMTQtLjI4LS4xMy4yOS0xLjU4LDMuNTUtMi41Mi0xLjI2LDIuNTQtMy4zOC4xNi0uMjItLjI3LS4wMi0zLjg4LS4zLjQyLTIuNjQsNC4yLDEuMTkuMjEuMDYtLjAyLS4yMi0uNDgtNC4yMXMyLjgsMCwyLjgsMFoiLz48Zz48cG9seWdvbiBmaWxsPSJibGFjayIgcG9pbnRzPSI2LjAzIC4yNSA2LjAzIDcuNTQgNS44NCA3LjcgNC4yNiAxMS4yNSAxLjc0IDkuOTkgNC4yOCA2LjYxIDQuNDQgNi4zOSA0LjE3IDYuMzcgLjI5IDYuMDcgLjcxIDMuNDMgNC45MSA0LjYyIDUuMTIgNC42OCA1LjEgNC40NiA0LjYyIC4yNSA2LjAzIC4yNSIvPjxwYXRoIGZpbGw9ImJsYWNrIiBkPSJNNC4zMywwbC41LDQuMzNMLjUsMy4xMWwtLjUsMy4xOCwzLjk3LjMxLTIuNjIsMy40OCwzLjAzLDEuNTEsMS41My0zLjQ0di0xLjI0bC0xLjc4LDMuOTktMi4wMi0xLDIuMzctMy4xNS40Mi0uNTgtNC4zMy0uMzMuMzQtMi4xLDQuNDksMS4yOC0uNS00LjUyaDEuMDFWMGgtMS41OFoiLz48L2c+PC9zdmc+')
+    no-repeat center;
+  -webkit-mask-size: contain;
+  mask-size: contain;
+  background-repeat: no-repeat;
+  width: 13px;
+  height: 12px;
+  display: inline-block;
+}
+
+.jdgm-star.jdgm--off:before {
+  content: '';
+  background-color: rgba(var(--color-text-1), 0.25);
+  -webkit-mask: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMi4wNiAxMS42MSI+PHBhdGggZmlsbD0ibm9uZSIgc3Ryb2tlPSJibGFjayIgc3Ryb2tlLXdpZHRoPSIuNSIgZD0iTTcuNDIuMjVsLS40Nyw0LjIxLS4wMy4yMi4yMS0uMDYsNC4zLTEuMTkuMzUsMi42Ni0zLjkxLjI4LS4yOC4wMi4xNy4yMiwyLjU3LDMuMzgtMi40MywxLjI4LTEuNzktMy41OC0uMTQtLjI4LS4xMy4yOS0xLjU4LDMuNTUtMi41Mi0xLjI2LDIuNTQtMy4zOC4xNi0uMjItLjI3LS4wMi0zLjg4LS4zLjQyLTIuNjQsNC4yLDEuMTkuMjEuMDYtLjAyLS4yMi0uNDgtNC4yMXMyLjgsMCwyLjgsMFoiLz48L3N2Zz4=')
+    no-repeat center;
+  mask: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMi4wNiAxMS42MSI+PHBhdGggZmlsbD0ibm9uZSIgc3Ryb2tlPSJibGFjayIgc3Ryb2tlLXdpZHRoPSIuNSIgZD0iTTcuNDIuMjVsLS40Nyw0LjIxLS4wMy4yMi4yMS0uMDYsNC4zLTEuMTkuMzUsMi42Ni0zLjkxLjI4LS4yOC4wMi4xNy4yMiwyLjU3LDMuMzgtMi40MywxLjI4LTEuNzktMy41OC0uMTQtLjI4LS4xMy4yOS0xLjU4LDMuNTUtMi41Mi0xLjI2LDIuNTQtMy4zOC4xNi0uMjItLjI3LS4wMi0zLjg4LS4zLjQyLTIuNjQsNC4yLDEuMTkuMjEuMDYtLjAyLS4yMi0uNDgtNC4yMXMyLjgsMCwyLjgsMFoiLz48L3N2Zz4=')
+    no-repeat center;
+  -webkit-mask-size: contain;
+  mask-size: contain;
+  background-repeat: no-repeat;
+  width: 13px;
+  height: 12px;
+  display: inline-block;
+}
+
+/*------------------------------------*\
+    #Product Page Stars
+\*------------------------------------*/
+
+.product-rating.product-template__rating .jdgm-prev-badge {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+.product-rating.product-template__rating .jdgm-prev-badge__text {
+  font-size: var(--text-size-tiny);
+}
+
+/*------------------------------------*\
+    #Product Page Cards
+\*------------------------------------*/
+
+.product-rating.product-card-grid__rating .jdgm-preview-badge .jdgm-star {
+  color: rgb(var(--color-accent)) !important;
+  font-size: 0.75rem !important;
+}
+
+.product-rating.product-card-grid__rating .jdgm-prev-badge__text {
+  display: none;
+}
+
+.product-rating.product-card-grid__rating {
+  align-items: flex-end;
+  margin-bottom: 0;
+  height: 1rem;
+}
+
+@media screen and (min-width: 750px) {
+  .product-rating.product-card-grid__rating .jdgm-prev-badge__text {
+    display: block;
+  }
+}
+
+@media screen and (min-width: 750px) {
+  .product-rating.product-card-grid__rating {
+    margin-top: -2rem;
+  }
+}
+
+/*------------------------------------*\
+    #Reviews Pagination
+\*------------------------------------*/
+
+.jdgm-paginate__page.jdgm-curt {
+  color: rgb(var(--color-text-1)) !important;
+}
+
+.jdgm-paginate__page {
+  color: rgb(var(--color-text-1)) !important;
+  font-size: inherit !important;
+}

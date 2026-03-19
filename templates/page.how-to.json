@@ -1,0 +1,237 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+        "padding_size": "section-padding-small"
+      }
+    },
+    "main_page_header_z7GBQx": {
+      "type": "main-page-header",
+      "name": "Main Page Header",
+      "settings": {
+        "custom_title": "How To",
+        "subtitle": "",
+        "header_background_image": "shopify://shop_images/5_noise_2x_2_9d2ed623-5eaf-438b-a68e-da2c862a27c2.jpg",
+        "padding_size": "section-padding-x-small",
+        "heading_size": "headline-style-h1",
+        "color_scheme": "scheme-cc80f6b4-b558-4219-8256-b69a754c7c0a"
+      }
+    },
+    "hae_image_with_text_k47d3J": {
+      "type": "hae-image-with-text",
+      "blocks": {
+        "heading_jenjyE": {
+          "type": "heading",
+          "settings": {
+            "heading": "01. Measure & Stick",
+            "heading_size": "headline-style-h2"
+          }
+        },
+        "text_MqwR84": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Clean your nails with the provided prep pad. Choose the perfect size for each nail and press the gel strip smoothly from cuticle to tip. Use the wooden stick provided to roll out any air bubbles—press and seal the edges carefully for a flawless fit.</p><p><strong>Tips</strong>:<br/>• Start with clean, oil-free nails.<br/>• Pick the strip that fits your nail bed best. Avoid choosing a larger size.<br/>• For slightly smaller strips, warm in the palm of hands before applying. Then gently stretch and adhere.<br/>• Nail strip must stick on nail bed only. Avoid sealing over cuticle edge as it will lift up.<br/>• Use the wooden stick to roll and seal the edges before curing.<br/>• Don’t fold or crease the strip.</p>",
+            "text_size": "text-size-medium"
+          }
+        },
+        "button_aRDteA": {
+          "type": "button",
+          "disabled": true,
+          "settings": {
+            "button_label": "Affilate Sign Up",
+            "button_link": "mailto:partnerships@nousnails.com",
+            "button_size": "button--medium"
+          }
+        }
+      },
+      "block_order": [
+        "heading_jenjyE",
+        "text_MqwR84",
+        "button_aRDteA"
+      ],
+      "name": "Image with text",
+      "settings": {
+        "layout": "left",
+        "color_scheme": "",
+        "media_type": "video",
+        "media_aspect_ratio": "1/1",
+        "video_url": "https://cdn.shopify.com/videos/c/o/v/bc31c17c41fb4248a133fd0d5ec54a73.mov",
+        "video_poster": "shopify://shop_images/01_CP.png"
+      }
+    },
+    "hae_image_with_text_GRi7tR": {
+      "type": "hae-image-with-text",
+      "blocks": {
+        "heading_riGgRC": {
+          "type": "heading",
+          "settings": {
+            "heading": "02. Cure",
+            "heading_size": "headline-style-h2"
+          }
+        },
+        "text_xBHirn": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Plug in your Nous LED Lamp and tap to power on. Cure each hand for 60 seconds to lock in a long-lasting finish.<br/><br/><strong>Do’s & Don’ts</strong>:<br/>• <strong>Do</strong>: Keep your hand steady under the lamp until the lamp turns off.<br/>• <strong>Don’t</strong>: Remove your hand mid-curing as this can affect adhesion and shine.</p>",
+            "text_size": "text-size-medium"
+          }
+        },
+        "button_aCJEJi": {
+          "type": "button",
+          "disabled": true,
+          "settings": {
+            "button_label": "Join Affilate Program",
+            "button_link": "",
+            "button_size": "button--medium"
+          }
+        }
+      },
+      "block_order": [
+        "heading_riGgRC",
+        "text_xBHirn",
+        "button_aCJEJi"
+      ],
+      "name": "Image with text",
+      "settings": {
+        "layout": "right",
+        "color_scheme": "scheme-6628b2c5-2a6e-43ae-9f30-7d31869aa0c7",
+        "media_type": "video",
+        "media_aspect_ratio": "1/1",
+        "video_url": "https://cdn.shopify.com/videos/c/o/v/c636a3eef91f47c79616fd88c4c5308f.mov",
+        "video_poster": "shopify://shop_images/02_CP.png"
+      }
+    },
+    "hae_image_with_text_pjpXD6": {
+      "type": "hae-image-with-text",
+      "blocks": {
+        "heading_wXTbWy": {
+          "type": "heading",
+          "settings": {
+            "heading": "03. Buff & Slay",
+            "heading_size": "headline-style-h2"
+          }
+        },
+        "text_WUHNPB": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Once cured, clip and file to your desired shape. Always buff in a <strong>downward motion</strong> for a smooth, salon-quality finish.</p><p><strong>Tips</strong>:<br/>• Avoid filing in an up-and-down motion, which can lift the strip after curing.<br/>• Skip lotion or oils for at least one hour post-application for maximum hold.<br/>• Your Nous nails are ready to slay — lasting up to <strong>14+ days</strong> of chip-free shine.</p>",
+            "text_size": "text-size-medium"
+          }
+        },
+        "button_4hT7rg": {
+          "type": "button",
+          "disabled": true,
+          "settings": {
+            "button_label": "Affilate Sign Up",
+            "button_link": "mailto:partnerships@nousnails.com",
+            "button_size": "button--medium"
+          }
+        }
+      },
+      "block_order": [
+        "heading_wXTbWy",
+        "text_WUHNPB",
+        "button_4hT7rg"
+      ],
+      "name": "Image with text",
+      "settings": {
+        "layout": "left",
+        "color_scheme": "",
+        "media_type": "video",
+        "media_aspect_ratio": "1/1",
+        "video_url": "https://cdn.shopify.com/videos/c/o/v/a1257515919e47a6b5b22754059968e1.mov",
+        "video_poster": "shopify://shop_images/03_CP.png"
+      }
+    },
+    "hae_marquee_banner_L8ggAh": {
+      "type": "hae-marquee-banner",
+      "name": "News ticker banner",
+      "settings": {
+        "color_scheme": "scheme-cc80f6b4-b558-4219-8256-b69a754c7c0a",
+        "text": "Redefining the nous standard ✱ Stick. Cure. Slay. ✱"
+      }
+    },
+    "hae_faqs_kMwEaE": {
+      "type": "hae-faqs",
+      "blocks": {
+        "faq_block_U7r6rD": {
+          "type": "faq_block",
+          "settings": {
+            "question": "What if a strip doesn’t fit my nail exactly?",
+            "answer": "<p>If you’re between sizes, opt for the smaller one to avoid overlapping onto the skin or cuticles. Choose a strip that fits slightly inside your nail line and leave a small gap at the cuticle. Never overlap onto the skin or cuticle—adhesive only sticks properly to the nail bed, and overlap can cause early lifting.</p>"
+          }
+        },
+        "faq_block_R63JyP": {
+          "type": "faq_block",
+          "settings": {
+            "question": "If a strip is slightly small, how do I make it fit?",
+            "answer": "<p>Warm it up to make it more flexible—rub it in the palm of your hands or place it briefly over a warm mug of coffee. Once softened, apply and gently stretch to fit. <em>Note:</em> this only works for slightly smaller strips; overstretching can tear the film or distort the artwork.</p>"
+          }
+        },
+        "faq_block_99G3Y8": {
+          "type": "faq_block",
+          "settings": {
+            "question": "Can I use these on extensions?",
+            "answer": "<p>Yes! If you prefer a longer nail look, you can apply Nous nail strips over clear press-ons or extensions just like you would on natural nails. Be sure the base surface is clean and dry before applying.</p>"
+          }
+        },
+        "faq_block_4DxKwD": {
+          "type": "faq_block",
+          "settings": {
+            "question": "How can I make them last longer?",
+            "answer": "<p>A few pro tips:<br/>• Always start with clean, oil-free nails using the provided prep pad.<br/>• Use the wooden stick to roll out air bubbles and seal the edges before curing.<br/>• Avoid oils or soaking your hands for at least one hour after application.<br/>• For extra shine and protection, finish with a clear top coat. With good prep, your Nous nails can handle gym sessions, dish-washing, typing, and all-day life—minus the click-clack.</p>"
+          }
+        },
+        "faq_block_YWiRy3": {
+          "type": "faq_block",
+          "settings": {
+            "question": "How do I remove them?",
+            "answer": "<p>Use our <a href=\"/products/ctrl-delete-nail-remover-serum\" target=\"_blank\" title=\"Ctrl+Delete Vitamin Serum Remover\"><strong>Ctrl + Delete Vitamin Serum Remover</strong></a> by applying drops between the nail strip and nail bed. Use the wooden stick to gently lift the edges, adding more remover as needed until the strip slides off completely. Once removed, you’ll notice your nails feel healthier—no harsh drilling, no salon damage, just clean removal and care.</p>"
+          }
+        },
+        "faq_block_iVWNgB": {
+          "type": "faq_block",
+          "settings": {
+            "question": "Is Nous nails non-toxic, vegan, and cruelty-free?",
+            "answer": "<p>Yes ✱ We’re non-toxic and free from the top 10 most questionable ingredients—so you can shine without worry. That means <strong>no formaldehyde, HEMA, DBP, TPHP, or toluene</strong>. No nasties, just nail magic. We’re also <strong>vegan</strong> and <strong>cruelty-free</strong>. ☺︎</p>"
+          }
+        }
+      },
+      "block_order": [
+        "faq_block_U7r6rD",
+        "faq_block_R63JyP",
+        "faq_block_99G3Y8",
+        "faq_block_4DxKwD",
+        "faq_block_YWiRy3",
+        "faq_block_iVWNgB"
+      ],
+      "name": "FAQ Section",
+      "settings": {
+        "color_scheme": "",
+        "heading": "Frequently Asked Questions",
+        "page": "",
+        "table_image": "shopify://shop_images/Affiliate_Gride.png"
+      }
+    }
+  },
+  "order": [
+    "main",
+    "main_page_header_z7GBQx",
+    "hae_image_with_text_k47d3J",
+    "hae_image_with_text_GRi7tR",
+    "hae_image_with_text_pjpXD6",
+    "hae_marquee_banner_L8ggAh",
+    "hae_faqs_kMwEaE"
+  ]
+}
