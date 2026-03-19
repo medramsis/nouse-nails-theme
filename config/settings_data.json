@@ -72,10 +72,8 @@
             "type": "block",
             "settings": {
               "top_level_link": "Shop All",
-              "promotion_1_image": "shopify://shop_images/Iced-Out-4.jpg",
               "promotion_1_text": "New Arrivals",
               "promotion_1_url": "shopify://collections/new-arrivals",
-              "promotion_2_image": "shopify://shop_images/Stars-Aligned-3.jpg",
               "promotion_2_text": "Nail Club Subscription",
               "promotion_2_url": "shopify://collections/subscription",
               "promotion_3_text": "",
@@ -86,10 +84,8 @@
             "type": "block",
             "settings": {
               "top_level_link": "New",
-              "promotion_1_image": "shopify://shop_images/Strange-Terrain-2.jpg",
               "promotion_1_text": "Art School Collection",
               "promotion_1_url": "shopify://collections/art-school-star-collection",
-              "promotion_2_image": "shopify://shop_images/Geometric-Jelly-2.jpg",
               "promotion_2_text": "Jelly Collection",
               "promotion_2_url": "shopify://collections/jelly-collection",
               "promotion_3_text": "",
@@ -97,7 +93,10 @@
             }
           }
         },
-        "block_order": ["block_Ln8P6T", "block_Dz7Lnx"],
+        "block_order": [
+          "block_Ln8P6T",
+          "block_Dz7Lnx"
+        ],
         "settings": {
           "mobile_nav_heading": "Shop",
           "mobile_menu_primary": "main-menu",
@@ -172,9 +171,7 @@
         "type": "footer",
         "settings": {
           "color_scheme": "scheme-cc80f6b4-b558-4219-8256-b69a754c7c0a",
-          "background_image": "shopify://shop_images/footer-bg.jpg",
           "show_company_info": true,
-          "company_logo": "shopify://shop_images/nous-logo.svg",
           "company_description": "",
           "show_social_icons": true,
           "show_quick_links": true,
@@ -186,7 +183,7 @@
           "klaviyo_form_id": "UQJuZt",
           "copyright_text": "All rights reserved.",
           "show_bottom_menu": true,
-          "bottom_menu": "footer-menu-2"
+          "bottom_menu": ""
         }
       },
       "1605316310afd292ce": {
@@ -233,7 +230,10 @@
             }
           }
         },
-        "block_order": ["collection_wCCpKy", "collection_wJTPLQ"],
+        "block_order": [
+          "collection_wCCpKy",
+          "collection_wJTPLQ"
+        ],
         "settings": {}
       },
       "1606088197e736fabb": {
@@ -270,7 +270,11 @@
             }
           }
         },
-        "block_order": ["callout_pBYmHY", "callout_rh8czt", "callout_QUEkYB"],
+        "block_order": [
+          "callout_pBYmHY",
+          "callout_rh8czt",
+          "callout_QUEkYB"
+        ],
         "settings": {
           "color_scheme": "scheme-bcc14177-2f35-42c6-9cb2-e793cb929778",
           "subtitle": "The Nous Standard in Nail Beauty",
@@ -519,7 +523,7 @@
         "type": "announcement-bar",
         "settings": {
           "announcement_text": "<p>Sign Up for Emails to Receive 15% Off First Order | Free U.S. Shipping Over $30+</p>",
-          "color_scheme": "scheme-cc80f6b4-b558-4219-8256-b69a754c7c0a",
+          "color_scheme": "scheme-38cadf72-7f29-4186-8b19-cfda33c52e01",
           "show_close_button": true
         }
       },
@@ -545,7 +549,11 @@
             }
           }
         },
-        "block_order": ["article_dkkCUP", "article_LqD8Dd", "article_FTwhxE"],
+        "block_order": [
+          "article_dkkCUP",
+          "article_LqD8Dd",
+          "article_FTwhxE"
+        ],
         "name": "Blog posts",
         "settings": {
           "color_scheme": "",
@@ -653,7 +661,11 @@
             }
           }
         },
-        "block_order": ["quote_jHzEpU", "quote_4BinWi", "quote_LCeqTH"],
+        "block_order": [
+          "quote_jHzEpU",
+          "quote_4BinWi",
+          "quote_LCeqTH"
+        ],
         "name": "HAE Testimonials",
         "settings": {
           "color_scheme": "scheme-cc80f6b4-b558-4219-8256-b69a754c7c0a",
@@ -728,84 +740,6 @@
       "featured_blog_WPc99D",
       "newsletter_qwtx4B"
     ],
-    "blocks": {
-      "855628211100114053": {
-        "type": "shopify://apps/klaviyo-email-marketing-sms/blocks/klaviyo-onsite-embed/2632fe16-c075-4321-a88b-50b567f42507",
-        "disabled": false,
-        "settings": {}
-      },
-      "14060646107696862457": {
-        "type": "shopify://apps/judge-me-reviews/blocks/judgeme_core/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
-        "disabled": false,
-        "settings": {}
-      },
-      "17368511000352060744": {
-        "type": "shopify://apps/goaffpro-affiliate-marketing/blocks/goaffpro-embedded-pixel/2f4d802b-86c2-47e4-8096-ae1aa3efbab2",
-        "disabled": false,
-        "settings": {}
-      },
-      "6174324309569838175": {
-        "type": "shopify://apps/smile-io/blocks/smile-shopify-app/2fae4e25-1841-4ea2-bc02-bd548478c4f6",
-        "disabled": false,
-        "settings": {}
-      },
-      "5557296251606798448": {
-        "type": "shopify://apps/bold-subscriptions/blocks/bsub-embed/9ceb49f0-5fe5-4b5e-943d-f8af8985167d",
-        "disabled": false,
-        "settings": {}
-      },
-      "12526071353035850722": {
-        "type": "shopify://apps/amp-back-in-stock/blocks/app-embed/bfa6a8c4-24e2-411a-9396-e35031b33f34",
-        "disabled": true,
-        "settings": {}
-      },
-      "7944482028155771153": {
-        "type": "shopify://apps/bold-product-upsell/blocks/Offer/0ea05cdc-3862-4d90-9a1b-14eafaef80dd",
-        "disabled": true,
-        "settings": {
-          "offer-modal-preview": false,
-          "offer-preview-product": "",
-          "title-font-size": 24,
-          "subtitle-font-size": 12,
-          "product-title-font-size": 15,
-          "title-color": "#121212",
-          "subtitle-color": "#343333",
-          "product-title-color": "#121212",
-          "modal-background-color": "#ffffff",
-          "modal-border-color": "#dedede"
-        }
-      },
-      "4146198581824321198": {
-        "type": "shopify://apps/postscript-sms-marketing/blocks/sdk/019be67b-1a2f-7589-97a3-72f1751f443e",
-        "disabled": false,
-        "settings": {}
-      },
-      "15948790894311257021": {
-        "type": "shopify://apps/bold-product-upsell/blocks/CartDrawerOffer/0ea05cdc-3862-4d90-9a1b-14eafaef80dd",
-        "disabled": true,
-        "settings": {
-          "cart-drawer-offer-position": "bottom",
-          "cart-drawer-show-bold-quantity-input": false,
-          "cart-drawer-custom-cart-drawer": false,
-          "cart-drawer-custom-cart-drawer-preview": false,
-          "custom-cart-drawer-checkout-text": "Checkout",
-          "custom-cart-drawer-cart-title-text": "Your cart",
-          "custom-cart-drawer-product-text": "Product",
-          "custom-cart-drawer-total-text": "Total",
-          "custom-cart-drawer-subtotal-text": "Subtotal",
-          "custom-cart-drawer-cart-empty-cart-text": "Cart empty",
-          "cart-drawer-items-element-tag": "cart-drawer-items",
-          "cart-drawer-footer-element-tag": ".cart-drawer-bold-products"
-        }
-      },
-      "11521838031393700371": {
-        "type": "shopify://apps/bold-product-upsell/blocks/cart-hooks/0ea05cdc-3862-4d90-9a1b-14eafaef80dd",
-        "disabled": true,
-        "settings": {
-          "cart-sync-interval": 1
-        }
-      }
-    },
     "color_schemes": {
       "background-1": {
         "settings": {
@@ -1202,7 +1136,9 @@
               }
             }
           },
-          "block_order": ["1492033924902-0"],
+          "block_order": [
+            "1492033924902-0"
+          ],
           "settings": {
             "title": ""
           }

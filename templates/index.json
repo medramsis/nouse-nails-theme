@@ -18,7 +18,7 @@
         "button-text": "Shop Now",
         "button-url": "shopify://collections/all",
         "media_type": "image",
-        "hero-image": "shopify://shop_images/HP_Hero_bc9a065a-d766-466f-b2f7-bf9dcb0041fc.png",
+        "hero-image": "shopify://shop_images/black-head-vacum-removal.png",
         "video_url": "",
         "show_sticker": true,
         "floating-sticker": "stars",
@@ -58,7 +58,6 @@
             "button_text": "Shop",
             "media_type": "image",
             "video_url": "",
-            "image": "shopify://shop_images/NOUS-STUDIO-668_EDIT.jpg",
             "floating_sticker": "sun-blue",
             "sticker_color": "#aec1fb"
           }
@@ -72,7 +71,6 @@
             "button_text": "Shop",
             "media_type": "image",
             "video_url": "",
-            "image": "shopify://shop_images/NOUS-STUDIO-081_a663cf74-b8bd-4538-816e-f1c50e318a8b.jpg",
             "floating_sticker": "sun-pink",
             "sticker_color": "#d1e1e8"
           }
@@ -112,7 +110,6 @@
         "text_with_icon_W9xJfL": {
           "type": "text_with_icon",
           "settings": {
-            "icon": "shopify://shop_images/0e17a53162a56d8cf9794ffeeb9326c1.svg",
             "text": "3 easy steps – warm, glide, rinse.",
             "text_size": "text-size-medium"
           }
@@ -120,7 +117,6 @@
         "text_with_icon_CcfNk9": {
           "type": "text_with_icon",
           "settings": {
-            "icon": "shopify://shop_images/c8e8a3162fda8fb7050dd3c651695e2a.svg",
             "text": "No Bruising",
             "text_size": "text-size-medium"
           }
@@ -128,7 +124,6 @@
         "text_with_icon_CTxiK4": {
           "type": "text_with_icon",
           "settings": {
-            "icon": "shopify://shop_images/ca0e36cc52a03559d35034ca36d41412.svg",
             "text": "60 Seconds Daily",
             "text_size": "text-size-medium"
           }
@@ -136,7 +131,6 @@
         "text_with_icon_KgNHp7": {
           "type": "text_with_icon",
           "settings": {
-            "icon": "shopify://shop_images/0ee9af4c0a5b1a829cf3abacf1cf0a0d.svg",
             "text": "Gentle on Skin",
             "text_size": "text-size-medium"
           }
@@ -144,7 +138,6 @@
         "text_with_icon_QfE8jK": {
           "type": "text_with_icon",
           "settings": {
-            "icon": "shopify://shop_images/52e95258835c6343d583074b3a79ba14.svg",
             "text": "3 Interchangeable Tips",
             "text_size": "text-size-medium"
           }
@@ -175,9 +168,7 @@
         "color_scheme": "",
         "media_type": "video",
         "media_aspect_ratio": "1/1",
-        "image": "shopify://shop_images/Step-by-Step-Reel-1x1_Cover_Photo.png",
-        "video_url": "https://cdn.shopify.com/videos/c/o/v/89f4b8510ab54e1cad1767b44fa6ade4.mov",
-        "video_poster": "shopify://shop_images/Step-by-Step-Reel-1x1_Cover_Photo.png"
+        "video_url": "https://cdn.shopify.com/videos/c/o/v/89f4b8510ab54e1cad1767b44fa6ade4.mov"
       }
     },
     "instagram_slideshow_FWNLT6": {
@@ -187,7 +178,6 @@
           "type": "slide",
           "settings": {
             "video_url": "https://cdn.shopify.com/videos/c/o/v/09ddf525f629438b8f208eb02acfacfa.mov",
-            "image": "shopify://shop_images/CP_Big_Hands_updated.png",
             "product": "art-school-star"
           }
         },
@@ -195,7 +185,6 @@
           "type": "slide",
           "settings": {
             "video_url": "https://cdn.shopify.com/videos/c/o/v/5d7383a27c35453abbad0beb67a3ca9f.mov",
-            "image": "shopify://shop_images/CP_Coming_Soon_Commercial.png",
             "product": "strange-terrain"
           }
         },
@@ -203,7 +192,6 @@
           "type": "slide",
           "settings": {
             "video_url": "https://cdn.shopify.com/videos/c/o/v/cab06d3256284857b9cc34aed5d67e91.mov",
-            "image": "shopify://shop_images/CP_Friends_showing_Nails.png",
             "product": "cherry-blitz"
           }
         },
@@ -211,7 +199,6 @@
           "type": "slide",
           "settings": {
             "video_url": "https://cdn.shopify.com/videos/c/o/v/27db45c2f1be4d568a2e3c9d7acbe735.mov",
-            "image": "shopify://shop_images/CP_Step-by-Step-Reel.png",
             "product": "strange-terrain"
           }
         },
@@ -219,7 +206,6 @@
           "type": "slide",
           "settings": {
             "video_url": "https://cdn.shopify.com/videos/c/o/v/93ceb01e5dfc4c39aafb92ae26f0e48d.mov",
-            "image": "shopify://shop_images/CP_Angel_Higlight.png",
             "product": "art-school-star"
           }
         },
@@ -227,7 +213,6 @@
           "type": "slide",
           "settings": {
             "video_url": "https://cdn.shopify.com/videos/c/o/v/11235a5fc5514a299153bd8e3d328a47.mov",
-            "image": "shopify://shop_images/CP_out_of_the_phone.png",
             "product": "iced-out"
           }
         }
@@ -242,7 +227,7 @@
       ],
       "name": "Instagram Slideshow",
       "settings": {
-        "color_scheme": "scheme-cc80f6b4-b558-4219-8256-b69a754c7c0a",
+        "color_scheme": "scheme-38cadf72-7f29-4186-8b19-cfda33c52e01",
         "title": "Stick. Cure. Slay.",
         "subtitle": "",
         "autoplay": true,
@@ -259,7 +244,6 @@
           "type": "callout",
           "settings": {
             "color_scheme": "scheme-2119b851-9410-4357-b9dd-7adf10307b8e",
-            "callout_image": "shopify://shop_images/Star_Shape.svg",
             "callout_header": "Gentle on Skin.",
             "callout_text": "<p>ClearVac™ micro-pulse technology is designed to minimize bruising and irritation. Start on Level 1 and work your way up—your skin will thank you.</p>",
             "text_size": "text-size-main"
@@ -269,7 +253,6 @@
           "type": "callout",
           "settings": {
             "color_scheme": "scheme-6628b2c5-2a6e-43ae-9f30-7d31869aa0c7",
-            "callout_image": "shopify://shop_images/Springy_Shape.svg",
             "callout_header": "Spa-Quality, Done in Seconds",
             "callout_text": "<p>Skip the $150 facial appointments and awkward small talk. Get professional pore care at home in just 60 seconds a day. Your schedule, your bathroom, your results.</p>",
             "text_size": "text-size-main"
@@ -279,7 +262,6 @@
           "type": "callout",
           "settings": {
             "color_scheme": "scheme-38cadf72-7f29-4186-8b19-cfda33c52e01",
-            "callout_image": "shopify://shop_images/Sun_Shape.svg",
             "callout_header": "Effortless Results, Without the Price",
             "callout_text": "<p>One device replaces monthly facials. Save hundreds compared to spa extractions. Rechargeable, reusable, and designed to last. Clear skin shouldn't cost a fortune.</p>",
             "text_size": "text-size-main"
@@ -354,8 +336,7 @@
       "settings": {
         "color_scheme": "",
         "heading": "Frequently Asked Questions",
-        "page": "faq",
-        "table_image": "shopify://shop_images/HP_Info_Grid.png"
+        "page": "faq"
       }
     },
     "hae_testimonials_tLEp99": {
@@ -443,7 +424,6 @@
         "cta_url": "shopify://collections/new-arrivals",
         "position": "right",
         "scroll_threshold": 500,
-        "modal_media": "shopify://shop_images/QD-758_Edit.jpg",
         "modal_media_aspect_ratio": "16/9",
         "modal_heading": "☀ SIGN UP & GET 15% OFF FIRST ORDER ☺",
         "modal_heading_size": "headline-style-h4",
