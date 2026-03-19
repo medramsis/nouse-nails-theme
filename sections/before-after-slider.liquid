@@ -1,0 +1,248 @@
+{% comment %}
+  Before/After Image Comparison Slider
+{% endcomment %}
+
+<style>
+  .before-after-section {
+    padding: 60px 20px;
+    background: #fff;
+  }
+
+  .before-after-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+  }
+
+  @media (max-width: 768px) {
+    .before-after-container {
+      grid-template-columns: 1fr;
+      gap: 30px;
+    }
+  }
+
+  .before-after-content h2 {
+    font-size: 36px;
+    font-weight: 700;
+    margin-bottom: 16px;
+    color: #000;
+  }
+
+  .before-after-content p {
+    font-size: 16px;
+    line-height: 1.6;
+    color: #666;
+  }
+
+  .before-after-slider-wrapper {
+    position: relative;
+    aspect-ratio: 3/4;
+    border-radius: 12px;
+    overflow: hidden;
+  }
+
+  .before-after-slider {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+  }
+
+  .before-image,
+  .after-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+
+  .before-image img,
+  .after-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+
+  .after-image {
+    clip-path: polygon(50% 0, 100% 0, 100% 100%, 50% 100%);
+  }
+
+  .slider-handle {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 4px;
+    height: 100%;
+    background: white;
+    cursor: ew-resize;
+    transform: translateX(-50%);
+  }
+
+  .slider-handle::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 48px;
+    height: 48px;
+    background: white;
+    border-radius: 50%;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.2);
+  }
+
+  .slider-handle::after {
+    content: '↔';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #fa009f;
+    font-size: 20px;
+    font-weight: 700;
+    z-index: 1;
+  }
+
+  .before-label,
+  .after-label {
+    position: absolute;
+    top: 16px;
+    padding: 8px 16px;
+    background: #fa009f;
+    color: white;
+    font-weight: 700;
+    font-size: 14px;
+    border-radius: 4px;
+    z-index: 2;
+  }
+
+  .before-label {
+    left: 16px;
+  }
+
+  .after-label {
+    right: 16px;
+  }
+</style>
+
+<div class="before-after-section">
+  <div class="before-after-container">
+    <div class="before-after-content">
+      <h2>{{ section.settings.heading }}</h2>
+      <p>{{ section.settings.description }}</p>
+    </div>
+
+    <div class="before-after-slider-wrapper">
+      <div class="before-after-slider" id="beforeAfterSlider">
+        <div class="before-image">
+          {% if section.settings.before_image %}
+            <img src="{{ section.settings.before_image | image_url: width: 800 }}" alt="Before">
+          {% else %}
+            <div style="background: #f5f5f5; width: 100%; height: 100%; display: flex; align-items: center; justify-content: center;">
+              <span style="color: #999;">Before Image</span>
+            </div>
+          {% endif %}
+        </div>
+        <div class="after-image" id="afterImage">
+          {% if section.settings.after_image %}
+            <img src="{{ section.settings.after_image | image_url: width: 800 }}" alt="After">
+          {% else %}
+            <div style="background: #e0e0e0; width: 100%; height: 100%; display: flex; align-items: center; justify-content: center;">
+              <span style="color: #999;">After Image</span>
+            </div>
+          {% endif %}
+        </div>
+        <div class="slider-handle" id="sliderHandle"></div>
+        <div class="before-label">Before</div>
+        <div class="after-label">After</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  const slider = document.getElementById('beforeAfterSlider');
+  const handle = document.getElementById('sliderHandle');
+  const afterImage = document.getElementById('afterImage');
+
+  if (slider && handle && afterImage) {
+    let isDragging = false;
+
+    function updateSlider(clientX) {
+      const rect = slider.getBoundingClientRect();
+      let x = clientX - rect.left;
+      x = Math.max(0, Math.min(x, rect.width));
+
+      const percentage = (x / rect.width) * 100;
+
+      handle.style.left = percentage + '%';
+      afterImage.style.clipPath = `polygon(${percentage}% 0, 100% 0, 100% 100%, ${percentage}% 100%)`;
+    }
+
+    handle.addEventListener('mousedown', () => isDragging = true);
+    document.addEventListener('mouseup', () => isDragging = false);
+
+    document.addEventListener('mousemove', (e) => {
+      if (!isDragging) return;
+      updateSlider(e.clientX);
+    });
+
+    slider.addEventListener('click', (e) => {
+      updateSlider(e.clientX);
+    });
+
+    // Touch support
+    handle.addEventListener('touchstart', (e) => {
+      isDragging = true;
+      e.preventDefault();
+    });
+
+    document.addEventListener('touchend', () => isDragging = false);
+
+    document.addEventListener('touchmove', (e) => {
+      if (!isDragging) return;
+      const touch = e.touches[0];
+      updateSlider(touch.clientX);
+    });
+  }
+</script>
+
+{% schema %}
+{
+  "name": "Before/After Slider",
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Your 60-Second Pore Reset"
+    },
+    {
+      "type": "textarea",
+      "id": "description",
+      "label": "Description",
+      "default": "Warm skin, then glide PoreLift™. Our ClearVac™ micro-pulse suction lifts oil and debris to reduce the look of blackheads and texture—so skin appears smoother and makeup sits better."
+    },
+    {
+      "type": "image_picker",
+      "id": "before_image",
+      "label": "Before Image"
+    },
+    {
+      "type": "image_picker",
+      "id": "after_image",
+      "label": "After Image"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Before/After Slider"
+    }
+  ]
+}
+{% endschema %}

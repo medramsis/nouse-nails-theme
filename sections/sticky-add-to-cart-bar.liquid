@@ -1,0 +1,215 @@
+{% comment %}
+  Sticky Add to Cart Bar (Bottom of Page)
+{% endcomment %}
+
+<style>
+  .sticky-cart-bar {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: white;
+    box-shadow: 0 -4px 12px rgba(0, 0, 0, 0.1);
+    padding: 12px 20px;
+    z-index: 1000;
+    transform: translateY(100%);
+    transition: transform 0.3s ease;
+  }
+
+  .sticky-cart-bar.visible {
+    transform: translateY(0);
+  }
+
+  .sticky-cart-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    justify-content: space-between;
+  }
+
+  .sticky-cart-product {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    flex: 1;
+  }
+
+  .sticky-cart-image {
+    width: 60px;
+    height: 60px;
+    border-radius: 8px;
+    overflow: hidden;
+    position: relative;
+    flex-shrink: 0;
+  }
+
+  .sticky-cart-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .sticky-cart-badge {
+    position: absolute;
+    top: 4px;
+    left: 4px;
+    background: #fa009f;
+    color: white;
+    padding: 2px 8px;
+    border-radius: 4px;
+    font-size: 10px;
+    font-weight: 700;
+  }
+
+  .sticky-cart-info {
+    flex: 1;
+  }
+
+  .sticky-cart-title {
+    font-weight: 700;
+    font-size: 14px;
+    color: #000;
+    margin: 0 0 4px;
+  }
+
+  .sticky-cart-price {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .sticky-cart-price-current {
+    font-size: 18px;
+    font-weight: 700;
+    color: #fa009f;
+  }
+
+  .sticky-cart-price-original {
+    font-size: 14px;
+    color: #999;
+    text-decoration: line-through;
+  }
+
+  .sticky-cart-price-badge {
+    background: #fa009f;
+    color: white;
+    padding: 2px 8px;
+    border-radius: 4px;
+    font-size: 10px;
+    font-weight: 700;
+  }
+
+  .sticky-cart-button {
+    background: #fa009f;
+    color: white;
+    border: none;
+    padding: 14px 32px;
+    border-radius: 8px;
+    font-weight: 700;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+    white-space: nowrap;
+  }
+
+  .sticky-cart-button:hover {
+    background: #d8008a;
+  }
+
+  @media (max-width: 768px) {
+    .sticky-cart-content {
+      flex-wrap: wrap;
+    }
+
+    .sticky-cart-button {
+      flex: 1 1 100%;
+    }
+  }
+</style>
+
+<div class="sticky-cart-bar" id="stickyCartBar">
+  <div class="sticky-cart-content">
+    <div class="sticky-cart-product">
+      <div class="sticky-cart-image">
+        {% if product.featured_image %}
+          <img src="{{ product.featured_image | image_url: width: 120 }}" alt="{{ product.title }}">
+        {% else %}
+          <div style="background: #f5f5f5; width: 100%; height: 100%;"></div>
+        {% endif %}
+        <div class="sticky-cart-badge">50% Off</div>
+      </div>
+
+      <div class="sticky-cart-info">
+        <h3 class="sticky-cart-title">{{ section.settings.product_title | default: product.title }}</h3>
+        <div class="sticky-cart-price">
+          <span class="sticky-cart-price-current">{{ section.settings.sale_price | default: "$59.99" }}</span>
+          <span class="sticky-cart-price-original">{{ section.settings.original_price | default: "$119.99" }}</span>
+          <span class="sticky-cart-price-badge">💾 SAVE 50%</span>
+        </div>
+      </div>
+    </div>
+
+    <button class="sticky-cart-button" onclick="document.querySelector('[name=add]').click()">
+      {{ section.settings.button_text | default: "Add to cart" }}
+    </button>
+  </div>
+</div>
+
+<script>
+  const stickyBar = document.getElementById('stickyCartBar');
+
+  if (stickyBar) {
+    let lastScroll = 0;
+    const showThreshold = 500; // Show after scrolling 500px
+
+    window.addEventListener('scroll', () => {
+      const currentScroll = window.pageYOffset;
+
+      if (currentScroll > showThreshold) {
+        stickyBar.classList.add('visible');
+      } else {
+        stickyBar.classList.remove('visible');
+      }
+
+      lastScroll = currentScroll;
+    });
+  }
+</script>
+
+{% schema %}
+{
+  "name": "Sticky Add to Cart Bar",
+  "settings": [
+    {
+      "type": "text",
+      "id": "product_title",
+      "label": "Product Title"
+    },
+    {
+      "type": "text",
+      "id": "sale_price",
+      "label": "Sale Price",
+      "default": "$59.99"
+    },
+    {
+      "type": "text",
+      "id": "original_price",
+      "label": "Original Price",
+      "default": "$119.99"
+    },
+    {
+      "type": "text",
+      "id": "button_text",
+      "label": "Button Text",
+      "default": "Add to cart"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Sticky Add to Cart Bar"
+    }
+  ]
+}
+{% endschema %}

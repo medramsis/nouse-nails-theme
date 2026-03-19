@@ -1,0 +1,317 @@
+{% comment %}
+  Tiered Pricing Section for Product Page
+{% endcomment %}
+
+<style>
+  .tiered-pricing {
+    margin: 20px 0;
+  }
+
+  .offer-timer {
+    background: #f5f5f5;
+    padding: 12px;
+    border-radius: 8px;
+    text-align: center;
+    margin-bottom: 16px;
+  }
+
+  .offer-timer-text {
+    color: #fa009f;
+    font-weight: 600;
+    font-size: 14px;
+    margin-bottom: 8px;
+  }
+
+  .timer-display {
+    font-size: 16px;
+    font-weight: 700;
+    color: #000;
+  }
+
+  .pricing-options {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin: 16px 0;
+  }
+
+  .pricing-option {
+    border: 2px solid #e0e0e0;
+    border-radius: 12px;
+    padding: 16px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+  }
+
+  .pricing-option:hover {
+    border-color: #fa009f;
+    box-shadow: 0 2px 8px rgba(250, 0, 159, 0.1);
+  }
+
+  .pricing-option.selected {
+    border-color: #fa009f;
+    border-width: 3px;
+    background: #fff5fc;
+  }
+
+  .pricing-option.most-popular {
+    border-color: #fa009f;
+  }
+
+  .pricing-option.most-popular::before {
+    content: 'MOST POPULAR';
+    position: absolute;
+    top: -10px;
+    right: 16px;
+    background: #fa009f;
+    color: white;
+    padding: 4px 12px;
+    border-radius: 4px;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+  }
+
+  .pricing-option.best-value::before {
+    content: 'BEST VALUE';
+    position: absolute;
+    top: -10px;
+    right: 16px;
+    background: #000;
+    color: white;
+    padding: 4px 12px;
+    border-radius: 4px;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+  }
+
+  .pricing-option-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 8px;
+  }
+
+  .pricing-option-left {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .pricing-radio {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    border: 2px solid #ccc;
+    position: relative;
+  }
+
+  .pricing-option.selected .pricing-radio {
+    border-color: #fa009f;
+  }
+
+  .pricing-option.selected .pricing-radio::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: #fa009f;
+  }
+
+  .pricing-title {
+    font-weight: 700;
+    font-size: 16px;
+    color: #000;
+  }
+
+  .pricing-badge {
+    background: #fa009f;
+    color: white;
+    padding: 2px 8px;
+    border-radius: 4px;
+    font-size: 11px;
+    font-weight: 700;
+    margin-left: 8px;
+  }
+
+  .pricing-amount {
+    text-align: right;
+  }
+
+  .pricing-price {
+    font-size: 20px;
+    font-weight: 700;
+    color: #000;
+  }
+
+  .pricing-original {
+    font-size: 14px;
+    color: #999;
+    text-decoration: line-through;
+  }
+
+  .pricing-details {
+    color: #666;
+    font-size: 14px;
+  }
+</style>
+
+<div class="tiered-pricing">
+  {% if section.settings.show_timer %}
+  <div class="offer-timer">
+    <div class="offer-timer-text">{{ section.settings.timer_text }}</div>
+    <div class="timer-display">
+      Sale expires in <span id="countdown-timer">00:03</span> ⏰
+    </div>
+  </div>
+  {% endif %}
+
+  <div class="pricing-options">
+    <!-- Option 1: Buy 1 -->
+    <div class="pricing-option {% if section.settings.default_option == '1' %}selected{% endif %}" data-option="1">
+      <div class="pricing-option-header">
+        <div class="pricing-option-left">
+          <div class="pricing-radio"></div>
+          <div>
+            <span class="pricing-title">Buy 1</span>
+            <span class="pricing-badge">SAVE 50%</span>
+          </div>
+        </div>
+        <div class="pricing-amount">
+          <div class="pricing-price">$59.99</div>
+          <div class="pricing-original">$119.99</div>
+        </div>
+      </div>
+      <div class="pricing-details">$59.99/ea</div>
+    </div>
+
+    <!-- Option 2: Buy 1 Get 1 50% OFF - MOST POPULAR -->
+    <div class="pricing-option most-popular {% if section.settings.default_option == '2' %}selected{% endif %}" data-option="2">
+      <div class="pricing-option-header">
+        <div class="pricing-option-left">
+          <div class="pricing-radio"></div>
+          <div>
+            <span class="pricing-title">Buy 1 Get 1 50% OFF</span>
+            <span class="pricing-badge">SAVE 63%</span>
+          </div>
+        </div>
+        <div class="pricing-amount">
+          <div class="pricing-price">$89.99</div>
+          <div class="pricing-original">$239.98</div>
+        </div>
+      </div>
+      <div class="pricing-details">$45.00/ea</div>
+    </div>
+
+    <!-- Option 3: Buy 2, Get 1 FREE - BEST VALUE -->
+    <div class="pricing-option best-value {% if section.settings.default_option == '3' %}selected{% endif %}" data-option="3">
+      <div class="pricing-option-header">
+        <div class="pricing-option-left">
+          <div class="pricing-radio"></div>
+          <div>
+            <span class="pricing-title">Buy 2, Get 1 FREE</span>
+            <span class="pricing-badge">SAVE 67%</span>
+          </div>
+        </div>
+        <div class="pricing-amount">
+          <div class="pricing-price">$119.99</div>
+          <div class="pricing-original">$359.97</div>
+        </div>
+      </div>
+      <div class="pricing-details">$40.00/ea</div>
+    </div>
+  </div>
+</div>
+
+<script>
+  // Countdown timer
+  {% if section.settings.show_timer %}
+  function startCountdown() {
+    const timerElement = document.getElementById('countdown-timer');
+    if (!timerElement) return;
+
+    let timeLeft = {{ section.settings.timer_minutes | default: 3 }} * 60; // Convert to seconds
+
+    function updateTimer() {
+      const hours = Math.floor(timeLeft / 3600);
+      const minutes = Math.floor((timeLeft % 3600) / 60);
+      const seconds = timeLeft % 60;
+
+      timerElement.textContent =
+        `${hours.toString().padStart(2, '0')}:${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+
+      if (timeLeft > 0) {
+        timeLeft--;
+        setTimeout(updateTimer, 1000);
+      }
+    }
+
+    updateTimer();
+  }
+
+  document.addEventListener('DOMContentLoaded', startCountdown);
+  {% endif %}
+
+  // Pricing option selection
+  document.querySelectorAll('.pricing-option').forEach(option => {
+    option.addEventListener('click', function() {
+      document.querySelectorAll('.pricing-option').forEach(opt => opt.classList.remove('selected'));
+      this.classList.add('selected');
+
+      // Update variant/quantity based on selection
+      const optionNum = this.dataset.option;
+      // Add your custom logic here to update the product form
+    });
+  });
+</script>
+
+{% schema %}
+{
+  "name": "Tiered Pricing",
+  "settings": [
+    {
+      "type": "checkbox",
+      "id": "show_timer",
+      "label": "Show Countdown Timer",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "timer_text",
+      "label": "Timer Text",
+      "default": "OFFER ENDS SOON"
+    },
+    {
+      "type": "range",
+      "id": "timer_minutes",
+      "min": 1,
+      "max": 60,
+      "step": 1,
+      "label": "Timer Duration (minutes)",
+      "default": 3
+    },
+    {
+      "type": "select",
+      "id": "default_option",
+      "label": "Default Selected Option",
+      "options": [
+        { "value": "1", "label": "Option 1 - Buy 1" },
+        { "value": "2", "label": "Option 2 - Buy 1 Get 1 50% OFF" },
+        { "value": "3", "label": "Option 3 - Buy 2 Get 1 FREE" }
+      ],
+      "default": "2"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Tiered Pricing"
+    }
+  ]
+}
+{% endschema %}

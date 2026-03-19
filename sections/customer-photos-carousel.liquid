@@ -1,0 +1,215 @@
+{% comment %}
+  Customer Photos Carousel - "Real People, Real Results"
+{% endcomment %}
+
+<style>
+  .customer-photos-section {
+    padding: 60px 20px;
+    background: #fff;
+  }
+
+  .customer-photos-heading {
+    text-align: center;
+    font-size: 36px;
+    font-weight: 700;
+    margin-bottom: 40px;
+    color: #000;
+  }
+
+  .customer-photos-carousel {
+    position: relative;
+    overflow: hidden;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .customer-photos-track {
+    display: flex;
+    gap: 20px;
+    transition: transform 0.5s ease;
+  }
+
+  .customer-photo-item {
+    min-width: calc(33.333% - 14px);
+    aspect-ratio: 3/4;
+    position: relative;
+    border-radius: 12px;
+    overflow: hidden;
+  }
+
+  @media (max-width: 768px) {
+    .customer-photo-item {
+      min-width: 100%;
+    }
+  }
+
+  .customer-photo-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .customer-photo-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(transparent, rgba(0,0,0,0.7));
+    padding: 20px;
+    color: white;
+  }
+
+  .customer-photo-text {
+    background: #000;
+    color: white;
+    padding: 8px 16px;
+    border-radius: 8px;
+    font-weight: 700;
+    display: inline-block;
+    font-size: 16px;
+  }
+
+  .carousel-nav {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    margin-top: 30px;
+  }
+
+  .carousel-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background: #f5f5f5;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+  }
+
+  .carousel-btn:hover {
+    background: #fa009f;
+    color: white;
+  }
+
+  .carousel-btn svg {
+    width: 24px;
+    height: 24px;
+  }
+</style>
+
+<div class="customer-photos-section">
+  <h2 class="customer-photos-heading">{{ section.settings.heading | default: "Real People, Real Results" }}</h2>
+
+  <div class="customer-photos-carousel">
+    <div class="customer-photos-track" id="customer-carousel-track">
+      {% for block in section.blocks %}
+        <div class="customer-photo-item">
+          {% if block.settings.image %}
+            <img src="{{ block.settings.image | image_url: width: 600 }}" alt="{{ block.settings.caption }}" loading="lazy">
+          {% else %}
+            <div style="background: #f5f5f5; width: 100%; height: 100%; display: flex; align-items: center; justify-content: center;">
+              <span style="color: #999;">Add image</span>
+            </div>
+          {% endif %}
+          {% if block.settings.caption != blank %}
+          <div class="customer-photo-overlay">
+            <div class="customer-photo-text">{{ block.settings.caption }}</div>
+          </div>
+          {% endif %}
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+
+  <div class="carousel-nav">
+    <button class="carousel-btn" id="carousel-prev">
+      <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+      </svg>
+    </button>
+    <button class="carousel-btn" id="carousel-next">
+      <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+      </svg>
+    </button>
+  </div>
+</div>
+
+<script>
+  const track = document.getElementById('customer-carousel-track');
+  const prevBtn = document.getElementById('carousel-prev');
+  const nextBtn = document.getElementById('carousel-next');
+
+  if (track && prevBtn && nextBtn) {
+    let currentIndex = 0;
+    const items = track.children;
+    const itemsPerView = window.innerWidth <= 768 ? 1 : 3;
+
+    function updateCarousel() {
+      const itemWidth = track.children[0].offsetWidth;
+      const gap = 20;
+      track.style.transform = `translateX(-${currentIndex * (itemWidth + gap)}px)`;
+    }
+
+    prevBtn.addEventListener('click', () => {
+      if (currentIndex > 0) {
+        currentIndex--;
+        updateCarousel();
+      }
+    });
+
+    nextBtn.addEventListener('click', () => {
+      if (currentIndex < items.length - itemsPerView) {
+        currentIndex++;
+        updateCarousel();
+      }
+    });
+  }
+</script>
+
+{% schema %}
+{
+  "name": "Customer Photos Carousel",
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Real People, Real Results"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "photo",
+      "name": "Customer Photo",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Photo"
+        },
+        {
+          "type": "text",
+          "id": "caption",
+          "label": "Caption",
+          "default": "No Cuts - No filters"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Customer Photos Carousel",
+      "blocks": [
+        { "type": "photo" },
+        { "type": "photo" },
+        { "type": "photo" }
+      ]
+    }
+  ]
+}
+{% endschema %}

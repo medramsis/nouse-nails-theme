@@ -1013,6 +1013,29 @@
           "colors_background_2": "#fbf8f4",
           "colors_background_3": "#f5fbfe"
         }
+      },
+      "scheme-eversmooth-pink": {
+        "settings": {
+          "colors_text": "#000000",
+          "colors_text_2": "#ffffff",
+          "color_links": "#fa009f",
+          "color_button_primary_background": "#fa009f",
+          "color_button_primary_hover_background": "#d8008a",
+          "color_button_primary_text": "#ffffff",
+          "color_button_primary_hover_text": "#ffffff",
+          "color_button_primary_border": "#fa009f",
+          "color_button_primary_hover_border": "#d8008a",
+          "color_button_secondary_background": "#6d38db",
+          "color_button_secondary_hover_background": "#5a2ab8",
+          "color_button_secondary_text": "#ffffff",
+          "color_button_secondary_hover_text": "#ffffff",
+          "color_button_secondary_border": "#6d38db",
+          "color_button_secondary_hover_border": "#5a2ab8",
+          "color_accent": "#fa009f",
+          "colors_background_1": "#ffffff",
+          "colors_background_2": "#f5f5f5",
+          "colors_background_3": "#fa009f"
+        }
       }
     }
   },

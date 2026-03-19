@@ -1,0 +1,202 @@
+{% comment %}
+  Testimonials Grid Section
+{% endcomment %}
+
+<style>
+  .testimonials-grid-section {
+    padding: 60px 20px;
+    background: #fff;
+  }
+
+  .testimonials-grid-heading {
+    text-align: center;
+    font-size: 36px;
+    font-weight: 700;
+    margin-bottom: 48px;
+    color: #000;
+  }
+
+  .testimonials-grid {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+  }
+
+  @media (max-width: 1024px) {
+    .testimonials-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (max-width: 768px) {
+    .testimonials-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  .testimonial-card {
+    background: #f9f9f9;
+    border-radius: 12px;
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    position: relative;
+  }
+
+  .testimonial-quote-icon {
+    width: 32px;
+    height: 32px;
+    background: #fa009f;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 20px;
+    font-weight: 700;
+    position: absolute;
+    top: 16px;
+    right: 16px;
+  }
+
+  .testimonial-stars {
+    color: #ffd700;
+    font-size: 16px;
+    letter-spacing: 2px;
+  }
+
+  .testimonial-title {
+    font-weight: 700;
+    font-size: 16px;
+    color: #000;
+    margin: 0;
+  }
+
+  .testimonial-text {
+    font-size: 14px;
+    line-height: 1.6;
+    color: #666;
+    margin: 0;
+  }
+
+  .testimonial-author {
+    font-size: 13px;
+    font-style: italic;
+    color: #999;
+    margin-top: auto;
+  }
+</style>
+
+<div class="testimonials-grid-section">
+  <h2 class="testimonials-grid-heading">{{ section.settings.heading }}</h2>
+
+  <div class="testimonials-grid">
+    {% for block in section.blocks %}
+      <div class="testimonial-card">
+        <div class="testimonial-quote-icon">"</div>
+        <div class="testimonial-stars">★★★★★</div>
+        <h3 class="testimonial-title">{{ block.settings.title }}</h3>
+        <p class="testimonial-text">{{ block.settings.quote }}</p>
+        <div class="testimonial-author">{{ block.settings.author }}</div>
+      </div>
+    {% endfor %}
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Testimonials Grid",
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Why 14,000+ Trust EverSmooth"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "testimonial",
+      "name": "Testimonial",
+      "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title",
+          "default": "Gentle for sensitive skin"
+        },
+        {
+          "type": "textarea",
+          "id": "quote",
+          "label": "Quote",
+          "default": "Used the silicone tip on the lowest level and kept it moving—no irritation, just smoother-feeling skin."
+        },
+        {
+          "type": "text",
+          "id": "author",
+          "label": "Author",
+          "default": "— Hannah S."
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Testimonials Grid",
+      "blocks": [
+        {
+          "type": "testimonial",
+          "settings": {
+            "title": "Gentle for sensitive skin",
+            "quote": "Used the silicone tip on the lowest level and kept it moving—no irritation, just smoother-feeling skin.",
+            "author": "— Hannah S."
+          }
+        },
+        {
+          "type": "testimonial",
+          "settings": {
+            "title": "Cheaper than facials",
+            "quote": "I used to book extractions every month. Now I do quick at-home sessions and save the appointment $$ for special occasions.",
+            "author": "— Alyssa G."
+          }
+        },
+        {
+          "type": "testimonial",
+          "settings": {
+            "title": "Clean & easy",
+            "quote": "Tips rinse fast, filters swap out in seconds. My partner borrows it too—unisex win.",
+            "author": "— Maya K."
+          }
+        },
+        {
+          "type": "testimonial",
+          "settings": {
+            "title": "Finally stopped squeezing",
+            "quote": "Warm towel + Level 1 and short glides—way less redness and my nose looks clearer after one use.",
+            "author": "— Amy J."
+          }
+        },
+        {
+          "type": "testimonial",
+          "settings": {
+            "title": "T-zone shine tamed",
+            "quote": "I'm oily. Using this 2–3x/week keeps the gunk down and my forehead stays less shiny.",
+            "author": "— Andre P."
+          }
+        },
+        {
+          "type": "testimonial",
+          "settings": {
+            "title": "Finally stopped squeezing",
+            "quote": "Warm towel + Level 1 and short glides—way less redness and my nose looks clearer after one use.",
+            "author": "— Amy J."
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

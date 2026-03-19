@@ -1,0 +1,258 @@
+{
+  "sections": {
+    "main": {
+      "type": "product-template",
+      "blocks": {
+        "title": {
+          "type": "title",
+          "settings": {}
+        },
+        "rating": {
+          "type": "rating",
+          "settings": {}
+        },
+        "price": {
+          "type": "price",
+          "settings": {}
+        },
+        "description": {
+          "type": "description",
+          "settings": {}
+        }
+      },
+      "block_order": [
+        "title",
+        "rating",
+        "price",
+        "description"
+      ],
+      "settings": {
+        "enable_sticky_info": true,
+        "color_scheme": "scheme-eversmooth-pink",
+        "section_padding": "section-padding-main",
+        "constrain_to_viewport": false,
+        "media_fit": "contain",
+        "product_images_position": "left",
+        "slideshow_media_aspect_ratio": "1/1",
+        "thumbnail_media_aspect_ratio": "1/1",
+        "mobile_thumbnails": "show"
+      }
+    },
+    "tiered_pricing": {
+      "type": "product-tiered-pricing",
+      "settings": {
+        "show_timer": true,
+        "timer_text": "OFFER ENDS SOON",
+        "timer_minutes": 3,
+        "default_option": "2"
+      }
+    },
+    "trust_badges": {
+      "type": "product-trust-badges",
+      "settings": {}
+    },
+    "sticky_cart": {
+      "type": "sticky-add-to-cart-bar",
+      "settings": {
+        "product_title": "",
+        "sale_price": "$59.99",
+        "original_price": "$119.99",
+        "button_text": "Add to cart"
+      }
+    },
+    "customer_photos": {
+      "type": "customer-photos-carousel",
+      "blocks": {
+        "photo_1": {
+          "type": "photo",
+          "settings": {
+            "caption": "No Cuts - No filters"
+          }
+        },
+        "photo_2": {
+          "type": "photo",
+          "settings": {
+            "caption": "Real Results"
+          }
+        },
+        "photo_3": {
+          "type": "photo",
+          "settings": {
+            "caption": "Amazing Results"
+          }
+        }
+      },
+      "block_order": ["photo_1", "photo_2", "photo_3"],
+      "settings": {
+        "heading": "Real People, Real Results"
+      }
+    },
+    "before_after": {
+      "type": "before-after-slider",
+      "settings": {
+        "heading": "Your 60-Second Pore Reset",
+        "description": "Warm skin, then glide PoreLift™. Our ClearVac™ micro-pulse suction lifts oil and debris to reduce the look of blackheads and texture—so skin appears smoother and makeup sits better."
+      }
+    },
+    "feature_blocks": {
+      "type": "feature-content-blocks",
+      "blocks": {
+        "feature_1": {
+          "type": "feature",
+          "settings": {
+            "heading": "Daily-Routine Easy.",
+            "description": "Rechargeable, rinse-clean tips—warm, glide, rinse, done.",
+            "media_type": "image",
+            "reverse": false
+          }
+        },
+        "feature_2": {
+          "type": "feature",
+          "settings": {
+            "heading": "Comfort-First Suction",
+            "description": "ClearVac™ micro-pulse is designed to be gentle—start on Level 1, glide, don't hover",
+            "media_type": "image",
+            "reverse": true
+          }
+        }
+      },
+      "block_order": ["feature_1", "feature_2"],
+      "settings": {}
+    },
+    "testimonials": {
+      "type": "testimonials-grid",
+      "blocks": {
+        "testimonial_1": {
+          "type": "testimonial",
+          "settings": {
+            "title": "Gentle for sensitive skin",
+            "quote": "Used the silicone tip on the lowest level and kept it moving—no irritation, just smoother-feeling skin.",
+            "author": "— Hannah S."
+          }
+        },
+        "testimonial_2": {
+          "type": "testimonial",
+          "settings": {
+            "title": "Cheaper than facials",
+            "quote": "I used to book extractions every month. Now I do quick at-home sessions and save the appointment $$ for special occasions.",
+            "author": "— Alyssa G."
+          }
+        },
+        "testimonial_3": {
+          "type": "testimonial",
+          "settings": {
+            "title": "Clean & easy",
+            "quote": "Tips rinse fast, filters swap out in seconds. My partner borrows it too—unisex win.",
+            "author": "— Maya K."
+          }
+        },
+        "testimonial_4": {
+          "type": "testimonial",
+          "settings": {
+            "title": "Finally stopped squeezing",
+            "quote": "Warm towel + Level 1 and short glides—way less redness and my nose looks clearer after one use.",
+            "author": "— Amy J."
+          }
+        },
+        "testimonial_5": {
+          "type": "testimonial",
+          "settings": {
+            "title": "T-zone shine tamed",
+            "quote": "I'm oily. Using this 2–3x/week keeps the gunk down and my forehead stays less shiny.",
+            "author": "— Andre P."
+          }
+        },
+        "testimonial_6": {
+          "type": "testimonial",
+          "settings": {
+            "title": "Finally stopped squeezing",
+            "quote": "Warm towel + Level 1 and short glides—way less redness and my nose looks clearer after one use.",
+            "author": "— Amy J."
+          }
+        }
+      },
+      "block_order": [
+        "testimonial_1",
+        "testimonial_2",
+        "testimonial_3",
+        "testimonial_4",
+        "testimonial_5",
+        "testimonial_6"
+      ],
+      "settings": {
+        "heading": "Why 14,000+ Trust EverSmooth"
+      }
+    },
+    "faqs": {
+      "type": "hae-faqs",
+      "blocks": {
+        "faq_1": {
+          "type": "faq_block",
+          "settings": {
+            "question": "Will it really not bruise my face?",
+            "answer": "<p>ClearVac™ micro-pulse is designed to be gentler than traditional suction. Start on Level 1, keep moving, and your skin should feel smooth—not sore.</p>"
+          }
+        },
+        "faq_2": {
+          "type": "faq_block",
+          "settings": {
+            "question": "How long does it take to see results?",
+            "answer": "<p>Most users notice smoother texture and fewer visible blackheads after 1-2 uses. Consistency is key!</p>"
+          }
+        },
+        "faq_3": {
+          "type": "faq_block",
+          "settings": {
+            "question": "Is it safe for all skin types and ages?",
+            "answer": "<p>Yes! PoreLift is designed for all skin types. Start on the lowest level if you have sensitive skin.</p>"
+          }
+        },
+        "faq_4": {
+          "type": "faq_block",
+          "settings": {
+            "question": "How do I use PoreLift properly?",
+            "answer": "<p>Warm your skin, apply light gliding motions, avoid hovering in one spot. Check the quick-start guide for full details.</p>"
+          }
+        },
+        "faq_5": {
+          "type": "faq_block",
+          "settings": {
+            "question": "Can I use this with my skincare products?",
+            "answer": "<p>Absolutely! Use PoreLift before applying serums and moisturizers for better absorption.</p>"
+          }
+        },
+        "faq_6": {
+          "type": "faq_block",
+          "settings": {
+            "question": "What if nothing comes out?",
+            "answer": "<p>That's normal! It means your pores are already clean. Use 2-3x per week for maintenance.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "faq_1",
+        "faq_2",
+        "faq_3",
+        "faq_4",
+        "faq_5",
+        "faq_6"
+      ],
+      "settings": {
+        "color_scheme": "background-1",
+        "heading": "FAQs",
+        "page": ""
+      }
+    }
+  },
+  "order": [
+    "main",
+    "tiered_pricing",
+    "trust_badges",
+    "sticky_cart",
+    "customer_photos",
+    "before_after",
+    "feature_blocks",
+    "testimonials",
+    "faqs"
+  ]
+}
