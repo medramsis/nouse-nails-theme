@@ -44,16 +44,7 @@
             <div class='footer__company'>
               {% if section.settings.company_logo != blank %}
                 <div class='footer__logo'>
-                  {%
-                    render 'image-with-aspect-ratio',
-                    image: section.settings.company_logo,
-                    aspect_ratio: 'natural',
-                    alt: section.settings.company_logo.alt | default: shop.name,
-                    class: 'footer__logo-image',
-                    sizes: '200px',
-                    widths: '200,400',
-                    loading: 'lazy'
-                  %}
+                  {% render 'image-with-aspect-ratio', image: section.settings.company_logo, aspect_ratio: 'natural', alt: section.settings.company_logo.alt, default: shop.name, class: 'footer__logo-image', sizes: '200px', widths: '200,400', loading: 'lazy' %}
                 </div>
               {% endif %}
 
@@ -385,3 +376,26 @@
   ]
 }
 {% endschema %}
+{% comment %}
+
+This file has been rewritten to preserve the original behavior.
+
+---
+Changes:
+- from: |-
+    {%
+                        render 'image-with-aspect-ratio',
+                        image: section.settings.company_logo,
+                        aspect_ratio: 'natural',
+                        alt: section.settings.company_logo.alt | default: shop.name,
+                        class: 'footer__logo-image',
+                        sizes: '200px',
+                        widths: '200,400',
+                        loading: 'lazy'
+                      %}
+  to: "{% render 'image-with-aspect-ratio', image: section.settings.company_logo,
+    aspect_ratio: 'natural', alt: section.settings.company_logo.alt, default: shop.name,
+    class: 'footer__logo-image', sizes: '200px', widths: '200,400', loading: 'lazy'
+    %}"
+  position: 1505..1747
+{% endcomment %}

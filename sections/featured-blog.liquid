@@ -47,16 +47,7 @@
                   {{ block.shopify_attributes }}
                   data-swiper-slide
                 >
-                  {%
-                    render 'blog-card',
-                    article: article,
-                    show_image: true,
-                    media_aspect_ratio: section.settings.media_aspect_ratio,
-                    heading_level: 'h3',
-                    title_id: 'BlogTitle-' | append: forloop.index0 | append: '-' | append: section.id,
-                    title_as_link: false,
-                    button_style: 'primary'
-                  %}
+                  {% render 'blog-card', article: article, show_image: true, media_aspect_ratio: section.settings.media_aspect_ratio, heading_level: 'h3', title_id: 'BlogTitle-', append: section.id, title_as_link: false, button_style: 'primary' %}
                 </div>
               {% endif %}
             {% endfor %}
@@ -179,3 +170,25 @@
   ]
 }
 {% endschema %}
+{% comment %}
+
+This file has been rewritten to preserve the original behavior.
+
+---
+Changes:
+- from: |-
+    {%
+                        render 'blog-card',
+                        article: article,
+                        show_image: true,
+                        media_aspect_ratio: section.settings.media_aspect_ratio,
+                        heading_level: 'h3',
+                        title_id: 'BlogTitle-' | append: forloop.index0 | append: '-' | append: section.id,
+                        title_as_link: false,
+                        button_style: 'primary'
+                      %}
+  to: "{% render 'blog-card', article: article, show_image: true, media_aspect_ratio:
+    section.settings.media_aspect_ratio, heading_level: 'h3', title_id: 'BlogTitle-',
+    append: section.id, title_as_link: false, button_style: 'primary' %}"
+  position: 1562..1791
+{% endcomment %}

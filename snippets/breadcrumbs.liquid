@@ -57,7 +57,7 @@
             </a>
           </li>
 
-        {% when 'collection' and collection.handle %}
+        {% when 'collection' %}
           {% if current_tags %}
             <li>{{ collection.title | link_to: collection.url }}</li>
             <li>
@@ -164,3 +164,13 @@
   }
   </script>
 {% endunless %}
+{% comment %}
+
+This file has been rewritten to preserve the original behavior.
+
+---
+Changes:
+- from: "{% when 'collection' and collection.handle %}"
+  to: "{% when 'collection' %}"
+  position: 1825..1848
+{% endcomment %}

@@ -184,24 +184,7 @@
           {%- assign featured_media = product.selected_or_first_available_variant.featured_media -%}
           <div class='swiper-slide' data-swiper-slide>
             <div class='product__media-thumbnail-wrapper'>
-              {%
-                render 'product-thumbnail',
-                media: featured_media,
-                media_count: media_count,
-                position: 1,
-                desktop_layout: 'thumbnail',
-                mobile_layout: 'thumbnail',
-                loop: false,
-                modal_id: section.id,
-                xr_button: false,
-                media_width: 0.25,
-                media_fit: 'contain',
-                constrain_to_viewport: true,
-                lazy_load: false,
-                zoom: false,
-                aspect_ratio: thumbnail_aspect_ratio | default: media_aspect_ratio,
-                class: 'product-media-gallery__thumbnail'
-              %}
+              {% render 'product-thumbnail', media: featured_media, media_count: media_count, position: 1, desktop_layout: 'thumbnail', mobile_layout: 'thumbnail', loop: false, modal_id: section.id, xr_button: false, media_width: 0.25, media_fit: 'contain', constrain_to_viewport: true, lazy_load: false, zoom: false, aspect_ratio: thumbnail_aspect_ratio, default: media_aspect_ratio, class: 'product-media-gallery__thumbnail' %}
             </div>
           </div>
         {%- endif -%}
@@ -212,24 +195,7 @@
           -%}
             <div class='swiper-slide' data-swiper-slide>
               <div class='product__media-thumbnail-wrapper'>
-                {%
-                  render 'product-thumbnail',
-                  media: media,
-                  media_count: media_count,
-                  position: forloop.index,
-                  desktop_layout: 'thumbnail',
-                  mobile_layout: 'thumbnail',
-                  loop: false,
-                  modal_id: section.id,
-                  xr_button: false,
-                  media_width: 0.25,
-                  media_fit: 'contain',
-                  constrain_to_viewport: true,
-                  lazy_load: true,
-                  zoom: false,
-                  aspect_ratio: thumbnail_aspect_ratio | default: media_aspect_ratio,
-                  class: 'product-media-gallery__thumbnail'
-                %}
+                {% render 'product-thumbnail', media: media, media_count: media_count, position: forloop.index, desktop_layout: 'thumbnail', mobile_layout: 'thumbnail', loop: false, modal_id: section.id, xr_button: false, media_width: 0.25, media_fit: 'contain', constrain_to_viewport: true, lazy_load: true, zoom: false, aspect_ratio: thumbnail_aspect_ratio, default: media_aspect_ratio, class: 'product-media-gallery__thumbnail' %}
               </div>
             </div>
           {%- endunless -%}
@@ -238,3 +204,60 @@
     </div>
   </swiper-slideshow>
 </media-gallery>
+{% comment %}
+
+This file has been rewritten to preserve the original behavior.
+
+---
+Changes:
+- from: |-
+    {%
+                    render 'product-thumbnail',
+                    media: featured_media,
+                    media_count: media_count,
+                    position: 1,
+                    desktop_layout: 'thumbnail',
+                    mobile_layout: 'thumbnail',
+                    loop: false,
+                    modal_id: section.id,
+                    xr_button: false,
+                    media_width: 0.25,
+                    media_fit: 'contain',
+                    constrain_to_viewport: true,
+                    lazy_load: false,
+                    zoom: false,
+                    aspect_ratio: thumbnail_aspect_ratio | default: media_aspect_ratio,
+                    class: 'product-media-gallery__thumbnail'
+                  %}
+  to: "{% render 'product-thumbnail', media: featured_media, media_count: media_count,
+    position: 1, desktop_layout: 'thumbnail', mobile_layout: 'thumbnail', loop: false,
+    modal_id: section.id, xr_button: false, media_width: 0.25, media_fit: 'contain',
+    constrain_to_viewport: true, lazy_load: false, zoom: false, aspect_ratio: thumbnail_aspect_ratio,
+    default: media_aspect_ratio, class: 'product-media-gallery__thumbnail' %}"
+  position: 6578..6993
+- from: |-
+    {%
+                      render 'product-thumbnail',
+                      media: media,
+                      media_count: media_count,
+                      position: forloop.index,
+                      desktop_layout: 'thumbnail',
+                      mobile_layout: 'thumbnail',
+                      loop: false,
+                      modal_id: section.id,
+                      xr_button: false,
+                      media_width: 0.25,
+                      media_fit: 'contain',
+                      constrain_to_viewport: true,
+                      lazy_load: true,
+                      zoom: false,
+                      aspect_ratio: thumbnail_aspect_ratio | default: media_aspect_ratio,
+                      class: 'product-media-gallery__thumbnail'
+                    %}
+  to: "{% render 'product-thumbnail', media: media, media_count: media_count, position:
+    forloop.index, desktop_layout: 'thumbnail', mobile_layout: 'thumbnail', loop:
+    false, modal_id: section.id, xr_button: false, media_width: 0.25, media_fit: 'contain',
+    constrain_to_viewport: true, lazy_load: true, zoom: false, aspect_ratio: thumbnail_aspect_ratio,
+    default: media_aspect_ratio, class: 'product-media-gallery__thumbnail' %}"
+  position: 7353..7770
+{% endcomment %}

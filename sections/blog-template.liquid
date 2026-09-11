@@ -32,15 +32,7 @@
       <div class='main-blog__grid grid grid-3 grid-gap-lg'>
         {%- for article in blog.articles -%}
           <div class='grid__item'>
-            {%
-              render 'blog-card',
-              article: article,
-              show_image: section.settings.show_image,
-              media_aspect_ratio: section.settings.media_aspect_ratio,
-              title_id: 'ArticleTitle-' | append: article.id | append: '-' | append: section.id,
-              title_as_link: true,
-              button_style: 'primary'
-            %}
+            {% render 'blog-card', article: article, show_image: section.settings.show_image, media_aspect_ratio: section.settings.media_aspect_ratio, title_id: 'ArticleTitle-', append: section.id, title_as_link: true, button_style: 'primary' %}
           </div>
         {%- endfor -%}
       </div>
@@ -143,3 +135,24 @@
   ]
 }
 {% endschema %}
+{% comment %}
+
+This file has been rewritten to preserve the original behavior.
+
+---
+Changes:
+- from: |-
+    {%
+                  render 'blog-card',
+                  article: article,
+                  show_image: section.settings.show_image,
+                  media_aspect_ratio: section.settings.media_aspect_ratio,
+                  title_id: 'ArticleTitle-' | append: article.id | append: '-' | append: section.id,
+                  title_as_link: true,
+                  button_style: 'primary'
+                %}
+  to: "{% render 'blog-card', article: article, show_image: section.settings.show_image,
+    media_aspect_ratio: section.settings.media_aspect_ratio, title_id: 'ArticleTitle-',
+    append: section.id, title_as_link: true, button_style: 'primary' %}"
+  position: 1372..1605
+{% endcomment %}
